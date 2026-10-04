@@ -1,0 +1,6 @@
+@model IEnumerable<SmartRental.ViewModels.Admin.AdminDanhGiaViewModel>
+@{ ViewData["Title"] = "Quản lý đánh giá"; Layout = "_AdminLayout"; }
+<div class="d-flex justify-content-between align-items-center mb-4"><div><h2 class="mb-1">Quản lý đánh giá</h2><p class="text-muted mb-0">Theo dõi và xóa đánh giá vi phạm.</p></div></div>
+<div class="card"><div class="table-responsive"><table class="table table-hover align-middle mb-0"><thead><tr><th>Người dùng</th><th>Phòng</th><th>Sao</th><th>Bình luận</th><th>Ngày</th><th></th></tr></thead><tbody>
+@foreach (var item in Model) { <tr><td>@item.UserName</td><td><a asp-controller="Phongtro" asp-action="Details" asp-route-id="@item.PhongtroId">@item.RoomTitle</a></td><td>★ @item.SoSao</td><td>@(item.NoiDung ?? "—")</td><td>@item.NgayDanhGia.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td><td><form asp-action="DeleteReview" method="post"><input type="hidden" name="userId" value="@item.UserId" /><input type="hidden" name="phongtroId" value="@item.PhongtroId" /><button class="btn btn-sm btn-outline-danger" type="submit">Xóa</button></form></td></tr> }
+</tbody></table></div></div>

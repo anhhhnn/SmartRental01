@@ -1,0 +1,335 @@
+﻿@model SmartRental.Models.Phongtro
+
+@{
+    ViewData["Title"] = "Chi tiết phòng trọ";
+
+    var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var canManage = User.IsInRole(AppRoles.Admin) ||
+        (currentUserId != null && Model.OwnerId == currentUserId);
+    var favoriteRoomIds = ViewBag.FavoriteRoomIds as HashSet<int>
+        ?? new HashSet<int>();
+    var returnUrl = Context.Request.Path + Context.Request.QueryString;
+}
+
+<div class="mb-5">
+
+    <div class="row">
+
+        <!-- ẢNH PHÒNG -->
+        <div class="col-lg-7 mb-4">
+
+            <div class="card">
+
+                @{ var gallery = Model.HinhAnhs.OrderBy(x => x.ThuTu).ToList(); var mainImage = gallery.FirstOrDefault(x => x.IsAnhChinh)?.DuongDan ?? gallery.FirstOrDefault()?.DuongDan ?? Model.HinhAnh; }
+                @if (!string.IsNullOrEmpty(mainImage))
+                {
+                    <img id="mainRoomImage" src="@mainImage"
+                         alt="@Model.TieuDe"
+                         class="details-image" />
+                    @if (gallery.Count > 1) { <div class="details-gallery p-2">@foreach(var image in gallery){<button type="button" class="gallery-thumb" data-image="@image.DuongDan"><img src="@image.DuongDan" alt="Ảnh phòng"/></button>}</div> }
+                }
+                else
+                {
+                    <div class="details-placeholder d-flex align-items-center justify-content-center">
+
+                        <span class="text-muted fs-5">
+                            Chưa có hình ảnh
+                        </span>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+
+        <!-- THÔNG TIN PHÒNG -->
+        <div class="col-lg-5">
+
+            <div class="card details-panel">
+
+                <div class="card-body">
+
+                    <h2 class="fw-bold mb-3">
+                        @Model.TieuDe
+                    </h2>
+
+
+                    <h3 class="room-price mb-4">
+                        @Model.Gia.ToString("N0") VNĐ/tháng
+                    </h3>
+
+
+                    <!-- Diện tích -->
+                    <div class="mb-3">
+
+                        <strong>
+                            Diện tích:
+                        </strong>
+
+                        <span class="ms-2">
+                            @Model.DienTich m²
+                        </span>
+
+                    </div>
+
+
+                    <!-- Địa chỉ -->
+                    <div class="mb-3">
+
+                        <strong>
+                            Địa chỉ:
+                        </strong>
+
+                        <span class="ms-2">
+                            @Model.DiaChi
+                        </span>
+
+                    </div>
+
+
+                    <!-- Ngày đăng -->
+                    <div class="mb-3">
+
+                        <strong>
+                            Ngày đăng:
+                        </strong>
+
+                        <span class="ms-2">
+                            @Model.NgayDang.ToString("dd/MM/yyyy HH:mm")
+                        </span>
+
+                    </div>
+
+
+                    <!-- Trạng thái -->
+                    <div class="mb-4">
+
+                        <strong>
+                            Trạng thái:
+                        </strong>
+
+                        @if (Model.SoLuongPhong > 0)
+                        {
+                            <span class="badge bg-success ms-2">
+                                Còn phòng · @Model.SoLuongPhong phòng trống
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary ms-2">
+                                Hết phòng
+                            </span>
+                        }
+
+                    </div>
+
+
+                    <hr />
+
+
+                    <!-- TIỆN NGHI -->
+                    <h5 class="fw-bold mb-3">
+                        Tiện nghi
+                    </h5>
+
+
+                    @if (Model.PhongTienNghis != null &&
+                                        Model.PhongTienNghis.Any())
+                    {
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+
+                            @foreach (var item in Model.PhongTienNghis)
+                            {
+                                <span class="amenity-chip">
+
+                                    ✓ @item.TienNghi.TenTienNghi
+
+                                </span>
+                            }
+
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-muted mb-4">
+                            Chưa cập nhật tiện nghi.
+                        </p>
+                    }
+
+
+                    <hr />
+
+
+                    <!-- MÔ TẢ -->
+                    <h5 class="fw-bold mb-3">
+                        Mô tả phòng
+                    </h5>
+
+
+                    @if (!string.IsNullOrWhiteSpace(Model.MoTa))
+                    {
+                        <p class="description">
+                            @Model.MoTa
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="text-muted">
+                            Chưa có mô tả cho phòng này.
+                        </p>
+                    }
+
+
+                    <hr />
+
+
+                    <div id="owner-contact" class="owner-card mb-4 p-3">
+                        <div class="card-body">
+                            <h5 class="fw-bold mb-3">Thông tin chủ trọ</h5>
+                            @if (Model.Owner != null)
+                            {
+                                <p class="mb-2"><strong>Họ tên:</strong> @(Model.Owner.HoTen ?? "Chưa cập nhật")</p>
+                                <p class="mb-2"><strong>Số điện thoại:</strong> @(Model.Owner.PhoneNumber ?? "Chưa cập nhật")</p>
+                                <p class="mb-3"><strong>Email:</strong> @(Model.Owner.Email ?? "Chưa cập nhật")</p>
+                                @if (User.Identity?.IsAuthenticated == true && Model.OwnerId != currentUserId)
+                                { <form asp-controller="Messages" asp-action="Start" method="post" class="d-inline-block mb-2"><input type="hidden" name="phongtroId" value="@Model.Id"/><button class="btn btn-success"><i class="bi bi-chat-dots me-1"></i>Nhắn tin</button></form> }
+                                else if (User.Identity?.IsAuthenticated != true)
+                                { <a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@returnUrl" class="btn btn-success mb-2"><i class="bi bi-chat-dots me-1"></i>Nhắn tin</a> }
+                                @if (!string.IsNullOrWhiteSpace(Model.Owner.PhoneNumber) || !string.IsNullOrWhiteSpace(Model.Owner.Email))
+                                {
+                                    <div class="d-flex flex-wrap gap-2">
+                                        @if (!string.IsNullOrWhiteSpace(Model.Owner.PhoneNumber))
+                                        {
+                                        }
+                                        @if (!string.IsNullOrWhiteSpace(Model.Owner.Email))
+                                        {
+                                            <a class="btn btn-outline-primary" href="mailto:@Model.Owner.Email">Email</a>
+                                        }
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <p class="text-muted mb-0">Chưa có thông tin chủ trọ.</p>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- NÚT -->
+                    <div class="d-grid gap-2">
+
+                        @if (Model.Owner != null)
+                        {
+                            @if (User.Identity?.IsAuthenticated == true && Model.OwnerId != currentUserId)
+                            {
+                                <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#bookingModal">Đặt lịch xem phòng</button>
+                            }
+                        }
+                        else
+                        {
+                            <button type="button" class="btn btn-secondary btn-lg" disabled>Chưa có thông tin chủ trọ</button>
+                        }
+
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            @if (favoriteRoomIds.Contains(Model.Id))
+                            {
+                                <form asp-action="RemoveYeuThich" method="post">
+                                    <input type="hidden" name="phongtroId" value="@Model.Id" />
+                                    <input type="hidden" name="returnUrl" value="@returnUrl" />
+                                    <button type="submit" class="btn btn-outline-danger w-100">Bỏ yêu thích</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <form asp-action="AddYeuThich" method="post">
+                                    <input type="hidden" name="phongtroId" value="@Model.Id" />
+                                    <input type="hidden" name="returnUrl" value="@returnUrl" />
+                                    <button type="submit" class="btn btn-outline-primary w-100">♡ Thêm vào yêu thích</button>
+                                </form>
+                            }
+                        }
+                        else
+                        {
+                            <a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@returnUrl" class="btn btn-outline-primary">♡ Thêm vào yêu thích</a>
+                        }
+
+
+                        @if (canManage)
+                        {
+                            <div class="d-flex gap-2">
+                                <a asp-action="Edit"
+                                   asp-route-id="@Model.Id"
+                                   class="btn btn-warning flex-fill">
+
+                                    Chỉnh sửa phòng
+
+                                </a>
+
+                                <a asp-action="Delete"
+                                   asp-route-id="@Model.Id"
+                                   class="btn btn-outline-danger flex-fill">
+
+                                    Xóa phòng
+
+                                </a>
+                            </div>
+                        }
+
+
+                        <a asp-action="Index"
+                           class="btn btn-outline-secondary">
+
+                            Quay lại danh sách
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@if (User.Identity?.IsAuthenticated == true && Model.OwnerId != currentUserId)
+{
+    <div class="modal fade" id="bookingModal" tabindex="-1"><div class="modal-dialog"><form asp-controller="LichXemPhong" asp-action="Create" method="post" class="modal-content"><div class="modal-header"><h5 class="modal-title">Đặt lịch xem phòng</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><input type="hidden" name="phongtroId" value="@Model.Id"/><div class="mb-3"><label class="form-label">Họ tên</label><input name="hoTen" class="form-control" required maxlength="150"/></div><div class="mb-3"><label class="form-label">Số điện thoại</label><input name="soDienThoai" class="form-control" maxlength="30"/></div><div class="mb-3"><label class="form-label">Thời gian xem</label><input name="thoiGianXem" type="datetime-local" class="form-control" required/></div><div><label class="form-label">Ghi chú</label><textarea name="ghiChu" class="form-control" maxlength="1000"></textarea></div></div><div class="modal-footer"><button class="btn btn-primary">Gửi yêu cầu</button></div></form></div></div>
+}
+
+@{
+    var reviews = ViewBag.Reviews as IEnumerable<SmartRental.Models.DanhGia> ?? Enumerable.Empty<SmartRental.Models.DanhGia>();
+    var myReview = ViewBag.MyReview as SmartRental.Models.DanhGia;
+    var reviewCount = (int)(ViewBag.ReviewCount ?? 0);
+    var averageRating = (double)(ViewBag.AverageRating ?? 0d);
+    var distribution = ViewBag.RatingDistribution as Dictionary<int, int> ?? new Dictionary<int, int>();
+}
+<section class="card mt-4"><div class="card-body"><h3 class="h4">Đánh giá phòng</h3><p class="fs-5 mb-2">@if (reviewCount > 0) { <span class="text-warning">★</span> @averageRating.ToString("0.0") <span class="text-muted">(@reviewCount đánh giá)</span> } else { <span class="text-muted">Chưa có đánh giá</span> }</p><div class="small text-muted mb-4">@for (var star = 5; star >= 1; star--) { <span class="me-3">@star sao: @(distribution.TryGetValue(star, out var count) ? count : 0)</span> }</div>
+@if (User.Identity?.IsAuthenticated == true) { <form asp-action="@(myReview == null ? "AddDanhGia" : "EditDanhGia")" method="post" class="border rounded p-3 mb-4"><input type="hidden" name="phongtroId" value="@Model.Id" /><input type="hidden" name="soSao" id="SoSao" value="@myReview?.SoSao"/><h4 class="h6">@(myReview == null ? "Gửi đánh giá của bạn" : "Chỉnh sửa đánh giá của bạn")</h4><div class="mb-3"><label class="form-label">Số sao</label><div class="rating-picker" data-rating="@myReview?.SoSao" role="radiogroup">@for(var star=1;star<=5;star++){<button type="button" class="rating-star" data-value="@star" aria-label="@star sao">★</button>}</div><small id="ratingText" class="text-muted"></small></div><div class="mb-3"><label class="form-label" for="noiDung">Bình luận</label><textarea id="noiDung" name="noiDung" class="form-control" maxlength="1000" rows="3">@myReview?.NoiDung</textarea></div><button class="btn btn-primary" type="submit">@(myReview == null ? "Gửi đánh giá" : "Cập nhật đánh giá")</button></form> } else { <p><a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@returnUrl">Đăng nhập</a> để gửi đánh giá.</p> }
+@foreach (var review in reviews) { <article class="border-top pt-3 mt-3"><div class="d-flex justify-content-between"><strong>@(review.User.HoTen ?? review.User.Email ?? review.User.UserName ?? "Người dùng")</strong><span class="text-warning">★ @review.SoSao</span></div><p class="mb-1">@review.NoiDung</p><small class="text-muted">@review.NgayDanhGia.ToLocalTime().ToString("dd/MM/yyyy HH:mm")@(review.NgayCapNhat.HasValue ? " (đã cập nhật)" : "")</small>@if (currentUserId == review.UserId || User.IsInRole(AppRoles.Admin)) { <form asp-action="DeleteDanhGia" method="post" class="d-inline ms-2"><input type="hidden" name="phongtroId" value="@Model.Id" /><input type="hidden" name="userId" value="@review.UserId" /><button type="submit" class="btn btn-sm btn-link text-danger">Xóa</button></form> }</article> }
+@if (ViewBag.ReviewTotalPages > 1) { <nav class="mt-3">@for (var p = 1; p <= (int)ViewBag.ReviewTotalPages; p++) { <a class="btn btn-sm @(p == (int)ViewBag.ReviewPage ? "btn-primary" : "btn-outline-primary")" asp-action="Details" asp-route-id="@Model.Id" asp-route-reviewPage="@p">@p</a> }</nav> }</div></section>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('.rating-picker').forEach(picker => { const hidden=document.querySelector('#SoSao'), text=document.querySelector('#ratingText'), labels=['','Rất tệ','Không tốt','Bình thường','Tốt','Rất tốt']; let value=Number(picker.dataset.rating)||0; const paint=n=>{picker.querySelectorAll('.rating-star').forEach(s=>s.classList.toggle('is-active',Number(s.dataset.value)<=n)); text.textContent=n?`${n} sao - ${labels[n]}`:'Chọn số sao';}; paint(value); picker.querySelectorAll('.rating-star').forEach(s=>{s.onmouseenter=()=>paint(Number(s.dataset.value));s.onclick=()=>{value=Number(s.dataset.value);hidden.value=value;paint(value);};});picker.onmouseleave=()=>paint(value); });
+        document.querySelectorAll('[data-copy-phone]').forEach(button => {
+            button.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(button.dataset.copyPhone);
+                    const originalText = button.textContent;
+                    button.textContent = 'Đã sao chép';
+                    setTimeout(() => button.textContent = originalText, 1500);
+                } catch {
+                    window.prompt('Sao chép số điện thoại:', button.dataset.copyPhone);
+                }
+            });
+        });
+        document.querySelectorAll('.gallery-thumb').forEach(button => button.addEventListener('click', () => document.querySelector('#mainRoomImage').src = button.dataset.image));
+    </script>
+}

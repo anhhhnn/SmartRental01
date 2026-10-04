@@ -1,0 +1,64 @@
+@page
+@model SmartRental.Areas.Identity.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "Đăng ký";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<div class="auth-wrap">
+    <div class="auth-card">
+        <div class="card">
+            <div class="card-body p-4">
+                <h2 class="fw-bold mb-3">Tạo tài khoản</h2>
+                <p class="text-muted">Đăng ký để lưu thông tin và sử dụng SmartRental.</p>
+
+                <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Input.HoTen" class="form-label"></label>
+                        <input asp-for="Input.HoTen" class="form-control" autocomplete="name" />
+                        <span asp-validation-for="Input.HoTen" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Input.Email" class="form-label"></label>
+                        <input asp-for="Input.Email" class="form-control" autocomplete="username" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Input.Password" class="form-label"></label>
+                        <input asp-for="Input.Password" class="form-control" autocomplete="new-password" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Input.ConfirmPassword" class="form-label"></label>
+                        <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" />
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-check mb-4">
+                        <input asp-for="Input.RegisterAsChuTro" class="form-check-input" />
+                        <label asp-for="Input.RegisterAsChuTro" class="form-check-label"></label>
+                        <div class="form-text">
+                            Bật lựa chọn này nếu bạn cần đăng và quản lý phòng trọ.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Đăng ký</button>
+                </form>
+
+                <p class="text-center mt-3 mb-0">
+                    Đã có tài khoản?
+                    <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Đăng nhập</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

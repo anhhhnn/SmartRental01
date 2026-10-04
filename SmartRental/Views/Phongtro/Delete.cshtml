@@ -1,0 +1,166 @@
+﻿@model SmartRental.Models.Phongtro
+
+@{
+    ViewData["Title"] = "Xác nhận xóa phòng trọ";
+}
+
+<div class="container mt-4 mb-5">
+
+    <div class="row">
+
+        <!-- Cột ảnh -->
+        <div class="col-lg-7 mb-4">
+
+            <div class="card border-0 shadow-sm">
+
+                @if (!string.IsNullOrEmpty(Model.HinhAnh))
+                {
+                    <img src="@Model.HinhAnh"
+                         alt="@Model.TieuDe"
+                         class="img-fluid rounded"
+                         style="
+                                 width:100%;
+                                 max-height:500px;
+                                 object-fit:cover;
+                             " />
+                }
+                else
+                {
+                    <div class="bg-light d-flex align-items-center justify-content-center"
+                         style="height:400px;">
+
+                        <span class="text-muted fs-5">
+                            Chưa có hình ảnh
+                        </span>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+
+        <!-- Cột thông tin -->
+        <div class="col-lg-5">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body">
+
+                    <h2 class="fw-bold mb-3">Xác nhận xóa</h2>
+
+                    <p class="text-danger">
+                        Bạn có chắc chắn muốn xóa phòng trọ này? Thao tác không thể hoàn tác.
+                    </p>
+
+                    <h4 class="fw-bold mb-3">@Model.TieuDe</h4>
+
+
+                    <h3 class="text-danger fw-bold mb-4">
+                        @Model.Gia.ToString("N0") VNĐ/tháng
+                    </h3>
+
+
+                    <div class="mb-3">
+                        <strong>Diện tích:</strong>
+
+                        <span class="ms-2">
+                            @Model.DienTich m²
+                        </span>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <strong>Địa chỉ:</strong>
+
+                        <span class="ms-2">
+                            @Model.DiaChi
+                        </span>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <strong>Ngày đăng:</strong>
+
+                        <span class="ms-2">
+                            @Model.NgayDang.ToString("dd/MM/yyyy HH:mm")
+                        </span>
+                    </div>
+
+
+                    <div class="mb-4">
+                        <strong>Trạng thái:</strong>
+
+                        @if (Model.TrangThai)
+                        {
+                            <span class="badge bg-success ms-2">
+                                Đang hoạt động
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary ms-2">
+                                Tạm ẩn
+                            </span>
+                        }
+                    </div>
+
+
+                    <hr />
+
+
+                    <h5 class="fw-bold">
+                        Mô tả
+                    </h5>
+
+
+                    @if (!string.IsNullOrWhiteSpace(Model.MoTa))
+                    {
+                        <p style="white-space: pre-line;">
+                            @Model.MoTa
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="text-muted">
+                            Chưa có mô tả cho phòng này.
+                        </p>
+                    }
+
+
+                    <hr />
+
+
+                    <div class="d-grid gap-2">
+
+                        <button type="button"
+                                class="btn btn-success btn-lg">
+                            Liên hệ chủ trọ
+                        </button>
+
+
+                        <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <button type="submit" class="btn btn-danger w-100">
+                                Xác nhận xóa
+                            </button>
+                        </form>
+
+
+                        <a asp-action="Index"
+                           class="btn btn-outline-secondary">
+                            Quay lại danh sách
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

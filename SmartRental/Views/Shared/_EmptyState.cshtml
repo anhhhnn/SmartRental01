@@ -1,0 +1,2 @@
+@{ var title=ViewData["EmptyTitle"]?.ToString()??"Chưa có dữ liệu"; var message=ViewData["EmptyMessage"]?.ToString()??"Hãy quay lại sau."; var action=ViewData["EmptyActionUrl"]?.ToString(); var actionText=ViewData["EmptyActionText"]?.ToString()??"Quay lại"; }
+<div class="card empty-state"><div class="empty-state__icon" aria-hidden="true">⌂</div><h3 class="h5 fw-bold mt-3">@title</h3><p class="text-muted mb-4">@message</p>@if(!string.IsNullOrEmpty(action)){<a href="@action" class="btn btn-primary">@actionText</a>}</div>

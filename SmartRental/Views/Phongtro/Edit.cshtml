@@ -1,0 +1,366 @@
+﻿@model SmartRental.Models.Phongtro
+
+@{
+    ViewData["Title"] = "Chỉnh sửa phòng trọ";
+
+    var selectedIds =
+        ViewBag.SelectedTienNghiIds as List<int>
+        ?? new List<int>();
+}
+
+<div class="mt-2 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-7">
+
+            <div class="card">
+
+                <div class="card-header">
+                    <h4 class="mb-0">
+                        Chỉnh sửa phòng trọ
+                    </h4>
+                </div>
+
+
+                <div class="card-body">
+
+                    <form asp-action="Edit"
+                          method="post"
+                          enctype="multipart/form-data">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3">
+                        </div>
+
+
+                        <input type="hidden"
+                               asp-for="Id" />
+
+                        <input type="hidden"
+                               asp-for="NgayDang" />
+
+
+                        <!-- TIÊU ĐỀ -->
+                        <div class="mb-3">
+
+                            <label asp-for="TieuDe"
+                                   class="form-label">
+                                Tiêu đề
+                            </label>
+
+                            <input asp-for="TieuDe"
+                                   class="form-control" />
+
+                            <span asp-validation-for="TieuDe"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+
+                        <!-- ĐỊA CHỈ -->
+                        <div class="mb-3">
+
+                            <label asp-for="DiaChi"
+                                   class="form-label">
+                                Địa chỉ
+                            </label>
+
+                            <input asp-for="DiaChi"
+                                   class="form-control" />
+
+                            <span asp-validation-for="DiaChi"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+
+                        <!-- GIÁ + DIỆN TÍCH -->
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label asp-for="Gia"
+                                       class="form-label">
+                                    Giá phòng
+                                </label>
+
+                                <div class="input-group">
+
+                                    <input asp-for="Gia"
+                                           class="form-control" />
+
+                                    <span class="input-group-text">
+                                        VNĐ/tháng
+                                    </span>
+
+                                </div>
+
+                                <span asp-validation-for="Gia"
+                                      class="text-danger">
+                                </span>
+
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label asp-for="DienTich"
+                                       class="form-label">
+                                    Diện tích
+                                </label>
+
+                                <div class="input-group">
+
+                                    <input asp-for="DienTich"
+                                           class="form-control" />
+
+                                    <span class="input-group-text">
+                                        m²
+                                    </span>
+
+                                </div>
+
+                                <span asp-validation-for="DienTich"
+                                      class="text-danger">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MÔ TẢ -->
+                        <div class="mb-3">
+
+                            <label asp-for="MoTa"
+                                   class="form-label">
+                                Mô tả
+                            </label>
+
+                            <textarea asp-for="MoTa"
+                                      class="form-control"
+                                      rows="5">
+                            </textarea>
+
+                            <span asp-validation-for="MoTa"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+
+                        <!-- TIỆN NGHI -->
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+                                Tiện nghi
+                            </label>
+
+                            <div class="row">
+
+                                @if (ViewBag.TienNghis != null)
+                                {
+                                    foreach (var tienNghi in ViewBag.TienNghis)
+                                    {
+                                        bool isChecked =
+                                        selectedIds.Contains(
+                                        tienNghi.Id
+                                        );
+
+                                        <div class="col-md-4 mb-2">
+
+                                            <div class="form-check">
+
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       name="tienNghiIds"
+                                                       value="@tienNghi.Id"
+                                                       id="tiennghi_@tienNghi.Id"
+                                                       checked="@isChecked" />
+
+                                                <label class="form-check-label"
+                                                       for="tiennghi_@tienNghi.Id">
+
+                                                    @tienNghi.TenTienNghi
+
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+                                    }
+                                }
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ẢNH HIỆN TẠI -->
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Ảnh hiện tại
+                            </label>
+
+                            @if (!string.IsNullOrEmpty(Model.HinhAnh))
+                            {
+                                <div>
+
+                                    <img src="@Model.HinhAnh"
+                                         alt="Ảnh phòng"
+                                         class="img-fluid rounded border"
+                                         style="
+                                                 width:100%;
+                                                 max-height:350px;
+                                                 object-fit:cover;
+                                             " />
+
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-secondary">
+                                    Phòng hiện chưa có ảnh.
+                                </div>
+                            }
+
+                        </div>
+
+
+                        <!-- CHỌN ẢNH MỚI -->
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Chọn ảnh mới
+                            </label>
+
+                            <input type="file"
+                                   name="imageFiles"
+                                   id="imageFile"
+                                   class="form-control"
+                                   accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                                   multiple />
+
+                            <div class="form-text">
+                                Có thể thêm nhiều ảnh (JPG, JPEG, PNG, WEBP; tối đa 10 ảnh, mỗi ảnh tối đa 5MB).
+                            </div>
+
+                            <span asp-validation-for="HinhAnh"
+                                  class="text-danger">
+                            </span>
+
+                        </div>
+
+
+                        <!-- PREVIEW ẢNH MỚI -->
+                        <div class="mb-3">
+
+                            <img id="previewImage"
+                                 src=""
+                                 alt="Xem trước ảnh mới"
+                                 class="img-fluid rounded border"
+                                 style="
+                                     display:none;
+                                     width:100%;
+                                     max-height:350px;
+                                     object-fit:cover;
+                                 " />
+
+                        </div>
+
+
+                        <!-- TRẠNG THÁI -->
+                        <div class="form-check mb-4">
+
+                            <input asp-for="TrangThai"
+                                   class="form-check-input" />
+
+                            <label asp-for="TrangThai"
+                                   class="form-check-label">
+                                Phòng đang hoạt động
+                            </label>
+
+                        </div>
+
+
+                        <!-- BUTTON -->
+                        <div class="d-flex justify-content-between">
+
+                            <a asp-action="Index"
+                               class="btn btn-outline-secondary">
+
+                                Quay lại
+
+                            </a>
+
+
+                            <button type="submit"
+                                    class="btn btn-warning px-4">
+
+                                Lưu thay đổi
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync(
+            "_ValidationScriptsPartial"
+        );
+    }
+
+
+    <script>
+
+        const imageInput =
+            document.getElementById("imageFile");
+
+        const previewImage =
+            document.getElementById("previewImage");
+
+
+        imageInput.addEventListener(
+            "change",
+            function () {
+
+                const file =
+                    this.files[0];
+
+                if (file) {
+
+                    previewImage.src =
+                        URL.createObjectURL(file);
+
+                    previewImage.style.display =
+                        "block";
+
+                }
+                else {
+
+                    previewImage.src = "";
+
+                    previewImage.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+    </script>
+}

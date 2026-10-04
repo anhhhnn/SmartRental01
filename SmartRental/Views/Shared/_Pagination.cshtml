@@ -1,0 +1,38 @@
+@{
+    var pageNumber = (int)(ViewBag.PageNumber ?? 1);
+    var totalPages = (int)(ViewBag.TotalPages ?? 1);
+    var hasPreviousPage = (bool)(ViewBag.HasPreviousPage ?? false);
+    var hasNextPage = (bool)(ViewBag.HasNextPage ?? false);
+    string BuildPageUrl(int page)
+    {
+        var parameters = new List<string>();
+        foreach (var query in Context.Request.Query.Where(q => !string.Equals(q.Key, "page", StringComparison.OrdinalIgnoreCase)))
+        {
+            foreach (var value in query.Value)
+            {
+                parameters.Add($"{Uri.EscapeDataString(query.Key)}={Uri.EscapeDataString(value ?? string.Empty)}");
+            }
+        }
+        parameters.Add($"page={page}");
+        return $"{Context.Request.Path}?{string.Join("&", parameters)}";
+    }
+}
+@if (totalPages > 1)
+{
+    <nav aria-label="Phân trang" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(!hasPreviousPage ? "disabled" : "")">
+                <a class="page-link" href="@BuildPageUrl(pageNumber - 1)" aria-label="Trang trước">Trước</a>
+            </li>
+            @for (var number = Math.Max(1, pageNumber - 2); number <= Math.Min(totalPages, pageNumber + 2); number++)
+            {
+                <li class="page-item @(number == pageNumber ? "active" : "")">
+                    <a class="page-link" href="@BuildPageUrl(number)">@number</a>
+                </li>
+            }
+            <li class="page-item @(!hasNextPage ? "disabled" : "")">
+                <a class="page-link" href="@BuildPageUrl(pageNumber + 1)" aria-label="Trang sau">Sau</a>
+            </li>
+        </ul>
+    </nav>
+}

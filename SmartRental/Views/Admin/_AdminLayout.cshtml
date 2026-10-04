@@ -1,0 +1,35 @@
+@using SmartRental.Security
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Quản trị SmartRental</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="admin-shell d-md-flex">
+        <aside class="admin-sidebar p-3 text-white">
+            <a asp-controller="Admin" asp-action="Index" class="admin-brand text-decoration-none d-block mb-4"><span class="brand-mark">SR</span> SmartRental Admin</a>
+            <nav class="nav flex-column gap-1">
+                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")" asp-controller="Admin" asp-action="Index">Dashboard</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() is "Users" or "UserDetails" ? "active" : "")" asp-controller="Admin" asp-action="Users">Người dùng</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Rooms" ? "active" : "")" asp-controller="Admin" asp-action="Rooms">Phòng trọ</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Amenities" ? "active" : "")" asp-controller="Admin" asp-action="Amenities">Tiện nghi</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Favorites" ? "active" : "")" asp-controller="Admin" asp-action="Favorites">Yêu thích</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Reviews" ? "active" : "")" asp-controller="Admin" asp-action="Reviews">Đánh giá</a>
+                <hr />
+                <a class="nav-link" asp-controller="Phongtro" asp-action="Index">← Quay về website</a>
+            </nav>
+        </aside>
+        <main class="admin-content flex-grow-1 p-3 p-md-4">
+            @if (TempData["Success"] is string success) { <div class="alert alert-success">@success</div> }
+            @if (TempData["Error"] is string error) { <div class="alert alert-danger">@error</div> }
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

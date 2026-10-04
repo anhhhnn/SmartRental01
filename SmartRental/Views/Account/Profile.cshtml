@@ -1,0 +1,7 @@
+@model SmartRental.ViewModels.Account.ProfileViewModel
+@{ ViewData["Title"] = "Hồ sơ cá nhân"; }
+<div class="row justify-content-center mt-4"><div class="col-lg-7"><div class="card border-0 shadow-sm"><div class="card-header bg-white"><h3 class="mb-0">Hồ sơ cá nhân</h3></div><div class="card-body">
+    @if (TempData["Success"] is string success) { <div class="alert alert-success">@success</div> }
+    <dl class="row mb-4"><dt class="col-sm-4">Họ tên</dt><dd class="col-sm-8">@(Model.HoTen ?? "Chưa cập nhật")</dd><dt class="col-sm-4">Email</dt><dd class="col-sm-8">@Model.Email</dd><dt class="col-sm-4">Số điện thoại</dt><dd class="col-sm-8">@(Model.PhoneNumber ?? "Chưa cập nhật")</dd><dt class="col-sm-4">Địa chỉ</dt><dd class="col-sm-8">@(Model.DiaChi ?? "Chưa cập nhật")</dd><dt class="col-sm-4">Vai trò</dt><dd class="col-sm-8">@string.Join(", ", Model.Roles)</dd></dl>
+    <div class="d-flex flex-wrap gap-2"><a asp-action="EditProfile" class="btn btn-primary">Chỉnh sửa</a><a asp-action="ChangePassword" class="btn btn-outline-secondary">Đổi mật khẩu</a></div>
+</div></div></div></div>
