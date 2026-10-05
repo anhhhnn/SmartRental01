@@ -20,7 +20,8 @@ public class MessagesController : Controller
     {
         var uid = _users.GetUserId(User)!;
         var conversations = await _db.CuocTroChuyens.Where(x => x.NguoiThueId == uid || x.ChuTroId == uid)
-            .Include(x => x.NguoiThue).Include(x => x.ChuTro).Include(x => x.TinNhans).OrderByDescending(x => x.LanCapNhatCuoi).ToListAsync();
+            .Include(x => x.NguoiThue).Include(x => x.ChuTro).Include(x => x.Phongtro).Include(x => x.TinNhans)
+            .OrderByDescending(x => x.LanCapNhatCuoi).ToListAsync();
         var selected = id.HasValue ? conversations.FirstOrDefault(x => x.Id == id) : conversations.FirstOrDefault();
         if (id.HasValue && selected is null) return Forbid();
         var messages = new List<TinNhan>(); var bookings = new List<LichXemPhong>();
@@ -29,7 +30,8 @@ public class MessagesController : Controller
             var unread = await _db.TinNhans.Where(x => x.CuocTroChuyenId == selected.Id && x.NguoiGuiId != uid && !x.DaDoc).ToListAsync();
             unread.ForEach(x => x.DaDoc = true); if (unread.Count > 0) await _db.SaveChangesAsync();
             messages = await _db.TinNhans.Where(x => x.CuocTroChuyenId == selected.Id).Include(x => x.NguoiGui).Include(x => x.Phongtro).OrderBy(x => x.NgayGui).ToListAsync();
-            bookings = await _db.LichXemPhongs.Where(x => x.NguoiThueId == selected.NguoiThueId && x.ChuTroId == selected.ChuTroId).Include(x => x.Phongtro).OrderByDescending(x => x.NgayTao).ToListAsync();
+            bookings = await _db.LichXemPhongs.Where(x => x.NguoiThueId == selected.NguoiThueId && x.ChuTroId == selected.ChuTroId)
+                .Include(x => x.Phongtro).ThenInclude(x => x.HinhAnhs).OrderByDescending(x => x.NgayTao).ToListAsync();
         }
         return View(new MessagesIndexViewModel { CurrentUserId = uid, Conversations = conversations, SelectedConversation = selected, Messages = messages, Bookings = bookings, IsCurrentUserOwner = selected?.ChuTroId == uid || User.IsInRole(AppRoles.Admin) });
     }

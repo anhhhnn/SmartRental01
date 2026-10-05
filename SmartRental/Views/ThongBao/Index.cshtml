@@ -1,2 +1,8 @@
 @model IEnumerable<SmartRental.Models.ThongBao>
-@{ViewData["Title"]="Thông báo";}<div class="container py-4"><h1 class="h3">Thông báo</h1><div class="card">@foreach(var n in Model){<form asp-action="Read" method="post" class="border-bottom p-3 @(n.DaDoc?"":"bg-light")"><input type="hidden" name="id" value="@n.Id"/><button class="btn btn-link text-start text-decoration-none p-0"><strong>@n.TieuDe</strong><div>@n.NoiDung</div><small class="text-muted">@n.NgayTao.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</small></button></form>}@if(!Model.Any()){<div class="p-4 text-muted">Chưa có thông báo.</div>}</div></div>
+@{ ViewData["Title"] = "Thông báo"; }
+<div class="container page-container">
+    <div class="page-heading"><span class="eyebrow">CẬP NHẬT DÀNH CHO BẠN</span><h1>Thông báo</h1><p>Theo dõi tin nhắn, lịch xem phòng và cập nhật hệ thống.</p></div>
+    @if(Model.Any()){
+        <div class="notification-list card">@foreach(var n in Model){var icon=n.Loai?.ToLowerInvariant() switch{"message" or "tinnhan"=>"bi-chat-dots","booking" or "lichxem"=>"bi-calendar-check",_=>"bi-bell"};<form asp-action="Read" method="post" class="notification-item @(n.DaDoc?"":"notification-item--unread")"><input type="hidden" name="id" value="@n.Id"/><button type="submit"><span class="notification-icon"><i class="bi @icon"></i></span><span class="notification-copy"><strong>@n.TieuDe</strong><span>@n.NoiDung</span><time><i class="bi bi-clock"></i> @n.NgayTao.ToLocalTime().ToString("dd/MM/yyyy · HH:mm")</time></span>@if(!n.DaDoc){<span class="notification-dot" aria-label="Chưa đọc"></span>}<i class="bi bi-chevron-right notification-arrow"></i></button></form>}</div>
+    }else{var data=new ViewDataDictionary(ViewData);data["EmptyTitle"]="Bạn đã xem hết thông báo";data["EmptyMessage"]="Thông báo mới về tin nhắn và lịch xem phòng sẽ xuất hiện tại đây.";<partial name="_EmptyState" view-data="data"/>}
+</div>

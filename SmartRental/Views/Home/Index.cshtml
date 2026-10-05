@@ -1,3 +1,93 @@
 @using SmartRental.Models
-@{ ViewData["Title"] = "Tìm phòng trọ thông minh"; var featured = ViewBag.FeaturedRooms as IEnumerable<Phongtro> ?? Enumerable.Empty<Phongtro>(); }
-<div class="container"><section class="landing-hero"><div class="hero-copy"><span class="hero-kicker"><i class="bi bi-stars"></i> SmartRental · tìm đúng nơi ở</span><h1>Tìm phòng trọ<br /><span>phù hợp với bạn</span></h1><p>Khám phá không gian sống phù hợp với nhu cầu, ngân sách và khu vực bạn mong muốn.</p></div><form class="hero-search-box" asp-controller="Phongtro" asp-action="Index" method="get"><label class="visually-hidden" for="hero-search">Tìm khu vực hoặc tên phòng</label><i class="bi bi-search"></i><input id="hero-search" name="search" placeholder="Tìm khu vực, tên phòng trọ..." /><button class="btn btn-primary" type="submit">Tìm phòng</button><div class="quick-chips"><span>Gợi ý:</span><a asp-controller="Phongtro" asp-action="Index" asp-route-search="ICTU">Gần ICTU</a><a asp-controller="Phongtro" asp-action="Index" asp-route-minPrice="1000000" asp-route-maxPrice="3000000">1–3 triệu</a><a asp-controller="Phongtro" asp-action="Index" asp-route-minArea="20">Từ 20m²</a></div></form></section><section class="stats-grid" aria-label="Thống kê SmartRental"><div><strong>@ViewBag.TotalRooms</strong><span>Phòng trọ</span></div><div><strong>@ViewBag.TotalFavorites</strong><span>Lượt yêu thích</span></div><div><strong>@ViewBag.ActiveRooms</strong><span>Phòng đang hoạt động</span></div></section><section class="home-section"><div class="section-heading"><div><span class="eyebrow">KHÁM PHÁ NHANH</span><h2>Tìm theo nhu cầu của bạn</h2></div><a asp-controller="Phongtro" asp-action="Index" class="link-arrow">Tìm kiếm nâng cao <i class="bi bi-arrow-right"></i></a></div><div class="quick-filter-grid"><a asp-controller="Phongtro" asp-action="Index"><i class="bi bi-geo-alt"></i>Khu vực</a><a asp-controller="Phongtro" asp-action="Index"><i class="bi bi-cash-stack"></i>Khoảng giá</a><a asp-controller="Phongtro" asp-action="Index"><i class="bi bi-aspect-ratio"></i>Diện tích</a><a asp-controller="Phongtro" asp-action="Index"><i class="bi bi-house-heart"></i>Tiện nghi</a></div></section><section class="home-section"><div class="section-heading"><div><span class="eyebrow">PHÒNG MỚI</span><h2>Phòng trọ nổi bật</h2></div><a asp-controller="Phongtro" asp-action="Index" class="link-arrow">Xem tất cả <i class="bi bi-arrow-right"></i></a></div>@if(featured.Any()){<div class="row g-4">@foreach(var room in featured){var data = new ViewDataDictionary(ViewData); data["ShowFavorite"] = User.Identity?.IsAuthenticated == true;<div class="col-sm-6 col-lg-3"><partial name="_RoomCard" model="room" view-data="data" /></div>}</div>}else{var data = new ViewDataDictionary(ViewData); data["EmptyTitle"] = "Chưa có phòng nổi bật"; data["EmptyMessage"] = "Các phòng đang hoạt động sẽ xuất hiện tại đây."; data["EmptyActionUrl"] = "/Phongtro"; data["EmptyActionText"] = "Tìm phòng"; <partial name="_EmptyState" view-data="data"/>}</section><section class="why-section"><span class="eyebrow text-mint">SMARTER RENTING</span><h2>Tại sao chọn SmartRental?</h2><div class="row g-4 mt-1"><div class="col-md-3"><i class="bi bi-lightning-charge"></i><h3>Tìm phòng nhanh</h3><p>Thông tin rõ ràng, cập nhật tập trung.</p></div><div class="col-md-3"><i class="bi bi-sliders"></i><h3>Lọc thông minh</h3><p>Dễ dàng tìm theo giá, diện tích và tiện nghi.</p></div><div class="col-md-3"><i class="bi bi-heart"></i><h3>Lưu yêu thích</h3><p>Đánh dấu và quay lại phòng bạn quan tâm.</p></div><div class="col-md-3"><i class="bi bi-stars"></i><h3>Gợi ý AI</h3><p>Sẵn sàng hỗ trợ tìm phòng theo nhu cầu.</p></div></div></section></div>
+@using SmartRental.Security
+@{
+    ViewData["Title"] = "Tìm phòng trọ thông minh";
+    var featured = (ViewBag.FeaturedRooms as IEnumerable<Phongtro> ?? Enumerable.Empty<Phongtro>()).ToList();
+    var heroRoom = featured.FirstOrDefault();
+    var heroImage = heroRoom?.HinhAnhs.OrderBy(x => x.ThuTu).FirstOrDefault(x => x.IsAnhChinh)?.DuongDan
+        ?? heroRoom?.HinhAnhs.OrderBy(x => x.ThuTu).FirstOrDefault()?.DuongDan
+        ?? heroRoom?.HinhAnh;
+}
+
+<div class="home-page">
+    <section class="landing-hero">
+        <div class="hero-orb hero-orb--one"></div><div class="hero-orb hero-orb--two"></div>
+        <div class="container hero-container">
+            <div class="hero-copy">
+                <span class="hero-kicker hero-intro hero-intro--1"><i class="bi bi-stars"></i> Nền tảng tìm phòng thông minh</span>
+                <h1 class="hero-intro hero-intro--2">Tìm phòng trọ <span>phù hợp với bạn</span></h1>
+                <p class="hero-intro hero-intro--3">Khám phá không gian sống đúng ngân sách, đúng vị trí và đủ tiện nghi — tất cả trong một hành trình đơn giản.</p>
+                <div class="hero-actions hero-intro hero-intro--4"><a asp-controller="Phongtro" asp-action="Index" class="sr-btn sr-btn-accent"><i class="bi bi-search"></i> Tìm phòng ngay</a>@if (User.IsInRole(AppRoles.ChuTro)){<a asp-controller="Phongtro" asp-action="Create" class="sr-btn hero-btn-secondary"><i class="bi bi-house-add"></i> Đăng phòng</a>}</div>
+                <div class="hero-trust hero-intro hero-intro--4"><span><i class="bi bi-check-circle-fill"></i> Dữ liệu rõ ràng</span><span><i class="bi bi-check-circle-fill"></i> Kết nối trực tiếp</span></div>
+            </div>
+            <div class="hero-showcase hero-intro hero-intro--6" aria-label="Gợi ý phòng nổi bật">
+                <div class="showcase-back showcase-back--one"></div><div class="showcase-back showcase-back--two"></div>
+                @if (heroRoom != null)
+                {
+                    <a class="showcase-room" asp-controller="Phongtro" asp-action="Details" asp-route-id="@heroRoom.Id">
+                        <div class="showcase-room__media">@if (!string.IsNullOrWhiteSpace(heroImage)){<img src="@heroImage" alt="@heroRoom.TieuDe" />}else{<div class="showcase-placeholder"><i class="bi bi-house-door"></i></div>}<span class="showcase-status"><i class="bi bi-circle-fill"></i> @(heroRoom.SoLuongPhong > 0 ? "Còn phòng" : "Hết phòng")</span></div>
+                        <div class="showcase-room__body"><small>Gợi ý mới trên SmartRental</small><strong>@heroRoom.TieuDe</strong><span><i class="bi bi-geo-alt"></i> @heroRoom.DiaChi</span><div><b>@heroRoom.Gia.ToString("N0") ₫</b><em>/tháng</em><span>@heroRoom.DienTich m²</span></div></div>
+                    </a>
+                }
+                else
+                {
+                    <div class="showcase-room showcase-room--empty"><div class="showcase-placeholder"><i class="bi bi-house-heart"></i></div><div class="showcase-room__body"><small>SmartRental</small><strong>Không gian phù hợp đang chờ bạn</strong><span>Tìm kiếm minh bạch, kết nối thuận tiện</span></div></div>
+                }
+                <div class="showcase-float showcase-float--top"><i class="bi bi-geo-alt-fill"></i><span><small>Vị trí</small><strong>Dễ dàng tìm kiếm</strong></span></div>
+                <div class="showcase-float showcase-float--bottom"><i class="bi bi-shield-check"></i><span><small>Thông tin</small><strong>Rõ ràng, trực quan</strong></span></div>
+            </div>
+            <form class="hero-search-box home-search hero-intro hero-intro--5" asp-controller="Phongtro" asp-action="Index" method="get">
+                <div class="home-search__main"><i class="bi bi-search"></i><label class="visually-hidden" for="hero-search">Tìm khu vực hoặc tên phòng</label><input id="hero-search" name="search" placeholder="Bạn muốn tìm phòng ở đâu?" autocomplete="off" /><button class="sr-btn sr-btn-primary" type="submit">Tìm phòng</button></div>
+                <div class="quick-chips"><span>Gợi ý nhanh:</span><a asp-controller="Phongtro" asp-action="Index" asp-route-search="ICTU">Gần ICTU</a><a asp-controller="Phongtro" asp-action="Index" asp-route-maxPrice="2000000">Dưới 2 triệu</a><a asp-controller="Phongtro" asp-action="Index" asp-route-minArea="20" asp-route-maxArea="30">20–30m²</a><a asp-controller="Phongtro" asp-action="Index" asp-route-minArea="30">Từ 30m²</a></div>
+            </form>
+        </div>
+    </section>
+
+    <section class="home-stats-wrap"><div class="container"><div class="stats-grid home-stats-card" aria-label="Thống kê SmartRental" data-reveal><div><i class="bi bi-buildings"></i><span><strong data-counter>@ViewBag.TotalRooms</strong><small>Phòng trọ</small></span></div><div><i class="bi bi-door-open"></i><span><strong data-counter>@ViewBag.AvailableRooms</strong><small>Phòng còn trống</small></span></div><div><i class="bi bi-heart"></i><span><strong data-counter>@ViewBag.TotalFavorites</strong><small>Lượt yêu thích</small></span></div></div></div></section>
+
+    <div class="container">
+        <section class="home-section" data-reveal>
+            <div class="section-heading"><div><span class="eyebrow">KHÁM PHÁ NHANH</span><h2>Bắt đầu từ điều bạn quan tâm</h2><p>Thu hẹp lựa chọn bằng những tiêu chí phổ biến nhất.</p></div><a asp-controller="Phongtro" asp-action="Index" class="link-arrow">Bộ lọc chi tiết <i class="bi bi-arrow-right"></i></a></div>
+            <div class="quick-filter-grid">
+                <a asp-controller="Phongtro" asp-action="Index" asp-route-search="Đồng Quang"><i class="bi bi-geo-alt"></i><span><strong>Theo khu vực</strong><small>Đồng Quang và lân cận</small></span><i class="bi bi-arrow-up-right"></i></a>
+                <a asp-controller="Phongtro" asp-action="Index" asp-route-maxPrice="2000000"><i class="bi bi-wallet2"></i><span><strong>Theo giá</strong><small>Phòng dưới 2 triệu</small></span><i class="bi bi-arrow-up-right"></i></a>
+                <a asp-controller="Phongtro" asp-action="Index" asp-route-minArea="20" asp-route-maxArea="30"><i class="bi bi-aspect-ratio"></i><span><strong>Theo diện tích</strong><small>Không gian 20–30m²</small></span><i class="bi bi-arrow-up-right"></i></a>
+                <a asp-controller="Phongtro" asp-action="Index"><i class="bi bi-toggles"></i><span><strong>Theo tiện nghi</strong><small>Mở bộ lọc chi tiết</small></span><i class="bi bi-arrow-up-right"></i></a>
+            </div>
+        </section>
+
+        <section class="home-section featured-section" data-reveal>
+            <div class="section-heading"><div><span class="eyebrow">GỢI Ý MỚI NHẤT</span><h2>Phòng trọ nổi bật</h2><p>Dữ liệu phòng đang hoạt động, được cập nhật trực tiếp trên SmartRental.</p></div><a asp-controller="Phongtro" asp-action="Index" class="link-arrow">Xem tất cả <i class="bi bi-arrow-right"></i></a></div>
+            @if (featured.Any())
+            {
+                <div class="row g-4">@foreach (var room in featured){var data = new ViewDataDictionary(ViewData);data["ShowFavorite"] = User.Identity?.IsAuthenticated == true;<div class="col-md-6 col-xl-3"><partial name="_RoomCard" model="room" view-data="data" /></div>}</div>
+            }
+            else
+            {
+                var data = new ViewDataDictionary(ViewData);data["EmptyTitle"] = "Chưa có phòng nổi bật";data["EmptyMessage"] = "Các phòng đang hoạt động sẽ xuất hiện tại đây.";data["EmptyActionUrl"] = "/Phongtro";data["EmptyActionText"] = "Tìm phòng";<partial name="_EmptyState" view-data="data" />
+            }
+        </section>
+
+        <section class="home-section areas-section" data-reveal>
+            <div class="section-heading"><div><span class="eyebrow">KHU VỰC PHỔ BIẾN</span><h2>Khám phá quanh Thái Nguyên</h2><p>Chọn nhanh khu vực bạn quan tâm để xem phòng phù hợp.</p></div></div>
+            <div class="area-grid">
+                <a asp-controller="Phongtro" asp-action="Index" asp-route-search="Đồng Quang" class="area-tile area-tile--one"><span class="area-pattern"></span><i class="bi bi-geo-alt-fill"></i><div><small>Khu vực</small><strong>Đồng Quang</strong><span>Khám phá phòng <i class="bi bi-arrow-right"></i></span></div></a>
+                <a asp-controller="Phongtro" asp-action="Index" asp-route-search="Túc Duyên" class="area-tile area-tile--two"><span class="area-pattern"></span><i class="bi bi-geo-alt-fill"></i><div><small>Khu vực</small><strong>Túc Duyên</strong><span>Khám phá phòng <i class="bi bi-arrow-right"></i></span></div></a>
+                <a asp-controller="Phongtro" asp-action="Index" asp-route-search="Phan Đình Phùng" class="area-tile area-tile--three"><span class="area-pattern"></span><i class="bi bi-geo-alt-fill"></i><div><small>Khu vực</small><strong>Phan Đình Phùng</strong><span>Khám phá phòng <i class="bi bi-arrow-right"></i></span></div></a>
+                <a asp-controller="Phongtro" asp-action="Index" asp-route-search="Trung Thành" class="area-tile area-tile--four"><span class="area-pattern"></span><i class="bi bi-geo-alt-fill"></i><div><small>Khu vực</small><strong>Trung Thành</strong><span>Khám phá phòng <i class="bi bi-arrow-right"></i></span></div></a>
+            </div>
+        </section>
+
+        <section class="home-section steps-section" data-reveal>
+            <div class="section-heading section-heading--center"><div><span class="eyebrow">ĐƠN GIẢN &amp; NHANH CHÓNG</span><h2>Tìm phòng phù hợp chỉ trong 3 bước</h2><p>Từ nhu cầu đến lịch xem phòng trong một hành trình liền mạch.</p></div></div>
+            <div class="steps-grid"><div class="step-card"><span class="step-number">01</span><div class="step-icon"><i class="bi bi-search"></i></div><h3>Tìm kiếm nhu cầu</h3><p>Nhập khu vực và dùng bộ lọc giá, diện tích, tiện nghi phù hợp.</p></div><div class="step-card"><span class="step-number">02</span><div class="step-icon"><i class="bi bi-columns-gap"></i></div><h3>So sánh phòng</h3><p>Xem thông tin, hình ảnh và lưu lại những lựa chọn bạn yêu thích.</p></div><div class="step-card"><span class="step-number">03</span><div class="step-icon"><i class="bi bi-calendar2-check"></i></div><h3>Kết nối và đặt lịch</h3><p>Nhắn tin trực tiếp với chủ trọ và chủ động đặt lịch xem phòng.</p></div></div>
+        </section>
+
+        <section class="why-section" data-reveal>
+            <div class="why-heading"><span class="eyebrow text-mint">VÌ SAO CHỌN SMARTRENTAL</span><h2>Mọi công cụ cần thiết, trong một trải nghiệm</h2><p>Tập trung vào những điều thực sự hữu ích để bạn tìm nơi ở tự tin hơn.</p></div>
+            <div class="why-grid"><div class="why-card"><i class="bi bi-lightning-charge"></i><h3>Tìm kiếm nhanh</h3><p>Thông tin phòng tập trung, rõ ràng và dễ tiếp cận.</p></div><div class="why-card"><i class="bi bi-sliders"></i><h3>Bộ lọc chi tiết</h3><p>Lọc theo giá, diện tích, trạng thái và tiện nghi.</p></div><div class="why-card"><i class="bi bi-chat-dots"></i><h3>Nhắn tin trực tiếp</h3><p>Trao đổi thuận tiện với chủ trọ ngay trên nền tảng.</p></div><div class="why-card"><i class="bi bi-calendar-check"></i><h3>Đặt lịch xem phòng</h3><p>Chọn thời gian phù hợp và theo dõi lịch hẹn dễ dàng.</p></div></div>
+        </section>
+
+        <section class="home-cta" data-reveal><span class="cta-orb"></span><div><span class="eyebrow text-mint">BẮT ĐẦU HÔM NAY</span>@if (User.IsInRole(AppRoles.ChuTro)){<h2>Bạn có phòng trống?</h2><p>Đăng phòng ngay để tiếp cận người thuê phù hợp.</p>}else if (User.Identity?.IsAuthenticated == true){<h2>Chưa tìm được phòng phù hợp?</h2><p>Khám phá danh sách mới và lưu lại lựa chọn bạn yêu thích.</p>}else{<h2>Tham gia SmartRental</h2><p>Tạo tài khoản để lưu phòng, nhắn tin và đặt lịch xem phòng.</p>}</div>@if (User.IsInRole(AppRoles.ChuTro)){<a asp-controller="Phongtro" asp-action="Create" class="sr-btn sr-btn-accent">Đăng phòng ngay <i class="bi bi-arrow-right"></i></a>}else if (User.Identity?.IsAuthenticated == true){<a asp-controller="Phongtro" asp-action="Index" class="sr-btn sr-btn-accent">Tìm phòng ngay <i class="bi bi-arrow-right"></i></a>}else{<a asp-area="Identity" asp-page="/Account/Register" class="sr-btn sr-btn-accent">Đăng ký <i class="bi bi-arrow-right"></i></a>}</section>
+    </div>
+</div>

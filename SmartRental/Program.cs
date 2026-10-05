@@ -25,6 +25,10 @@ builder.Services.AddRazorPages();
 var app = builder.Build();
 
 await IdentitySeed.SeedRolesAsync(app.Services);
+if (app.Environment.IsDevelopment())
+{
+    await DemoDataSeed.SeedAsync(app.Services);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

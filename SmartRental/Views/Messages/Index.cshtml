@@ -1,9 +1,140 @@
 @model SmartRental.ViewModels.Messages.MessagesIndexViewModel
 @using SmartRental.Models
-@{ ViewData["Title"]="Tin nhắn"; var selected=Model.SelectedConversation; string NameOf(ApplicationUser u)=>u.HoTen??u.Email??"Người dùng"; string Initials(string n)=>string.Concat(n.Split(' ',StringSplitOptions.RemoveEmptyEntries).Take(2).Select(x=>char.ToUpperInvariant(x[0]))); string Relative(DateTime d)=>d.ToLocalTime().Date==DateTime.Today?d.ToLocalTime().ToString("HH:mm"):d.ToLocalTime().ToString("dd/MM"); LichXemPhong? BookingFor(TinNhan m)=>m.LoaiTinNhan=="DatLich"?Model.Bookings.OrderBy(x=>Math.Abs((x.NgayTao-m.NgayGui).TotalMinutes)).FirstOrDefault():null; }
-<div class="container py-2 py-md-4"><div class="messages-shell">
-<aside class="messages-sidebar @(selected is not null?"has-selection":"")"><div class="messages-sidebar__head"><h1>Tin nhắn</h1><span class="messages-count">@Model.Conversations.Count</span></div><label class="messages-search" for="conversationSearch"><i class="bi bi-search"></i><input id="conversationSearch" type="search" placeholder="Tìm cuộc trò chuyện" /></label>
-@if(!Model.Conversations.Any()){<div class="messages-empty messages-empty--sidebar"><i class="bi bi-chat-square-text"></i><p>Bạn chưa có cuộc trò chuyện nào</p><a class="btn btn-primary btn-sm" asp-controller="Phongtro" asp-action="Index">Tìm phòng</a></div>}else{<div class="conversation-list">@foreach(var c in Model.Conversations){var other=c.NguoiThueId==Model.CurrentUserId?c.ChuTro:c.NguoiThue;var name=NameOf(other);var last=c.TinNhans.OrderByDescending(x=>x.NgayGui).FirstOrDefault();var unread=c.TinNhans.Count(x=>x.NguoiGuiId!=Model.CurrentUserId&&!x.DaDoc);<a class="conversation-item @(selected?.Id==c.Id?"is-active":"")" data-conversation="@name @(c.Phongtro?.TieuDe??"")" asp-route-id="@c.Id"><span class="message-avatar">@Initials(name)</span><span class="conversation-item__body"><span class="conversation-item__top"><strong>@name</strong><time>@Relative(last?.NgayGui??c.LanCapNhatCuoi)</time></span><span class="conversation-item__room">@(c.Phongtro?.TieuDe??"Trao đổi chung")</span><span class="conversation-item__bottom"><span>@(last?.NoiDung??"Chưa có tin nhắn")</span>@if(unread>0){<b class="unread-badge">@unread</b>}</span></span></a>}</div>}</aside>
-<section class="messages-content @(selected is null?"is-empty":"")">@if(selected is null){<div class="messages-empty"><i class="bi bi-chat-dots"></i><h2>@(Model.Conversations.Any()?"Chọn một cuộc trò chuyện":"Bạn chưa có cuộc trò chuyện nào")</h2><p>@(Model.Conversations.Any()?"Chọn cuộc trò chuyện bên trái để bắt đầu trao đổi.":"Khám phá các phòng phù hợp và liên hệ chủ trọ.")</p>@if(!Model.Conversations.Any()){<a class="btn btn-primary" asp-controller="Phongtro" asp-action="Index">Tìm phòng</a>}</div>}else{var other=selected.NguoiThueId==Model.CurrentUserId?selected.ChuTro:selected.NguoiThue;var name=NameOf(other);<header class="chat-header"><a class="chat-back" asp-action="Index"><i class="bi bi-arrow-left"></i></a><span class="message-avatar">@Initials(name)</span><div><h2>@name</h2><p>@(selected.Phongtro?.TieuDe??"Trao đổi chung")</p></div>@if(selected.PhongtroId.HasValue){<a class="btn btn-outline-primary btn-sm ms-auto" asp-controller="Phongtro" asp-action="Details" asp-route-id="@selected.PhongtroId">Xem phòng <i class="bi bi-box-arrow-up-right ms-1"></i></a>}</header><div class="chat-messages" id="chatMessages">@foreach(var m in Model.Messages){var booking=BookingFor(m);if(m.LoaiTinNhan=="DatLich"){<div class="system-message"><div class="system-message__notice"><i class="bi bi-calendar-event"></i>@m.NoiDung</div>@if(booking is not null){<article class="booking-card"><div class="booking-card__top"><span><i class="bi bi-house-door"></i> @(booking.Phongtro?.TieuDe??selected.Phongtro?.TieuDe)</span><span class="booking-status booking-status--@booking.TrangThai">@booking.TrangThai</span></div><div class="booking-card__details"><span><i class="bi bi-calendar3"></i>@booking.ThoiGianXem.ToString("dd/MM/yyyy")</span><span><i class="bi bi-clock"></i>@booking.ThoiGianXem.ToString("HH:mm")</span></div>@if(!string.IsNullOrWhiteSpace(booking.GhiChu)){<p><i class="bi bi-chat-left-text"></i>@booking.GhiChu</p>}@if(Model.IsCurrentUserOwner&&booking.TrangThai==TrangThaiLich.ChoXacNhan){<form asp-controller="LichXemPhong" asp-action="Respond" method="post" class="booking-actions"><input type="hidden" name="id" value="@booking.Id"/><button class="btn btn-primary btn-sm" name="action" value="accept">Đồng ý</button><button class="btn btn-outline-secondary btn-sm" name="action" value="busy">Báo bận</button></form>}</article>}<time>@m.NgayGui.ToLocalTime().ToString("HH:mm, dd/MM/yyyy")</time></div>}else{var mine=m.NguoiGuiId==Model.CurrentUserId;<div class="chat-row @(mine?"chat-row--mine":"")"><div class="message-bubble">@m.NoiDung</div><time>@m.NgayGui.ToLocalTime().ToString("HH:mm")</time></div>}}</div><form asp-action="Send" method="post" class="chat-composer"><input type="hidden" name="conversationId" value="@selected.Id"/><input id="messageText" name="noiDung" maxlength="2000" required autocomplete="off" placeholder="Nhập tin nhắn..."/><button class="btn btn-primary" type="submit"><i class="bi bi-send-fill"></i><span>Gửi</span></button></form>}</section>
-</div></div>
-@section Scripts { <script>document.getElementById('chatMessages')?.scrollTo(0,document.getElementById('chatMessages').scrollHeight);document.getElementById('conversationSearch')?.addEventListener('input',function(){const q=this.value.toLocaleLowerCase();document.querySelectorAll('[data-conversation]').forEach(x=>x.hidden=!x.dataset.conversation.toLocaleLowerCase().includes(q));});</script> }
+@{
+    ViewData["Title"] = "Tin nhắn";
+    var selected = Model.SelectedConversation;
+    string NameOf(ApplicationUser user) => user.HoTen ?? user.Email ?? "Người dùng";
+    string Initials(string name) => string.Concat(name.Split(' ', StringSplitOptions.RemoveEmptyEntries).Take(2).Select(x => char.ToUpperInvariant(x[0])));
+    string Relative(DateTime date) => date.ToLocalTime().Date == DateTime.Today ? date.ToLocalTime().ToString("HH:mm") : date.ToLocalTime().ToString("dd/MM");
+    string StatusText(string status) => status switch
+    {
+        TrangThaiLich.ChoXacNhan => "Chờ xác nhận",
+        TrangThaiLich.DaDongY => "Đã đồng ý",
+        TrangThaiLich.BaoBan => "Báo bận",
+        TrangThaiLich.DaHuy => "Đã hủy",
+        _ => status
+    };
+    bool IsBookingMessage(TinNhan message) => message.LoaiTinNhan == "DatLich" || message.LoaiTinNhan.StartsWith("Lich:", StringComparison.Ordinal);
+    LichXemPhong? BookingFor(TinNhan message)
+    {
+        if (message.LoaiTinNhan.StartsWith("Lich:", StringComparison.Ordinal))
+        {
+            var parts = message.LoaiTinNhan.Split(':');
+            if (parts.Length >= 2 && int.TryParse(parts[1], out var bookingId))
+                return Model.Bookings.FirstOrDefault(x => x.Id == bookingId);
+        }
+
+        return message.LoaiTinNhan == "DatLich"
+            ? Model.Bookings.Where(x => !message.PhongtroId.HasValue || x.PhongtroId == message.PhongtroId)
+                .OrderBy(x => Math.Abs((x.NgayTao - message.NgayGui).TotalMinutes)).FirstOrDefault()
+            : null;
+    }
+}
+
+<div class="container py-2 py-md-4">
+    @if (TempData["Error"] is string messageError) { <div class="booking-feedback booking-feedback--error" role="alert"><i class="bi bi-exclamation-circle"></i>@messageError</div> }
+    @if (TempData["Success"] is string messageSuccess) { <div class="booking-feedback booking-feedback--success" role="status"><i class="bi bi-check-circle"></i>@messageSuccess</div> }
+    <div class="messages-shell">
+        <aside class="messages-sidebar @(selected is not null ? "has-selection" : "")">
+            <div class="messages-sidebar__head"><h1>Tin nhắn</h1><span class="messages-count">@Model.Conversations.Count</span></div>
+            <label class="messages-search" for="conversationSearch"><i class="bi bi-search"></i><input id="conversationSearch" type="search" placeholder="Tìm cuộc trò chuyện" /></label>
+            @if (!Model.Conversations.Any())
+            {
+                <div class="messages-empty messages-empty--sidebar"><i class="bi bi-chat-square-text"></i><p>Bạn chưa có cuộc trò chuyện nào</p><a class="btn btn-primary btn-sm" asp-controller="Phongtro" asp-action="Index">Tìm phòng</a></div>
+            }
+            else
+            {
+                <div class="conversation-list">
+                    @foreach (var conversation in Model.Conversations)
+                    {
+                        var otherUser = conversation.NguoiThueId == Model.CurrentUserId ? conversation.ChuTro : conversation.NguoiThue;
+                        var name = NameOf(otherUser);
+                        var last = conversation.TinNhans.OrderByDescending(x => x.NgayGui).FirstOrDefault();
+                        var unread = conversation.TinNhans.Count(x => x.NguoiGuiId != Model.CurrentUserId && !x.DaDoc);
+                        <a class="conversation-item @(selected?.Id == conversation.Id ? "is-active" : "")" data-conversation="@name @(conversation.Phongtro?.TieuDe ?? "")" asp-route-id="@conversation.Id">
+                            <span class="message-avatar">@Initials(name)</span>
+                            <span class="conversation-item__body">
+                                <span class="conversation-item__top"><strong>@name</strong><time>@Relative(last?.NgayGui ?? conversation.LanCapNhatCuoi)</time></span>
+                                <span class="conversation-item__room">@(conversation.Phongtro?.TieuDe ?? "Trao đổi chung")</span>
+                                <span class="conversation-item__bottom"><span>@(last?.NoiDung ?? "Chưa có tin nhắn")</span>@if (unread > 0) { <b class="unread-badge">@unread</b> }</span>
+                            </span>
+                        </a>
+                    }
+                </div>
+            }
+        </aside>
+
+        <section class="messages-content @(selected is null ? "is-empty" : "")">
+            @if (selected is null)
+            {
+                <div class="messages-empty"><i class="bi bi-chat-dots"></i><h2>@(Model.Conversations.Any() ? "Chọn một cuộc trò chuyện" : "Bạn chưa có cuộc trò chuyện nào")</h2><p>@(Model.Conversations.Any() ? "Chọn cuộc trò chuyện bên trái để bắt đầu trao đổi." : "Khám phá các phòng phù hợp và liên hệ chủ trọ.")</p>@if (!Model.Conversations.Any()) { <a class="btn btn-primary" asp-controller="Phongtro" asp-action="Index">Tìm phòng</a> }</div>
+            }
+            else
+            {
+                var otherUser = selected.NguoiThueId == Model.CurrentUserId ? selected.ChuTro : selected.NguoiThue;
+                var name = NameOf(otherUser);
+                <header class="chat-header">
+                    <a class="chat-back" asp-action="Index"><i class="bi bi-arrow-left"></i></a><span class="message-avatar">@Initials(name)</span>
+                    <div><h2>@name</h2><p>@(selected.Phongtro?.TieuDe ?? "Trao đổi chung")</p></div>
+                    @if (selected.PhongtroId.HasValue) { <a class="btn btn-outline-primary btn-sm ms-auto" asp-controller="Phongtro" asp-action="Details" asp-route-id="@selected.PhongtroId">Xem phòng <i class="bi bi-box-arrow-up-right ms-1"></i></a> }
+                </header>
+                <div class="chat-messages" id="chatMessages">
+                    @foreach (var message in Model.Messages)
+                    {
+                        var booking = BookingFor(message);
+                        if (IsBookingMessage(message))
+                        {
+                            <div class="system-message">
+                                <div class="system-message__notice"><i class="bi bi-calendar-event"></i>@message.NoiDung</div>
+                                @if (booking is not null)
+                                {
+                                    var roomImage = booking.Phongtro?.HinhAnhs.OrderByDescending(x => x.IsAnhChinh).ThenBy(x => x.ThuTu).FirstOrDefault()?.DuongDan ?? booking.Phongtro?.HinhAnh;
+                                    <article class="booking-card">
+                                        <div class="booking-card__heading">
+                                            @if (!string.IsNullOrWhiteSpace(roomImage)) { <img src="@roomImage" alt="@booking.Phongtro?.TieuDe" /> }
+                                            else { <span class="booking-card__placeholder"><i class="bi bi-house-door"></i></span> }
+                                            <div><small>Yêu cầu xem phòng</small><strong>@(booking.Phongtro?.TieuDe ?? selected.Phongtro?.TieuDe)</strong></div>
+                                            <span class="booking-status booking-status--@booking.TrangThai">@StatusText(booking.TrangThai)</span>
+                                        </div>
+                                        <div class="booking-card__details">
+                                            <span><i class="bi bi-calendar3"></i>@booking.ThoiGianXem.ToString("dd/MM/yyyy")</span>
+                                            <span><i class="bi bi-clock"></i>@booking.ThoiGianXem.ToString("HH:mm")</span>
+                                            <span><i class="bi bi-person"></i>@booking.HoTen</span>
+                                        </div>
+                                        @if (!string.IsNullOrWhiteSpace(booking.GhiChu)) { <p><i class="bi bi-chat-left-text"></i>@booking.GhiChu</p> }
+                                        @if (Model.IsCurrentUserOwner && booking.TrangThai == TrangThaiLich.ChoXacNhan)
+                                        {
+                                            <form asp-controller="LichXemPhong" asp-action="Respond" method="post" class="booking-actions" data-single-submit>
+                                                <input type="hidden" name="id" value="@booking.Id" />
+                                                <input type="text" name="lyDo" maxlength="500" class="form-control form-control-sm" placeholder="Lý do nếu báo bận (không bắt buộc)" />
+                                                <div><button class="btn btn-primary btn-sm" name="action" value="accept">Đồng ý</button><button class="btn btn-outline-secondary btn-sm" name="action" value="busy">Báo bận</button></div>
+                                            </form>
+                                        }
+                                    </article>
+                                }
+                                <time>@message.NgayGui.ToLocalTime().ToString("HH:mm, dd/MM/yyyy")</time>
+                            </div>
+                        }
+                        else
+                        {
+                            var mine = message.NguoiGuiId == Model.CurrentUserId;
+                            <div class="chat-row @(mine ? "chat-row--mine" : "")"><div class="message-bubble">@message.NoiDung</div><time>@message.NgayGui.ToLocalTime().ToString("HH:mm")</time></div>
+                        }
+                    }
+                </div>
+                <form asp-action="Send" method="post" class="chat-composer" data-single-submit><input type="hidden" name="conversationId" value="@selected.Id" /><input id="messageText" name="noiDung" maxlength="2000" required autocomplete="off" placeholder="Nhập tin nhắn..." /><button class="btn btn-primary" type="submit"><i class="bi bi-send-fill"></i><span>Gửi</span></button></form>
+            }
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const chat = document.getElementById('chatMessages');
+        chat?.scrollTo(0, chat.scrollHeight);
+        document.getElementById('conversationSearch')?.addEventListener('input', function () {
+            const query = this.value.toLocaleLowerCase();
+            document.querySelectorAll('[data-conversation]').forEach(item => item.hidden = !item.dataset.conversation.toLocaleLowerCase().includes(query));
+        });
+    </script>
+}

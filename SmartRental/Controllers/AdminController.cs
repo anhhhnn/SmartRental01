@@ -24,22 +24,140 @@ namespace SmartRental.Controllers
 
         [HttpGet("/Admin")]
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? year)
         {
+            var currentYear = DateTime.Today.Year;
+            var availableYears = await _context.Phongtros
+                .AsNoTracking()
+                .Select(p => p.NgayDang.Year)
+                .Distinct()
+                .OrderByDescending(value => value)
+                .ToListAsync();
+            if (!availableYears.Contains(currentYear)) availableYears.Insert(0, currentYear);
+            var selectedYear = year.HasValue && availableYears.Contains(year.Value) ? year.Value : currentYear;
+
+            var adminRoleId = await GetRoleIdAsync(AppRoles.Admin);
             var landlordRoleId = await GetRoleIdAsync(AppRoles.ChuTro);
             var tenantRoleId = await GetRoleIdAsync(AppRoles.NguoiThue);
 
+            var adminUserIds = _context.UserRoles
+                .Where(ur => adminRoleId != null && ur.RoleId == adminRoleId)
+                .Select(ur => ur.UserId);
+            var landlordUserIds = _context.UserRoles
+                .Where(ur => landlordRoleId != null && ur.RoleId == landlordRoleId)
+                .Select(ur => ur.UserId);
+            var tenantUserIds = _context.UserRoles
+                .Where(ur => tenantRoleId != null && ur.RoleId == tenantRoleId)
+                .Select(ur => ur.UserId);
+
+            var totalAdmins = adminRoleId == null ? 0 : await adminUserIds.Distinct().CountAsync();
+            var totalLandlords = landlordRoleId == null ? 0 : await landlordUserIds.Distinct().CountAsync();
+            var totalTenants = tenantRoleId == null ? 0 : await tenantUserIds.Distinct().CountAsync();
+            var primaryLandlords = landlordRoleId == null
+                ? 0
+                : await landlordUserIds.Where(id => !adminUserIds.Contains(id)).Distinct().CountAsync();
+            var primaryTenants = tenantRoleId == null
+                ? 0
+                : await tenantUserIds
+                    .Where(id => !adminUserIds.Contains(id) && !landlordUserIds.Contains(id))
+                    .Distinct()
+                    .CountAsync();
+
+            var monthlyRoomCounts = await _context.Phongtros
+                .AsNoTracking()
+                .Where(p => p.NgayDang.Year == selectedYear)
+                .GroupBy(p => p.NgayDang.Month)
+                .Select(group => new { Month = group.Key, Count = group.Count() })
+                .ToListAsync();
+            var monthlyNewRooms = new int[12];
+            foreach (var item in monthlyRoomCounts) monthlyNewRooms[item.Month - 1] = item.Count;
+
+            var ratingCounts = await _context.DanhGias
+                .AsNoTracking()
+                .Where(review => review.SoSao >= 1 && review.SoSao <= 5)
+                .GroupBy(review => review.SoSao)
+                .Select(group => new { Rating = group.Key, Count = group.Count() })
+                .ToListAsync();
+            var ratingDistribution = new int[5];
+            foreach (var item in ratingCounts) ratingDistribution[item.Rating - 1] = item.Count;
+
+            var bookingCounts = await _context.LichXemPhongs
+                .AsNoTracking()
+                .GroupBy(booking => booking.TrangThai)
+                .Select(group => new { Status = group.Key, Count = group.Count() })
+                .ToDictionaryAsync(item => item.Status, item => item.Count);
+
+            var topRooms = await _context.Phongtros
+                .AsNoTracking()
+                .Select(room => new AdminTopRoomViewModel
+                {
+                    Id = room.Id,
+                    Title = room.TieuDe,
+                    OwnerName = room.Owner == null
+                        ? "Chưa gán chủ trọ"
+                        : (room.Owner.HoTen ?? room.Owner.Email ?? room.Owner.UserName ?? "Chưa đặt tên"),
+                    ImageUrl = room.HinhAnh,
+                    Price = room.Gia,
+                    ViewCount = room.LichSuXems.Sum(view => (long?)view.SoLanXem) ?? 0,
+                    FavoriteCount = room.YeuThichs.Count,
+                    AverageRating = room.DanhGias.Average(review => (double?)review.SoSao),
+                    RoomQuantity = room.SoLuongPhong
+                })
+                .OrderByDescending(room => room.ViewCount)
+                .ThenByDescending(room => room.FavoriteCount)
+                .ThenBy(room => room.Id)
+                .Take(5)
+                .ToListAsync();
+
+            var recentRooms = await _context.Phongtros
+                .AsNoTracking()
+                .OrderByDescending(room => room.NgayDang)
+                .ThenByDescending(room => room.Id)
+                .Select(room => new AdminRecentRoomViewModel
+                {
+                    Id = room.Id,
+                    Title = room.TieuDe,
+                    OwnerName = room.Owner == null
+                        ? "Chưa gán chủ trọ"
+                        : (room.Owner.HoTen ?? room.Owner.Email ?? room.Owner.UserName ?? "Chưa đặt tên"),
+                    PostedAt = room.NgayDang,
+                    Price = room.Gia,
+                    RoomQuantity = room.SoLuongPhong
+                })
+                .Take(5)
+                .ToListAsync();
+
+            var availableRooms = await _context.Phongtros.CountAsync(room => room.SoLuongPhong > 0);
+            var unavailableRooms = await _context.Phongtros.CountAsync(room => room.SoLuongPhong == 0);
+
             var model = new AdminDashboardViewModel
             {
+                SelectedYear = selectedYear,
+                AvailableYears = availableYears,
                 TotalUsers = await _userManager.Users.CountAsync(),
-                TotalLandlords = landlordRoleId == null ? 0 : await _context.UserRoles.CountAsync(ur => ur.RoleId == landlordRoleId),
-                TotalTenants = tenantRoleId == null ? 0 : await _context.UserRoles.CountAsync(ur => ur.RoleId == tenantRoleId),
+                TotalLandlords = totalLandlords,
+                TotalTenants = totalTenants,
+                TotalAdmins = totalAdmins,
                 TotalRooms = await _context.Phongtros.CountAsync(),
-                ActiveRooms = await _context.Phongtros.CountAsync(p => p.TrangThai),
-                HiddenRooms = await _context.Phongtros.CountAsync(p => !p.TrangThai),
+                AvailableRooms = availableRooms,
+                UnavailableRooms = unavailableRooms,
                 TotalFavorites = await _context.YeuThichs.CountAsync(),
-                TotalAmenities = await _context.TienNghis.CountAsync(),
-                TotalReviews = await _context.DanhGias.CountAsync()
+                TotalViews = await _context.LichSuXems.SumAsync(view => (long?)view.SoLanXem) ?? 0,
+                PendingBookings = bookingCounts.GetValueOrDefault(TrangThaiLich.ChoXacNhan),
+                TotalReviews = await _context.DanhGias.CountAsync(),
+                MonthlyNewRooms = monthlyNewRooms,
+                RoomStatusDistribution = [availableRooms, unavailableRooms],
+                UserRoleDistribution = [primaryLandlords, primaryTenants, totalAdmins],
+                RatingDistribution = ratingDistribution,
+                BookingStatusDistribution =
+                [
+                    bookingCounts.GetValueOrDefault(TrangThaiLich.ChoXacNhan),
+                    bookingCounts.GetValueOrDefault(TrangThaiLich.DaDongY),
+                    bookingCounts.GetValueOrDefault(TrangThaiLich.BaoBan),
+                    bookingCounts.GetValueOrDefault(TrangThaiLich.DaHuy)
+                ],
+                TopRooms = topRooms,
+                RecentRooms = recentRooms
             };
 
             return View(model);

@@ -24,6 +24,7 @@ namespace SmartRental.Controllers
 
         public async Task<IActionResult> Index(
        string? search,
+       string? khuVuc,
        decimal? minPrice,
        decimal? maxPrice,
        double? minArea,
@@ -47,6 +48,12 @@ namespace SmartRental.Controllers
                 phongtros = phongtros.Where(p =>
                     p.TieuDe.Contains(search) ||
                     p.DiaChi.Contains(search));
+            }
+
+            // Khu vực hiện được lưu trực tiếp trong địa chỉ phòng.
+            if (!string.IsNullOrWhiteSpace(khuVuc))
+            {
+                phongtros = phongtros.Where(p => p.DiaChi.Contains(khuVuc));
             }
 
             // Giá
@@ -303,7 +310,56 @@ namespace SmartRental.Controllers
                 .GroupBy(dg => dg.SoSao)
                 .ToDictionaryAsync(g => g.Key, g => g.Count());
 
-            var currentUserId = _userManager.GetUserId(User);
+            ViewBag.ViewCount = await _context.LichSuXems
+                .Where(ls => ls.PhongtroId == phongtro.Id)
+                .SumAsync(ls => (int?)ls.SoLanXem) ?? 0;
+            ViewBag.FavoriteCount = await _context.YeuThichs
+                .CountAsync(yt => yt.PhongtroId == phongtro.Id);
+            ViewBag.OwnerActiveRoomCount = string.IsNullOrEmpty(phongtro.OwnerId)
+                ? 0
+                : await _context.Phongtros.CountAsync(p =>
+                    p.OwnerId == phongtro.OwnerId && p.IsVisible && p.SoLuongPhong > 0);
+
+            if (!string.IsNullOrEmpty(phongtro.OwnerId))
+            {
+                var ownerBookings = _context.LichXemPhongs
+                    .AsNoTracking()
+                    .Where(booking => booking.ChuTroId == phongtro.OwnerId);
+                var totalOwnerBookings = await ownerBookings.CountAsync();
+                var respondedOwnerBookings = await ownerBookings.CountAsync(booking =>
+                    booking.TrangThai == TrangThaiLich.DaDongY ||
+                    booking.TrangThai == TrangThaiLich.BaoBan);
+
+                ViewBag.OwnerResponseRate = totalOwnerBookings == 0
+                    ? null
+                    : (int?)Math.Round(respondedOwnerBookings * 100d / totalOwnerBookings);
+            }
+            else
+            {
+                ViewBag.OwnerResponseRate = null;
+            }
+
+            var priceRange = Math.Max(phongtro.Gia * 0.25m, 500000m);
+            var minimumSimilarPrice = Math.Max(0, phongtro.Gia - priceRange);
+            var maximumSimilarPrice = phongtro.Gia + priceRange;
+            ViewBag.SimilarRooms = await _context.Phongtros
+                .AsNoTracking()
+                .Where(p => p.Id != phongtro.Id && p.IsVisible &&
+                    (p.DiaChi == phongtro.DiaChi ||
+                     (p.Gia >= minimumSimilarPrice && p.Gia <= maximumSimilarPrice)))
+                .Include(p => p.HinhAnhs)
+                .OrderByDescending(p => p.DiaChi == phongtro.DiaChi)
+                .ThenBy(p => Math.Abs(p.Gia - phongtro.Gia))
+                .ThenByDescending(p => p.NgayDang)
+                .Take(3)
+                .ToListAsync();
+
+            var currentUser = User.Identity?.IsAuthenticated == true
+                ? await _userManager.GetUserAsync(User)
+                : null;
+            var currentUserId = currentUser?.Id;
+            ViewBag.BookingHoTen = currentUser?.HoTen ?? string.Empty;
+            ViewBag.BookingPhone = currentUser?.PhoneNumber ?? string.Empty;
             ViewBag.MyReview = currentUserId == null
                 ? null
                 : await _context.DanhGias.FindAsync(currentUserId, phongtro.Id);

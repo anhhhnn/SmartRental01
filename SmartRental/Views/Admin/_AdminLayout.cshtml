@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Quản trị SmartRental</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
@@ -13,14 +14,14 @@
         <aside class="admin-sidebar p-3 text-white">
             <a asp-controller="Admin" asp-action="Index" class="admin-brand text-decoration-none d-block mb-4"><span class="brand-mark">SR</span> SmartRental Admin</a>
             <nav class="nav flex-column gap-1">
-                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")" asp-controller="Admin" asp-action="Index">Dashboard</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() is "Users" or "UserDetails" ? "active" : "")" asp-controller="Admin" asp-action="Users">Người dùng</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Rooms" ? "active" : "")" asp-controller="Admin" asp-action="Rooms">Phòng trọ</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Amenities" ? "active" : "")" asp-controller="Admin" asp-action="Amenities">Tiện nghi</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Favorites" ? "active" : "")" asp-controller="Admin" asp-action="Favorites">Yêu thích</a>
-                <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Reviews" ? "active" : "")" asp-controller="Admin" asp-action="Reviews">Đánh giá</a>
+                <a class="nav-link admin-sidebar-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")" asp-controller="Admin" asp-action="Index"><i class="bi bi-grid-1x2"></i><span>Tổng quan</span></a>
+                <a class="nav-link admin-sidebar-link @(ViewContext.RouteData.Values["action"]?.ToString() is "Users" or "UserDetails" ? "active" : "")" asp-controller="Admin" asp-action="Users"><i class="bi bi-people"></i><span>Người dùng</span></a>
+                <a class="nav-link admin-sidebar-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Rooms" ? "active" : "")" asp-controller="Admin" asp-action="Rooms"><i class="bi bi-houses"></i><span>Phòng trọ</span></a>
+                <a class="nav-link admin-sidebar-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Amenities" ? "active" : "")" asp-controller="Admin" asp-action="Amenities"><i class="bi bi-stars"></i><span>Tiện nghi</span></a>
+                <a class="nav-link admin-sidebar-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Favorites" ? "active" : "")" asp-controller="Admin" asp-action="Favorites"><i class="bi bi-heart"></i><span>Yêu thích</span></a>
+                <a class="nav-link admin-sidebar-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Reviews" ? "active" : "")" asp-controller="Admin" asp-action="Reviews"><i class="bi bi-star"></i><span>Đánh giá</span></a>
                 <hr />
-                <a class="nav-link" asp-controller="Phongtro" asp-action="Index">← Quay về website</a>
+                <a class="nav-link admin-sidebar-link" asp-controller="Home" asp-action="Index"><i class="bi bi-arrow-left"></i><span>Về trang chính</span></a>
             </nav>
         </aside>
         <main class="admin-content flex-grow-1 p-3 p-md-4">

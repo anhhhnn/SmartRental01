@@ -49,7 +49,9 @@ namespace SmartRental.Areas.Identity.Pages.Account
             {
                 UserName = Input.Email,
                 Email = Input.Email,
-                HoTen = Input.HoTen.Trim()
+                HoTen = Input.HoTen.Trim(),
+                PhoneNumber = string.IsNullOrWhiteSpace(Input.PhoneNumber) ? null : Input.PhoneNumber.Trim(),
+                DiaChi = string.IsNullOrWhiteSpace(Input.DiaChi) ? null : Input.DiaChi.Trim()
             };
 
             var result = await _userManager.CreateAsync(user, Input.Password);
@@ -101,6 +103,14 @@ namespace SmartRental.Areas.Identity.Pages.Account
             [EmailAddress(ErrorMessage = "Email không hợp lệ.")]
             [Display(Name = "Email")]
             public string Email { get; set; } = string.Empty;
+
+            [Phone(ErrorMessage = "Số điện thoại không hợp lệ.")]
+            [Display(Name = "Số điện thoại")]
+            public string? PhoneNumber { get; set; }
+
+            [StringLength(250, ErrorMessage = "Địa chỉ không được vượt quá {1} ký tự.")]
+            [Display(Name = "Địa chỉ")]
+            public string? DiaChi { get; set; }
 
             [Required(ErrorMessage = "Vui lòng nhập mật khẩu.")]
             [StringLength(

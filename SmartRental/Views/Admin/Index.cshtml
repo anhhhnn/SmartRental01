@@ -1,7 +1,85 @@
+@using System.Text.Json
 @model SmartRental.ViewModels.Admin.AdminDashboardViewModel
-@{ ViewData["Title"] = "Dashboard"; Layout = "_AdminLayout"; }
-<div class="d-flex justify-content-between align-items-center mb-4"><div><h2 class="mb-1">Dashboard</h2><p class="text-muted mb-0">Tổng quan hệ thống SmartRental</p></div></div>
-<div class="row g-3">
-    @{ var cards = new[] { ("Tổng người dùng", Model.TotalUsers, "primary"), ("Chủ trọ", Model.TotalLandlords, "success"), ("Người thuê", Model.TotalTenants, "info"), ("Tổng phòng trọ", Model.TotalRooms, "dark"), ("Phòng hoạt động", Model.ActiveRooms, "success"), ("Phòng tạm ẩn", Model.HiddenRooms, "secondary"), ("Lượt yêu thích", Model.TotalFavorites, "danger"), ("Tiện nghi", Model.TotalAmenities, "warning") }; }
-    @foreach (var card in cards) { <div class="col-sm-6 col-xl-3"><div class="card stat-card h-100"><div class="card-body"><div class="text-muted">@card.Item1</div><div class="fs-2 fw-bold text-@card.Item3">@card.Item2</div></div></div></div> }
+@{
+    ViewData["Title"] = "Tổng quan";
+    Layout = "_AdminLayout";
+    var cards = new[]
+    {
+        ("Tổng người dùng", Model.TotalUsers.ToString("N0"), "bi-people", "blue"),
+        ("Tổng phòng trọ", Model.TotalRooms.ToString("N0"), "bi-houses", "navy"),
+        ("Phòng còn trống", Model.AvailableRooms.ToString("N0"), "bi-door-open", "emerald"),
+        ("Tổng lượt xem", Model.TotalViews.ToString("N0"), "bi-eye", "blue"),
+        ("Lượt yêu thích", Model.TotalFavorites.ToString("N0"), "bi-heart", "navy"),
+        ("Lịch xem chờ xác nhận", Model.PendingBookings.ToString("N0"), "bi-calendar2-check", "emerald"),
+        ("Phòng hết", Model.UnavailableRooms.ToString("N0"), "bi-door-closed", "muted"),
+        ("Tổng đánh giá", Model.TotalReviews.ToString("N0"), "bi-star", "blue")
+    };
+    var roomTotal = Model.AvailableRooms + Model.UnavailableRooms;
+    var availablePercent = roomTotal == 0 ? 0 : Math.Round(Model.AvailableRooms * 100d / roomTotal, 1);
+    var unavailablePercent = roomTotal == 0 ? 0 : Math.Round(Model.UnavailableRooms * 100d / roomTotal, 1);
+    var jsonOptions = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+}
+
+<div class="admin-topbar">
+    <div><span class="eyebrow">SMARTRENTAL ADMIN</span><h1>Tổng quan hệ thống</h1><p>Số liệu được tổng hợp trực tiếp từ dữ liệu vận hành.</p></div>
+    <form method="get" asp-action="Index" class="admin-year-filter">
+        <label for="dashboardYear">Năm</label>
+        <select id="dashboardYear" name="year" class="form-select" onchange="this.form.submit()">
+            @foreach (var year in Model.AvailableYears) { <option value="@year" selected="@(year == Model.SelectedYear)">@year</option> }
+        </select>
+    </form>
 </div>
+
+<div class="row g-3 admin-kpi-grid">
+    @foreach (var card in cards)
+    {
+        <div class="col-6 col-md-4 col-xl-3"><div class="card stat-card stat-card--@card.Item4 h-100"><div class="card-body"><span class="stat-card__icon"><i class="bi @card.Item3" aria-hidden="true"></i></span><div><div class="stat-card__value">@card.Item2</div><div class="stat-card__label">@card.Item1</div></div></div></div></div>
+    }
+</div>
+
+<div class="row g-3 mt-1 admin-dashboard-charts">
+    <div class="col-xl-8"><section class="card dashboard-panel h-100" aria-labelledby="monthlyRoomsTitle"><div class="card-header"><div><h2 id="monthlyRoomsTitle">Phòng đăng mới theo tháng</h2><p>Năm @Model.SelectedYear, dựa trên ngày đăng tin</p></div></div><div class="card-body"><div class="chart-wrap chart-wrap--wide"><canvas id="monthlyRoomsChart"></canvas></div></div></section></div>
+    <div class="col-xl-4"><section class="card dashboard-panel h-100" aria-labelledby="roomStatusTitle"><div class="card-header"><div><h2 id="roomStatusTitle">Tình trạng phòng</h2><p>Theo số lượng phòng còn lại</p></div></div><div class="card-body"><div class="chart-wrap"><canvas id="roomStatusChart"></canvas></div><div class="chart-summary"><span><i class="chart-dot chart-dot--emerald"></i>Còn phòng: <strong>@Model.AvailableRooms</strong> (@availablePercent%)</span><span><i class="chart-dot chart-dot--navy"></i>Hết phòng: <strong>@Model.UnavailableRooms</strong> (@unavailablePercent%)</span></div></div></section></div>
+    <div class="col-xl-6"><section class="card dashboard-panel h-100" aria-labelledby="roleTitle"><div class="card-header"><div><h2 id="roleTitle">Phân bố người dùng</h2><p>Vai trò chính, ưu tiên Admin → Chủ trọ → Người thuê để không đếm trùng</p></div></div><div class="card-body"><div class="chart-wrap"><canvas id="userRoleChart"></canvas></div></div></section></div>
+    <div class="col-xl-6"><section class="card dashboard-panel h-100" aria-labelledby="ratingTitle"><div class="card-header"><div><h2 id="ratingTitle">Phân bố đánh giá</h2><p>@Model.TotalReviews đánh giá thực tế</p></div></div><div class="card-body"><div class="chart-wrap"><canvas id="ratingChart"></canvas></div></div></section></div>
+    <div class="col-xl-6"><section class="card dashboard-panel h-100" aria-labelledby="bookingTitle"><div class="card-header"><div><h2 id="bookingTitle">Trạng thái lịch xem phòng</h2><p>Các trạng thái đang được hệ thống hỗ trợ</p></div></div><div class="card-body"><div class="chart-wrap"><canvas id="bookingChart"></canvas></div></div></section></div>
+    <div class="col-xl-6"><section class="card dashboard-panel h-100" aria-labelledby="recentRoomsTitle"><div class="card-header"><div><h2 id="recentRoomsTitle">Phòng mới đăng</h2><p>5 tin mới nhất theo ngày đăng</p></div></div><div class="table-responsive"><table class="table table-hover mb-0 compact-admin-table"><thead><tr><th>Phòng</th><th>Ngày đăng</th><th class="text-end">Giá</th><th>Tình trạng</th></tr></thead><tbody>
+    @if (Model.RecentRooms.Count == 0) { <tr><td colspan="4" class="text-center text-muted py-4">Chưa có phòng trọ.</td></tr> }
+    else { @foreach (var room in Model.RecentRooms) { <tr><td><a asp-controller="Phongtro" asp-action="Details" asp-route-id="@room.Id" class="room-table-title">@room.Title</a><small>@room.OwnerName</small></td><td class="text-nowrap">@room.PostedAt.ToString("dd/MM/yyyy")</td><td class="text-end text-nowrap">@room.Price.ToString("N0") đ</td><td><span class="availability-badge @(room.RoomQuantity > 0 ? "is-available" : "is-unavailable")">@(room.RoomQuantity > 0 ? "Còn phòng" : "Hết phòng")</span></td></tr> } }
+    </tbody></table></div></section></div>
+</div>
+
+<section class="card dashboard-panel mt-3" aria-labelledby="topRoomsTitle"><div class="card-header"><div><h2 id="topRoomsTitle">Top phòng được quan tâm</h2><p>Xếp theo tổng lượt xem, sau đó theo lượt yêu thích</p></div></div><div class="table-responsive"><table class="table table-hover mb-0 admin-top-rooms-table"><thead><tr><th>Phòng</th><th>Chủ trọ</th><th class="text-end">Giá</th><th class="text-center">Lượt xem</th><th class="text-center">Yêu thích</th><th>Rating</th><th>Tình trạng</th></tr></thead><tbody>
+@if (Model.TopRooms.Count == 0) { <tr><td colspan="7" class="text-center text-muted py-5">Chưa có dữ liệu phòng trọ.</td></tr> }
+else
+{
+    @foreach (var room in Model.TopRooms)
+    {
+        <tr><td><div class="top-room-cell">@if (!string.IsNullOrWhiteSpace(room.ImageUrl)) { <img src="@room.ImageUrl" alt="" loading="lazy" /> } else { <span class="top-room-placeholder"><i class="bi bi-house"></i></span> }<a asp-controller="Phongtro" asp-action="Details" asp-route-id="@room.Id">@room.Title</a></div></td><td>@room.OwnerName</td><td class="text-end text-nowrap">@room.Price.ToString("N0") đ</td><td class="text-center fw-bold">@room.ViewCount.ToString("N0")</td><td class="text-center">@room.FavoriteCount.ToString("N0")</td><td class="text-nowrap">@if (room.AverageRating.HasValue) { <span class="rating-value"><i class="bi bi-star-fill"></i> @room.AverageRating.Value.ToString("0.0")</span> } else { <span class="text-muted">Chưa có đánh giá</span> }</td><td><span class="availability-badge @(room.RoomQuantity > 0 ? "is-available" : "is-unavailable")">@(room.RoomQuantity > 0 ? "Còn phòng" : "Hết phòng")</span></td></tr>
+    }
+}
+</tbody></table></div></section>
+
+<div class="dashboard-data-note mt-3"><i class="bi bi-info-circle"></i><span>Chưa thể thống kê lượt xem theo từng tháng: dữ liệu hiện tại chỉ lưu tổng lượt xem và thời điểm xem cuối cho mỗi cặp người dùng–phòng.</span></div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script>
+        (() => {
+            const monthlyNewRooms = @Html.Raw(JsonSerializer.Serialize(Model.MonthlyNewRooms, jsonOptions));
+            const roomStatus = @Html.Raw(JsonSerializer.Serialize(Model.RoomStatusDistribution, jsonOptions));
+            const userRoles = @Html.Raw(JsonSerializer.Serialize(Model.UserRoleDistribution, jsonOptions));
+            const ratings = @Html.Raw(JsonSerializer.Serialize(Model.RatingDistribution, jsonOptions));
+            const bookings = @Html.Raw(JsonSerializer.Serialize(Model.BookingStatusDistribution, jsonOptions));
+            const monthLabels = Array.from({ length: 12 }, (_, index) => `T${index + 1}`);
+            const colors = { navy: '#173B6C', blue: '#377DB5', emerald: '#24A985', softBlue: '#9BC3E1', muted: '#AAB7C4' };
+            const baseOptions = { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8, padding: 18 } } } };
+            const axisOptions = { ...baseOptions, scales: { x: { grid: { display: false }, ticks: { color: '#65758A' } }, y: { beginAtZero: true, ticks: { precision: 0, color: '#65758A' }, grid: { color: '#E9EEF4' } } } };
+            new Chart(document.getElementById('monthlyRoomsChart'), { type: 'bar', data: { labels: monthLabels, datasets: [{ label: 'Phòng đăng mới', data: monthlyNewRooms, backgroundColor: colors.blue, borderRadius: 7, maxBarThickness: 38 }] }, options: axisOptions });
+            new Chart(document.getElementById('roomStatusChart'), { type: 'doughnut', data: { labels: ['Còn phòng', 'Hết phòng'], datasets: [{ data: roomStatus, backgroundColor: [colors.emerald, colors.navy], borderWidth: 0, hoverOffset: 5 }] }, options: { ...baseOptions, cutout: '68%' } });
+            new Chart(document.getElementById('userRoleChart'), { type: 'doughnut', data: { labels: ['Chủ trọ', 'Người thuê', 'Admin'], datasets: [{ data: userRoles, backgroundColor: [colors.emerald, colors.blue, colors.navy], borderWidth: 0, hoverOffset: 5 }] }, options: { ...baseOptions, cutout: '62%' } });
+            new Chart(document.getElementById('ratingChart'), { type: 'bar', data: { labels: ['1 sao', '2 sao', '3 sao', '4 sao', '5 sao'], datasets: [{ label: 'Số đánh giá', data: ratings, backgroundColor: colors.blue, borderRadius: 7 }] }, options: { ...axisOptions, indexAxis: 'y' } });
+            new Chart(document.getElementById('bookingChart'), { type: 'bar', data: { labels: ['Chờ xác nhận', 'Đã đồng ý', 'Báo bận', 'Đã hủy'], datasets: [{ label: 'Lịch xem', data: bookings, backgroundColor: [colors.blue, colors.emerald, colors.softBlue, colors.muted], borderRadius: 7 }] }, options: axisOptions });
+        })();
+    </script>
+}
