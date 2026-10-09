@@ -29,7 +29,7 @@
                             <div class="bg-light d-flex align-items-center justify-content-center" style="height:220px;">Chưa có hình ảnh</div>
                         }
                         <div class="card-body">
-                            <div class="mb-2"><span class="badge @(item.Phongtro.TrangThai ? "bg-success" : "bg-secondary")">@(item.Phongtro.TrangThai ? "Đang hoạt động" : "Tạm ẩn")</span></div>
+                            <div class="mb-2 d-flex gap-2"><span class="badge @(item.Phongtro.SoLuongPhong > 0 ? "bg-success" : "bg-danger")">@(item.Phongtro.SoLuongPhong > 0 ? "Còn phòng" : "Hết phòng")</span><span class="badge @(item.Phongtro.IsVisible ? "bg-primary" : "bg-secondary")">@(item.Phongtro.IsVisible ? "Hiển thị" : "Đã ẩn")</span></div>
                             <h5 class="card-title fw-bold">@item.Phongtro.TieuDe</h5>
                             <p class="text-danger fw-bold mb-2">@item.Phongtro.Gia.ToString("N0") VNĐ/tháng</p>
                             <p class="mb-2"><strong>Diện tích:</strong> @item.Phongtro.DienTich m²</p>

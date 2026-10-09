@@ -21,14 +21,14 @@ namespace SmartRental.Controllers
         {
             ViewBag.TotalRooms = await _context.Phongtros.CountAsync();
             ViewBag.TotalFavorites = await _context.YeuThichs.CountAsync();
-            ViewBag.AvailableRooms = await _context.Phongtros.CountAsync(p => p.TrangThai && p.IsVisible && p.SoLuongPhong > 0);
+            ViewBag.AvailableRooms = await _context.Phongtros.CountAsync(p => p.IsVisible && p.SoLuongPhong > 0);
             ViewBag.FeaturedRooms = await _context.Phongtros
                 .AsNoTracking()
                 .Include(p => p.PhongTienNghis)
                     .ThenInclude(pt => pt.TienNghi)
                 .Include(p => p.HinhAnhs)
                 .Include(p => p.DanhGias)
-                .Where(p => p.TrangThai && p.IsVisible)
+                .Where(p => p.IsVisible)
                 .OrderByDescending(p => p.NgayDang)
                 .Take(4)
                 .ToListAsync();

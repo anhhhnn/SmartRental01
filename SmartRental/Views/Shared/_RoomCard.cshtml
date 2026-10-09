@@ -9,6 +9,7 @@
     <div class="card-body d-flex flex-column">
         <div class="room-card__topline"><span><i class="bi bi-aspect-ratio"></i> @Model.DienTich m²</span>@if(ratingCount>0){<span class="room-rating"><i class="bi bi-star-fill"></i> @averageRating.ToString("0.0") <small>(@ratingCount)</small></span>}</div>
         <h3 class="h5 room-card__title"><a asp-controller="Phongtro" asp-action="Details" asp-route-id="@Model.Id">@Model.TieuDe</a></h3>
+        <p class="room-meta"><i class="bi bi-person"></i><span>@Model.SoNguoiToiDa người</span></p>
         <p class="room-meta"><i class="bi bi-geo-alt"></i><span>@Model.DiaChi</span></p>
         @if(amenities.Any()){<div class="room-amenities">@foreach(var amenity in amenities.Take(3)){<span class="amenity-chip">@amenity.TienNghi.TenTienNghi</span>}@if(amenities.Count>3){<span class="amenity-chip">+@(amenities.Count-3)</span>}</div>}
         <div class="room-card__footerline mt-auto"><div><small>Từ</small><div class="room-card__price">@Model.Gia.ToString("N0") ₫<span>/tháng</span></div></div><a asp-controller="Phongtro" asp-action="Details" asp-route-id="@Model.Id" class="sr-btn sr-btn-secondary sr-btn-sm">Chi tiết <i class="bi bi-arrow-right"></i></a></div>

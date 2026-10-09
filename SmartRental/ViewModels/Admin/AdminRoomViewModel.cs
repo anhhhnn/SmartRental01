@@ -8,7 +8,6 @@ namespace SmartRental.ViewModels.Admin
         public decimal Gia { get; set; }
         public double DienTich { get; set; }
         public string OwnerName { get; set; } = "Chưa gán chủ phòng";
-        public bool TrangThai { get; set; }
         public bool IsVisible { get; set; }
         public int SoLuongPhong { get; set; }
         public DateTime NgayDang { get; set; }

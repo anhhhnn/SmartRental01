@@ -89,22 +89,8 @@
                     </div>
 
 
-                    <div class="mb-4">
-                        <strong>Trạng thái:</strong>
-
-                        @if (Model.TrangThai)
-                        {
-                            <span class="badge bg-success ms-2">
-                                Đang hoạt động
-                            </span>
-                        }
-                        else
-                        {
-                            <span class="badge bg-secondary ms-2">
-                                Tạm ẩn
-                            </span>
-                        }
-                    </div>
+                    <div class="mb-2"><strong>Tình trạng:</strong><span class="badge @(Model.SoLuongPhong > 0 ? "bg-success" : "bg-danger") ms-2">@(Model.SoLuongPhong > 0 ? "Còn phòng" : "Hết phòng")</span></div>
+                    <div class="mb-4"><strong>Hiển thị tin:</strong><span class="badge @(Model.IsVisible ? "bg-primary" : "bg-secondary") ms-2">@(Model.IsVisible ? "Hiển thị" : "Đã ẩn")</span></div>
 
 
                     <hr />

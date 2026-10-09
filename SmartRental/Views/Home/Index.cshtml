@@ -45,7 +45,7 @@
 
     <section class="home-stats-wrap"><div class="container"><div class="stats-grid home-stats-card" aria-label="Thống kê SmartRental" data-reveal><div><i class="bi bi-buildings"></i><span><strong data-counter>@ViewBag.TotalRooms</strong><small>Phòng trọ</small></span></div><div><i class="bi bi-door-open"></i><span><strong data-counter>@ViewBag.AvailableRooms</strong><small>Phòng còn trống</small></span></div><div><i class="bi bi-heart"></i><span><strong data-counter>@ViewBag.TotalFavorites</strong><small>Lượt yêu thích</small></span></div></div></div></section>
 
-    <div class="container">
+    <div class="container room-sections-container">
         <section class="home-section" data-reveal>
             <div class="section-heading"><div><span class="eyebrow">KHÁM PHÁ NHANH</span><h2>Bắt đầu từ điều bạn quan tâm</h2><p>Thu hẹp lựa chọn bằng những tiêu chí phổ biến nhất.</p></div><a asp-controller="Phongtro" asp-action="Index" class="link-arrow">Bộ lọc chi tiết <i class="bi bi-arrow-right"></i></a></div>
             <div class="quick-filter-grid">
@@ -60,7 +60,7 @@
             <div class="section-heading"><div><span class="eyebrow">GỢI Ý MỚI NHẤT</span><h2>Phòng trọ nổi bật</h2><p>Dữ liệu phòng đang hoạt động, được cập nhật trực tiếp trên SmartRental.</p></div><a asp-controller="Phongtro" asp-action="Index" class="link-arrow">Xem tất cả <i class="bi bi-arrow-right"></i></a></div>
             @if (featured.Any())
             {
-                <div class="row g-4">@foreach (var room in featured){var data = new ViewDataDictionary(ViewData);data["ShowFavorite"] = User.Identity?.IsAuthenticated == true;<div class="col-md-6 col-xl-3"><partial name="_RoomCard" model="room" view-data="data" /></div>}</div>
+                <div class="room-grid room-grid--featured">@foreach (var room in featured){var data = new ViewDataDictionary(ViewData);data["ShowFavorite"] = User.Identity?.IsAuthenticated == true;<div class="room-grid__item"><partial name="_RoomCard" model="room" view-data="data" /></div>}</div>
             }
             else
             {

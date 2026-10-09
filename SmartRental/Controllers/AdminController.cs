@@ -15,11 +15,16 @@ namespace SmartRental.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly ILogger<AdminController> _logger;
 
-        public AdminController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public AdminController(
+            ApplicationDbContext context,
+            UserManager<ApplicationUser> userManager,
+            ILogger<AdminController> logger)
         {
             _context = context;
             _userManager = userManager;
+            _logger = logger;
         }
 
         [HttpGet("/Admin")]
@@ -249,7 +254,6 @@ namespace SmartRental.Controllers
                     Gia = p.Gia,
                     DienTich = p.DienTich,
                     OwnerName = p.Owner == null ? "Chưa gán chủ phòng" : (p.Owner.HoTen ?? p.Owner.Email ?? p.Owner.UserName ?? "Chưa đặt tên"),
-                    TrangThai = p.TrangThai,
                     IsVisible = p.IsVisible,
                     SoLuongPhong = p.SoLuongPhong,
                     NgayDang = p.NgayDang,
@@ -265,9 +269,9 @@ namespace SmartRental.Controllers
         {
             var room = await _context.Phongtros.FindAsync(id);
             if (room == null) return NotFound();
-            room.TrangThai = !room.TrangThai;
+            room.IsVisible = !room.IsVisible;
             await _context.SaveChangesAsync();
-            TempData["Success"] = room.TrangThai ? "Đã hiển thị phòng trọ." : "Đã tạm ẩn phòng trọ.";
+            TempData["Success"] = room.IsVisible ? "Đã hiển thị tin phòng trọ." : "Đã ẩn tin phòng trọ.";
             return RedirectToAction(nameof(Rooms));
         }
 
@@ -301,19 +305,69 @@ namespace SmartRental.Controllers
             if (id == _userManager.GetUserId(User)) { TempData["Error"] = "Bạn không thể xóa tài khoản Admin đang đăng nhập."; return RedirectToAction(nameof(Users)); }
             var user = await _userManager.FindByIdAsync(id); if (user is null) return NotFound();
             await using var transaction = await _context.Database.BeginTransactionAsync();
+            var files = new List<string>();
             try
             {
                 var rooms = await _context.Phongtros.Where(x => x.OwnerId == id).Include(x => x.HinhAnhs).ToListAsync();
-                var files = rooms.SelectMany(x => x.HinhAnhs.Select(i => i.DuongDan).Append(x.HinhAnh)).Where(x => !string.IsNullOrWhiteSpace(x)).Cast<string>().Distinct().ToList();
+                var roomIds = rooms.Select(x => x.Id).ToList();
+                files = rooms.SelectMany(x => x.HinhAnhs.Select(i => i.DuongDan).Append(x.HinhAnh))
+                    .Where(x => !string.IsNullOrWhiteSpace(x)).Cast<string>().Distinct().ToList();
+
+                // Conversation participants are Restrict FKs. Remove only conversations
+                // involving this account; messages in those conversations cascade with them.
                 var conversations = await _context.CuocTroChuyens.Where(x => x.NguoiThueId == id || x.ChuTroId == id).ToListAsync();
                 _context.CuocTroChuyens.RemoveRange(conversations);
+
+                // Booking user FKs are Restrict. Explicit cleanup is required for both roles,
+                // including bookings made by other users for rooms owned by this account.
+                var bookings = await _context.LichXemPhongs
+                    .Where(x => x.NguoiThueId == id || x.ChuTroId == id || roomIds.Contains(x.PhongtroId))
+                    .ToListAsync();
+                _context.LichXemPhongs.RemoveRange(bookings);
+
+                var favorites = await _context.YeuThichs
+                    .Where(x => x.UserId == id || roomIds.Contains(x.PhongtroId)).ToListAsync();
+                var viewHistory = await _context.LichSuXems
+                    .Where(x => x.UserId == id || roomIds.Contains(x.PhongtroId)).ToListAsync();
+                var reviews = await _context.DanhGias
+                    .Where(x => x.UserId == id || roomIds.Contains(x.PhongtroId)).ToListAsync();
+                var roomAmenities = await _context.PhongTienNghis
+                    .Where(x => roomIds.Contains(x.PhongtroId)).ToListAsync();
+                var roomImages = await _context.PhongtroHinhAnhs
+                    .Where(x => roomIds.Contains(x.PhongtroId)).ToListAsync();
+                var notifications = await _context.ThongBaos.Where(x => x.UserId == id).ToListAsync();
+
+                _context.YeuThichs.RemoveRange(favorites);
+                _context.LichSuXems.RemoveRange(viewHistory);
+                _context.DanhGias.RemoveRange(reviews);
+                _context.PhongTienNghis.RemoveRange(roomAmenities);
+                _context.PhongtroHinhAnhs.RemoveRange(roomImages);
+                _context.ThongBaos.RemoveRange(notifications);
+
+                // Defensive cleanup for malformed legacy messages where the sender is no
+                // longer one of the conversation participants.
+                var conversationIds = conversations.Select(x => x.Id).ToList();
+                var remainingSentMessages = await _context.TinNhans
+                    .Where(x => x.NguoiGuiId == id && !conversationIds.Contains(x.CuocTroChuyenId))
+                    .ToListAsync();
+                _context.TinNhans.RemoveRange(remainingSentMessages);
+
                 _context.Phongtros.RemoveRange(rooms);
                 await _context.SaveChangesAsync();
                 var result = await _userManager.DeleteAsync(user);
                 if (!result.Succeeded) throw new InvalidOperationException(string.Join(" ", result.Errors.Select(x => x.Description)));
-                await transaction.CommitAsync(); DeleteUploadFiles(files); TempData["Success"] = "Đã xóa tài khoản cùng dữ liệu liên quan.";
+                await transaction.CommitAsync();
+                DeleteUploadFiles(files);
+                TempData["Success"] = "Đã xóa tài khoản cùng dữ liệu liên quan.";
             }
-            catch { await transaction.RollbackAsync(); TempData["Error"] = "Không thể xóa tài khoản. Dữ liệu chưa bị thay đổi."; }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                _logger.LogError(ex, "Không thể xóa tài khoản {UserId} và dữ liệu liên quan.", id);
+                TempData["Error"] = ex is DbUpdateException
+                    ? "Không thể xóa tài khoản do dữ liệu liên quan chưa được xử lý đầy đủ. Không có thay đổi nào được lưu."
+                    : "Không thể xóa tài khoản. Không có thay đổi nào được lưu; chi tiết đã được ghi vào log hệ thống.";
+            }
             return RedirectToAction(nameof(Users));
         }
 
@@ -337,7 +391,13 @@ namespace SmartRental.Controllers
                 TempData["Error"] = "Tên tiện nghi không được vượt quá 100 ký tự.";
                 return RedirectToAction(nameof(Amenities));
             }
-            _context.TienNghis.Add(new TienNghi { TenTienNghi = tenTienNghi.Trim() });
+            var normalizedName = tenTienNghi.Trim();
+            if (await _context.TienNghis.AnyAsync(item => item.TenTienNghi.ToLower() == normalizedName.ToLower()))
+            {
+                TempData["Error"] = "Tiện nghi này đã tồn tại.";
+                return RedirectToAction(nameof(Amenities));
+            }
+            _context.TienNghis.Add(new TienNghi { TenTienNghi = normalizedName });
             await _context.SaveChangesAsync();
             TempData["Success"] = "Đã thêm tiện nghi.";
             return RedirectToAction(nameof(Amenities));
@@ -354,7 +414,13 @@ namespace SmartRental.Controllers
                 TempData["Error"] = "Tên tiện nghi phải có từ 1 đến 100 ký tự.";
                 return RedirectToAction(nameof(Amenities));
             }
-            amenity.TenTienNghi = tenTienNghi.Trim();
+            var normalizedName = tenTienNghi.Trim();
+            if (await _context.TienNghis.AnyAsync(item => item.Id != id && item.TenTienNghi.ToLower() == normalizedName.ToLower()))
+            {
+                TempData["Error"] = "Tiện nghi này đã tồn tại.";
+                return RedirectToAction(nameof(Amenities));
+            }
+            amenity.TenTienNghi = normalizedName;
             await _context.SaveChangesAsync();
             TempData["Success"] = "Đã cập nhật tiện nghi.";
             return RedirectToAction(nameof(Amenities));

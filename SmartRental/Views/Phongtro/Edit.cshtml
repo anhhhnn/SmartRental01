@@ -9,6 +9,8 @@
 }
 
 <div class="mt-2 mb-5">
+    @if (TempData["Success"] is string success) { <div class="alert alert-success">@success</div> }
+    @if (TempData["Error"] is string error) { <div class="alert alert-danger">@error</div> }
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-7">
 
@@ -59,6 +61,15 @@
 
                         <!-- ĐỊA CHỈ -->
                         <div class="mb-3">
+                            <label asp-for="KhuVuc" class="form-label">Khu vực</label>
+                            <select asp-for="KhuVuc" class="form-select">
+                                <option value="">Chọn khu vực</option>
+                                @foreach (var area in ThaiNguyenAreas.All) { <option value="@area">@area</option> }
+                            </select>
+                            <span asp-validation-for="KhuVuc" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
 
                             <label asp-for="DiaChi"
                                    class="form-label">
@@ -88,6 +99,7 @@
                                 <div class="input-group">
 
                                     <input asp-for="Gia"
+                                           min="400000"
                                            class="form-control" />
 
                                     <span class="input-group-text">
@@ -113,6 +125,7 @@
                                 <div class="input-group">
 
                                     <input asp-for="DienTich"
+                                           min="10"
                                            class="form-control" />
 
                                     <span class="input-group-text">
@@ -129,6 +142,12 @@
 
                         </div>
 
+
+                        <div class="mb-3">
+                            <label asp-for="SoNguoiToiDa" class="form-label">Số người ở tối đa</label>
+                            <input asp-for="SoNguoiToiDa" type="number" min="1" class="form-control" />
+                            <span asp-validation-for="SoNguoiToiDa" class="text-danger"></span>
+                        </div>
 
                         <!-- MÔ TẢ -->
                         <div class="mb-3">
@@ -228,6 +247,26 @@
 
                         </div>
 
+                        @if (Model.HinhAnhs.Any())
+                        {
+                            <div class="image-preview-grid mb-4">
+                                @foreach (var image in Model.HinhAnhs.OrderByDescending(item => item.IsAnhChinh).ThenBy(item => item.ThuTu))
+                                {
+                                    <div class="image-preview-item">
+                                        <img src="@image.DuongDan" alt="Ảnh phòng" class="image-preview-thumb" />
+                                        <span>@(image.IsAnhChinh ? "Ảnh chính" : "Ảnh phụ")</span>
+                                        <div class="d-flex gap-1 mt-2">
+                                            @if (!image.IsAnhChinh)
+                                            {
+                                                <button type="submit" formaction="@Url.Action("SetPrimaryImage", "Phongtro")" name="imageId" value="@image.Id" class="btn btn-sm btn-outline-primary">Đặt làm chính</button>
+                                            }
+                                            <button type="submit" formaction="@Url.Action("DeleteImage", "Phongtro")" name="imageId" value="@image.Id" class="btn btn-sm btn-outline-danger">Xóa</button>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        }
+
 
                         <!-- CHỌN ẢNH MỚI -->
                         <div class="mb-3">
@@ -244,7 +283,7 @@
                                    multiple />
 
                             <div class="form-text">
-                                Có thể thêm nhiều ảnh (JPG, JPEG, PNG, WEBP; tối đa 10 ảnh, mỗi ảnh tối đa 5MB).
+                                Có thể thêm nhiều ảnh (JPG, JPEG, PNG, WEBP; tổng cộng tối đa 10 ảnh, mỗi ảnh tối đa 5MB).
                             </div>
 
                             <span asp-validation-for="HinhAnh"
@@ -267,20 +306,6 @@
                                      max-height:350px;
                                      object-fit:cover;
                                  " />
-
-                        </div>
-
-
-                        <!-- TRẠNG THÁI -->
-                        <div class="form-check mb-4">
-
-                            <input asp-for="TrangThai"
-                                   class="form-check-input" />
-
-                            <label asp-for="TrangThai"
-                                   class="form-check-label">
-                                Phòng đang hoạt động
-                            </label>
 
                         </div>
 

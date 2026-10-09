@@ -16,13 +16,7 @@
     var minAreaValue = areaFloor;
     var maxAreaValue = areaCeiling;
     var selectedArea = Context.Request.Query["khuVuc"].ToString();
-    var thaiNguyenAreas = new[]
-    {
-        "Đồng Quang", "Túc Duyên", "Phan Đình Phùng", "Trưng Vương", "Hoàng Văn Thụ",
-        "Quang Trung", "Tân Thịnh", "Tích Lương", "Trung Thành", "Gia Sàng", "Phú Xá",
-        "Cam Giá", "Hương Sơn", "Quan Triều", "Quang Vinh", "Đồng Bẩm", "Chùa Hang",
-        "Thịnh Đán", "Quyết Thắng", "Sơn Cẩm"
-    };
+    var thaiNguyenAreas = ThaiNguyenAreas.All;
 
     if (long.TryParse(Context.Request.Query["minPrice"], out var queryMinPrice))
         minPriceValue = Math.Clamp(queryMinPrice, priceFloor, priceCeiling);
@@ -36,6 +30,7 @@
     minPriceValue = Math.Min(minPriceValue, maxPriceValue);
     minAreaValue = Math.Min(minAreaValue, maxAreaValue);
 }
+<div class="rooms-page-container">
 <section class="search-page-header"><div><span class="eyebrow">KHÁM PHÁ SMARTRENTAL</span><h1>Tìm phòng trọ phù hợp</h1><p>Chọn nơi ở theo ngân sách, diện tích và tiện nghi bạn cần.</p></div>@if (canCreate) { <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i>Đăng phòng</a> }</section>
 <section class="horizontal-filter-card">
     <form asp-action="Index" method="get" class="horizontal-filter-form">
@@ -89,10 +84,12 @@
                 <div class="filter-dropdown-panel"><label class="form-label" for="status">Trạng thái phòng</label><select id="status" name="status" class="form-select"><option value="">Tất cả trạng thái</option><option value="true" selected="@(Context.Request.Query["status"] == "true")">Còn phòng</option><option value="false" selected="@(Context.Request.Query["status"] == "false")">Hết phòng</option></select></div>
             </details>
 
+            <div class="filter-select-wrap"><i class="bi bi-people"></i><select id="soNguoi" name="soNguoi" class="form-select" aria-label="Số người"><option value="">Số người</option>@for (var people = 1; people <= 4; people++) { <option value="@people" selected="@(Context.Request.Query["soNguoi"] == people.ToString())">@people người</option> }</select></div>
             <button class="btn btn-primary filter-apply" type="submit"><i class="bi bi-funnel me-1"></i>Áp dụng</button>
             <a asp-action="Index" class="filter-reset">Xóa bộ lọc</a>
         </div>
     </form>
 </section>
 
-<section class="search-results search-results--full"><div class="page-heading"><h2 class="h3 mb-1">Danh sách phòng</h2><p class="mb-0">Tìm thấy <strong>@(Model is SmartRental.ViewModels.PagedResult<SmartRental.Models.Phongtro> paged ? paged.TotalItems : Model.Count())</strong> phòng trọ</p></div>@if (Model.Any()) { <div class="row g-4">@foreach (var item in Model) { var data = new ViewDataDictionary(ViewData); data["ShowFavorite"] = true; data["Favorite"] = favorites.Contains(item.Id); data["Manage"] = User.IsInRole(AppRoles.Admin) || (uid != null && item.OwnerId == uid); <div class="col-md-6 col-xl-4"><partial name="_RoomCard" model="item" view-data="data" /></div> }</div> } else { var data = new ViewDataDictionary(ViewData); data["EmptyTitle"] = "Không tìm thấy phòng phù hợp"; data["EmptyMessage"] = "Hãy điều chỉnh bộ lọc và thử lại."; data["EmptyActionUrl"] = "/Phongtro"; data["EmptyActionText"] = "Xem tất cả phòng"; <partial name="_EmptyState" view-data="data" /> }<partial name="_Pagination" /></section>
+<section class="search-results search-results--full"><div class="page-heading"><h2 class="h3 mb-1">Danh sách phòng</h2><p class="mb-0">Tìm thấy <strong>@(Model is SmartRental.ViewModels.PagedResult<SmartRental.Models.Phongtro> paged ? paged.TotalItems : Model.Count())</strong> phòng trọ</p></div>@if (Model.Any()) { <div class="room-grid">@foreach (var item in Model) { var data = new ViewDataDictionary(ViewData); data["ShowFavorite"] = true; data["Favorite"] = favorites.Contains(item.Id); data["Manage"] = User.IsInRole(AppRoles.Admin) || (uid != null && item.OwnerId == uid); <div class="room-grid__item"><partial name="_RoomCard" model="item" view-data="data" /></div> }</div> } else { var data = new ViewDataDictionary(ViewData); data["EmptyTitle"] = "Không tìm thấy phòng phù hợp"; data["EmptyMessage"] = "Hãy điều chỉnh bộ lọc và thử lại."; data["EmptyActionUrl"] = "/Phongtro"; data["EmptyActionText"] = "Xem tất cả phòng"; <partial name="_EmptyState" view-data="data" /> }<partial name="_Pagination" /></section>
+</div>

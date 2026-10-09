@@ -29,6 +29,7 @@ namespace SmartRental.Controllers
        decimal? maxPrice,
        double? minArea,
        double? maxArea,
+       int? soNguoi,
        bool? status,
        List<int>? tienNghiIds,
        int page = 1)
@@ -50,10 +51,10 @@ namespace SmartRental.Controllers
                     p.DiaChi.Contains(search));
             }
 
-            // Khu vực hiện được lưu trực tiếp trong địa chỉ phòng.
-            if (!string.IsNullOrWhiteSpace(khuVuc))
+            var normalizedArea = ThaiNguyenAreas.Normalize(khuVuc);
+            if (normalizedArea is not null)
             {
-                phongtros = phongtros.Where(p => p.DiaChi.Contains(khuVuc));
+                phongtros = phongtros.Where(p => p.KhuVuc == normalizedArea);
             }
 
             // Giá
@@ -80,6 +81,11 @@ namespace SmartRental.Controllers
             {
                 phongtros = phongtros.Where(p =>
                     p.DienTich <= maxArea.Value);
+            }
+
+            if (soNguoi.HasValue && soNguoi.Value > 0)
+            {
+                phongtros = phongtros.Where(p => p.SoNguoiToiDa >= soNguoi.Value);
             }
 
             // Trạng thái
@@ -236,9 +242,14 @@ namespace SmartRental.Controllers
             }
 
             const int pageSize = 9;
-            var phongtrosQuery = _context.Phongtros
+            var ownerRooms = _context.Phongtros
                 .AsNoTracking()
-                .Where(p => p.OwnerId == currentUserId)
+                .Where(p => p.OwnerId == currentUserId);
+            ViewBag.TotalRoomListings = await ownerRooms.CountAsync();
+            ViewBag.VisibleRoomListings = await ownerRooms.CountAsync(p => p.IsVisible);
+            ViewBag.AvailableRoomUnits = await ownerRooms.SumAsync(p => (int?)p.SoLuongPhong) ?? 0;
+
+            var phongtrosQuery = ownerRooms
                 .Include(p => p.PhongTienNghis)
                     .ThenInclude(pt => pt.TienNghi)
                 .OrderByDescending(p => p.NgayDang);
@@ -278,6 +289,11 @@ namespace SmartRental.Controllers
                 .FirstOrDefaultAsync(p => p.Id == id);
 
             if (phongtro == null)
+            {
+                return NotFound();
+            }
+
+            if (!phongtro.IsVisible && !CanManageRoom(phongtro))
             {
                 return NotFound();
             }
@@ -345,10 +361,10 @@ namespace SmartRental.Controllers
             ViewBag.SimilarRooms = await _context.Phongtros
                 .AsNoTracking()
                 .Where(p => p.Id != phongtro.Id && p.IsVisible &&
-                    (p.DiaChi == phongtro.DiaChi ||
+                    (p.KhuVuc == phongtro.KhuVuc ||
                      (p.Gia >= minimumSimilarPrice && p.Gia <= maximumSimilarPrice)))
                 .Include(p => p.HinhAnhs)
-                .OrderByDescending(p => p.DiaChi == phongtro.DiaChi)
+                .OrderByDescending(p => p.KhuVuc == phongtro.KhuVuc)
                 .ThenBy(p => Math.Abs(p.Gia - phongtro.Gia))
                 .ThenByDescending(p => p.NgayDang)
                 .Take(3)
@@ -495,14 +511,20 @@ namespace SmartRental.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(
-            [Bind("Id,TieuDe,DiaChi,Gia,DienTich,MoTa,NgayDang,TrangThai,SoLuongPhong,IsVisible")]
+            [Bind("Id,TieuDe,DiaChi,KhuVuc,Gia,DienTich,MoTa,NgayDang,SoLuongPhong,SoNguoiToiDa")]
     Phongtro phongtro,
             List<IFormFile>? imageFiles,
             bool conPhong,
             List<int>? tienNghiIds)
         {
             imageFiles ??= new List<IFormFile>();
+            phongtro.KhuVuc = ThaiNguyenAreas.Normalize(phongtro.KhuVuc) ?? string.Empty;
+            if (string.IsNullOrEmpty(phongtro.KhuVuc))
+                ModelState.AddModelError(nameof(phongtro.KhuVuc), "Vui lòng chọn khu vực hợp lệ.");
+            if (!imageFiles.Any(image => image.Length > 0))
+                ModelState.AddModelError("imageFiles", "Phòng mới phải có ít nhất 1 ảnh.");
             if (imageFiles.Count > 10) ModelState.AddModelError("imageFiles", "Chỉ được tải lên tối đa 10 ảnh.");
+            ValidateImageFiles(imageFiles);
             if (conPhong && phongtro.SoLuongPhong < 1) ModelState.AddModelError(nameof(phongtro.SoLuongPhong), "Phòng còn trống phải có số lượng ít nhất 1.");
             if (!conPhong) phongtro.SoLuongPhong = 0;
             var imageFile = imageFiles.FirstOrDefault();
@@ -627,6 +649,7 @@ namespace SmartRental.Controllers
             }
 
             phongtro.OwnerId = currentUserId;
+            phongtro.IsVisible = true;
             phongtro.NgayDang =
                 DateTime.Now;
 
@@ -742,7 +765,7 @@ namespace SmartRental.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(
             int? id,
-            [Bind("Id,TieuDe,DiaChi,Gia,DienTich,MoTa,TrangThai,SoLuongPhong,IsVisible")]
+            [Bind("Id,TieuDe,DiaChi,KhuVuc,Gia,DienTich,MoTa,SoLuongPhong,SoNguoiToiDa")]
     Phongtro phongtro,
             List<IFormFile>? imageFiles,
             bool conPhong,
@@ -770,12 +793,17 @@ namespace SmartRental.Controllers
             phongtro.HinhAnh = phongtroCu.HinhAnh;
             phongtro.NgayDang = phongtroCu.NgayDang;
             phongtro.OwnerId = phongtroCu.OwnerId;
+            phongtro.KhuVuc = ThaiNguyenAreas.Normalize(phongtro.KhuVuc) ?? string.Empty;
+            if (string.IsNullOrEmpty(phongtro.KhuVuc))
+                ModelState.AddModelError(nameof(phongtro.KhuVuc), "Vui lòng chọn khu vực hợp lệ.");
             imageFiles ??= new List<IFormFile>();
-            if (imageFiles.Count > 10) ModelState.AddModelError("imageFiles", "Chỉ được tải lên tối đa 10 ảnh.");
+            var existingImageCount = await _context.PhongtroHinhAnhs.CountAsync(image => image.PhongtroId == phongtroCu.Id);
+            if (existingImageCount == 0 && !string.IsNullOrWhiteSpace(phongtroCu.HinhAnh)) existingImageCount = 1;
+            if (existingImageCount + imageFiles.Count > 10)
+                ModelState.AddModelError("imageFiles", $"Phòng chỉ được có tối đa 10 ảnh; hiện có {existingImageCount} ảnh.");
+            ValidateImageFiles(imageFiles);
             if (conPhong && phongtro.SoLuongPhong < 1) ModelState.AddModelError(nameof(phongtro.SoLuongPhong), "Phòng còn trống phải có số lượng ít nhất 1.");
             if (!conPhong) phongtro.SoLuongPhong = 0;
-            var imageFile = imageFiles.FirstOrDefault();
-
             if (!ModelState.IsValid)
             {
                 ViewBag.TienNghis = await _context.TienNghis
@@ -784,33 +812,10 @@ namespace SmartRental.Controllers
 
                 ViewBag.SelectedTienNghiIds =
                     tienNghiIds ?? new List<int>();
+                phongtro.HinhAnhs = await _context.PhongtroHinhAnhs
+                    .Where(image => image.PhongtroId == phongtroCu.Id).OrderBy(image => image.ThuTu).ToListAsync();
 
                 return View(phongtro);
-            }
-
-            string? newImagePath = null;
-            var oldImagePath = phongtroCu.HinhAnh;
-
-            // =========================
-            // XỬ LÝ ẢNH MỚI
-            // =========================
-            if (imageFile != null && imageFile.Length > 0)
-            {
-                newImagePath = await SaveImage(imageFile);
-
-                if (newImagePath == null)
-                {
-                    ViewBag.TienNghis = await _context.TienNghis
-                        .OrderBy(t => t.TenTienNghi)
-                        .ToListAsync();
-
-                    ViewBag.SelectedTienNghiIds =
-                        tienNghiIds ?? new List<int>();
-
-                    return View(phongtro);
-                }
-
-                phongtroCu.HinhAnh = newImagePath;
             }
 
             try
@@ -820,22 +825,38 @@ namespace SmartRental.Controllers
                 // =========================
                 phongtroCu.TieuDe = phongtro.TieuDe;
                 phongtroCu.DiaChi = phongtro.DiaChi;
+                phongtroCu.KhuVuc = phongtro.KhuVuc;
                 phongtroCu.Gia = phongtro.Gia;
                 phongtroCu.DienTich = phongtro.DienTich;
                 phongtroCu.MoTa = phongtro.MoTa;
-                phongtroCu.TrangThai = phongtro.TrangThai;
                 phongtroCu.SoLuongPhong = phongtro.SoLuongPhong;
-                phongtroCu.IsVisible = phongtro.IsVisible;
+                phongtroCu.SoNguoiToiDa = phongtro.SoNguoiToiDa;
 
                 await _context.SaveChangesAsync();
 
-                var imageOrder = await _context.PhongtroHinhAnhs.Where(x => x.PhongtroId == phongtroCu.Id).CountAsync();
-                foreach (var extraImage in imageFiles.Skip(1))
+                var imageOrder = await _context.PhongtroHinhAnhs
+                    .Where(x => x.PhongtroId == phongtroCu.Id).Select(x => (int?)x.ThuTu).MaxAsync() ?? -1;
+                var hasPrimaryImage = await _context.PhongtroHinhAnhs
+                    .AnyAsync(x => x.PhongtroId == phongtroCu.Id && x.IsAnhChinh);
+                foreach (var uploadedImage in imageFiles.Where(file => file.Length > 0))
                 {
-                    var path = await SaveImage(extraImage);
-                    if (path is not null) _context.PhongtroHinhAnhs.Add(new PhongtroHinhAnh { PhongtroId = phongtroCu.Id, DuongDan = path, ThuTu = imageOrder++ });
+                    var path = await SaveImage(uploadedImage);
+                    if (path is null) continue;
+                    var isPrimary = !hasPrimaryImage;
+                    _context.PhongtroHinhAnhs.Add(new PhongtroHinhAnh
+                    {
+                        PhongtroId = phongtroCu.Id,
+                        DuongDan = path,
+                        ThuTu = ++imageOrder,
+                        IsAnhChinh = isPrimary
+                    });
+                    if (isPrimary)
+                    {
+                        phongtroCu.HinhAnh = PreserveDemoMarker(phongtroCu.HinhAnh, path);
+                        hasPrimaryImage = true;
+                    }
                 }
-                if (imageFiles.Count > 1) await _context.SaveChangesAsync();
+                if (imageFiles.Count > 0) await _context.SaveChangesAsync();
 
 
                 // =========================
@@ -887,10 +908,6 @@ namespace SmartRental.Controllers
                     await _context.SaveChangesAsync();
                 }
 
-                if (newImagePath != null)
-                {
-                    DeleteImageFile(oldImagePath);
-                }
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -903,6 +920,58 @@ namespace SmartRental.Controllers
             }
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [Authorize(Roles = AppRoles.CanManageRooms)]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SetPrimaryImage(int imageId)
+        {
+            var image = await _context.PhongtroHinhAnhs.Include(item => item.Phongtro)
+                .FirstOrDefaultAsync(item => item.Id == imageId);
+            if (image is null) return NotFound();
+            if (!CanManageRoom(image.Phongtro)) return Forbid();
+
+            var roomImages = await _context.PhongtroHinhAnhs
+                .Where(item => item.PhongtroId == image.PhongtroId).ToListAsync();
+            foreach (var roomImage in roomImages) roomImage.IsAnhChinh = roomImage.Id == image.Id;
+            image.Phongtro.HinhAnh = PreserveDemoMarker(image.Phongtro.HinhAnh, image.DuongDan);
+            await _context.SaveChangesAsync();
+            TempData["Success"] = "Đã chọn ảnh chính cho phòng.";
+            return RedirectToAction(nameof(Edit), new { id = image.PhongtroId });
+        }
+
+        [Authorize(Roles = AppRoles.CanManageRooms)]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteImage(int imageId)
+        {
+            var image = await _context.PhongtroHinhAnhs.Include(item => item.Phongtro)
+                .FirstOrDefaultAsync(item => item.Id == imageId);
+            if (image is null) return NotFound();
+            if (!CanManageRoom(image.Phongtro)) return Forbid();
+
+            var roomImages = await _context.PhongtroHinhAnhs
+                .Where(item => item.PhongtroId == image.PhongtroId).OrderBy(item => item.ThuTu).ToListAsync();
+            if (roomImages.Count <= 1)
+            {
+                TempData["Error"] = "Phòng phải giữ lại ít nhất một ảnh.";
+                return RedirectToAction(nameof(Edit), new { id = image.PhongtroId });
+            }
+
+            var deletedPath = image.DuongDan;
+            var wasPrimary = image.IsAnhChinh;
+            _context.PhongtroHinhAnhs.Remove(image);
+            if (wasPrimary)
+            {
+                var replacement = roomImages.First(item => item.Id != image.Id);
+                replacement.IsAnhChinh = true;
+                image.Phongtro.HinhAnh = PreserveDemoMarker(image.Phongtro.HinhAnh, replacement.DuongDan);
+            }
+            await _context.SaveChangesAsync();
+            await DeleteImageFileIfUnreferencedAsync(deletedPath);
+            TempData["Success"] = "Đã xóa ảnh phòng.";
+            return RedirectToAction(nameof(Edit), new { id = image.PhongtroId });
         }
 
         // =========================
@@ -1048,6 +1117,22 @@ namespace SmartRental.Controllers
                 phongtro.OwnerId == currentUserId;
         }
 
+        private void ValidateImageFiles(IEnumerable<IFormFile> imageFiles)
+        {
+            var allowedExtensions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+            {
+                ".jpg", ".jpeg", ".png", ".webp"
+            };
+
+            foreach (var file in imageFiles.Where(file => file.Length > 0))
+            {
+                if (!allowedExtensions.Contains(Path.GetExtension(file.FileName)))
+                    ModelState.AddModelError("imageFiles", $"Ảnh '{file.FileName}' không đúng định dạng JPG, JPEG, PNG hoặc WEBP.");
+                if (file.Length > 5 * 1024 * 1024)
+                    ModelState.AddModelError("imageFiles", $"Ảnh '{file.FileName}' vượt quá dung lượng 5MB.");
+            }
+        }
+
 
         // =========================
         // LƯU ẢNH
@@ -1134,6 +1219,20 @@ namespace SmartRental.Controllers
             {
                 System.IO.File.Delete(fullPath);
             }
+        }
+
+        private async Task DeleteImageFileIfUnreferencedAsync(string imagePath)
+        {
+            var isReferenced = await _context.PhongtroHinhAnhs.AnyAsync(image => image.DuongDan == imagePath)
+                || await _context.Phongtros.AnyAsync(room => room.HinhAnh != null && room.HinhAnh.StartsWith(imagePath));
+            if (!isReferenced) DeleteImageFile(imagePath);
+        }
+
+        private static string PreserveDemoMarker(string? currentPath, string newPath)
+        {
+            if (string.IsNullOrWhiteSpace(currentPath)) return newPath;
+            var markerIndex = currentPath.IndexOf("#sr-demo-", StringComparison.Ordinal);
+            return markerIndex < 0 ? newPath : newPath + currentPath[markerIndex..];
         }
 
         private static string GetUploadsFolder()

@@ -14,9 +14,14 @@ namespace SmartRental.Models
         [Required]
         public string DiaChi { get; set; } = string.Empty;
 
+        [Required, StringLength(100)]
+        public string KhuVuc { get; set; } = string.Empty;
+
         [Precision(18, 2)]
+        [Range(typeof(decimal), "400000", "79228162514264337593543950335", ErrorMessage = "Giá phòng phải từ 400.000 VNĐ trở lên.")]
         public decimal Gia { get; set; }
 
+        [Range(10, double.MaxValue, ErrorMessage = "Diện tích phòng phải từ 10 m² trở lên.")]
         public double DienTich { get; set; }
 
         public string? MoTa { get; set; }
@@ -29,6 +34,9 @@ namespace SmartRental.Models
 
         [Range(0, int.MaxValue)]
         public int SoLuongPhong { get; set; } = 1;
+
+        [Range(1, int.MaxValue, ErrorMessage = "Số người ở tối đa phải từ 1 trở lên.")]
+        public int SoNguoiToiDa { get; set; } = 2;
 
         // Kept separate from availability; a landlord may hide an available listing.
         public bool IsVisible { get; set; } = true;
