@@ -31,9 +31,20 @@
     minAreaValue = Math.Min(minAreaValue, maxAreaValue);
 }
 <div class="rooms-page-container">
-<section class="search-page-header"><div><span class="eyebrow">KHÁM PHÁ SMARTRENTAL</span><h1>Tìm phòng trọ phù hợp</h1><p>Chọn nơi ở theo ngân sách, diện tích và tiện nghi bạn cần.</p></div>@if (canCreate) { <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i>Đăng phòng</a> }</section>
+<section class="search-page-header">
+    <div>
+        <span class="eyebrow">KHÁM PHÁ SMARTRENTAL</span>
+        <h1>Tìm phòng trọ phù hợp</h1>
+        <p>Chọn nơi ở theo ngân sách, diện tích và tiện nghi bạn cần.</p>
+    </div>
+    @if (canCreate)
+    {
+        <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i>Đăng phòng</a>
+    }
+</section>
 <section class="horizontal-filter-card">
     <form asp-action="Index" method="get" class="horizontal-filter-form">
+        <input type="hidden" name="sort" value="@ViewBag.Sort" />
         <div class="search-filter-row">
             <div class="search-filter-input input-group">
                 <span class="input-group-text"><i class="bi bi-search"></i></span>
@@ -57,39 +68,142 @@
             <details class="filter-dropdown">
                 <summary><i class="bi bi-cash-coin"></i><span>Khoảng giá</span><i class="bi bi-chevron-down"></i></summary>
                 <div class="filter-dropdown-panel filter-range-panel">
-                    <div class="range-values" aria-live="polite"><span data-range-min-label>400k</span><span data-range-max-label>10tr</span></div>
-                    <div class="dual-range" data-min-id="minPrice" data-max-id="maxPrice" data-min="400000" data-max="10000000"><div class="dual-range__track"><span class="dual-range__fill"></span></div><input class="dual-range__input dual-range__min" type="range" min="400000" max="10000000" step="100000" value="@minPriceValue" aria-label="Giá tối thiểu" /><input class="dual-range__input dual-range__max" type="range" min="400000" max="10000000" step="100000" value="@maxPriceValue" aria-label="Giá tối đa" /></div>
-                    <input id="minPrice" type="hidden" name="minPrice" value="@minPriceValue" /><input id="maxPrice" type="hidden" name="maxPrice" value="@maxPriceValue" />
-                    <div class="quick-chips" data-min="minPrice" data-max="maxPrice"><button type="button" data-min="400000" data-max="1000000" class="btn btn-sm btn-outline-secondary">400k - 1 triệu</button><button type="button" data-min="1000000" data-max="2000000" class="btn btn-sm btn-outline-secondary">1 - 2 triệu</button><button type="button" data-min="2000000" data-max="3000000" class="btn btn-sm btn-outline-secondary">2 - 3 triệu</button><button type="button" data-min="3000000" data-max="5000000" class="btn btn-sm btn-outline-secondary">3 - 5 triệu</button><button type="button" data-min="5000000" data-max="10000000" class="btn btn-sm btn-outline-secondary">Trên 5 triệu</button></div>
+                    <div class="range-values" aria-live="polite">
+                        <span data-range-min-label>400k</span>
+                        <span data-range-max-label>10tr</span>
+                    </div>
+                    <div class="dual-range" data-min-id="minPrice" data-max-id="maxPrice" data-min="400000" data-max="10000000">
+                        <div class="dual-range__track"><span class="dual-range__fill"></span></div>
+                        <input class="dual-range__input dual-range__min" type="range" min="400000" max="10000000" step="100000" value="@minPriceValue" aria-label="Giá tối thiểu" />
+                        <input class="dual-range__input dual-range__max" type="range" min="400000" max="10000000" step="100000" value="@maxPriceValue" aria-label="Giá tối đa" />
+                    </div>
+                    <input id="minPrice" type="hidden" name="minPrice" value="@minPriceValue" />
+                    <input id="maxPrice" type="hidden" name="maxPrice" value="@maxPriceValue" />
+                    <div class="quick-chips" data-min="minPrice" data-max="maxPrice">
+                        <button type="button" data-min="400000" data-max="1000000" class="btn btn-sm btn-outline-secondary">400k - 1 triệu</button>
+                        <button type="button" data-min="1000000" data-max="2000000" class="btn btn-sm btn-outline-secondary">1 - 2 triệu</button>
+                        <button type="button" data-min="2000000" data-max="3000000" class="btn btn-sm btn-outline-secondary">2 - 3 triệu</button>
+                        <button type="button" data-min="3000000" data-max="5000000" class="btn btn-sm btn-outline-secondary">3 - 5 triệu</button>
+                        <button type="button" data-min="5000000" data-max="10000000" class="btn btn-sm btn-outline-secondary">Trên 5 triệu</button>
+                    </div>
                 </div>
             </details>
 
             <details class="filter-dropdown">
                 <summary><i class="bi bi-aspect-ratio"></i><span>Diện tích</span><i class="bi bi-chevron-down"></i></summary>
                 <div class="filter-dropdown-panel filter-range-panel">
-                    <div class="range-values" aria-live="polite"><span data-range-min-label>10m²</span><span data-range-max-label>100m²</span></div>
-                    <div class="dual-range" data-min-id="minArea" data-max-id="maxArea" data-min="10" data-max="100"><div class="dual-range__track"><span class="dual-range__fill"></span></div><input class="dual-range__input dual-range__min" type="range" min="10" max="100" step="1" value="@minAreaValue" aria-label="Diện tích tối thiểu" /><input class="dual-range__input dual-range__max" type="range" min="10" max="100" step="1" value="@maxAreaValue" aria-label="Diện tích tối đa" /></div>
-                    <input id="minArea" type="hidden" name="minArea" value="@minAreaValue" /><input id="maxArea" type="hidden" name="maxArea" value="@maxAreaValue" />
-                    <div class="quick-chips" data-min="minArea" data-max="maxArea"><button type="button" data-min="10" data-max="20" class="btn btn-sm btn-outline-secondary">10 - 20m²</button><button type="button" data-min="20" data-max="30" class="btn btn-sm btn-outline-secondary">20 - 30m²</button><button type="button" data-min="30" data-max="40" class="btn btn-sm btn-outline-secondary">30 - 40m²</button><button type="button" data-min="40" data-max="50" class="btn btn-sm btn-outline-secondary">40 - 50m²</button><button type="button" data-min="50" data-max="100" class="btn btn-sm btn-outline-secondary">Trên 50m²</button></div>
+                    <div class="range-values" aria-live="polite">
+                        <span data-range-min-label>10m²</span>
+                        <span data-range-max-label>100m²</span>
+                    </div>
+                    <div class="dual-range" data-min-id="minArea" data-max-id="maxArea" data-min="10" data-max="100">
+                        <div class="dual-range__track"><span class="dual-range__fill"></span></div>
+                        <input class="dual-range__input dual-range__min" type="range" min="10" max="100" step="1" value="@minAreaValue" aria-label="Diện tích tối thiểu" />
+                        <input class="dual-range__input dual-range__max" type="range" min="10" max="100" step="1" value="@maxAreaValue" aria-label="Diện tích tối đa" />
+                    </div>
+                    <input id="minArea" type="hidden" name="minArea" value="@minAreaValue" />
+                    <input id="maxArea" type="hidden" name="maxArea" value="@maxAreaValue" />
+                    <div class="quick-chips" data-min="minArea" data-max="maxArea">
+                        <button type="button" data-min="10" data-max="20" class="btn btn-sm btn-outline-secondary">10 - 20m²</button>
+                        <button type="button" data-min="20" data-max="30" class="btn btn-sm btn-outline-secondary">20 - 30m²</button>
+                        <button type="button" data-min="30" data-max="40" class="btn btn-sm btn-outline-secondary">30 - 40m²</button>
+                        <button type="button" data-min="40" data-max="50" class="btn btn-sm btn-outline-secondary">40 - 50m²</button>
+                        <button type="button" data-min="50" data-max="100" class="btn btn-sm btn-outline-secondary">Trên 50m²</button>
+                    </div>
                 </div>
             </details>
 
             <details class="filter-dropdown filter-dropdown--wide">
                 <summary><i class="bi bi-stars"></i><span>Tiện nghi</span><i class="bi bi-chevron-down"></i></summary>
-                <div class="filter-dropdown-panel"><div class="amenity-filter-list amenities-grid">@if (ViewBag.TienNghis != null) { foreach (var x in ViewBag.TienNghis) { <label class="filter-check"><input class="form-check-input" type="checkbox" name="tienNghiIds" value="@x.Id" checked="@selected.Contains(x.Id)" /> <span>@x.TenTienNghi</span></label> } }</div></div>
+                <div class="filter-dropdown-panel">
+                    <div class="amenity-filter-list amenities-grid">
+                        @if (ViewBag.TienNghis != null)
+                        {
+                            foreach (var x in ViewBag.TienNghis)
+                            {
+                                <label class="filter-check"><input class="form-check-input" type="checkbox" name="tienNghiIds" value="@x.Id" checked="@selected.Contains(x.Id)" /> <span>@x.TenTienNghi</span></label>
+                            }
+                        }
+                    </div>
+                </div>
             </details>
 
             <details class="filter-dropdown">
                 <summary><i class="bi bi-sliders"></i><span>Lọc nâng cao</span><i class="bi bi-chevron-down"></i></summary>
-                <div class="filter-dropdown-panel"><label class="form-label" for="status">Trạng thái phòng</label><select id="status" name="status" class="form-select"><option value="">Tất cả trạng thái</option><option value="true" selected="@(Context.Request.Query["status"] == "true")">Còn phòng</option><option value="false" selected="@(Context.Request.Query["status"] == "false")">Hết phòng</option></select></div>
+                <div class="filter-dropdown-panel">
+                    <label class="form-label" for="status">Trạng thái phòng</label>
+                    <select id="status" name="status" class="form-select">
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="true" selected="@(Context.Request.Query["status"] == "true")">Còn phòng</option>
+                        <option value="false" selected="@(Context.Request.Query["status"] == "false")">Hết phòng</option>
+                    </select>
+                </div>
             </details>
 
-            <div class="filter-select-wrap"><i class="bi bi-people"></i><select id="soNguoi" name="soNguoi" class="form-select" aria-label="Số người"><option value="">Số người</option>@for (var people = 1; people <= 4; people++) { <option value="@people" selected="@(Context.Request.Query["soNguoi"] == people.ToString())">@people người</option> }</select></div>
+            <div class="filter-select-wrap">
+                <i class="bi bi-people"></i>
+                <select id="soNguoi" name="soNguoi" class="form-select" aria-label="Số người">
+                    <option value="">Số người</option>
+                    @for (var people = 1; people <= 4; people++)
+                    {
+                        <option value="@people" selected="@(Context.Request.Query["soNguoi"] == people.ToString())">@people người</option>
+                    }
+                </select>
+            </div>
             <button class="btn btn-primary filter-apply" type="submit"><i class="bi bi-funnel me-1"></i>Áp dụng</button>
             <a asp-action="Index" class="filter-reset">Xóa bộ lọc</a>
         </div>
     </form>
 </section>
 
-<section class="search-results search-results--full"><div class="page-heading"><h2 class="h3 mb-1">Danh sách phòng</h2><p class="mb-0">Tìm thấy <strong>@(Model is SmartRental.ViewModels.PagedResult<SmartRental.Models.Phongtro> paged ? paged.TotalItems : Model.Count())</strong> phòng trọ</p></div>@if (Model.Any()) { <div class="room-grid">@foreach (var item in Model) { var data = new ViewDataDictionary(ViewData); data["ShowFavorite"] = true; data["Favorite"] = favorites.Contains(item.Id); data["Manage"] = User.IsInRole(AppRoles.Admin) || (uid != null && item.OwnerId == uid); <div class="room-grid__item"><partial name="_RoomCard" model="item" view-data="data" /></div> }</div> } else { var data = new ViewDataDictionary(ViewData); data["EmptyTitle"] = "Không tìm thấy phòng phù hợp"; data["EmptyMessage"] = "Hãy điều chỉnh bộ lọc và thử lại."; data["EmptyActionUrl"] = "/Phongtro"; data["EmptyActionText"] = "Xem tất cả phòng"; <partial name="_EmptyState" view-data="data" /> }<partial name="_Pagination" /></section>
+<section class="search-results search-results--full">
+    <div class="page-heading search-results-heading">
+        <div>
+            <h2 class="h3 mb-1">Danh sách phòng</h2>
+            <p class="mb-0">Tìm thấy <strong>@(Model is SmartRental.ViewModels.PagedResult<SmartRental.Models.Phongtro> paged ? paged.TotalItems : Model.Count())</strong> phòng trọ</p>
+        </div>
+        <form asp-action="Index" method="get" class="sort-form">
+            @foreach (var query in Context.Request.Query.Where(query =>
+                !string.Equals(query.Key, "sort", StringComparison.OrdinalIgnoreCase) &&
+                !string.Equals(query.Key, "page", StringComparison.OrdinalIgnoreCase)))
+            {
+                foreach (var value in query.Value)
+                {
+                    <input type="hidden" name="@query.Key" value="@value" />
+                }
+            }
+            <label for="sort">Sắp xếp</label>
+            <select id="sort" name="sort" class="form-select" onchange="this.form.submit()">
+                <option value="default" selected="@(ViewBag.Sort == "default")">Mặc định</option>
+                <option value="price_asc" selected="@(ViewBag.Sort == "price_asc")">Giá tăng dần</option>
+                <option value="price_desc" selected="@(ViewBag.Sort == "price_desc")">Giá giảm dần</option>
+            </select>
+        </form>
+    </div>
+    @if (Model.Any())
+    {
+        <div class="room-grid">
+            @foreach (var item in Model)
+            {
+                var data = new ViewDataDictionary(ViewData);
+                data["ShowFavorite"] = true;
+                data["Favorite"] = favorites.Contains(item.Id);
+                data["Manage"] = User.IsInRole(AppRoles.Admin) || (uid != null && item.OwnerId == uid);
+                <div class="room-grid__item">
+                    <partial name="_RoomCard" model="item" view-data="data" />
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        var data = new ViewDataDictionary(ViewData);
+        data["EmptyTitle"] = "Không tìm thấy phòng phù hợp";
+        data["EmptyMessage"] = "Hãy điều chỉnh bộ lọc và thử lại.";
+        data["EmptyActionUrl"] = "/Phongtro";
+        data["EmptyActionText"] = "Xem tất cả phòng";
+        <partial name="_EmptyState" view-data="data" />
+    }
+    <partial name="_Pagination" />
+</section>
 </div>

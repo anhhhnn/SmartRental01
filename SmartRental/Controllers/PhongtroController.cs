@@ -32,6 +32,7 @@ namespace SmartRental.Controllers
        int? soNguoi,
        bool? status,
        List<int>? tienNghiIds,
+       string? sort,
        int page = 1)
         {
             var phongtros = _context.Phongtros
@@ -118,13 +119,19 @@ namespace SmartRental.Controllers
             ViewBag.SelectedTienNghiIds =
                 tienNghiIds ?? new List<int>();
 
-            phongtros = phongtros
-                .OrderByDescending(p => p.NgayDang);
-
             const int pageSize = 9;
             var totalItems = await phongtros.CountAsync();
             var totalPages = Math.Max(1, (int)Math.Ceiling(totalItems / (double)pageSize));
             page = Math.Clamp(page, 1, totalPages);
+
+            phongtros = sort switch
+            {
+                "price_asc" => phongtros.OrderBy(p => p.Gia),
+                "price_desc" => phongtros.OrderByDescending(p => p.Gia),
+                _ => phongtros.OrderByDescending(p => p.NgayDang)
+            };
+
+            ViewBag.Sort = sort is "price_asc" or "price_desc" ? sort : "default";
             var rooms = await phongtros
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)

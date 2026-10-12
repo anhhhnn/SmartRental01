@@ -13,22 +13,66 @@
                 <span class="auth-kicker"><i class="bi bi-shield-check"></i> Bắt đầu thật dễ dàng</span>
                 <h1>Một tài khoản, trọn vẹn trải nghiệm thuê phòng</h1>
                 <p>Lưu phòng yêu thích, trò chuyện an toàn và quản lý lịch xem phòng ở cùng một nơi.</p>
-                <ul class="auth-benefits"><li><i class="bi bi-check-circle-fill"></i> Thông tin phòng rõ ràng</li><li><i class="bi bi-check-circle-fill"></i> Kết nối trực tiếp chủ trọ</li><li><i class="bi bi-check-circle-fill"></i> Quản lý tiện lợi</li></ul>
+                <ul class="auth-benefits">
+                    <li><i class="bi bi-check-circle-fill"></i> Thông tin phòng rõ ràng</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Kết nối trực tiếp chủ trọ</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Quản lý tiện lợi</li>
+                </ul>
             </div>
         </aside>
         <section class="auth-form-panel" aria-labelledby="register-title">
-            <div class="auth-form-heading"><span class="eyebrow">THAM GIA SMARTRENTAL</span><h2 id="register-title">Tạo tài khoản</h2><p>Điền thông tin để bắt đầu trong vài phút.</p></div>
+            <div class="auth-form-heading">
+                <span class="eyebrow">THAM GIA SMARTRENTAL</span>
+                <h2 id="register-title">Tạo tài khoản</h2>
+                <p>Điền thông tin để bắt đầu trong vài phút.</p>
+            </div>
             <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
                 <div asp-validation-summary="ModelOnly" class="alert alert-danger py-2" role="alert"></div>
                 <div class="row g-3">
-                    <div class="col-md-6"><label asp-for="Input.HoTen" class="form-label"></label><input asp-for="Input.HoTen" class="form-control" autocomplete="name" placeholder="Nguyễn Văn A" /><span asp-validation-for="Input.HoTen" class="text-danger small"></span></div>
-                    <div class="col-md-6"><label asp-for="Input.PhoneNumber" class="form-label"></label><input asp-for="Input.PhoneNumber" class="form-control" autocomplete="tel" placeholder="09xx xxx xxx" /><span asp-validation-for="Input.PhoneNumber" class="text-danger small"></span></div>
-                    <div class="col-12"><label asp-for="Input.Email" class="form-label"></label><input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="ban@example.com" /><span asp-validation-for="Input.Email" class="text-danger small"></span></div>
-                    <div class="col-12"><label asp-for="Input.DiaChi" class="form-label"></label><input asp-for="Input.DiaChi" class="form-control" autocomplete="street-address" placeholder="Địa chỉ của bạn (không bắt buộc)" /><span asp-validation-for="Input.DiaChi" class="text-danger small"></span></div>
-                    <div class="col-md-6"><label asp-for="Input.Password" class="form-label"></label><input asp-for="Input.Password" class="form-control" autocomplete="new-password" placeholder="Tối thiểu 6 ký tự" /><span asp-validation-for="Input.Password" class="text-danger small"></span></div>
-                    <div class="col-md-6"><label asp-for="Input.ConfirmPassword" class="form-label"></label><input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" placeholder="Nhập lại mật khẩu" /><span asp-validation-for="Input.ConfirmPassword" class="text-danger small"></span></div>
+                    <div class="col-md-6">
+                        <label asp-for="Input.HoTen" class="form-label"></label>
+                        <input asp-for="Input.HoTen" class="form-control" autocomplete="name" placeholder="Nguyễn Văn A" />
+                        <span asp-validation-for="Input.HoTen" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Input.PhoneNumber" class="form-label"></label>
+                        <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="tel" placeholder="09xx xxx xxx" />
+                        <span asp-validation-for="Input.PhoneNumber" class="text-danger small"></span>
+                    </div>
+                    <div class="col-12">
+                        <label asp-for="Input.Email" class="form-label"></label>
+                        <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="ban@example.com" />
+                        <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                    </div>
+                    <div class="col-12">
+                        <label asp-for="Input.DiaChi" class="form-label"></label>
+                        <input asp-for="Input.DiaChi" class="form-control" autocomplete="street-address" placeholder="Địa chỉ của bạn (không bắt buộc)" />
+                        <span asp-validation-for="Input.DiaChi" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Input.Password" class="form-label"></label>
+                        <input asp-for="Input.Password" class="form-control" autocomplete="new-password" placeholder="Tối thiểu 6 ký tự" />
+                        <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Input.ConfirmPassword" class="form-label"></label>
+                        <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" placeholder="Nhập lại mật khẩu" />
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger small"></span>
+                    </div>
                 </div>
-                <fieldset class="mt-4"><legend class="form-label mb-2">Bạn muốn sử dụng SmartRental với vai trò</legend><div class="role-selector"><label><input type="radio" asp-for="Input.RegisterAsChuTro" value="false" checked /><span><i class="bi bi-search-heart"></i><strong>Người thuê</strong><small>Tìm và lưu phòng phù hợp</small></span></label><label><input type="radio" asp-for="Input.RegisterAsChuTro" value="true" /><span><i class="bi bi-house-add"></i><strong>Chủ trọ</strong><small>Đăng và quản lý phòng</small></span></label></div></fieldset>
+                <fieldset class="mt-4">
+                    <legend class="form-label mb-2">Bạn muốn sử dụng SmartRental với vai trò</legend>
+                    <div class="role-selector">
+                        <label>
+                            <input type="radio" asp-for="Input.RegisterAsChuTro" value="false" checked />
+                            <span><i class="bi bi-search-heart"></i><strong>Người thuê</strong><small>Tìm và lưu phòng phù hợp</small></span>
+                        </label>
+                        <label>
+                            <input type="radio" asp-for="Input.RegisterAsChuTro" value="true" />
+                            <span><i class="bi bi-house-add"></i><strong>Chủ trọ</strong><small>Đăng và quản lý phòng</small></span>
+                        </label>
+                    </div>
+                </fieldset>
                 <button type="submit" class="sr-btn sr-btn-accent w-100 mt-4"><i class="bi bi-person-plus"></i> Tạo tài khoản</button>
             </form>
             <p class="auth-switch">Đã có tài khoản? <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Đăng nhập</a></p>
@@ -36,4 +80,7 @@
     </div>
 </div>
 
-@section Scripts { <partial name="_ValidationScriptsPartial" /> }
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

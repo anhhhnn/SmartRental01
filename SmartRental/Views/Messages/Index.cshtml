@@ -32,8 +32,14 @@
 }
 
 <div class="container py-2 py-md-4">
-    @if (TempData["Error"] is string messageError) { <div class="booking-feedback booking-feedback--error" role="alert"><i class="bi bi-exclamation-circle"></i>@messageError</div> }
-    @if (TempData["Success"] is string messageSuccess) { <div class="booking-feedback booking-feedback--success" role="status"><i class="bi bi-check-circle"></i>@messageSuccess</div> }
+    @if (TempData["Error"] is string messageError)
+    {
+        <div class="booking-feedback booking-feedback--error" role="alert"><i class="bi bi-exclamation-circle"></i>@messageError</div>
+    }
+    @if (TempData["Success"] is string messageSuccess)
+    {
+        <div class="booking-feedback booking-feedback--success" role="status"><i class="bi bi-check-circle"></i>@messageSuccess</div>
+    }
     <div class="messages-shell">
         <aside class="messages-sidebar @(selected is not null ? "has-selection" : "")">
             <div class="messages-sidebar__head"><h1>Tin nhắn</h1><span class="messages-count">@Model.Conversations.Count</span></div>
@@ -122,7 +128,11 @@
                         }
                     }
                 </div>
-                <form asp-action="Send" method="post" class="chat-composer" data-single-submit><input type="hidden" name="conversationId" value="@selected.Id" /><input id="messageText" name="noiDung" maxlength="2000" required autocomplete="off" placeholder="Nhập tin nhắn..." /><button class="btn btn-primary" type="submit"><i class="bi bi-send-fill"></i><span>Gửi</span></button></form>
+                <form asp-action="Send" method="post" class="chat-composer" data-single-submit>
+                    <input type="hidden" name="conversationId" value="@selected.Id" />
+                    <input id="messageText" name="noiDung" maxlength="2000" required autocomplete="off" placeholder="Nhập tin nhắn..." />
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-send-fill"></i><span>Gửi</span></button>
+                </form>
             }
         </section>
     </div>

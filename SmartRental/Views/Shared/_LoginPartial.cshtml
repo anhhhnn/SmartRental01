@@ -11,9 +11,46 @@
         var displayName = currentUser?.HoTen ?? currentUser?.UserName ?? User.Identity?.Name ?? "Tài khoản";
         var unreadMessages = currentUser is null ? 0 : await Db.TinNhans.CountAsync(x => !x.DaDoc && x.NguoiGuiId != currentUser.Id && (x.CuocTroChuyen.NguoiThueId == currentUser.Id || x.CuocTroChuyen.ChuTroId == currentUser.Id));
         var unreadNotifications = currentUser is null ? 0 : await Db.ThongBaos.CountAsync(x => x.UserId == currentUser.Id && !x.DaDoc);
-        <li class="nav-item"><a class="nav-link nav-icon-link position-relative" asp-controller="Messages" asp-action="Index" aria-label="Tin nhắn"><i class="bi bi-chat-dots"></i>@if (unreadMessages > 0) { <span class="nav-unread-badge">@(unreadMessages > 99 ? "99+" : unreadMessages)</span> }</a></li>
-        <li class="nav-item"><a class="nav-link nav-icon-link position-relative" asp-controller="ThongBao" asp-action="Index" aria-label="Thông báo"><i class="bi bi-bell"></i>@if (unreadNotifications > 0) { <span class="nav-unread-badge">@(unreadNotifications > 99 ? "99+" : unreadNotifications)</span> }</a></li>
-        <li class="nav-item dropdown"><a class="nav-link nav-user dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown" aria-expanded="false"><span class="nav-avatar">@displayName[..1].ToUpper()</span><span class="nav-user-name">@displayName</span></a><ul class="dropdown-menu dropdown-menu-end user-menu"><li class="dropdown-header">Tài khoản của bạn</li><li><a class="dropdown-item" asp-controller="Profile" asp-action="Index"><i class="bi bi-person"></i> Hồ sơ</a></li>@if (User.IsInRole(SmartRental.Security.AppRoles.Admin) || User.IsInRole(SmartRental.Security.AppRoles.ChuTro)) { <li><a class="dropdown-item" asp-controller="Phongtro" asp-action="MyRooms"><i class="bi bi-house-door"></i> Phòng của tôi</a></li> }<li><a class="dropdown-item" asp-controller="LichXemPhong" asp-action="Index"><i class="bi bi-calendar-check"></i> Lịch xem phòng</a></li><li><a class="dropdown-item" asp-controller="Phongtro" asp-action="DaXemGanDay"><i class="bi bi-clock-history"></i> Đã xem gần đây</a></li><li><hr class="dropdown-divider" /></li><li><form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post"><button type="submit" class="dropdown-item text-danger"><i class="bi bi-box-arrow-right"></i> Đăng xuất</button></form></li></ul></li>
+        <li class="nav-item">
+            <a class="nav-link nav-icon-link position-relative" asp-controller="Messages" asp-action="Index" aria-label="Tin nhắn">
+                <i class="bi bi-chat-dots"></i>
+                @if (unreadMessages > 0)
+                {
+                    <span class="nav-unread-badge">@(unreadMessages > 99 ? "99+" : unreadMessages)</span>
+                }
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-icon-link position-relative" asp-controller="ThongBao" asp-action="Index" aria-label="Thông báo">
+                <i class="bi bi-bell"></i>
+                @if (unreadNotifications > 0)
+                {
+                    <span class="nav-unread-badge">@(unreadNotifications > 99 ? "99+" : unreadNotifications)</span>
+                }
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link nav-user dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="nav-avatar">@displayName[..1].ToUpper()</span>
+                <span class="nav-user-name">@displayName</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end user-menu">
+                <li class="dropdown-header">Tài khoản của bạn</li>
+                <li><a class="dropdown-item" asp-controller="Profile" asp-action="Index"><i class="bi bi-person"></i> Hồ sơ</a></li>
+                @if (User.IsInRole(SmartRental.Security.AppRoles.Admin) || User.IsInRole(SmartRental.Security.AppRoles.ChuTro))
+                {
+                    <li><a class="dropdown-item" asp-controller="Phongtro" asp-action="MyRooms"><i class="bi bi-house-door"></i> Phòng của tôi</a></li>
+                }
+                <li><a class="dropdown-item" asp-controller="LichXemPhong" asp-action="Index"><i class="bi bi-calendar-check"></i> Lịch xem phòng</a></li>
+                <li><a class="dropdown-item" asp-controller="Phongtro" asp-action="DaXemGanDay"><i class="bi bi-clock-history"></i> Đã xem gần đây</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post">
+                        <button type="submit" class="dropdown-item text-danger"><i class="bi bi-box-arrow-right"></i> Đăng xuất</button>
+                    </form>
+                </li>
+            </ul>
+        </li>
     }
     else
     {

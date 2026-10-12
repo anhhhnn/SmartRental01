@@ -24,10 +24,35 @@
             <li class="page-item @(!hasPreviousPage ? "disabled" : "")">
                 <a class="page-link" href="@BuildPageUrl(pageNumber - 1)" aria-label="Trang trước">Trước</a>
             </li>
-            @for (var number = Math.Max(1, pageNumber - 2); number <= Math.Min(totalPages, pageNumber + 2); number++)
+            @{
+                var firstVisiblePage = Math.Max(2, pageNumber - 2);
+                var lastVisiblePage = Math.Min(totalPages - 1, pageNumber + 2);
+            }
+            <li class="page-item @(pageNumber == 1 ? "active" : "")">
+                <a class="page-link" href="@BuildPageUrl(1)">1</a>
+            </li>
+            @if (firstVisiblePage > 2)
+            {
+                <li class="page-item page-item-ellipsis disabled" aria-hidden="true">
+                    <span class="page-link">&hellip;</span>
+                </li>
+            }
+            @for (var number = firstVisiblePage; number <= lastVisiblePage; number++)
             {
                 <li class="page-item @(number == pageNumber ? "active" : "")">
                     <a class="page-link" href="@BuildPageUrl(number)">@number</a>
+                </li>
+            }
+            @if (lastVisiblePage < totalPages - 1)
+            {
+                <li class="page-item page-item-ellipsis disabled" aria-hidden="true">
+                    <span class="page-link">&hellip;</span>
+                </li>
+            }
+            @if (totalPages > 1)
+            {
+                <li class="page-item @(pageNumber == totalPages ? "active" : "")">
+                    <a class="page-link" href="@BuildPageUrl(totalPages)">@totalPages</a>
                 </li>
             }
             <li class="page-item @(!hasNextPage ? "disabled" : "")">

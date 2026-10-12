@@ -21,11 +21,18 @@
 }
 
 <div class="admin-topbar">
-    <div><span class="eyebrow">SMARTRENTAL ADMIN</span><h1>Tổng quan hệ thống</h1><p>Số liệu được tổng hợp trực tiếp từ dữ liệu vận hành.</p></div>
+    <div>
+        <span class="eyebrow">SMARTRENTAL ADMIN</span>
+        <h1>Tổng quan hệ thống</h1>
+        <p>Số liệu được tổng hợp trực tiếp từ dữ liệu vận hành.</p>
+    </div>
     <form method="get" asp-action="Index" class="admin-year-filter">
         <label for="dashboardYear">Năm</label>
         <select id="dashboardYear" name="year" class="form-select" onchange="this.form.submit()">
-            @foreach (var year in Model.AvailableYears) { <option value="@year" selected="@(year == Model.SelectedYear)">@year</option> }
+            @foreach (var year in Model.AvailableYears)
+            {
+                <option value="@year" selected="@(year == Model.SelectedYear)">@year</option>
+            }
         </select>
     </form>
 </div>
@@ -33,32 +40,194 @@
 <div class="row g-3 admin-kpi-grid">
     @foreach (var card in cards)
     {
-        <div class="col-6 col-md-4 col-xl-3"><div class="card stat-card stat-card--@card.Item4 h-100"><div class="card-body"><span class="stat-card__icon"><i class="bi @card.Item3" aria-hidden="true"></i></span><div><div class="stat-card__value">@card.Item2</div><div class="stat-card__label">@card.Item1</div></div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-3">
+            <div class="card stat-card stat-card--@card.Item4 h-100">
+                <div class="card-body">
+                    <span class="stat-card__icon"><i class="bi @card.Item3" aria-hidden="true"></i></span>
+                    <div>
+                        <div class="stat-card__value">@card.Item2</div>
+                        <div class="stat-card__label">@card.Item1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
 </div>
 
 <div class="row g-3 mt-1 admin-dashboard-charts">
-    <div class="col-xl-8"><section class="card dashboard-panel h-100" aria-labelledby="monthlyRoomsTitle"><div class="card-header"><div><h2 id="monthlyRoomsTitle">Phòng đăng mới theo tháng</h2><p>Năm @Model.SelectedYear, dựa trên ngày đăng tin</p></div></div><div class="card-body"><div class="chart-wrap chart-wrap--wide"><canvas id="monthlyRoomsChart"></canvas></div></div></section></div>
-    <div class="col-xl-4"><section class="card dashboard-panel h-100" aria-labelledby="roomStatusTitle"><div class="card-header"><div><h2 id="roomStatusTitle">Tình trạng phòng</h2><p>Theo số lượng phòng còn lại</p></div></div><div class="card-body"><div class="chart-wrap"><canvas id="roomStatusChart"></canvas></div><div class="chart-summary"><span><i class="chart-dot chart-dot--emerald"></i>Còn phòng: <strong>@Model.AvailableRooms</strong> (@availablePercent%)</span><span><i class="chart-dot chart-dot--navy"></i>Hết phòng: <strong>@Model.UnavailableRooms</strong> (@unavailablePercent%)</span></div></div></section></div>
-    <div class="col-xl-6"><section class="card dashboard-panel h-100" aria-labelledby="roleTitle"><div class="card-header"><div><h2 id="roleTitle">Phân bố người dùng</h2><p>Vai trò chính, ưu tiên Admin → Chủ trọ → Người thuê để không đếm trùng</p></div></div><div class="card-body"><div class="chart-wrap"><canvas id="userRoleChart"></canvas></div></div></section></div>
-    <div class="col-xl-6"><section class="card dashboard-panel h-100" aria-labelledby="ratingTitle"><div class="card-header"><div><h2 id="ratingTitle">Phân bố đánh giá</h2><p>@Model.TotalReviews đánh giá thực tế</p></div></div><div class="card-body"><div class="chart-wrap"><canvas id="ratingChart"></canvas></div></div></section></div>
-    <div class="col-xl-6"><section class="card dashboard-panel h-100" aria-labelledby="bookingTitle"><div class="card-header"><div><h2 id="bookingTitle">Trạng thái lịch xem phòng</h2><p>Các trạng thái đang được hệ thống hỗ trợ</p></div></div><div class="card-body"><div class="chart-wrap"><canvas id="bookingChart"></canvas></div></div></section></div>
-    <div class="col-xl-6"><section class="card dashboard-panel h-100" aria-labelledby="recentRoomsTitle"><div class="card-header"><div><h2 id="recentRoomsTitle">Phòng mới đăng</h2><p>5 tin mới nhất theo ngày đăng</p></div></div><div class="table-responsive"><table class="table table-hover mb-0 compact-admin-table"><thead><tr><th>Phòng</th><th>Ngày đăng</th><th class="text-end">Giá</th><th>Tình trạng</th></tr></thead><tbody>
-    @if (Model.RecentRooms.Count == 0) { <tr><td colspan="4" class="text-center text-muted py-4">Chưa có phòng trọ.</td></tr> }
-    else { @foreach (var room in Model.RecentRooms) { <tr><td><a asp-controller="Phongtro" asp-action="Details" asp-route-id="@room.Id" class="room-table-title">@room.Title</a><small>@room.OwnerName</small></td><td class="text-nowrap">@room.PostedAt.ToString("dd/MM/yyyy")</td><td class="text-end text-nowrap">@room.Price.ToString("N0") đ</td><td><span class="availability-badge @(room.RoomQuantity > 0 ? "is-available" : "is-unavailable")">@(room.RoomQuantity > 0 ? "Còn phòng" : "Hết phòng")</span></td></tr> } }
-    </tbody></table></div></section></div>
+    <div class="col-xl-8">
+        <section class="card dashboard-panel h-100" aria-labelledby="monthlyRoomsTitle">
+            <div class="card-header">
+                <div>
+                    <h2 id="monthlyRoomsTitle">Phòng đăng mới theo tháng</h2>
+                    <p>Năm @Model.SelectedYear, dựa trên ngày đăng tin</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="chart-wrap chart-wrap--wide"><canvas id="monthlyRoomsChart"></canvas></div>
+            </div>
+        </section>
+    </div>
+    <div class="col-xl-4">
+        <section class="card dashboard-panel h-100" aria-labelledby="roomStatusTitle">
+            <div class="card-header">
+                <div>
+                    <h2 id="roomStatusTitle">Tình trạng phòng</h2>
+                    <p>Theo số lượng phòng còn lại</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="chart-wrap"><canvas id="roomStatusChart"></canvas></div>
+                <div class="chart-summary">
+                    <span><i class="chart-dot chart-dot--emerald"></i>Còn phòng: <strong>@Model.AvailableRooms</strong> (@availablePercent%)</span>
+                    <span><i class="chart-dot chart-dot--navy"></i>Hết phòng: <strong>@Model.UnavailableRooms</strong> (@unavailablePercent%)</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-xl-6">
+        <section class="card dashboard-panel h-100" aria-labelledby="roleTitle">
+            <div class="card-header">
+                <div>
+                    <h2 id="roleTitle">Phân bố người dùng</h2>
+                    <p>Vai trò chính, ưu tiên Admin → Chủ trọ → Người thuê để không đếm trùng</p>
+                </div>
+            </div>
+            <div class="card-body"><div class="chart-wrap"><canvas id="userRoleChart"></canvas></div></div>
+        </section>
+    </div>
+    <div class="col-xl-6">
+        <section class="card dashboard-panel h-100" aria-labelledby="ratingTitle">
+            <div class="card-header">
+                <div>
+                    <h2 id="ratingTitle">Phân bố đánh giá</h2>
+                    <p>@Model.TotalReviews đánh giá thực tế</p>
+                </div>
+            </div>
+            <div class="card-body"><div class="chart-wrap"><canvas id="ratingChart"></canvas></div></div>
+        </section>
+    </div>
+    <div class="col-xl-6">
+        <section class="card dashboard-panel h-100" aria-labelledby="bookingTitle">
+            <div class="card-header">
+                <div>
+                    <h2 id="bookingTitle">Trạng thái lịch xem phòng</h2>
+                    <p>Các trạng thái đang được hệ thống hỗ trợ</p>
+                </div>
+            </div>
+            <div class="card-body"><div class="chart-wrap"><canvas id="bookingChart"></canvas></div></div>
+        </section>
+    </div>
+    <div class="col-xl-6">
+        <section class="card dashboard-panel h-100" aria-labelledby="recentRoomsTitle">
+            <div class="card-header">
+                <div>
+                    <h2 id="recentRoomsTitle">Phòng mới đăng</h2>
+                    <p>5 tin mới nhất theo ngày đăng</p>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 compact-admin-table">
+                    <thead>
+                        <tr>
+                            <th>Phòng</th>
+                            <th>Ngày đăng</th>
+                            <th class="text-end">Giá</th>
+                            <th>Tình trạng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    @if (Model.RecentRooms.Count == 0)
+    {
+        <tr><td colspan="4" class="text-center text-muted py-4">Chưa có phòng trọ.</td></tr>
+    }
+    else
+    {
+        @foreach (var room in Model.RecentRooms)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Phongtro" asp-action="Details" asp-route-id="@room.Id" class="room-table-title">@room.Title</a>
+                    <small>@room.OwnerName</small>
+                </td>
+                <td class="text-nowrap">@room.PostedAt.ToString("dd/MM/yyyy")</td>
+                <td class="text-end text-nowrap">@room.Price.ToString("N0") đ</td>
+                <td><span class="availability-badge @(room.RoomQuantity > 0 ? "is-available" : "is-unavailable")">@(room.RoomQuantity > 0 ? "Còn phòng" : "Hết phòng")</span></td>
+            </tr>
+        }
+    }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
 </div>
 
-<section class="card dashboard-panel mt-3" aria-labelledby="topRoomsTitle"><div class="card-header"><div><h2 id="topRoomsTitle">Top phòng được quan tâm</h2><p>Xếp theo tổng lượt xem, sau đó theo lượt yêu thích</p></div></div><div class="table-responsive"><table class="table table-hover mb-0 admin-top-rooms-table"><thead><tr><th>Phòng</th><th>Chủ trọ</th><th class="text-end">Giá</th><th class="text-center">Lượt xem</th><th class="text-center">Yêu thích</th><th>Rating</th><th>Tình trạng</th></tr></thead><tbody>
-@if (Model.TopRooms.Count == 0) { <tr><td colspan="7" class="text-center text-muted py-5">Chưa có dữ liệu phòng trọ.</td></tr> }
+<section class="card dashboard-panel mt-3" aria-labelledby="topRoomsTitle">
+    <div class="card-header">
+        <div>
+            <h2 id="topRoomsTitle">Top phòng được quan tâm</h2>
+            <p>Xếp theo tổng lượt xem, sau đó theo lượt yêu thích</p>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover mb-0 admin-top-rooms-table">
+            <thead>
+                <tr>
+                    <th>Phòng</th>
+                    <th>Chủ trọ</th>
+                    <th class="text-end">Giá</th>
+                    <th class="text-center">Lượt xem</th>
+                    <th class="text-center">Yêu thích</th>
+                    <th>Rating</th>
+                    <th>Tình trạng</th>
+                </tr>
+            </thead>
+            <tbody>
+@if (Model.TopRooms.Count == 0)
+{
+    <tr><td colspan="7" class="text-center text-muted py-5">Chưa có dữ liệu phòng trọ.</td></tr>
+}
 else
 {
     @foreach (var room in Model.TopRooms)
     {
-        <tr><td><div class="top-room-cell">@if (!string.IsNullOrWhiteSpace(room.ImageUrl)) { <img src="@room.ImageUrl" alt="" loading="lazy" /> } else { <span class="top-room-placeholder"><i class="bi bi-house"></i></span> }<a asp-controller="Phongtro" asp-action="Details" asp-route-id="@room.Id">@room.Title</a></div></td><td>@room.OwnerName</td><td class="text-end text-nowrap">@room.Price.ToString("N0") đ</td><td class="text-center fw-bold">@room.ViewCount.ToString("N0")</td><td class="text-center">@room.FavoriteCount.ToString("N0")</td><td class="text-nowrap">@if (room.AverageRating.HasValue) { <span class="rating-value"><i class="bi bi-star-fill"></i> @room.AverageRating.Value.ToString("0.0")</span> } else { <span class="text-muted">Chưa có đánh giá</span> }</td><td><span class="availability-badge @(room.RoomQuantity > 0 ? "is-available" : "is-unavailable")">@(room.RoomQuantity > 0 ? "Còn phòng" : "Hết phòng")</span></td></tr>
+        <tr>
+            <td>
+                <div class="top-room-cell">
+                    @if (!string.IsNullOrWhiteSpace(room.ImageUrl))
+                    {
+                        <img src="@room.ImageUrl" alt="" loading="lazy" />
+                    }
+                    else
+                    {
+                        <span class="top-room-placeholder"><i class="bi bi-house"></i></span>
+                    }
+                    <a asp-controller="Phongtro" asp-action="Details" asp-route-id="@room.Id">@room.Title</a>
+                </div>
+            </td>
+            <td>@room.OwnerName</td>
+            <td class="text-end text-nowrap">@room.Price.ToString("N0") đ</td>
+            <td class="text-center fw-bold">@room.ViewCount.ToString("N0")</td>
+            <td class="text-center">@room.FavoriteCount.ToString("N0")</td>
+            <td class="text-nowrap">
+                @if (room.AverageRating.HasValue)
+                {
+                    <span class="rating-value"><i class="bi bi-star-fill"></i> @room.AverageRating.Value.ToString("0.0")</span>
+                }
+                else
+                {
+                    <span class="text-muted">Chưa có đánh giá</span>
+                }
+            </td>
+            <td><span class="availability-badge @(room.RoomQuantity > 0 ? "is-available" : "is-unavailable")">@(room.RoomQuantity > 0 ? "Còn phòng" : "Hết phòng")</span></td>
+        </tr>
     }
 }
-</tbody></table></div></section>
+            </tbody>
+        </table>
+    </div>
+</section>
 
 <div class="dashboard-data-note mt-3"><i class="bi bi-info-circle"></i><span>Chưa thể thống kê lượt xem theo từng tháng: dữ liệu hiện tại chỉ lưu tổng lượt xem và thời điểm xem cuối cho mỗi cặp người dùng–phòng.</span></div>
 
