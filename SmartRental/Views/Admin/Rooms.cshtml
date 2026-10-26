@@ -26,7 +26,7 @@
 						<td>
 							@if (!string.IsNullOrWhiteSpace(room.HinhAnh))
 							{
-								<img src="@room.HinhAnh" alt="" width="72" height="52" style="object-fit:cover" class="rounded" />
+								<img src="@room.HinhAnh" alt="Ảnh phòng @room.TieuDe" width="72" height="52" class="admin-room-thumb" />
 							}
 						</td>
 						<td>
@@ -51,7 +51,7 @@
 									<form asp-action="DeleteRoom" method="post" class="modal-content">
 										<div class="modal-header">
 											<h5 class="modal-title">Xóa phòng trọ</h5>
-											<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
 										</div>
 										<div class="modal-body">Xóa <strong>@room.TieuDe</strong>? Dữ liệu liên quan sẽ được xử lý an toàn; lịch sử chat vẫn được giữ.</div>
 										<div class="modal-footer">

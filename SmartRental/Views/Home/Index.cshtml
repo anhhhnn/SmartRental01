@@ -75,11 +75,11 @@
                     <span><small>Thông tin</small><strong>Rõ ràng, trực quan</strong></span>
                 </div>
             </div>
-            <form class="hero-search-box home-search hero-intro hero-intro--5" asp-controller="Phongtro" asp-action="Index" method="get">
+            <form class="hero-search-box home-search hero-intro hero-intro--5" asp-controller="Phongtro" asp-action="Index" method="get" role="search">
                 <div class="home-search__main">
                     <i class="bi bi-search"></i>
                     <label class="visually-hidden" for="hero-search">Tìm khu vực hoặc tên phòng</label>
-                    <input id="hero-search" name="search" placeholder="Bạn muốn tìm phòng ở đâu?" autocomplete="off" />
+                    <input id="hero-search" name="search" type="search" placeholder="Bạn muốn tìm phòng ở đâu?" autocomplete="off" />
                     <button class="sr-btn sr-btn-primary" type="submit">Tìm phòng</button>
                 </div>
                 <div class="quick-chips">

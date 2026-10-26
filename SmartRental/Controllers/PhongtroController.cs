@@ -5,7 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using SmartRental.Data;
 using SmartRental.Models;
 using SmartRental.Security;
+using SmartRental.Services;
 using SmartRental.ViewModels;
+using System.Globalization;
+using System.Text;
 
 namespace SmartRental.Controllers
 {
@@ -13,13 +16,19 @@ namespace SmartRental.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly AiSearchService _aiSearchService;
+        private readonly GeoDistanceService _geoDistanceService;
 
         public PhongtroController(
             ApplicationDbContext context,
-            UserManager<ApplicationUser> userManager)
+            UserManager<ApplicationUser> userManager,
+            AiSearchService aiSearchService,
+            GeoDistanceService geoDistanceService)
         {
             _context = context;
             _userManager = userManager;
+            _aiSearchService = aiSearchService;
+            _geoDistanceService = geoDistanceService;
         }
 
         public async Task<IActionResult> Index(
@@ -33,7 +42,9 @@ namespace SmartRental.Controllers
        bool? status,
        List<int>? tienNghiIds,
        string? sort,
-       int page = 1)
+       int page = 1,
+       string? aiQuery = null,
+       CancellationToken cancellationToken = default)
         {
             var phongtros = _context.Phongtros
                 .AsNoTracking()
@@ -42,7 +53,97 @@ namespace SmartRental.Controllers
                 .Include(p => p.DanhGias)
                 .Include(p => p.PhongTienNghis)
                     .ThenInclude(pt => pt.TienNghi)
+                .AsSplitQuery()
                 .AsQueryable();
+
+            AiSearchResult? aiResult = null;
+            DiaDiem? landmark = null;
+            var landmarkRequested = false;
+            if (!string.IsNullOrWhiteSpace(aiQuery))
+            {
+                aiQuery = aiQuery.Trim();
+                aiResult = await _aiSearchService.ParseAsync(aiQuery, cancellationToken);
+                if (aiResult is null)
+                {
+                    ViewBag.AiSearchError = "Dịch vụ tìm kiếm AI hiện chưa sẵn sàng. Bạn vẫn có thể sử dụng bộ lọc thông thường.";
+                }
+                else
+                {
+                    ViewBag.AiSearchResult = aiResult;
+                    landmarkRequested = !string.IsNullOrWhiteSpace(aiResult.NearPlace);
+
+                    if (aiResult.MaxPrice.HasValue)
+                    {
+                        phongtros = phongtros.Where(p => p.Gia <= aiResult.MaxPrice.Value);
+                    }
+
+                    if (aiResult.SoNguoi.HasValue && aiResult.SoNguoi.Value > 0)
+                    {
+                        phongtros = phongtros.Where(p => p.SoNguoiToiDa >= aiResult.SoNguoi.Value);
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(aiResult.KhuVuc))
+                    {
+                        var aiArea = aiResult.KhuVuc.Trim();
+                        var normalizedAiArea = ThaiNguyenAreas.Normalize(aiArea);
+                        phongtros = normalizedAiArea is not null
+                            ? phongtros.Where(p => p.KhuVuc == normalizedAiArea)
+                            : phongtros.Where(p => p.KhuVuc.Contains(aiArea) || p.DiaChi.Contains(aiArea));
+                    }
+
+                    if (landmarkRequested)
+                    {
+                        var normalizedNearPlace = NormalizeSearchText(aiResult.NearPlace!);
+                        var activeLandmarks = await _context.DiaDiems
+                            .AsNoTracking()
+                            .Where(d => d.IsActive)
+                            .ToListAsync(cancellationToken);
+
+                        landmark = activeLandmarks.FirstOrDefault(d =>
+                            NormalizeSearchText(d.Ten) == normalizedNearPlace
+                            || (d.Alias ?? string.Empty)
+                                .Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                                .Any(alias => NormalizeSearchText(alias) == normalizedNearPlace));
+
+                        if (landmark is null)
+                        {
+                            ViewBag.LandmarkNotFound = true;
+                        }
+                    }
+
+                    var requestedAmenities = aiResult.TienNghi
+                        .Where(name => !string.IsNullOrWhiteSpace(name))
+                        .Select(NormalizeSearchText)
+                        .Distinct()
+                        .ToList();
+
+                    if (requestedAmenities.Count > 0)
+                    {
+                        var amenities = await _context.TienNghis
+                            .AsNoTracking()
+                            .Select(item => new { item.Id, item.TenTienNghi })
+                            .ToListAsync(cancellationToken);
+                        var amenityIds = requestedAmenities
+                            .Select(name => amenities.FirstOrDefault(item =>
+                                NormalizeSearchText(item.TenTienNghi) == name)?.Id)
+                            .ToList();
+
+                        if (amenityIds.Any(id => !id.HasValue))
+                        {
+                            phongtros = phongtros.Where(_ => false);
+                        }
+                        else
+                        {
+                            foreach (var amenityId in amenityIds.Select(id => id!.Value))
+                            {
+                                var id = amenityId;
+                                phongtros = phongtros.Where(p =>
+                                    p.PhongTienNghis.Any(pt => pt.TienNghiId == id));
+                            }
+                        }
+                    }
+                }
+            }
 
             // Tìm theo tiêu đề / địa chỉ
             if (!string.IsNullOrWhiteSpace(search))
@@ -114,32 +215,102 @@ namespace SmartRental.Controllers
             ViewBag.TienNghis =
                 await _context.TienNghis
                     .OrderBy(t => t.TenTienNghi)
-                    .ToListAsync();
+                    .ToListAsync(cancellationToken);
 
             ViewBag.SelectedTienNghiIds =
                 tienNghiIds ?? new List<int>();
 
             const int pageSize = 9;
-            var totalItems = await phongtros.CountAsync();
-            var totalPages = Math.Max(1, (int)Math.Ceiling(totalItems / (double)pageSize));
-            page = Math.Clamp(page, 1, totalPages);
+            int totalItems;
+            List<PhongtroSearchItemViewModel> rooms;
 
-            phongtros = sort switch
+            if (landmarkRequested)
             {
-                "price_asc" => phongtros.OrderBy(p => p.Gia),
-                "price_desc" => phongtros.OrderByDescending(p => p.Gia),
-                _ => phongtros.OrderByDescending(p => p.NgayDang)
-            };
+                if (landmark is null)
+                {
+                    totalItems = 0;
+                    rooms = new List<PhongtroSearchItemViewModel>();
+                }
+                else
+                {
+                    // SQL performs all ordinary filters first. For the current prototype-sized
+                    // dataset, Haversine is then calculated in memory because SQL Server spatial
+                    // types are not configured in this project.
+                    var candidates = await phongtros
+                        .Where(p => p.Latitude.HasValue && p.Longitude.HasValue)
+                        .ToListAsync(cancellationToken);
 
+                    IEnumerable<PhongtroSearchItemViewModel> searchItems = candidates.Select(room =>
+                        new PhongtroSearchItemViewModel
+                        {
+                            Phongtro = room,
+                            NearPlaceName = landmark.Ten,
+                            DistanceKm = _geoDistanceService.CalculateDistanceKm(
+                                room.Latitude!.Value,
+                                room.Longitude!.Value,
+                                landmark.Latitude,
+                                landmark.Longitude)
+                        });
+
+                    if (aiResult?.MaxDistanceKm is >= 0)
+                    {
+                        searchItems = searchItems.Where(item =>
+                            item.DistanceKm <= aiResult.MaxDistanceKm.Value);
+                    }
+
+                    searchItems = sort switch
+                    {
+                        "price_asc" => searchItems
+                            .OrderByDescending(item => item.Phongtro.SoLuongPhong > 0)
+                            .ThenBy(item => item.Phongtro.Gia)
+                            .ThenBy(item => item.DistanceKm),
+                        "price_desc" => searchItems
+                            .OrderByDescending(item => item.Phongtro.SoLuongPhong > 0)
+                            .ThenByDescending(item => item.Phongtro.Gia)
+                            .ThenBy(item => item.DistanceKm),
+                        _ => searchItems
+                            .OrderByDescending(item => item.Phongtro.SoLuongPhong > 0)
+                            .ThenBy(item => item.DistanceKm)
+                            .ThenByDescending(item => item.Phongtro.NgayDang)
+                    };
+
+                    var rankedRooms = searchItems.ToList();
+                    totalItems = rankedRooms.Count;
+                    var totalLandmarkPages = Math.Max(1, (int)Math.Ceiling(totalItems / (double)pageSize));
+                    page = Math.Clamp(page, 1, totalLandmarkPages);
+                    rooms = rankedRooms
+                        .Skip((page - 1) * pageSize)
+                        .Take(pageSize)
+                        .ToList();
+                }
+            }
+            else
+            {
+                totalItems = await phongtros.CountAsync(cancellationToken);
+                var totalSqlPages = Math.Max(1, (int)Math.Ceiling(totalItems / (double)pageSize));
+                page = Math.Clamp(page, 1, totalSqlPages);
+
+                phongtros = sort switch
+                {
+                    "price_asc" => phongtros.OrderByDescending(p => p.SoLuongPhong > 0).ThenBy(p => p.Gia),
+                    "price_desc" => phongtros.OrderByDescending(p => p.SoLuongPhong > 0).ThenByDescending(p => p.Gia),
+                    _ => phongtros.OrderByDescending(p => p.SoLuongPhong > 0).ThenByDescending(p => p.NgayDang)
+                };
+
+                rooms = (await phongtros
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync(cancellationToken))
+                    .Select(room => new PhongtroSearchItemViewModel { Phongtro = room })
+                    .ToList();
+            }
+
+            ViewBag.AiNoExactMatch = aiResult is not null && totalItems == 0;
             ViewBag.Sort = sort is "price_asc" or "price_desc" ? sort : "default";
-            var rooms = await phongtros
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
             await SetFavoriteRoomIdsAsync();
 
             SetPaginationViewData(page, pageSize, totalItems);
-            return View(new PagedResult<Phongtro>
+            return View(new PagedResult<PhongtroSearchItemViewModel>
             {
                 Items = rooms,
                 PageNumber = page,
@@ -1051,6 +1222,24 @@ namespace SmartRental.Controllers
         private bool PhongtroExists(int id)
         {
             return _context.Phongtros.Any(p => p.Id == id);
+        }
+
+        private static string NormalizeSearchText(string value)
+        {
+            var normalized = value.Trim().Normalize(NormalizationForm.FormD);
+            var builder = new StringBuilder(normalized.Length);
+            foreach (var character in normalized)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(character) != UnicodeCategory.NonSpacingMark)
+                {
+                    builder.Append(character is 'đ' or 'Đ'
+                        ? 'd'
+                        : char.ToLowerInvariant(character));
+                }
+            }
+
+            return string.Join(' ', builder.ToString().Normalize(NormalizationForm.FormC)
+                .Split(' ', StringSplitOptions.RemoveEmptyEntries));
         }
 
         private async Task SetFavoriteRoomIdsAsync()

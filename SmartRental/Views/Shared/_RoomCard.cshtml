@@ -3,6 +3,8 @@
     var fav = (ViewData["Favorite"] as bool?) ?? false;
     var manage = (ViewData["Manage"] as bool?) ?? false;
     var showFav = (ViewData["ShowFavorite"] as bool?) ?? false;
+    var distanceKm = ViewData["DistanceKm"] as double?;
+    var nearPlaceName = ViewData["NearPlaceName"] as string;
     var ret = Context.Request.Path + Context.Request.QueryString;
     var amenities = Model.PhongTienNghis?.ToList() ?? new();
     var ratings = Model.DanhGias ?? new List<SmartRental.Models.DanhGia>();
@@ -43,8 +45,15 @@
             }
         </div>
         <h3 class="h5 room-card__title"><a asp-controller="Phongtro" asp-action="Details" asp-route-id="@Model.Id">@Model.TieuDe</a></h3>
-        <p class="room-meta"><i class="bi bi-person"></i><span>@Model.SoNguoiToiDa người</span></p>
-        <p class="room-meta"><i class="bi bi-geo-alt"></i><span>@Model.DiaChi</span></p>
+        <p class="room-meta room-meta--compact"><i class="bi bi-person"></i><span>@Model.SoNguoiToiDa người</span></p>
+        <p class="room-meta room-meta--address" title="@Model.DiaChi"><i class="bi bi-geo-alt"></i><span>@Model.DiaChi</span></p>
+        @if (distanceKm.HasValue && !string.IsNullOrWhiteSpace(nearPlaceName))
+        {
+            <p class="room-meta room-meta--distance">
+                <i class="bi bi-signpost-2"></i>
+                <span>Cách @nearPlaceName: @distanceKm.Value.ToString("0.0") km</span>
+            </p>
+        }
         @if (amenities.Any())
         {
             <div class="room-amenities">

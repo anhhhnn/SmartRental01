@@ -150,6 +150,14 @@ public static class DemoDataSeed
             room.TieuDe = s.Title; room.DiaChi = s.Address; room.KhuVuc = s.Location.Name; room.Gia = s.Price; room.DienTich = s.Size;
             room.MoTa = s.Description; room.HinhAnh = Images[i % Images.Length] + RoomMark + $"{i + 1:000}"; room.NgayDang = DateTime.Today.AddDays(-(i * 7 % 120));
             room.SoLuongPhong = s.Quantity; room.TrangThai = s.Quantity > 0; room.SoNguoiToiDa = s.Capacity; room.IsVisible = s.Visible; room.OwnerId = owners[i % owners.Count].Id;
+            // Demo addresses are synthetic, so coordinates stay unset until a reliable
+            // geocoding source is available. If a future spec supplies verified coordinates,
+            // update both values together and never erase coordinates entered manually.
+            if (s.Latitude.HasValue && s.Longitude.HasValue)
+            {
+                room.Latitude = s.Latitude;
+                room.Longitude = s.Longitude;
+            }
             rooms.Add(room);
         }
         db.Phongtros.AddRange(newRooms);
@@ -511,6 +519,19 @@ public static class DemoDataSeed
     private static void Shuffle<T>(IList<T> values, Random random) { for (var i = values.Count - 1; i > 0; i--) { var j = random.Next(i + 1); (values[i], values[j]) = (values[j], values[i]); } }
     private static void Ensure(IdentityResult result, string operation) { if (!result.Succeeded) throw new InvalidOperationException($"Không thể {operation}: {string.Join("; ", result.Errors.Select(x => x.Description))}"); }
     private sealed record AreaProfile(string Name, Tier Level, double Factor, string Street);
-    private sealed record Spec(double Size, int Capacity, decimal Price, int Quantity, bool Visible, AreaProfile Location, List<string> Amenities, string Title, string Address, string Description, double Popularity);
+    private sealed record Spec(
+        double Size,
+        int Capacity,
+        decimal Price,
+        int Quantity,
+        bool Visible,
+        AreaProfile Location,
+        List<string> Amenities,
+        string Title,
+        string Address,
+        string Description,
+        double Popularity,
+        double? Latitude = null,
+        double? Longitude = null);
     private enum Tier { Near, Medium, Far }
 }

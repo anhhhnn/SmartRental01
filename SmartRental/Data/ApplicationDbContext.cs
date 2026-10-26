@@ -30,11 +30,17 @@ namespace SmartRental.Data
         public DbSet<ThongBao> ThongBaos { get; set; }
         public DbSet<LichXemPhong> LichXemPhongs { get; set; }
 
+        public DbSet<DiaDiem> DiaDiems { get; set; }
+
 
         protected override void OnModelCreating(
             ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<DiaDiem>()
+                .HasIndex(d => d.Ten)
+                .IsUnique();
 
             modelBuilder.Entity<PhongTienNghi>()
                 .HasKey(pt => new

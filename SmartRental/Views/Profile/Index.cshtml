@@ -2,18 +2,18 @@
 @{
 	ViewData["Title"] = "Hồ sơ cá nhân";
 }
-<div class="row justify-content-center mt-2">
-	<div class="col-md-8 col-lg-6">
+<div class="container page-container profile-page">
+	<div class="profile-shell">
 		@if (TempData["SuccessMessage"] is string message)
 		{
 			<div class="alert alert-success" role="alert">@message</div>
 		}
-		<div class="card">
+		<div class="card profile-card">
 			<div class="card-body p-4">
 				<div class="d-flex align-items-center gap-3 mb-4">
 					<div class="profile-avatar">@((Model.HoTen ?? Model.Email ?? "SR").Substring(0, 1).ToUpper())</div>
 					<div>
-						<h2 class="h4 fw-bold mb-1">Hồ sơ cá nhân</h2>
+						<h1 class="h4 fw-bold mb-1">Hồ sơ cá nhân</h1>
 						<p class="text-muted mb-0">Quản lý thông tin tài khoản của bạn</p>
 					</div>
 				</div>
@@ -30,8 +30,8 @@
 					<dd class="col-sm-8">@(Model.Roles.Any() ? string.Join(", ", Model.Roles) : "Chưa có vai trò")</dd>
 				</dl>
 				<div class="d-flex flex-wrap gap-2">
-					<a asp-action="Edit" class="btn btn-primary">Chỉnh sửa</a>
-					<a asp-action="ChangePassword" class="btn btn-outline-secondary">Đổi mật khẩu</a>
+					<a asp-action="Edit" class="sr-btn sr-btn-primary"><i class="bi bi-pencil"></i> Chỉnh sửa</a>
+					<a asp-action="ChangePassword" class="sr-btn sr-btn-secondary"><i class="bi bi-shield-lock"></i> Đổi mật khẩu</a>
 				</div>
 			</div>
 		</div>

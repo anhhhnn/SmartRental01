@@ -80,7 +80,7 @@
                 var otherUser = selected.NguoiThueId == Model.CurrentUserId ? selected.ChuTro : selected.NguoiThue;
                 var name = NameOf(otherUser);
                 <header class="chat-header">
-                    <a class="chat-back" asp-action="Index"><i class="bi bi-arrow-left"></i></a><span class="message-avatar">@Initials(name)</span>
+                    <a class="chat-back" asp-action="Index" aria-label="Quay lại danh sách cuộc trò chuyện"><i class="bi bi-arrow-left"></i></a><span class="message-avatar">@Initials(name)</span>
                     <div><h2>@name</h2><p>@(selected.Phongtro?.TieuDe ?? "Trao đổi chung")</p></div>
                     @if (selected.PhongtroId.HasValue) { <a class="btn btn-outline-primary btn-sm ms-auto" asp-controller="Phongtro" asp-action="Details" asp-route-id="@selected.PhongtroId">Xem phòng <i class="bi bi-box-arrow-up-right ms-1"></i></a> }
                 </header>
@@ -112,7 +112,8 @@
                                         {
                                             <form asp-controller="LichXemPhong" asp-action="Respond" method="post" class="booking-actions" data-single-submit>
                                                 <input type="hidden" name="id" value="@booking.Id" />
-                                                <input type="text" name="lyDo" maxlength="500" class="form-control form-control-sm" placeholder="Lý do nếu báo bận (không bắt buộc)" />
+                                                <label class="visually-hidden" for="bookingReason-@booking.Id">Lý do nếu báo bận</label>
+                                                <input id="bookingReason-@booking.Id" type="text" name="lyDo" maxlength="500" class="form-control form-control-sm" placeholder="Lý do nếu báo bận (không bắt buộc)" />
                                                 <div><button class="btn btn-primary btn-sm" name="action" value="accept">Đồng ý</button><button class="btn btn-outline-secondary btn-sm" name="action" value="busy">Báo bận</button></div>
                                             </form>
                                         }
@@ -130,6 +131,7 @@
                 </div>
                 <form asp-action="Send" method="post" class="chat-composer" data-single-submit>
                     <input type="hidden" name="conversationId" value="@selected.Id" />
+                    <label class="visually-hidden" for="messageText">Nội dung tin nhắn</label>
                     <input id="messageText" name="noiDung" maxlength="2000" required autocomplete="off" placeholder="Nhập tin nhắn..." />
                     <button class="btn btn-primary" type="submit"><i class="bi bi-send-fill"></i><span>Gửi</span></button>
                 </form>

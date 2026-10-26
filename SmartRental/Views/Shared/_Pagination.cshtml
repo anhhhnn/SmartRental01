@@ -22,14 +22,21 @@
     <nav aria-label="Phân trang" class="mt-4">
         <ul class="pagination justify-content-center">
             <li class="page-item @(!hasPreviousPage ? "disabled" : "")">
-                <a class="page-link" href="@BuildPageUrl(pageNumber - 1)" aria-label="Trang trước">Trước</a>
+                @if (hasPreviousPage)
+                {
+                    <a class="page-link" href="@BuildPageUrl(pageNumber - 1)" rel="prev" aria-label="Trang trước">Trước</a>
+                }
+                else
+                {
+                    <span class="page-link" aria-disabled="true">Trước</span>
+                }
             </li>
             @{
                 var firstVisiblePage = Math.Max(2, pageNumber - 2);
                 var lastVisiblePage = Math.Min(totalPages - 1, pageNumber + 2);
             }
             <li class="page-item @(pageNumber == 1 ? "active" : "")">
-                <a class="page-link" href="@BuildPageUrl(1)">1</a>
+                <a class="page-link" href="@BuildPageUrl(1)" aria-current="@(pageNumber == 1 ? "page" : null)">1</a>
             </li>
             @if (firstVisiblePage > 2)
             {
@@ -40,7 +47,7 @@
             @for (var number = firstVisiblePage; number <= lastVisiblePage; number++)
             {
                 <li class="page-item @(number == pageNumber ? "active" : "")">
-                    <a class="page-link" href="@BuildPageUrl(number)">@number</a>
+                    <a class="page-link" href="@BuildPageUrl(number)" aria-current="@(pageNumber == number ? "page" : null)">@number</a>
                 </li>
             }
             @if (lastVisiblePage < totalPages - 1)
@@ -52,11 +59,18 @@
             @if (totalPages > 1)
             {
                 <li class="page-item @(pageNumber == totalPages ? "active" : "")">
-                    <a class="page-link" href="@BuildPageUrl(totalPages)">@totalPages</a>
+                    <a class="page-link" href="@BuildPageUrl(totalPages)" aria-current="@(pageNumber == totalPages ? "page" : null)">@totalPages</a>
                 </li>
             }
             <li class="page-item @(!hasNextPage ? "disabled" : "")">
-                <a class="page-link" href="@BuildPageUrl(pageNumber + 1)" aria-label="Trang sau">Sau</a>
+                @if (hasNextPage)
+                {
+                    <a class="page-link" href="@BuildPageUrl(pageNumber + 1)" rel="next" aria-label="Trang sau">Sau</a>
+                }
+                else
+                {
+                    <span class="page-link" aria-disabled="true">Sau</span>
+                }
             </li>
         </ul>
     </nav>

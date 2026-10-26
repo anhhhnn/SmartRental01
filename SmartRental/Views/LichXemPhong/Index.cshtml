@@ -20,7 +20,7 @@
 	</div>
 	@if (Model.Any())
 	{
-		<div class="card">
+		<div class="card booking-list-card">
 			<div class="table-responsive">
 				<table class="table mb-0">
 					<thead>
@@ -36,24 +36,24 @@
 						@foreach (var x in Model)
 						{
 							<tr>
-								<td><a class="fw-bold" asp-controller="Phongtro" asp-action="Details" asp-route-id="@x.PhongtroId">@x.Phongtro.TieuDe</a></td>
-								<td>@x.HoTen</td>
-								<td><i class="bi bi-calendar3 me-1 text-muted"></i>@x.ThoiGianXem.ToString("HH:mm · dd/MM/yyyy")</td>
-								<td><span class="booking-status booking-status--@x.TrangThai">@StatusText(x.TrangThai)</span></td>
-								<td class="text-end">
+								<td data-label="Phòng"><a class="fw-bold" asp-controller="Phongtro" asp-action="Details" asp-route-id="@x.PhongtroId">@x.Phongtro.TieuDe</a></td>
+								<td data-label="Người đặt">@x.HoTen</td>
+								<td data-label="Thời gian"><i class="bi bi-calendar3 me-1 text-muted"></i>@x.ThoiGianXem.ToString("HH:mm · dd/MM/yyyy")</td>
+								<td data-label="Trạng thái"><span class="booking-status booking-status--@x.TrangThai">@StatusText(x.TrangThai)</span></td>
+								<td data-label="Thao tác" class="text-end">
 									@if (owner && x.TrangThai == TrangThaiLich.ChoXacNhan)
 									{
 										<form asp-action="Respond" method="post" class="d-inline-flex gap-1">
 											<input name="id" type="hidden" value="@x.Id" />
-											<button name="action" value="accept" class="sr-btn sr-btn-accent sr-btn-sm">Đồng ý</button>
-											<button name="action" value="busy" class="sr-btn sr-btn-secondary sr-btn-sm">Báo bận</button>
+											<button type="submit" name="action" value="accept" class="sr-btn sr-btn-accent sr-btn-sm">Đồng ý</button>
+											<button type="submit" name="action" value="busy" class="sr-btn sr-btn-secondary sr-btn-sm">Báo bận</button>
 										</form>
 									}
 									else if (!owner && (x.TrangThai == TrangThaiLich.ChoXacNhan || x.TrangThai == TrangThaiLich.DaDongY))
 									{
 										<form asp-action="Cancel" method="post">
 											<input name="id" type="hidden" value="@x.Id" />
-											<button class="sr-btn sr-btn-danger sr-btn-sm">Hủy</button>
+											<button type="submit" class="sr-btn sr-btn-danger sr-btn-sm">Hủy</button>
 										</form>
 									}
 								</td>

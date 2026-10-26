@@ -12,7 +12,7 @@
         var unreadMessages = currentUser is null ? 0 : await Db.TinNhans.CountAsync(x => !x.DaDoc && x.NguoiGuiId != currentUser.Id && (x.CuocTroChuyen.NguoiThueId == currentUser.Id || x.CuocTroChuyen.ChuTroId == currentUser.Id));
         var unreadNotifications = currentUser is null ? 0 : await Db.ThongBaos.CountAsync(x => x.UserId == currentUser.Id && !x.DaDoc);
         <li class="nav-item">
-            <a class="nav-link nav-icon-link position-relative" asp-controller="Messages" asp-action="Index" aria-label="Tin nhắn">
+            <a class="nav-link nav-icon-link position-relative @(ViewContext.RouteData.Values["controller"]?.ToString() == "Messages" ? "active" : "")" asp-controller="Messages" asp-action="Index" aria-label="Tin nhắn" aria-current="@(ViewContext.RouteData.Values["controller"]?.ToString() == "Messages" ? "page" : null)">
                 <i class="bi bi-chat-dots"></i>
                 @if (unreadMessages > 0)
                 {
@@ -21,7 +21,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link nav-icon-link position-relative" asp-controller="ThongBao" asp-action="Index" aria-label="Thông báo">
+            <a class="nav-link nav-icon-link position-relative @(ViewContext.RouteData.Values["controller"]?.ToString() == "ThongBao" ? "active" : "")" asp-controller="ThongBao" asp-action="Index" aria-label="Thông báo" aria-current="@(ViewContext.RouteData.Values["controller"]?.ToString() == "ThongBao" ? "page" : null)">
                 <i class="bi bi-bell"></i>
                 @if (unreadNotifications > 0)
                 {

@@ -1,4 +1,11 @@
 @using SmartRental.Security
+@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+    bool IsRoute(string controller, string? action = null) =>
+        string.Equals(currentController, controller, StringComparison.OrdinalIgnoreCase) &&
+        (action is null || string.Equals(currentAction, action, StringComparison.OrdinalIgnoreCase));
+}
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -16,7 +23,7 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-lg navbar-smart fixed-top" aria-label="Điều hướng chính">
             <div class="container">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><span class="brand-mark">SR</span><span>SmartRental</span></a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index" aria-label="SmartRental - Trang chủ"><span class="brand-mark">SR</span><span>SmartRental</span></a>
                 @if (User.IsInRole(AppRoles.Admin))
                 {
                     var isAdminPage = Context.Request.Path.StartsWithSegments("/Admin");
@@ -33,10 +40,10 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Mở điều hướng"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Trang chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-controller="Phongtro" asp-action="Index">Tìm phòng</a></li>
+                        <li class="nav-item"><a class="nav-link @(IsRoute("Home", "Index") ? "active" : "")" asp-controller="Home" asp-action="Index" aria-current="@(IsRoute("Home", "Index") ? "page" : null)">Trang chủ</a></li>
+                        <li class="nav-item"><a class="nav-link @(IsRoute("Phongtro", "Index") || IsRoute("Phongtro", "Details") ? "active" : "")" asp-controller="Phongtro" asp-action="Index" aria-current="@(IsRoute("Phongtro", "Index") || IsRoute("Phongtro", "Details") ? "page" : null)">Tìm phòng</a></li>
                         <li class="nav-item"><a class="nav-link disabled" href="#" aria-disabled="true" title="Sẽ sớm được tích hợp"><i class="bi bi-stars"></i> Gợi ý AI</a></li>
-                        @if (User.Identity?.IsAuthenticated == true) { <li class="nav-item"><a class="nav-link" asp-controller="Phongtro" asp-action="YeuThichCuaToi"><i class="bi bi-heart"></i> Yêu thích</a></li> }
+                        @if (User.Identity?.IsAuthenticated == true) { <li class="nav-item"><a class="nav-link @(IsRoute("Phongtro", "YeuThichCuaToi") ? "active" : "")" asp-controller="Phongtro" asp-action="YeuThichCuaToi" aria-current="@(IsRoute("Phongtro", "YeuThichCuaToi") ? "page" : null)"><i class="bi bi-heart"></i> Yêu thích</a></li> }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

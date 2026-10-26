@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using SmartRental.Data;
 using SmartRental.Models;
+using SmartRental.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,12 +22,21 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<GeoDistanceService>();
+builder.Services.AddHttpClient<AiSearchService>((sp, client) =>
+{
+    var configuration = sp.GetRequiredService<IConfiguration>();
+    client.BaseAddress = new Uri(
+        configuration["AiService:BaseUrl"] ?? "http://127.0.0.1:8000");
+    client.Timeout = TimeSpan.FromSeconds(5);
+});
 
 var app = builder.Build();
 
 await IdentitySeed.SeedRolesAsync(app.Services);
 if (app.Environment.IsDevelopment())
 {
+    await DiaDiemSeed.SeedAsync(app.Services);
     await DemoDataSeed.SeedAsync(app.Services);
 }
 

@@ -1,4 +1,4 @@
-@model IEnumerable<SmartRental.Models.Phongtro>
+@model SmartRental.ViewModels.PagedResult<SmartRental.ViewModels.PhongtroSearchItemViewModel>
 @{
     ViewData["Title"] = "Tìm phòng trọ";
     var selected = ViewBag.SelectedTienNghiIds as List<int> ?? new();
@@ -17,6 +17,9 @@
     var maxAreaValue = areaCeiling;
     var selectedArea = Context.Request.Query["khuVuc"].ToString();
     var thaiNguyenAreas = ThaiNguyenAreas.All;
+    var aiResult = ViewBag.AiSearchResult as SmartRental.ViewModels.AiSearchResult;
+    var aiSearchError = ViewBag.AiSearchError as string;
+    var aiQuery = Context.Request.Query["aiQuery"].ToString();
 
     if (long.TryParse(Context.Request.Query["minPrice"], out var queryMinPrice))
         minPriceValue = Math.Clamp(queryMinPrice, priceFloor, priceCeiling);
@@ -43,12 +46,30 @@
     }
 </section>
 <section class="horizontal-filter-card">
-    <form asp-action="Index" method="get" class="horizontal-filter-form">
+    <form asp-action="Index" method="get" class="horizontal-filter-form" role="search" aria-label="Tìm và lọc phòng trọ">
         <input type="hidden" name="sort" value="@ViewBag.Sort" />
+        <div class="ai-search-box">
+            <div class="ai-search-box__heading">
+                <span class="ai-search-box__icon" aria-hidden="true"><i class="bi bi-stars"></i></span>
+                <div>
+                    <label for="aiQuery">Bạn đang tìm phòng như thế nào?</label>
+                    <span>Hãy mô tả tự nhiên, AI sẽ chuyển yêu cầu thành bộ lọc.</span>
+                </div>
+            </div>
+            <div class="ai-search-box__controls">
+                <input id="aiQuery" name="aiQuery" type="search" value="@aiQuery" class="form-control"
+                       placeholder="VD: Tìm phòng dưới 1,5 triệu cho 2 người ở Tân Thịnh có wifi và điều hòa" />
+                <button class="btn btn-ai-search" type="submit" data-ai-submit>
+                    <i class="bi bi-stars" data-ai-icon></i>
+                    <span data-ai-label>Tìm bằng AI</span>
+                </button>
+            </div>
+        </div>
         <div class="search-filter-row">
             <div class="search-filter-input input-group">
                 <span class="input-group-text"><i class="bi bi-search"></i></span>
-                <input id="search" name="search" value="@Context.Request.Query["search"]" class="form-control" placeholder="Tìm theo tên phòng, địa chỉ hoặc khu vực..." />
+                <label class="visually-hidden" for="search">Tên phòng, địa chỉ hoặc khu vực</label>
+                <input id="search" name="search" type="search" value="@Context.Request.Query["search"]" class="form-control" placeholder="Tìm theo tên phòng, địa chỉ hoặc khu vực..." />
             </div>
             <button class="btn btn-primary search-submit" type="submit"><i class="bi bi-search me-1"></i>Tìm</button>
         </div>
@@ -156,11 +177,66 @@
     </form>
 </section>
 
+@if (!string.IsNullOrWhiteSpace(aiSearchError))
+{
+    <div class="alert alert-warning ai-search-alert" role="alert">
+        <i class="bi bi-exclamation-circle"></i>
+        <span>@aiSearchError</span>
+    </div>
+}
+else if (aiResult is not null)
+{
+    <aside class="ai-search-summary" aria-live="polite">
+        <div class="ai-search-summary__title"><i class="bi bi-stars"></i> AI hiểu yêu cầu:</div>
+        <ul>
+            @if (aiResult.MaxPrice.HasValue)
+            {
+                <li><strong>Giá tối đa:</strong> @aiResult.MaxPrice.Value.ToString("N0")đ</li>
+            }
+            @if (aiResult.SoNguoi.HasValue)
+            {
+                <li><strong>Số người:</strong> @aiResult.SoNguoi</li>
+            }
+            @if (!string.IsNullOrWhiteSpace(aiResult.KhuVuc))
+            {
+                <li><strong>Khu vực:</strong> @aiResult.KhuVuc</li>
+            }
+            @if (!string.IsNullOrWhiteSpace(aiResult.NearPlace))
+            {
+                <li><strong>Gần:</strong> @aiResult.NearPlace</li>
+            }
+            @if (aiResult.MaxDistanceKm.HasValue)
+            {
+                <li><strong>Bán kính:</strong> @aiResult.MaxDistanceKm.Value.ToString("0.##") km</li>
+            }
+            @if (aiResult.TienNghi.Count > 0)
+            {
+                <li><strong>Tiện nghi:</strong> @string.Join(", ", aiResult.TienNghi)</li>
+            }
+        </ul>
+    </aside>
+}
+
+@if (ViewBag.LandmarkNotFound == true)
+{
+    <div class="alert alert-warning ai-search-alert" role="alert">
+        <i class="bi bi-geo-alt"></i>
+        <span>Không tìm thấy địa điểm được yêu cầu trong dữ liệu hệ thống.</span>
+    </div>
+}
+else if (ViewBag.AiNoExactMatch == true)
+{
+    <div class="alert alert-info ai-search-alert" role="status">
+        <i class="bi bi-info-circle"></i>
+        <span>Không có phòng khớp hoàn toàn với yêu cầu của bạn.</span>
+    </div>
+}
+
 <section class="search-results search-results--full">
     <div class="page-heading search-results-heading">
         <div>
             <h2 class="h3 mb-1">Danh sách phòng</h2>
-            <p class="mb-0">Tìm thấy <strong>@(Model is SmartRental.ViewModels.PagedResult<SmartRental.Models.Phongtro> paged ? paged.TotalItems : Model.Count())</strong> phòng trọ</p>
+            <p class="mb-0">Tìm thấy <strong>@Model.TotalItems</strong> phòng trọ</p>
         </div>
         <form asp-action="Index" method="get" class="sort-form">
             @foreach (var query in Context.Request.Query.Where(query =>
@@ -183,12 +259,15 @@
     @if (Model.Any())
     {
         <div class="room-grid">
-            @foreach (var item in Model)
+            @foreach (var resultItem in Model)
             {
+                var item = resultItem.Phongtro;
                 var data = new ViewDataDictionary(ViewData);
                 data["ShowFavorite"] = true;
                 data["Favorite"] = favorites.Contains(item.Id);
                 data["Manage"] = User.IsInRole(AppRoles.Admin) || (uid != null && item.OwnerId == uid);
+                data["DistanceKm"] = resultItem.DistanceKm;
+                data["NearPlaceName"] = resultItem.NearPlaceName;
                 <div class="room-grid__item">
                     <partial name="_RoomCard" model="item" view-data="data" />
                 </div>
@@ -207,3 +286,15 @@
     <partial name="_Pagination" />
 </section>
 </div>
+
+<script>
+    document.querySelector('.horizontal-filter-form')?.addEventListener('submit', function (event) {
+        if (!event.submitter?.matches('[data-ai-submit]')) return;
+        const button = event.submitter;
+        button.disabled = true;
+        button.querySelector('[data-ai-icon]')?.classList.replace('bi-stars', 'spinner-border');
+        button.querySelector('[data-ai-icon]')?.classList.add('spinner-border-sm');
+        const label = button.querySelector('[data-ai-label]');
+        if (label) label.textContent = 'Đang phân tích...';
+    });
+</script>

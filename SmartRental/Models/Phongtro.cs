@@ -17,6 +17,10 @@ namespace SmartRental.Models
         [Required, StringLength(100)]
         public string KhuVuc { get; set; } = string.Empty;
 
+        public double? Latitude { get; set; }
+
+        public double? Longitude { get; set; }
+
         [Precision(18, 2)]
         [Range(typeof(decimal), "400000", "79228162514264337593543950335", ErrorMessage = "Giá phòng phải từ 400.000 VNĐ trở lên.")]
         public decimal Gia { get; set; }

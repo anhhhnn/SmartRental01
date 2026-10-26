@@ -257,6 +257,7 @@
                             }
                             <small id="ratingText"></small>
                         </div>
+                        <label class="visually-hidden" for="noiDung">Nội dung đánh giá</label>
                         <textarea id="noiDung" name="noiDung" class="form-control" maxlength="1000" rows="3" placeholder="Chia sẻ cảm nhận của bạn...">@myReview?.NoiDung</textarea>
                         <button class="sr-btn sr-btn-primary" type="submit">@(myReview == null ? "Gửi đánh giá" : "Cập nhật")</button>
                     </form>
@@ -282,7 +283,7 @@
                                     <form asp-action="DeleteDanhGia" method="post" class="d-inline">
                                         <input type="hidden" name="phongtroId" value="@Model.Id" />
                                         <input type="hidden" name="userId" value="@review.UserId" />
-                                        <button type="submit" class="review-delete">Xóa</button>
+                                        <button type="submit" class="review-delete" aria-label="Xóa đánh giá của @review.User?.HoTen">Xóa</button>
                                     </form>
                                 }
                             </div>
