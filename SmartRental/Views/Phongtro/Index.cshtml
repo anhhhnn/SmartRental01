@@ -1,4 +1,4 @@
-@model SmartRental.ViewModels.PagedResult<SmartRental.ViewModels.PhongtroSearchItemViewModel>
+@model SmartRental.ViewModels.PhongtroIndexViewModel
 @{
     ViewData["Title"] = "Tìm phòng trọ";
     var selected = ViewBag.SelectedTienNghiIds as List<int> ?? new();
@@ -189,7 +189,15 @@ else if (aiResult is not null)
     <aside class="ai-search-summary" aria-live="polite">
         <div class="ai-search-summary__title"><i class="bi bi-stars"></i> AI hiểu yêu cầu:</div>
         <ul>
-            @if (aiResult.MaxPrice.HasValue)
+            @if (aiResult.MinPrice.HasValue && aiResult.MaxPrice.HasValue)
+            {
+                <li><strong>Khoảng giá:</strong> @aiResult.MinPrice.Value.ToString("N0")đ – @aiResult.MaxPrice.Value.ToString("N0")đ</li>
+            }
+            else if (aiResult.MinPrice.HasValue)
+            {
+                <li><strong>Giá tối thiểu:</strong> @aiResult.MinPrice.Value.ToString("N0")đ</li>
+            }
+            else if (aiResult.MaxPrice.HasValue)
             {
                 <li><strong>Giá tối đa:</strong> @aiResult.MaxPrice.Value.ToString("N0")đ</li>
             }
@@ -232,11 +240,49 @@ else if (ViewBag.AiNoExactMatch == true)
     </div>
 }
 
+@if (Model.ShowRecommendations && Model.RecommendedRooms.Any())
+{
+    <section class="recommendation-section" aria-labelledby="recommendation-heading">
+        <div class="recommendation-section__heading">
+            <div>
+                <span class="recommendation-section__badge">
+                    <i class="bi bi-stars" aria-hidden="true"></i>
+                    Đề xuất
+                </span>
+                <h2 id="recommendation-heading">
+                    @(Model.RecommendationColdStart ? "Phòng nổi bật dành cho bạn" : "Gợi ý cho bạn")
+                </h2>
+                <p>
+                    @(Model.RecommendationColdStart
+                        ? "Bạn chưa có đủ lịch sử tương tác, nên hệ thống đang giới thiệu một số phòng phổ biến."
+                        : "Những phòng được đề xuất dựa trên sở thích và lịch sử tương tác của bạn.")
+                </p>
+            </div>
+        </div>
+        <div class="room-grid recommendation-grid">
+            @foreach (var room in Model.RecommendedRooms.Take(8))
+            {
+                var data = new ViewDataDictionary(ViewData);
+                data["ShowFavorite"] = true;
+                data["Favorite"] = favorites.Contains(room.Id);
+                data["Manage"] = User.IsInRole(AppRoles.Admin) || (uid != null && room.OwnerId == uid);
+                if (Model.RecommendationByRoomId.TryGetValue(room.Id, out var recommendationItem))
+                {
+                    data["RecommendationReasons"] = recommendationItem.Reasons;
+                }
+                <div class="room-grid__item">
+                    <partial name="_RoomCard" model="room" view-data="data" />
+                </div>
+            }
+        </div>
+    </section>
+}
+
 <section class="search-results search-results--full">
     <div class="page-heading search-results-heading">
         <div>
             <h2 class="h3 mb-1">Danh sách phòng</h2>
-            <p class="mb-0">Tìm thấy <strong>@Model.TotalItems</strong> phòng trọ</p>
+            <p class="mb-0">Tìm thấy <strong>@Model.SearchResults.TotalItems</strong> phòng trọ</p>
         </div>
         <form asp-action="Index" method="get" class="sort-form">
             @foreach (var query in Context.Request.Query.Where(query =>
@@ -256,10 +302,10 @@ else if (ViewBag.AiNoExactMatch == true)
             </select>
         </form>
     </div>
-    @if (Model.Any())
+    @if (Model.SearchResults.Any())
     {
         <div class="room-grid">
-            @foreach (var resultItem in Model)
+            @foreach (var resultItem in Model.SearchResults)
             {
                 var item = resultItem.Phongtro;
                 var data = new ViewDataDictionary(ViewData);

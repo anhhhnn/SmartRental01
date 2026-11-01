@@ -1,0 +1,1512 @@
+{
+  "selection_policy": [
+    "NDCG@10",
+    "HitRate@10",
+    "Recall@10",
+    "Precision@10",
+    "Coverage@10"
+  ],
+  "tuning_population": "demo users only",
+  "outer_split": {
+    "seed": 20261028,
+    "min_interactions": 5,
+    "train_interactions": 2964,
+    "test_interactions": 776,
+    "train_users": 74,
+    "evaluated_users": 73,
+    "excluded_users": 1,
+    "excluded_reasons": {
+      "below_min_interactions": 1
+    },
+    "leaked_test_pairs": 0
+  },
+  "inner_split": {
+    "seed": 20261029,
+    "min_interactions": 5,
+    "train_interactions": 2342,
+    "test_interactions": 622,
+    "train_users": 74,
+    "evaluated_users": 73,
+    "excluded_users": 1,
+    "excluded_reasons": {
+      "below_min_interactions": 1
+    },
+    "leaked_test_pairs": 0
+  },
+  "configs": [
+    {
+      "config": {
+        "factors": 16,
+        "regularization": 0.01,
+        "iterations": 15,
+        "alpha": 10,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.022222222222222223,
+        "recall_at_5": 0.013210978835978835,
+        "hit_rate_at_5": 0.1111111111111111,
+        "precision_at_10": 0.022222222222222223,
+        "recall_at_10": 0.026102793811127144,
+        "hit_rate_at_10": 0.20833333333333334,
+        "ndcg_at_10": 0.02540074750314575,
+        "unique_recommended_rooms_at_10": 272,
+        "catalog_coverage_at_10": 0.6460807600950119,
+        "average_top10_jaccard_overlap": 0.020951834732739975,
+        "average_recommendation_popularity": 6.570833333333334,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 425,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 117,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 285,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 454,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 104,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 461,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 272,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 275,
+            "recommendation_count": 6
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.021917808219178082,
+        "recall_at_5": 0.013030006523157207,
+        "hit_rate_at_5": 0.1095890410958904,
+        "precision_at_10": 0.021917808219178082,
+        "recall_at_10": 0.0257452212931665,
+        "hit_rate_at_10": 0.2054794520547945,
+        "ndcg_at_10": 0.025052792057897177,
+        "unique_recommended_rooms_at_10": 272,
+        "catalog_coverage_at_10": 0.6460807600950119,
+        "average_top10_jaccard_overlap": 0.02097457116842304,
+        "average_recommendation_popularity": 6.571232876712329,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 425,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 117,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 285,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 454,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 104,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 461,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 435,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 272,
+            "recommendation_count": 6
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 16,
+        "regularization": 0.05,
+        "iterations": 30,
+        "alpha": 20,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.027777777777777776,
+        "recall_at_5": 0.017124118165784834,
+        "hit_rate_at_5": 0.1388888888888889,
+        "precision_at_10": 0.026388888888888892,
+        "recall_at_10": 0.031437389770723106,
+        "hit_rate_at_10": 0.20833333333333334,
+        "ndcg_at_10": 0.027924425723615778,
+        "unique_recommended_rooms_at_10": 277,
+        "catalog_coverage_at_10": 0.6579572446555819,
+        "average_top10_jaccard_overlap": 0.020766646855870537,
+        "average_recommendation_popularity": 6.544444444444444,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 117,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 436,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 470,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 425,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 285,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 272,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 315,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 230,
+            "recommendation_count": 7
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.0273972602739726,
+        "recall_at_5": 0.016889541204609698,
+        "hit_rate_at_5": 0.136986301369863,
+        "precision_at_10": 0.026027397260273973,
+        "recall_at_10": 0.031006740595781693,
+        "hit_rate_at_10": 0.2054794520547945,
+        "ndcg_at_10": 0.02754189934384022,
+        "unique_recommended_rooms_at_10": 279,
+        "catalog_coverage_at_10": 0.66270783847981,
+        "average_top10_jaccard_overlap": 0.020749559269888092,
+        "average_recommendation_popularity": 6.545205479452055,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 117,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 436,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 470,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 425,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 285,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 272,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 315,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 230,
+            "recommendation_count": 7
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 16,
+        "regularization": 0.1,
+        "iterations": 15,
+        "alpha": 40,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.01666666666666667,
+        "recall_at_5": 0.009738756613756613,
+        "hit_rate_at_5": 0.08333333333333333,
+        "precision_at_10": 0.018055555555555557,
+        "recall_at_10": 0.020866402116402116,
+        "hit_rate_at_10": 0.16666666666666666,
+        "ndcg_at_10": 0.02002419032600113,
+        "unique_recommended_rooms_at_10": 269,
+        "catalog_coverage_at_10": 0.6389548693586699,
+        "average_top10_jaccard_overlap": 0.022828645226863224,
+        "average_recommendation_popularity": 6.6375,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 267,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 285,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 117,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 470,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 230,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 270,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 446,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 376,
+            "recommendation_count": 7
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.016438356164383564,
+        "recall_at_5": 0.009605348988910632,
+        "hit_rate_at_5": 0.0821917808219178,
+        "precision_at_10": 0.01780821917808219,
+        "recall_at_10": 0.020580560991519895,
+        "hit_rate_at_10": 0.1643835616438356,
+        "ndcg_at_10": 0.019749886348932624,
+        "unique_recommended_rooms_at_10": 270,
+        "catalog_coverage_at_10": 0.6413301662707839,
+        "average_top10_jaccard_overlap": 0.022708334315060637,
+        "average_recommendation_popularity": 6.6287671232876715,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 267,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 285,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 117,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 470,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 230,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 270,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 425,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 446,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 7
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 32,
+        "regularization": 0.01,
+        "iterations": 15,
+        "alpha": 20,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.022222222222222223,
+        "recall_at_5": 0.012384259259259258,
+        "hit_rate_at_5": 0.1111111111111111,
+        "precision_at_10": 0.025,
+        "recall_at_10": 0.0283179012345679,
+        "hit_rate_at_10": 0.2361111111111111,
+        "ndcg_at_10": 0.0272669358330262,
+        "unique_recommended_rooms_at_10": 290,
+        "catalog_coverage_at_10": 0.6888361045130641,
+        "average_top10_jaccard_overlap": 0.017968977531434834,
+        "average_recommendation_popularity": 6.354166666666667,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 446,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 86,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 375,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 267,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 454,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 120,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 436,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 434,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 42,
+            "recommendation_count": 6
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.021917808219178082,
+        "recall_at_5": 0.012214611872146118,
+        "hit_rate_at_5": 0.1095890410958904,
+        "precision_at_10": 0.024657534246575342,
+        "recall_at_10": 0.027929984779299845,
+        "hit_rate_at_10": 0.2328767123287671,
+        "ndcg_at_10": 0.026893416164080634,
+        "unique_recommended_rooms_at_10": 293,
+        "catalog_coverage_at_10": 0.6959619952494062,
+        "average_top10_jaccard_overlap": 0.0176969763846151,
+        "average_recommendation_popularity": 6.341095890410959,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 446,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 86,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 375,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 267,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 454,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 120,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 436,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 434,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 42,
+            "recommendation_count": 6
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 32,
+        "regularization": 0.01,
+        "iterations": 30,
+        "alpha": 10,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.01666666666666667,
+        "recall_at_5": 0.009143518518518518,
+        "hit_rate_at_5": 0.08333333333333333,
+        "precision_at_10": 0.020833333333333332,
+        "recall_at_10": 0.023804012345679013,
+        "hit_rate_at_10": 0.18055555555555555,
+        "ndcg_at_10": 0.021574393079810503,
+        "unique_recommended_rooms_at_10": 295,
+        "catalog_coverage_at_10": 0.7007125890736342,
+        "average_top10_jaccard_overlap": 0.018143667839702667,
+        "average_recommendation_popularity": 6.384722222222222,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 454,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 260,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 446,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 343,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 150,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 310,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 327,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 285,
+            "recommendation_count": 6
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.016438356164383564,
+        "recall_at_5": 0.009018264840182649,
+        "hit_rate_at_5": 0.0821917808219178,
+        "precision_at_10": 0.02054794520547945,
+        "recall_at_10": 0.023477929984779298,
+        "hit_rate_at_10": 0.1780821917808219,
+        "ndcg_at_10": 0.021278853448580222,
+        "unique_recommended_rooms_at_10": 300,
+        "catalog_coverage_at_10": 0.7125890736342043,
+        "average_top10_jaccard_overlap": 0.01780902419447311,
+        "average_recommendation_popularity": 6.3712328767123285,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 454,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 260,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 446,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 343,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 150,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 310,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 327,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 285,
+            "recommendation_count": 6
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 32,
+        "regularization": 0.05,
+        "iterations": 15,
+        "alpha": 10,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.019444444444444445,
+        "recall_at_5": 0.010648148148148148,
+        "hit_rate_at_5": 0.09722222222222222,
+        "precision_at_10": 0.023611111111111114,
+        "recall_at_10": 0.02663690476190476,
+        "hit_rate_at_10": 0.20833333333333334,
+        "ndcg_at_10": 0.02712377039107923,
+        "unique_recommended_rooms_at_10": 292,
+        "catalog_coverage_at_10": 0.6935866983372921,
+        "average_top10_jaccard_overlap": 0.018173579181006615,
+        "average_recommendation_popularity": 6.3597222222222225,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 446,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 382,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 450,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 310,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 230,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 246,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 375,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 86,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 423,
+            "recommendation_count": 6
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.019178082191780823,
+        "recall_at_5": 0.01050228310502283,
+        "hit_rate_at_5": 0.0958904109589041,
+        "precision_at_10": 0.023287671232876714,
+        "recall_at_10": 0.026272015655577297,
+        "hit_rate_at_10": 0.2054794520547945,
+        "ndcg_at_10": 0.026752211892571296,
+        "unique_recommended_rooms_at_10": 298,
+        "catalog_coverage_at_10": 0.7078384798099763,
+        "average_top10_jaccard_overlap": 0.01779583632432919,
+        "average_recommendation_popularity": 6.33972602739726,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 446,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 382,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 450,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 310,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 230,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 246,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 375,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 86,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 423,
+            "recommendation_count": 6
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 32,
+        "regularization": 0.05,
+        "iterations": 30,
+        "alpha": 20,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.011111111111111112,
+        "recall_at_5": 0.0060185185185185185,
+        "hit_rate_at_5": 0.05555555555555555,
+        "precision_at_10": 0.025,
+        "recall_at_10": 0.02821869488536155,
+        "hit_rate_at_10": 0.25,
+        "ndcg_at_10": 0.02402826478944245,
+        "unique_recommended_rooms_at_10": 301,
+        "catalog_coverage_at_10": 0.7149643705463183,
+        "average_top10_jaccard_overlap": 0.017876551823266165,
+        "average_recommendation_popularity": 6.277777777777778,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 446,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 246,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 466,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 120,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 42,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 310,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 454,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 436,
+            "recommendation_count": 6
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.010958904109589041,
+        "recall_at_5": 0.005936073059360731,
+        "hit_rate_at_5": 0.0547945205479452,
+        "precision_at_10": 0.024657534246575342,
+        "recall_at_10": 0.027832137421178516,
+        "hit_rate_at_10": 0.2465753424657534,
+        "ndcg_at_10": 0.023699110477258305,
+        "unique_recommended_rooms_at_10": 304,
+        "catalog_coverage_at_10": 0.7220902612826603,
+        "average_top10_jaccard_overlap": 0.01762933537323178,
+        "average_recommendation_popularity": 6.263013698630137,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 446,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 246,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 466,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 120,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 42,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 310,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 454,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 436,
+            "recommendation_count": 6
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 32,
+        "regularization": 0.1,
+        "iterations": 30,
+        "alpha": 40,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.03333333333333334,
+        "recall_at_5": 0.01867283950617284,
+        "hit_rate_at_5": 0.16666666666666666,
+        "precision_at_10": 0.03333333333333334,
+        "recall_at_10": 0.03784722222222223,
+        "hit_rate_at_10": 0.3194444444444444,
+        "ndcg_at_10": 0.03244870874913128,
+        "unique_recommended_rooms_at_10": 296,
+        "catalog_coverage_at_10": 0.7030878859857482,
+        "average_top10_jaccard_overlap": 0.01760213461328303,
+        "average_recommendation_popularity": 6.311111111111111,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 423,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 454,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 429,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 120,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 436,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 42,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 172,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 310,
+            "recommendation_count": 6
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.03287671232876713,
+        "recall_at_5": 0.018417047184170473,
+        "hit_rate_at_5": 0.1643835616438356,
+        "precision_at_10": 0.03287671232876713,
+        "recall_at_10": 0.03732876712328767,
+        "hit_rate_at_10": 0.3150684931506849,
+        "ndcg_at_10": 0.03200420588955414,
+        "unique_recommended_rooms_at_10": 298,
+        "catalog_coverage_at_10": 0.7078384798099763,
+        "average_top10_jaccard_overlap": 0.017444770639703983,
+        "average_recommendation_popularity": 6.3,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 423,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 454,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 417,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 429,
+            "recommendation_count": 7
+          },
+          {
+            "PhongtroId": 120,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 436,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 346,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 42,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 172,
+            "recommendation_count": 6
+          },
+          {
+            "PhongtroId": 310,
+            "recommendation_count": 6
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 64,
+        "regularization": 0.01,
+        "iterations": 15,
+        "alpha": 10,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.027777777777777776,
+        "recall_at_5": 0.01608796296296296,
+        "hit_rate_at_5": 0.1388888888888889,
+        "precision_at_10": 0.020833333333333332,
+        "recall_at_10": 0.023754910213243545,
+        "hit_rate_at_10": 0.19444444444444445,
+        "ndcg_at_10": 0.031053775758761653,
+        "unique_recommended_rooms_at_10": 217,
+        "catalog_coverage_at_10": 0.5154394299287411,
+        "average_top10_jaccard_overlap": 0.031792278800774565,
+        "average_recommendation_popularity": 5.694444444444445,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 397,
+            "recommendation_count": 13
+          },
+          {
+            "PhongtroId": 352,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 117,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 170,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 151,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 218,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 74,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 354,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 350,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 36,
+            "recommendation_count": 8
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.0273972602739726,
+        "recall_at_5": 0.015867579908675798,
+        "hit_rate_at_5": 0.136986301369863,
+        "precision_at_10": 0.02054794520547945,
+        "recall_at_10": 0.023429500484295002,
+        "hit_rate_at_10": 0.1917808219178082,
+        "ndcg_at_10": 0.030628381570285464,
+        "unique_recommended_rooms_at_10": 222,
+        "catalog_coverage_at_10": 0.5273159144893111,
+        "average_top10_jaccard_overlap": 0.03136630717581988,
+        "average_recommendation_popularity": 5.6808219178082195,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 397,
+            "recommendation_count": 13
+          },
+          {
+            "PhongtroId": 352,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 117,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 36,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 170,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 151,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 218,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 74,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 354,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 350,
+            "recommendation_count": 8
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 64,
+        "regularization": 0.05,
+        "iterations": 15,
+        "alpha": 20,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.03333333333333334,
+        "recall_at_5": 0.019615299823633154,
+        "hit_rate_at_5": 0.16666666666666666,
+        "precision_at_10": 0.037500000000000006,
+        "recall_at_10": 0.04387175324675325,
+        "hit_rate_at_10": 0.3472222222222222,
+        "ndcg_at_10": 0.04177636154156667,
+        "unique_recommended_rooms_at_10": 224,
+        "catalog_coverage_at_10": 0.5320665083135392,
+        "average_top10_jaccard_overlap": 0.03249898235108776,
+        "average_recommendation_popularity": 5.7555555555555555,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 465,
+            "recommendation_count": 13
+          },
+          {
+            "PhongtroId": 42,
+            "recommendation_count": 13
+          },
+          {
+            "PhongtroId": 398,
+            "recommendation_count": 13
+          },
+          {
+            "PhongtroId": 422,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 151,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 377,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 374,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 218,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 397,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 162,
+            "recommendation_count": 9
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.03287671232876713,
+        "recall_at_5": 0.019346597086323112,
+        "hit_rate_at_5": 0.1643835616438356,
+        "precision_at_10": 0.036986301369863014,
+        "recall_at_10": 0.043270770325564846,
+        "hit_rate_at_10": 0.3424657534246575,
+        "ndcg_at_10": 0.04120408261633973,
+        "unique_recommended_rooms_at_10": 226,
+        "catalog_coverage_at_10": 0.5368171021377672,
+        "average_top10_jaccard_overlap": 0.0324145319427138,
+        "average_recommendation_popularity": 5.741095890410959,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 465,
+            "recommendation_count": 13
+          },
+          {
+            "PhongtroId": 42,
+            "recommendation_count": 13
+          },
+          {
+            "PhongtroId": 398,
+            "recommendation_count": 13
+          },
+          {
+            "PhongtroId": 422,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 151,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 377,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 162,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 374,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 36,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 218,
+            "recommendation_count": 9
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 64,
+        "regularization": 0.05,
+        "iterations": 30,
+        "alpha": 40,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.03888888888888889,
+        "recall_at_5": 0.02261403719737053,
+        "hit_rate_at_5": 0.19444444444444445,
+        "precision_at_10": 0.03194444444444445,
+        "recall_at_10": 0.03703252765752765,
+        "hit_rate_at_10": 0.2777777777777778,
+        "ndcg_at_10": 0.037299094910489376,
+        "unique_recommended_rooms_at_10": 229,
+        "catalog_coverage_at_10": 0.5439429928741093,
+        "average_top10_jaccard_overlap": 0.02965449029163618,
+        "average_recommendation_popularity": 5.780555555555556,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 42,
+            "recommendation_count": 12
+          },
+          {
+            "PhongtroId": 465,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 36,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 162,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 151,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 422,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 398,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 374,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 419,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 372,
+            "recommendation_count": 8
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.038356164383561646,
+        "recall_at_5": 0.0223042558658997,
+        "hit_rate_at_5": 0.1917808219178082,
+        "precision_at_10": 0.031506849315068496,
+        "recall_at_10": 0.03652523275810947,
+        "hit_rate_at_10": 0.273972602739726,
+        "ndcg_at_10": 0.03678814840486624,
+        "unique_recommended_rooms_at_10": 231,
+        "catalog_coverage_at_10": 0.5486935866983373,
+        "average_top10_jaccard_overlap": 0.029732923308774705,
+        "average_recommendation_popularity": 5.772602739726027,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 42,
+            "recommendation_count": 12
+          },
+          {
+            "PhongtroId": 465,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 36,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 162,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 151,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 422,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 398,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 374,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 419,
+            "recommendation_count": 8
+          },
+          {
+            "PhongtroId": 372,
+            "recommendation_count": 8
+          }
+        ]
+      }
+    },
+    {
+      "config": {
+        "factors": 64,
+        "regularization": 0.1,
+        "iterations": 15,
+        "alpha": 40,
+        "seed": 20261028,
+        "strength_transform": "log1p"
+      },
+      "demo_metrics": {
+        "eligible_users": 72,
+        "precision_at_5": 0.03333333333333334,
+        "recall_at_5": 0.019615299823633154,
+        "hit_rate_at_5": 0.16666666666666666,
+        "precision_at_10": 0.030555555555555558,
+        "recall_at_10": 0.03573132114798781,
+        "hit_rate_at_10": 0.3055555555555556,
+        "ndcg_at_10": 0.03759181869378263,
+        "unique_recommended_rooms_at_10": 221,
+        "catalog_coverage_at_10": 0.5249406175771971,
+        "average_top10_jaccard_overlap": 0.03200780395579738,
+        "average_recommendation_popularity": 5.720833333333333,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 36,
+            "recommendation_count": 14
+          },
+          {
+            "PhongtroId": 465,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 398,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 397,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 151,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 269,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 377,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 162,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 270,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 131,
+            "recommendation_count": 8
+          }
+        ]
+      },
+      "all_metrics_reference_only": {
+        "eligible_users": 73,
+        "precision_at_5": 0.03287671232876713,
+        "recall_at_5": 0.019346597086323112,
+        "hit_rate_at_5": 0.1643835616438356,
+        "precision_at_10": 0.030136986301369864,
+        "recall_at_10": 0.03524185099527565,
+        "hit_rate_at_10": 0.3013698630136986,
+        "ndcg_at_10": 0.037076862273319855,
+        "unique_recommended_rooms_at_10": 225,
+        "catalog_coverage_at_10": 0.5344418052256532,
+        "average_top10_jaccard_overlap": 0.03193458524119989,
+        "average_recommendation_popularity": 5.708219178082191,
+        "most_recommended_rooms": [
+          {
+            "PhongtroId": 36,
+            "recommendation_count": 15
+          },
+          {
+            "PhongtroId": 465,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 398,
+            "recommendation_count": 11
+          },
+          {
+            "PhongtroId": 397,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 162,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 151,
+            "recommendation_count": 10
+          },
+          {
+            "PhongtroId": 269,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 377,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 270,
+            "recommendation_count": 9
+          },
+          {
+            "PhongtroId": 131,
+            "recommendation_count": 8
+          }
+        ]
+      }
+    }
+  ],
+  "selected_config": {
+    "factors": 64,
+    "regularization": 0.05,
+    "iterations": 15,
+    "alpha": 20,
+    "seed": 20261028,
+    "strength_transform": "log1p",
+    "confidence_formula": "1 + alpha * log1p(Score)",
+    "benchmarked_configs": 12
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "model": "implicit_als_challenger",
+  "implementation": "numpy_scipy",
+  "config_count": 12,
+  "best_config": {
+    "factors": 64,
+    "regularization": 0.05,
+    "iterations": 15,
+    "alpha": 20,
+    "seed": 20261028,
+    "strength_transform": "log1p",
+    "confidence_formula": "1 + alpha * log1p(Score)",
+    "benchmarked_configs": 12
+  },
+  "split": {
+    "seed": 20261028,
+    "min_interactions": 5,
+    "train_interactions": 2964,
+    "test_interactions": 776,
+    "train_users": 74,
+    "evaluated_users": 73,
+    "excluded_users": 1,
+    "excluded_reasons": {
+      "below_min_interactions": 1
+    },
+    "leaked_test_pairs": 0
+  },
+  "audit": {
+    "schema": [
+      "UserId",
+      "PhongtroId",
+      "Views",
+      "Favorite",
+      "Booking",
+      "Rating",
+      "Score"
+    ],
+    "interactions": 3740,
+    "users": 74,
+    "rooms_with_interactions": 449,
+    "catalog_rooms": 450,
+    "visible_rooms": 421,
+    "interactions_per_user": 50.54054054054054,
+    "sparsity": 0.887437548907482
+  },
+  "segments": {
+    "demo_users": 72,
+    "non_demo_users": 2,
+    "demo_interactions": 3726,
+    "non_demo_interactions": 14
+  },
+  "metrics": {
+    "all_users": {
+      "eligible_users": 73,
+      "precision_at_5": 0.0273972602739726,
+      "recall_at_5": 0.012635309895583868,
+      "hit_rate_at_5": 0.136986301369863,
+      "precision_at_10": 0.026027397260273973,
+      "recall_at_10": 0.024182286511053634,
+      "hit_rate_at_10": 0.2465753424657534,
+      "ndcg_at_10": 0.02655815337196141,
+      "unique_recommended_rooms_at_10": 235,
+      "catalog_coverage_at_10": 0.5581947743467933,
+      "average_top10_jaccard_overlap": 0.030034706282638764,
+      "average_recommendation_popularity": 7.250684931506849,
+      "most_recommended_rooms": [
+        {
+          "PhongtroId": 172,
+          "recommendation_count": 14
+        },
+        {
+          "PhongtroId": 36,
+          "recommendation_count": 11
+        },
+        {
+          "PhongtroId": 343,
+          "recommendation_count": 10
+        },
+        {
+          "PhongtroId": 318,
+          "recommendation_count": 10
+        },
+        {
+          "PhongtroId": 438,
+          "recommendation_count": 9
+        },
+        {
+          "PhongtroId": 259,
+          "recommendation_count": 9
+        },
+        {
+          "PhongtroId": 189,
+          "recommendation_count": 8
+        },
+        {
+          "PhongtroId": 125,
+          "recommendation_count": 8
+        },
+        {
+          "PhongtroId": 350,
+          "recommendation_count": 8
+        },
+        {
+          "PhongtroId": 42,
+          "recommendation_count": 8
+        }
+      ]
+    },
+    "demo_users": {
+      "eligible_users": 72,
+      "precision_at_5": 0.027777777777777776,
+      "recall_at_5": 0.012810800310800311,
+      "hit_rate_at_5": 0.1388888888888889,
+      "precision_at_10": 0.026388888888888892,
+      "recall_at_10": 0.024518151601484937,
+      "hit_rate_at_10": 0.25,
+      "ndcg_at_10": 0.026927016613238652,
+      "unique_recommended_rooms_at_10": 231,
+      "catalog_coverage_at_10": 0.5486935866983373,
+      "average_top10_jaccard_overlap": 0.030077286596276696,
+      "average_recommendation_popularity": 7.25,
+      "most_recommended_rooms": [
+        {
+          "PhongtroId": 172,
+          "recommendation_count": 14
+        },
+        {
+          "PhongtroId": 36,
+          "recommendation_count": 10
+        },
+        {
+          "PhongtroId": 318,
+          "recommendation_count": 10
+        },
+        {
+          "PhongtroId": 438,
+          "recommendation_count": 9
+        },
+        {
+          "PhongtroId": 259,
+          "recommendation_count": 9
+        },
+        {
+          "PhongtroId": 343,
+          "recommendation_count": 9
+        },
+        {
+          "PhongtroId": 189,
+          "recommendation_count": 8
+        },
+        {
+          "PhongtroId": 125,
+          "recommendation_count": 8
+        },
+        {
+          "PhongtroId": 350,
+          "recommendation_count": 8
+        },
+        {
+          "PhongtroId": 42,
+          "recommendation_count": 8
+        }
+      ]
+    },
+    "non_demo_users": {
+      "eligible_users": 1,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_10": 0.0,
+      "recall_at_10": 0.0,
+      "hit_rate_at_10": 0.0,
+      "ndcg_at_10": 0.0,
+      "unique_recommended_rooms_at_10": 10,
+      "catalog_coverage_at_10": 0.023752969121140142,
+      "average_top10_jaccard_overlap": null,
+      "average_recommendation_popularity": 7.3,
+      "most_recommended_rooms": [
+        {
+          "PhongtroId": 301,
+          "recommendation_count": 1
+        },
+        {
+          "PhongtroId": 107,
+          "recommendation_count": 1
+        },
+        {
+          "PhongtroId": 98,
+          "recommendation_count": 1
+        },
+        {
+          "PhongtroId": 354,
+          "recommendation_count": 1
+        },
+        {
+          "PhongtroId": 137,
+          "recommendation_count": 1
+        },
+        {
+          "PhongtroId": 418,
+          "recommendation_count": 1
+        },
+        {
+          "PhongtroId": 448,
+          "recommendation_count": 1
+        },
+        {
+          "PhongtroId": 420,
+          "recommendation_count": 1
+        },
+        {
+          "PhongtroId": 36,
+          "recommendation_count": 1
+        },
+        {
+          "PhongtroId": 343,
+          "recommendation_count": 1
+        }
+      ]
+    }
+  },
+  "content_based_optimized": {
+    "precision_at_5": 0.03783783783783784,
+    "recall_at_5": 0.01743999243999244,
+    "hit_rate_at_5": 0.1891891891891892,
+    "precision_at_10": 0.03513513513513514,
+    "recall_at_10": 0.035307335307335305,
+    "hit_rate_at_10": 0.33783783783783783,
+    "ndcg_at_10": 0.03827438520223624,
+    "catalog_coverage_at_10": 0.1543942992874109
+  },
+  "examples": [
+    {
+      "user_id_masked": "b655...4fc4",
+      "interaction_count": 64,
+      "collaborative_top5": [
+        {
+          "PhongtroId": 104,
+          "CollaborativeScore": 0.21090825889463816
+        },
+        {
+          "PhongtroId": 183,
+          "CollaborativeScore": 0.20561939994829212
+        },
+        {
+          "PhongtroId": 184,
+          "CollaborativeScore": 0.18758516001784054
+        },
+        {
+          "PhongtroId": 25,
+          "CollaborativeScore": 0.1780012319081773
+        },
+        {
+          "PhongtroId": 86,
+          "CollaborativeScore": 0.16431249310696383
+        }
+      ],
+      "content_based_top5": [
+        {
+          "PhongtroId": 271,
+          "ContentScore": 0.9126718165938961
+        },
+        {
+          "PhongtroId": 374,
+          "ContentScore": 0.9124280126412919
+        },
+        {
+          "PhongtroId": 347,
+          "ContentScore": 0.910082302639933
+        },
+        {
+          "PhongtroId": 304,
+          "ContentScore": 0.9032130301505207
+        },
+        {
+          "PhongtroId": 297,
+          "ContentScore": 0.8989452627376173
+        }
+      ],
+      "overlap_count": 0,
+      "overlap_room_ids": []
+    },
+    {
+      "user_id_masked": "f032...db15",
+      "interaction_count": 51,
+      "collaborative_top5": [
+        {
+          "PhongtroId": 376,
+          "CollaborativeScore": 0.18580403764002557
+        },
+        {
+          "PhongtroId": 341,
+          "CollaborativeScore": 0.185332877280135
+        },
+        {
+          "PhongtroId": 295,
+          "CollaborativeScore": 0.14693280045030577
+        },
+        {
+          "PhongtroId": 264,
+          "CollaborativeScore": 0.14484875997301377
+        },
+        {
+          "PhongtroId": 182,
+          "CollaborativeScore": 0.14158067948608233
+        }
+      ],
+      "content_based_top5": [
+        {
+          "PhongtroId": 271,
+          "ContentScore": 0.9138122217320658
+        },
+        {
+          "PhongtroId": 304,
+          "ContentScore": 0.9120930334397823
+        },
+        {
+          "PhongtroId": 97,
+          "ContentScore": 0.9049264611896374
+        },
+        {
+          "PhongtroId": 297,
+          "ContentScore": 0.9042992363041006
+        },
+        {
+          "PhongtroId": 30,
+          "ContentScore": 0.8985868923691616
+        }
+      ],
+      "overlap_count": 0,
+      "overlap_room_ids": []
+    },
+    {
+      "user_id_masked": "bf07...bbfd",
+      "interaction_count": 3,
+      "collaborative_top5": [
+        {
+          "PhongtroId": 253,
+          "CollaborativeScore": 0.40010712505899754
+        },
+        {
+          "PhongtroId": 83,
+          "CollaborativeScore": 0.31751607752051253
+        },
+        {
+          "PhongtroId": 42,
+          "CollaborativeScore": 0.2906135091189155
+        },
+        {
+          "PhongtroId": 37,
+          "CollaborativeScore": 0.28436605339135895
+        },
+        {
+          "PhongtroId": 326,
+          "CollaborativeScore": 0.28204984707888264
+        }
+      ],
+      "content_based_top5": [
+        {
+          "PhongtroId": 48,
+          "ContentScore": 0.8769416880528736
+        },
+        {
+          "PhongtroId": 409,
+          "ContentScore": 0.8669740995551477
+        },
+        {
+          "PhongtroId": 436,
+          "ContentScore": 0.8666523121171962
+        },
+        {
+          "PhongtroId": 261,
+          "ContentScore": 0.8564002483805321
+        },
+        {
+          "PhongtroId": 147,
+          "ContentScore": 0.8549064525954587
+        }
+      ],
+      "overlap_count": 0,
+      "overlap_room_ids": []
+    }
+  ],
+  "model_artifact": "AI/models/collaborative_model.npz",
+  "conclusion": "C. Collaborative kém rõ rệt; giữ Content-Based làm model chính, Collaborative chỉ là challenger.",
+  "limitations": [
+    "72/74 users and 3726/3740 interactions are demo data",
+    "Non-demo metrics are descriptive only",
+    "No timestamp exists, so the split is seeded random per user"
+  ]
+}

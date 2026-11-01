@@ -1,0 +1,10 @@
+{
+  "factors": 64,
+  "regularization": 0.05,
+  "iterations": 15,
+  "alpha": 20,
+  "seed": 20261028,
+  "strength_transform": "log1p",
+  "confidence_formula": "1 + alpha * log1p(Score)",
+  "benchmarked_configs": 12
+}

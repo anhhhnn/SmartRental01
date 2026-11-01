@@ -1,0 +1,225 @@
+{
+  "model": "content_based_cosine",
+  "features": [
+    "KhuVuc",
+    "TienNghi",
+    "Gia",
+    "DienTich",
+    "SoNguoiToiDa"
+  ],
+  "feature_group_count": 5,
+  "feature_names": [
+    "KhuVuc_Cam Giá",
+    "KhuVuc_Chùa Hang",
+    "KhuVuc_Gia Sàng",
+    "KhuVuc_Hoàng Văn Thụ",
+    "KhuVuc_Hương Sơn",
+    "KhuVuc_Phan Đình Phùng",
+    "KhuVuc_Phú Xá",
+    "KhuVuc_Quan Triều",
+    "KhuVuc_Quang Trung",
+    "KhuVuc_Quang Vinh",
+    "KhuVuc_Quyết Thắng",
+    "KhuVuc_Sơn Cẩm",
+    "KhuVuc_Thịnh Đán",
+    "KhuVuc_Trung Thành",
+    "KhuVuc_Trưng Vương",
+    "KhuVuc_Tân Long",
+    "KhuVuc_Tân Thịnh",
+    "KhuVuc_Tích Lương",
+    "KhuVuc_Túc Duyên",
+    "KhuVuc_Đồng Bẩm",
+    "KhuVuc_Đồng Quang",
+    "TienNghi=Ban công",
+    "TienNghi=Bếp",
+    "TienNghi=Chỗ để xe",
+    "TienNghi=Giường",
+    "TienNghi=Máy giặt",
+    "TienNghi=Nóng lạnh",
+    "TienNghi=Tủ lạnh",
+    "TienNghi=Tủ quần áo",
+    "TienNghi=WC riêng",
+    "TienNghi=Wifi",
+    "TienNghi=Điều hòa",
+    "Gia_scaled",
+    "DienTich_scaled",
+    "SoNguoiToiDa_scaled"
+  ],
+  "vector_dimension": 35,
+  "vector_validation": "passed",
+  "room_count": 450,
+  "visible_room_count": 421,
+  "hidden_room_count": 29,
+  "profile_user_count": 74,
+  "tenant_user_count": 74,
+  "cold_start_user_count": 0,
+  "segments": {
+    "demo_tenant_users": 72,
+    "non_demo_tenant_users": 2,
+    "demo_profile_users": 72,
+    "non_demo_profile_users": 2
+  },
+  "split": {
+    "method": "per-user seeded random 20% visible holdout",
+    "seed": 20261028,
+    "train_interactions": 2963,
+    "test_interactions": 777,
+    "skipped_users": {}
+  },
+  "metrics": {
+    "all_users": {
+      "eligible_users": 74,
+      "precision_at_5": 0.03513513513513514,
+      "recall_at_5": 0.016077091077091078,
+      "hit_rate_at_5": 0.17567567567567569,
+      "precision_at_10": 0.032432432432432434,
+      "recall_at_10": 0.029178479178479176,
+      "hit_rate_at_10": 0.28378378378378377,
+      "ndcg_at_10": 0.03227378334223687
+    },
+    "demo_users": {
+      "eligible_users": 72,
+      "precision_at_5": 0.036111111111111115,
+      "recall_at_5": 0.01652367694034361,
+      "hit_rate_at_5": 0.18055555555555555,
+      "precision_at_10": 0.03333333333333334,
+      "recall_at_10": 0.029988992488992488,
+      "hit_rate_at_10": 0.2916666666666667,
+      "ndcg_at_10": 0.03317027732396568
+    },
+    "non_demo_users": {
+      "eligible_users": 2,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "hit_rate_at_5": 0.0,
+      "precision_at_10": 0.0,
+      "recall_at_10": 0.0,
+      "hit_rate_at_10": 0.0,
+      "ndcg_at_10": 0.0
+    }
+  },
+  "examples": [
+    {
+      "user_id_masked": "b655...4fc4",
+      "interaction_count": 64,
+      "top_areas": [
+        "Đồng Quang",
+        "Tân Thịnh",
+        "Trung Thành"
+      ],
+      "weighted_average_price": 1779096.638655462,
+      "top_amenities": [
+        "Wifi",
+        "Chỗ để xe",
+        "WC riêng",
+        "Điều hòa",
+        "Tủ quần áo"
+      ],
+      "recommendations": [
+        {
+          "PhongtroId": 271,
+          "ContentScore": 0.887913
+        },
+        {
+          "PhongtroId": 347,
+          "ContentScore": 0.877368
+        },
+        {
+          "PhongtroId": 374,
+          "ContentScore": 0.870324
+        },
+        {
+          "PhongtroId": 297,
+          "ContentScore": 0.864525
+        },
+        {
+          "PhongtroId": 304,
+          "ContentScore": 0.861167
+        }
+      ]
+    },
+    {
+      "user_id_masked": "f032...db15",
+      "interaction_count": 51,
+      "top_areas": [
+        "Đồng Quang",
+        "Quan Triều",
+        "Hương Sơn"
+      ],
+      "weighted_average_price": 1802586.2068965517,
+      "top_amenities": [
+        "Wifi",
+        "Chỗ để xe",
+        "WC riêng",
+        "Nóng lạnh",
+        "Tủ quần áo"
+      ],
+      "recommendations": [
+        {
+          "PhongtroId": 304,
+          "ContentScore": 0.899204
+        },
+        {
+          "PhongtroId": 271,
+          "ContentScore": 0.898653
+        },
+        {
+          "PhongtroId": 297,
+          "ContentScore": 0.880432
+        },
+        {
+          "PhongtroId": 97,
+          "ContentScore": 0.876703
+        },
+        {
+          "PhongtroId": 454,
+          "ContentScore": 0.868718
+        }
+      ]
+    },
+    {
+      "user_id_masked": "bf07...bbfd",
+      "interaction_count": 3,
+      "top_areas": [
+        "Hương Sơn",
+        "Quang Trung",
+        "Quan Triều"
+      ],
+      "weighted_average_price": 1300000.0,
+      "top_amenities": [
+        "Chỗ để xe",
+        "Wifi",
+        "Nóng lạnh",
+        "Tủ quần áo",
+        "WC riêng"
+      ],
+      "recommendations": [
+        {
+          "PhongtroId": 105,
+          "ContentScore": 0.819806
+        },
+        {
+          "PhongtroId": 191,
+          "ContentScore": 0.81847
+        },
+        {
+          "PhongtroId": 127,
+          "ContentScore": 0.81361
+        },
+        {
+          "PhongtroId": 436,
+          "ContentScore": 0.810198
+        },
+        {
+          "PhongtroId": 48,
+          "ContentScore": 0.803914
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Metrics are dominated by demo accounts.",
+    "Only two non-demo tenants have interactions, which is insufficient for production conclusions.",
+    "The interaction export has no event timestamp, so the holdout is seeded random rather than temporal."
+  ]
+}

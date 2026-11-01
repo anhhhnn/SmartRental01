@@ -1,0 +1,451 @@
+PhongtroId,KhuVuc,Gia,DienTich,SoNguoiToiDa,TienNghi,IsVisible
+21,Phan Đình Phùng,1150000.00,14,1,Ban công|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,0
+22,Cam Giá,2450000.00,31,3,Ban công|Bếp|Chỗ để xe|Máy giặt|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+23,Đồng Quang,1750000.00,21,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Tủ lạnh|WC riêng|Wifi,0
+24,Sơn Cẩm,2150000.00,36,3,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Tủ lạnh|Tủ quần áo|Wifi,1
+25,Sơn Cẩm,900000.00,11,1,Ban công|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+26,Hương Sơn,1400000.00,23,1,Chỗ để xe|Điều hòa|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+27,Túc Duyên,2300000.00,35,3,Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+28,Chùa Hang,1300000.00,17,2,Ban công|Bếp|Chỗ để xe|Máy giặt|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+29,Quang Trung,1450000.00,16,2,Ban công|Bếp|Chỗ để xe|Giường|Máy giặt|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+30,Quyết Thắng,1750000.00,24,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+31,Quan Triều,1450000.00,25,3,Điều hòa|Giường|Máy giặt|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+32,Phú Xá,1050000.00,15,1,Bếp|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+33,Chùa Hang,1600000.00,24,2,Bếp|Chỗ để xe|Máy giặt|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+34,Chùa Hang,1700000.00,24,1,Ban công|Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+35,Trung Thành,2600000.00,33,3,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|Wifi,1
+36,Quang Trung,1350000.00,18,1,Ban công|Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+37,Tân Long,1500000.00,23,1,Chỗ để xe|Điều hòa|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+38,Đồng Quang,1800000.00,22,1,Ban công|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+39,Quan Triều,1150000.00,25,2,Ban công|Bếp|Chỗ để xe|Máy giặt|Tủ lạnh|Wifi,0
+40,Tích Lương,3250000.00,40,3,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+41,Đồng Quang,2150000.00,27,3,Ban công|Bếp|Chỗ để xe|Giường|Tủ lạnh|WC riêng|Wifi,1
+42,Thịnh Đán,1500000.00,17,1,Ban công|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng,1
+43,Sơn Cẩm,3100000.00,43,3,Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+44,Trưng Vương,1250000.00,17,2,Bếp|Chỗ để xe|Máy giặt|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+45,Quang Vinh,2100000.00,28,3,Ban công|Chỗ để xe|Giường|Tủ quần áo|WC riêng|Wifi,1
+46,Phú Xá,2700000.00,43,4,Chỗ để xe|Giường|Nóng lạnh,1
+47,Chùa Hang,1100000.00,10,1,Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+48,Hương Sơn,1150000.00,10,1,Ban công|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+49,Chùa Hang,2450000.00,32,3,Bếp|Chỗ để xe|Điều hòa|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+50,Tân Thịnh,2450000.00,28,3,Ban công|Chỗ để xe|Điều hòa|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+51,Đồng Bẩm,2100000.00,32,3,Ban công|Chỗ để xe|Điều hòa|Tủ lạnh|Wifi,1
+52,Quang Vinh,1850000.00,24,1,Ban công|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Wifi,1
+53,Hương Sơn,1450000.00,21,1,Chỗ để xe|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+54,Gia Sàng,1300000.00,16,1,Chỗ để xe|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+55,Sơn Cẩm,1450000.00,30,3,Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+56,Túc Duyên,1700000.00,24,2,Chỗ để xe|Điều hòa|Nóng lạnh|WC riêng|Wifi,1
+57,Cam Giá,1950000.00,28,3,Ban công|Chỗ để xe|Điều hòa|Tủ quần áo|WC riêng|Wifi,1
+58,Quan Triều,1600000.00,25,3,Ban công|Chỗ để xe|Điều hòa|Nóng lạnh|WC riêng|Wifi,1
+59,Túc Duyên,1300000.00,19,1,Ban công|Giường|Nóng lạnh|WC riêng|Wifi,1
+60,Đồng Quang,1750000.00,21,2,Bếp|Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+61,Trưng Vương,1750000.00,23,1,Chỗ để xe|Giường|Máy giặt|Nóng lạnh|WC riêng|Wifi,0
+62,Phan Đình Phùng,1800000.00,22,2,Chỗ để xe|Điều hòa|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+63,Gia Sàng,1750000.00,23,1,Bếp|Điều hòa|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+64,Quang Vinh,2200000.00,28,3,Bếp|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+65,Túc Duyên,1500000.00,18,1,Bếp|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+66,Hoàng Văn Thụ,1850000.00,22,1,Bếp|Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+67,Quyết Thắng,850000.00,20,2,Ban công|Giường|Wifi,1
+68,Tân Long,1350000.00,25,3,Chỗ để xe|Máy giặt|WC riêng|Wifi,1
+69,Phú Xá,1000000.00,15,2,Bếp|Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+70,Chùa Hang,1700000.00,28,2,Chỗ để xe|Giường|Nóng lạnh|WC riêng|Wifi,1
+71,Quan Triều,1000000.00,14,1,Chỗ để xe|Tủ lạnh|Tủ quần áo|Wifi,0
+72,Trưng Vương,1100000.00,13,1,Ban công|Chỗ để xe|Máy giặt|Tủ quần áo|WC riêng|Wifi,1
+73,Trung Thành,1500000.00,19,1,Ban công|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1
+74,Tích Lương,2300000.00,27,3,Ban công|Chỗ để xe|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+75,Trung Thành,1350000.00,19,1,Bếp|Chỗ để xe|Giường|Nóng lạnh|Wifi,1
+76,Trưng Vương,1550000.00,25,2,Ban công|Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+77,Phan Đình Phùng,1950000.00,24,1,Ban công|Chỗ để xe|Điều hòa|Nóng lạnh|WC riêng|Wifi,1
+78,Phú Xá,1250000.00,25,3,Ban công|Chỗ để xe|Nóng lạnh|Wifi,1
+79,Chùa Hang,1450000.00,19,1,Bếp|Chỗ để xe|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+80,Chùa Hang,1250000.00,25,2,Bếp|Chỗ để xe|WC riêng|Wifi,1
+81,Phú Xá,2800000.00,34,3,Bếp|Chỗ để xe|Điều hòa|Nóng lạnh|Tủ lạnh|Wifi,1
+82,Đồng Bẩm,1800000.00,27,2,Chỗ để xe|Giường|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+83,Trung Thành,1050000.00,10,1,Chỗ để xe|Giường|Tủ lạnh|WC riêng|Wifi,1
+84,Tân Thịnh,1400000.00,19,1,Điều hòa|Tủ lạnh,1
+85,Đồng Bẩm,1000000.00,10,1,Ban công|Chỗ để xe|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+86,Túc Duyên,2100000.00,26,3,Ban công|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+87,Quang Trung,1400000.00,17,2,Chỗ để xe|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,0
+88,Quang Trung,1500000.00,19,1,Bếp|Chỗ để xe|Tủ quần áo|WC riêng|Wifi,1
+89,Hương Sơn,1800000.00,26,2,Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+90,Gia Sàng,1550000.00,24,1,Ban công|Chỗ để xe|Máy giặt|Wifi,1
+91,Hoàng Văn Thụ,1100000.00,15,2,Bếp|Chỗ để xe|Giường|Nóng lạnh|WC riêng|Wifi,1
+92,Tân Thịnh,1150000.00,10,1,Chỗ để xe|Điều hòa|Nóng lạnh|WC riêng|Wifi,1
+93,Phú Xá,850000.00,10,1,Nóng lạnh|WC riêng|Wifi,1
+94,Phú Xá,1750000.00,25,2,Ban công|Bếp|Chỗ để xe|Máy giặt|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+95,Thịnh Đán,1450000.00,16,1,Ban công|Bếp|Chỗ để xe|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+96,Chùa Hang,1150000.00,14,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Nóng lạnh|WC riêng|Wifi,1
+97,Hương Sơn,2250000.00,27,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+98,Tân Thịnh,1850000.00,21,1,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+99,Gia Sàng,1550000.00,25,3,Bếp|Máy giặt|Tủ lạnh|WC riêng|Wifi,1
+100,Sơn Cẩm,1200000.00,25,3,Chỗ để xe|Điều hòa|Nóng lạnh|Wifi,1
+101,Tích Lương,1500000.00,18,1,Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|WC riêng,1
+102,Phú Xá,2000000.00,30,3,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+103,Trung Thành,1200000.00,17,2,Chỗ để xe|Giường|WC riêng|Wifi,1
+104,Hoàng Văn Thụ,1950000.00,23,3,Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+105,Trung Thành,1450000.00,19,1,Ban công|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+106,Sơn Cẩm,1000000.00,19,1,Ban công|Chỗ để xe|Máy giặt,1
+107,Tân Thịnh,1150000.00,15,1,Ban công|Bếp|Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+108,Quang Vinh,1500000.00,16,1,Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+109,Trung Thành,1100000.00,20,2,Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+110,Gia Sàng,1150000.00,12,1,Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+111,Trưng Vương,1150000.00,15,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+112,Hương Sơn,1200000.00,17,1,Ban công|Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+113,Quan Triều,850000.00,15,1,Ban công|Chỗ để xe|Tủ lạnh|Wifi,1
+114,Gia Sàng,2450000.00,35,4,Ban công|Chỗ để xe|Điều hòa|Giường|Máy giặt|Tủ quần áo|WC riêng|Wifi,1
+115,Quan Triều,1650000.00,22,2,Bếp|Chỗ để xe|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+116,Phan Đình Phùng,1500000.00,18,2,Bếp|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+117,Tân Thịnh,1150000.00,14,1,Chỗ để xe|Điều hòa|Nóng lạnh|WC riêng|Wifi,1
+118,Thịnh Đán,1250000.00,20,3,Chỗ để xe|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+119,Phan Đình Phùng,1150000.00,13,1,Chỗ để xe|Giường|Nóng lạnh|WC riêng|Wifi,1
+120,Phan Đình Phùng,2100000.00,26,2,Ban công|Bếp|Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+121,Túc Duyên,1100000.00,20,3,Chỗ để xe|Điều hòa|Tủ lạnh|Tủ quần áo|Wifi,1
+122,Quan Triều,1150000.00,15,1,Ban công|Chỗ để xe|Điều hòa|Máy giặt|Tủ lạnh|WC riêng|Wifi,1
+123,Hoàng Văn Thụ,3350000.00,36,4,Chỗ để xe|Điều hòa|Máy giặt|Wifi,1
+124,Phú Xá,1350000.00,25,3,Chỗ để xe|Điều hòa|Nóng lạnh|Wifi,1
+125,Đồng Quang,1250000.00,17,1,Máy giặt|Nóng lạnh|Tủ quần áo|Wifi,1
+126,Tân Long,1150000.00,11,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1
+127,Tân Long,1500000.00,19,1,Ban công|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+128,Cam Giá,900000.00,12,1,Chỗ để xe|Giường|WC riêng|Wifi,1
+129,Quang Trung,1150000.00,11,1,Chỗ để xe|Điều hòa|Nóng lạnh|Tủ lạnh|WC riêng,1
+130,Đồng Quang,1450000.00,20,2,Ban công|Chỗ để xe|Điều hòa|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+131,Đồng Quang,2350000.00,28,2,Bếp|Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+132,Thịnh Đán,1200000.00,17,1,Chỗ để xe|WC riêng|Wifi,1
+133,Hoàng Văn Thụ,1150000.00,14,1,Ban công|Chỗ để xe|WC riêng|Wifi,1
+134,Hoàng Văn Thụ,1500000.00,19,1,Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Wifi,1
+135,Đồng Bẩm,2600000.00,34,3,Chỗ để xe|Điều hòa|Nóng lạnh|Tủ lạnh|WC riêng,1
+136,Quang Vinh,1250000.00,18,1,Bếp|Chỗ để xe|Máy giặt|WC riêng|Wifi,1
+137,Gia Sàng,1400000.00,20,1,Bếp|Chỗ để xe|Điều hòa|Máy giặt|Tủ lạnh|WC riêng|Wifi,1
+138,Đồng Quang,2800000.00,33,4,Bếp|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1
+139,Quang Vinh,2100000.00,27,2,Điều hòa|Máy giặt|Tủ quần áo|WC riêng|Wifi,1
+140,Trưng Vương,2150000.00,26,2,Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+141,Cam Giá,1600000.00,24,2,Ban công|Chỗ để xe|Giường|Máy giặt|Tủ lạnh|WC riêng|Wifi,1
+142,Quang Trung,2750000.00,34,2,Ban công|Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+143,Chùa Hang,900000.00,10,1,Ban công|Chỗ để xe|Giường|WC riêng|Wifi,1
+144,Trưng Vương,3150000.00,37,4,Bếp|Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+145,Tân Thịnh,2850000.00,34,2,Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Wifi,1
+146,Tân Long,900000.00,10,1,Ban công|Chỗ để xe|Máy giặt|Tủ quần áo|Wifi,1
+147,Túc Duyên,1150000.00,14,1,Ban công|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+148,Tân Long,1450000.00,18,1,Bếp|Chỗ để xe|Giường|Máy giặt|Tủ quần áo|WC riêng|Wifi,1
+149,Tân Thịnh,1950000.00,22,3,Ban công|Bếp|Chỗ để xe|Điều hòa|Máy giặt|Tủ lạnh|Wifi,1
+150,Quang Vinh,2350000.00,27,2,Bếp|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+151,Trưng Vương,1500000.00,18,1,Ban công|Bếp|Chỗ để xe|Tủ quần áo|WC riêng|Wifi,1
+152,Quyết Thắng,1000000.00,15,1,Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+153,Sơn Cẩm,1150000.00,13,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Tủ lạnh|WC riêng|Wifi,1
+154,Tân Long,1500000.00,18,2,Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+155,Sơn Cẩm,1350000.00,17,1,Chỗ để xe|Điều hòa|Máy giặt|Tủ lạnh|WC riêng|Wifi,1
+156,Tân Thịnh,1150000.00,11,1,Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+157,Quan Triều,1150000.00,10,1,Ban công|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+158,Tân Thịnh,2750000.00,33,4,Ban công|Chỗ để xe|Điều hòa|Nóng lạnh|WC riêng|Wifi,1
+159,Trưng Vương,1400000.00,25,2,Bếp|Tủ quần áo|WC riêng|Wifi,1
+160,Tích Lương,1400000.00,19,1,Ban công|Bếp|Điều hòa|Máy giặt|Wifi,1
+161,Tích Lương,1150000.00,13,1,Ban công|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+162,Hoàng Văn Thụ,2550000.00,28,2,Chỗ để xe|Điều hòa|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+163,Đồng Quang,1500000.00,18,1,Ban công|Bếp|Chỗ để xe|Giường|Tủ quần áo|WC riêng|Wifi,1
+164,Quang Trung,1150000.00,15,2,Bếp|Chỗ để xe|Giường|Tủ lạnh|WC riêng|Wifi,1
+165,Phan Đình Phùng,1450000.00,20,2,Chỗ để xe|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+166,Tích Lương,1500000.00,17,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1
+167,Gia Sàng,1500000.00,23,3,Chỗ để xe|Nóng lạnh|Tủ quần áo|Wifi,0
+168,Túc Duyên,1550000.00,22,1,Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+169,Quang Trung,950000.00,13,1,WC riêng|Wifi,1
+170,Trưng Vương,1150000.00,14,1,Ban công|Chỗ để xe|Điều hòa|Máy giặt|WC riêng|Wifi,1
+171,Cam Giá,1700000.00,24,1,Ban công|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+172,Trung Thành,2150000.00,26,3,Ban công|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+173,Tích Lương,1100000.00,14,1,Ban công|Chỗ để xe|Nóng lạnh|Wifi,1
+174,Cam Giá,1100000.00,20,2,Ban công|Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+175,Cam Giá,1550000.00,24,2,Bếp|Chỗ để xe|Giường|WC riêng|Wifi,1
+176,Gia Sàng,1500000.00,22,2,Chỗ để xe|Điều hòa|Nóng lạnh,1
+177,Trưng Vương,1500000.00,19,2,Chỗ để xe|Máy giặt|WC riêng|Wifi,1
+178,Trung Thành,1950000.00,26,3,Ban công|Chỗ để xe|Điều hòa|Giường|Tủ lạnh|WC riêng|Wifi,1
+179,Tân Long,1200000.00,16,1,Điều hòa|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+180,Trưng Vương,1850000.00,25,2,Ban công|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1
+181,Quang Vinh,900000.00,10,1,Ban công|Chỗ để xe|Nóng lạnh|WC riêng,1
+182,Đồng Quang,1500000.00,16,2,Ban công|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+183,Tích Lương,1200000.00,20,1,Bếp|Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+184,Gia Sàng,1900000.00,21,2,Ban công|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+185,Gia Sàng,1300000.00,20,1,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|Wifi,1
+186,Tích Lương,1400000.00,20,1,Ban công|Điều hòa|Máy giặt|Tủ lạnh|WC riêng|Wifi,1
+187,Tân Long,1800000.00,30,3,Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+188,Phan Đình Phùng,1150000.00,12,1,Ban công|Chỗ để xe|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+189,Hoàng Văn Thụ,1150000.00,14,1,Ban công|Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+190,Quan Triều,2150000.00,27,2,Ban công|Bếp|Chỗ để xe|Máy giặt|Nóng lạnh|Tủ quần áo|Wifi,1
+191,Hoàng Văn Thụ,1500000.00,20,1,Ban công|Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+192,Đồng Quang,1750000.00,21,2,Ban công|Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+193,Quyết Thắng,1150000.00,10,1,Chỗ để xe|Giường|Máy giặt|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+194,Phú Xá,1550000.00,23,1,Ban công|Giường|Máy giặt|WC riêng|Wifi,1
+195,Quyết Thắng,1350000.00,17,1,Chỗ để xe|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+196,Thịnh Đán,1950000.00,24,2,Ban công|Bếp|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+197,Hoàng Văn Thụ,1800000.00,22,1,Ban công|Chỗ để xe|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+198,Gia Sàng,1500000.00,22,1,Ban công|Bếp|Chỗ để xe|Giường|WC riêng|Wifi,1
+199,Tích Lương,900000.00,14,1,Chỗ để xe|Tủ quần áo|Wifi,1
+200,Túc Duyên,1650000.00,22,2,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|Wifi,1
+201,Phan Đình Phùng,2600000.00,32,3,Ban công|Chỗ để xe|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+202,Đồng Bẩm,950000.00,15,1,Bếp|Chỗ để xe|Tủ quần áo|WC riêng|Wifi,1
+203,Phan Đình Phùng,1450000.00,16,1,Chỗ để xe|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1
+204,Quan Triều,2450000.00,32,2,Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+205,Gia Sàng,1750000.00,27,2,Tủ lạnh|Wifi,1
+206,Quang Vinh,1700000.00,26,2,Chỗ để xe|Máy giặt|Tủ quần áo|WC riêng|Wifi,0
+207,Tân Thịnh,1800000.00,30,3,Điều hòa|Giường|WC riêng|Wifi,1
+208,Phú Xá,1700000.00,24,1,Ban công|Bếp|Giường|Nóng lạnh|WC riêng|Wifi,1
+209,Tân Long,2000000.00,29,2,Bếp|Chỗ để xe|Điều hòa|Giường|WC riêng,1
+210,Thịnh Đán,1400000.00,20,1,Ban công|Chỗ để xe|Điều hòa|Nóng lạnh|WC riêng|Wifi,1
+211,Chùa Hang,1450000.00,22,2,Ban công|Chỗ để xe|Điều hòa|Giường|WC riêng|Wifi,1
+212,Tích Lương,1950000.00,22,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+213,Đồng Quang,1850000.00,21,2,Ban công|Chỗ để xe|Điều hòa|Giường|WC riêng,1
+214,Quang Vinh,1600000.00,25,2,Điều hòa|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+215,Quan Triều,1150000.00,16,2,Bếp|WC riêng|Wifi,0
+216,Phú Xá,1050000.00,19,1,Chỗ để xe|Tủ quần áo|Wifi,1
+217,Thịnh Đán,1150000.00,14,1,Chỗ để xe|Điều hòa|Giường|Tủ lạnh|WC riêng|Wifi,1
+218,Thịnh Đán,3150000.00,36,4,Ban công|Bếp|Chỗ để xe|Điều hòa|Tủ quần áo|WC riêng|Wifi,1
+219,Tân Thịnh,2350000.00,29,3,Bếp|Chỗ để xe|Điều hòa|Giường|Tủ lạnh|WC riêng|Wifi,1
+220,Tích Lương,1600000.00,25,3,Ban công|Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+221,Quang Trung,2150000.00,27,2,Bếp|Chỗ để xe|Điều hòa|Máy giặt|WC riêng|Wifi,1
+222,Thịnh Đán,1800000.00,23,2,Ban công|Bếp|Chỗ để xe|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+223,Túc Duyên,2850000.00,33,3,Ban công|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+224,Phan Đình Phùng,1500000.00,19,1,Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|Wifi,1
+225,Quyết Thắng,1750000.00,23,1,Ban công|Chỗ để xe|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+226,Hương Sơn,1400000.00,23,1,Điều hòa|Giường|WC riêng|Wifi,1
+227,Phan Đình Phùng,1500000.00,17,1,Ban công|Chỗ để xe|Giường|Máy giặt|Tủ lạnh|WC riêng|Wifi,1
+228,Tân Long,1350000.00,21,2,Chỗ để xe|Điều hòa|Giường|WC riêng|Wifi,1
+229,Túc Duyên,2750000.00,40,4,Chỗ để xe|Điều hòa|Máy giặt|Tủ quần áo|WC riêng|Wifi,1
+230,Tân Thịnh,2450000.00,28,2,Bếp|Chỗ để xe|Điều hòa|Tủ lạnh|WC riêng|Wifi,1
+231,Trưng Vương,2200000.00,28,3,Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+232,Quang Trung,1650000.00,24,1,Ban công|Chỗ để xe|Tủ quần áo|WC riêng|Wifi,1
+233,Trung Thành,850000.00,15,1,Chỗ để xe|Giường|Nóng lạnh|Wifi,1
+234,Cam Giá,1300000.00,19,1,Chỗ để xe|Nóng lạnh|Tủ lạnh|Tủ quần áo|Wifi,1
+235,Trưng Vương,1150000.00,17,1,WC riêng|Wifi,1
+236,Tích Lương,1350000.00,17,1,Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+237,Đồng Bẩm,1150000.00,18,1,Chỗ để xe|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+238,Quang Vinh,1900000.00,24,1,Ban công|Bếp|Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+239,Trưng Vương,1250000.00,16,2,Ban công|Bếp|Chỗ để xe|Máy giặt|Nóng lạnh|Wifi,1
+240,Tích Lương,1950000.00,23,1,Ban công|Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+241,Trung Thành,1500000.00,17,2,Bếp|Chỗ để xe|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+242,Sơn Cẩm,800000.00,17,2,Tủ quần áo|Wifi,1
+243,Đồng Quang,1850000.00,25,3,Ban công|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+244,Chùa Hang,1400000.00,16,1,Ban công|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|WC riêng|Wifi,0
+245,Hoàng Văn Thụ,1100000.00,10,1,Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+246,Đồng Quang,1300000.00,20,2,Ban công|Chỗ để xe|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|Wifi,1
+247,Gia Sàng,1350000.00,17,1,Bếp|Chỗ để xe|Tủ lạnh|WC riêng|Wifi,1
+248,Phú Xá,1450000.00,19,1,Chỗ để xe|Điều hòa|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng,1
+249,Đồng Quang,1400000.00,17,1,Bếp|Chỗ để xe|Tủ quần áo|WC riêng|Wifi,1
+250,Phú Xá,1950000.00,29,2,Chỗ để xe|Máy giặt|WC riêng|Wifi,1
+251,Đồng Bẩm,1950000.00,26,3,Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,0
+252,Tân Long,1350000.00,16,1,Ban công|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1
+253,Túc Duyên,1350000.00,20,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Tủ lạnh|Tủ quần áo|Wifi,1
+254,Thịnh Đán,1250000.00,16,1,Bếp|Chỗ để xe|Máy giặt|WC riêng,1
+255,Trung Thành,1200000.00,18,1,Bếp|WC riêng|Wifi,0
+256,Thịnh Đán,1100000.00,11,1,Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+257,Cam Giá,1450000.00,22,1,Ban công|Chỗ để xe|Điều hòa|Nóng lạnh|Wifi,1
+258,Hoàng Văn Thụ,1800000.00,22,3,Bếp|Chỗ để xe|Giường|Máy giặt|WC riêng|Wifi,1
+259,Gia Sàng,1150000.00,15,1,Bếp|Điều hòa|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+260,Đồng Quang,2450000.00,31,4,Ban công|Chỗ để xe|Giường|Tủ quần áo|WC riêng|Wifi,1
+261,Hoàng Văn Thụ,1150000.00,13,1,Ban công|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+262,Thịnh Đán,1750000.00,26,2,Điều hòa|Nóng lạnh|WC riêng|Wifi,1
+263,Quang Vinh,1000000.00,13,1,Bếp|Chỗ để xe|Giường|Nóng lạnh|Wifi,1
+264,Trung Thành,2300000.00,27,3,Bếp|Chỗ để xe|Máy giặt|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+265,Gia Sàng,2300000.00,29,3,Ban công|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+266,Phú Xá,2400000.00,34,2,Ban công|Chỗ để xe|Điều hòa|Tủ quần áo|WC riêng|Wifi,1
+267,Đồng Quang,1450000.00,18,1,Ban công|Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+268,Gia Sàng,1500000.00,19,1,Chỗ để xe|Điều hòa|Giường|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+269,Thịnh Đán,1250000.00,17,2,Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+270,Đồng Quang,2300000.00,26,2,Bếp|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+271,Túc Duyên,1750000.00,19,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+272,Sơn Cẩm,2050000.00,29,3,Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+273,Hoàng Văn Thụ,1600000.00,19,1,Bếp|Giường|Tủ lạnh|Tủ quần áo|WC riêng,1
+274,Quyết Thắng,2600000.00,34,3,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+275,Gia Sàng,2450000.00,30,2,Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|Wifi,1
+276,Túc Duyên,1550000.00,20,1,Ban công|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+277,Phan Đình Phùng,1750000.00,18,2,Bếp|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+278,Phan Đình Phùng,1850000.00,18,1,Ban công|Bếp|Chỗ để xe|Giường|Máy giặt|Tủ lạnh|Tủ quần áo|Wifi,1
+279,Quyết Thắng,1350000.00,20,2,Chỗ để xe|Giường|Tủ quần áo|WC riêng|Wifi,1
+280,Quyết Thắng,1900000.00,21,1,Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|Wifi,1
+281,Tân Thịnh,1850000.00,20,1,Bếp|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Wifi,1
+282,Quang Vinh,2050000.00,23,1,Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+283,Tân Thịnh,2250000.00,23,3,Chỗ để xe|Điều hòa|Tủ lạnh|Tủ quần áo|Wifi,1
+284,Quyết Thắng,2050000.00,22,2,Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,0
+285,Hương Sơn,1150000.00,17,1,Giường|Tủ quần áo|WC riêng|Wifi,1
+286,Quyết Thắng,1500000.00,17,1,Bếp|Chỗ để xe|Giường|Tủ quần áo|WC riêng|Wifi,1
+287,Quan Triều,1250000.00,15,2,Chỗ để xe|Điều hòa|Giường|Máy giặt|WC riêng|Wifi,1
+288,Hương Sơn,2350000.00,21,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+289,Tân Thịnh,2250000.00,25,3,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+290,Thịnh Đán,2750000.00,32,4,Giường|Tủ quần áo|Wifi,1
+291,Túc Duyên,2000000.00,23,1,Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+292,Quyết Thắng,2350000.00,28,2,Bếp|Chỗ để xe|Máy giặt|Tủ quần áo|WC riêng|Wifi,0
+293,Tích Lương,2450000.00,26,3,Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|WC riêng|Wifi,1
+294,Quang Trung,2100000.00,22,2,Điều hòa|Nóng lạnh|Tủ quần áo|Wifi,1
+295,Quyết Thắng,2450000.00,33,3,Bếp|Giường|Tủ quần áo|Wifi,1
+296,Quyết Thắng,1500000.00,17,2,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+297,Tích Lương,2050000.00,18,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+298,Đồng Bẩm,1750000.00,22,1,Bếp|Chỗ để xe|Điều hòa|Giường|WC riêng|Wifi,1
+299,Phan Đình Phùng,1400000.00,20,1,Giường|Nóng lạnh|Tủ quần áo|WC riêng,1
+300,Sơn Cẩm,1650000.00,23,1,Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+301,Đồng Bẩm,1050000.00,11,1,Giường|Tủ quần áo|Wifi,1
+302,Đồng Quang,1600000.00,10,1,Bếp|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+303,Quang Vinh,1500000.00,10,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+304,Đồng Quang,2350000.00,24,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+305,Trưng Vương,2450000.00,30,2,Chỗ để xe|Điều hòa|Giường|Tủ lạnh|Wifi,1
+306,Tân Thịnh,1400000.00,12,1,Giường|Nóng lạnh|Wifi,1
+307,Phan Đình Phùng,2300000.00,23,2,Bếp|Chỗ để xe|Giường|Tủ quần áo,1
+308,Quang Vinh,1900000.00,24,3,Chỗ để xe|Điều hòa|Giường|Máy giặt|Tủ quần áo|WC riêng|Wifi,0
+309,Quyết Thắng,1400000.00,12,1,Bếp|Chỗ để xe|Điều hòa|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+310,Tân Thịnh,1650000.00,19,1,Giường|Tủ quần áo|Wifi,1
+311,Thịnh Đán,2400000.00,21,2,Bếp|Điều hòa|Giường|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+312,Quan Triều,2800000.00,28,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+313,Tân Long,1550000.00,12,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+314,Phú Xá,1550000.00,16,2,Máy giặt|Wifi,1
+315,Quang Trung,2000000.00,24,2,Điều hòa|Giường|Tủ lạnh|Wifi,1
+316,Tích Lương,2650000.00,30,2,Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|WC riêng,1
+317,Quan Triều,2800000.00,41,3,Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+318,Phú Xá,1800000.00,29,3,Chỗ để xe|Nóng lạnh|Wifi,1
+319,Phú Xá,1850000.00,21,1,Chỗ để xe|Giường|Nóng lạnh|WC riêng|Wifi,0
+320,Quyết Thắng,1550000.00,15,1,Ban công|Bếp|Chỗ để xe|Máy giặt|Tủ lạnh|WC riêng|Wifi,1
+321,Trung Thành,1450000.00,12,1,Ban công|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng,1
+322,Tích Lương,2050000.00,21,2,Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|Wifi,1
+323,Thịnh Đán,1400000.00,18,1,Bếp|Chỗ để xe|Giường|Nóng lạnh|WC riêng|Wifi,1
+324,Trưng Vương,2050000.00,21,2,Chỗ để xe|Điều hòa|Giường|Máy giặt|Tủ quần áo|WC riêng|Wifi,0
+325,Tân Long,2950000.00,37,4,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+326,Phan Đình Phùng,1500000.00,16,1,Bếp|Chỗ để xe|Điều hòa|Nóng lạnh|Tủ quần áo|Wifi,1
+327,Quan Triều,2250000.00,21,2,Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+328,Trung Thành,2150000.00,29,2,Ban công|Chỗ để xe|Giường|WC riêng|Wifi,1
+329,Chùa Hang,2200000.00,24,1,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+330,Sơn Cẩm,1500000.00,10,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+331,Quang Trung,1350000.00,20,1,Chỗ để xe|Giường|Tủ quần áo|Wifi,1
+332,Quang Vinh,1950000.00,21,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+333,Trung Thành,2700000.00,34,3,Bếp|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng,1
+334,Cam Giá,1300000.00,17,1,Tủ quần áo|WC riêng,1
+335,Phan Đình Phùng,2100000.00,22,2,Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|Wifi,1
+336,Chùa Hang,2900000.00,35,3,Chỗ để xe|Điều hòa|Máy giặt|Tủ quần áo|WC riêng|Wifi,1
+337,Chùa Hang,1350000.00,13,1,Chỗ để xe|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1
+338,Phú Xá,1250000.00,13,1,Chỗ để xe|Giường|Tủ quần áo|Wifi,1
+339,Tân Thịnh,2400000.00,23,1,Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+340,Trưng Vương,1450000.00,19,2,Bếp|Chỗ để xe|Giường|Tủ quần áo|WC riêng,1
+341,Đồng Quang,2400000.00,22,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+342,Sơn Cẩm,1900000.00,27,2,Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1
+343,Thịnh Đán,1250000.00,15,1,Ban công|Điều hòa|Giường|Tủ quần áo|Wifi,1
+344,Đồng Bẩm,1600000.00,24,3,Bếp|Chỗ để xe|Giường|Nóng lạnh|WC riêng,0
+345,Quan Triều,1500000.00,17,2,Bếp|Chỗ để xe|Giường|Tủ quần áo|Wifi,1
+346,Tân Thịnh,1600000.00,18,2,Chỗ để xe|Giường|Tủ lạnh|Tủ quần áo,1
+347,Gia Sàng,2100000.00,22,1,Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+348,Tích Lương,2250000.00,24,1,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+349,Hương Sơn,1200000.00,20,2,Ban công|Giường|WC riêng|Wifi,0
+350,Trưng Vương,1250000.00,14,1,Chỗ để xe|WC riêng|Wifi,1
+351,Đồng Bẩm,1850000.00,25,2,Chỗ để xe|Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+352,Thịnh Đán,1600000.00,19,2,Ban công|Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+353,Quyết Thắng,1600000.00,19,1,Chỗ để xe|Giường|Tủ quần áo|WC riêng|Wifi,1
+354,Trung Thành,2300000.00,27,3,Ban công|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+355,Phú Xá,2400000.00,26,2,Bếp|Chỗ để xe|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+356,Phan Đình Phùng,2550000.00,23,1,Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,0
+357,Hương Sơn,1450000.00,15,2,Bếp|Chỗ để xe|Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+358,Tích Lương,1500000.00,18,1,Ban công|WC riêng|Wifi,1
+359,Gia Sàng,3000000.00,34,4,Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+360,Gia Sàng,1200000.00,17,2,Chỗ để xe|Wifi,1
+361,Sơn Cẩm,1250000.00,16,2,Bếp|Tủ quần áo|WC riêng|Wifi,1
+362,Trung Thành,1800000.00,17,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+363,Hương Sơn,1400000.00,22,2,Chỗ để xe|Giường|WC riêng|Wifi,1
+364,Tân Thịnh,2200000.00,21,2,Ban công|Chỗ để xe|Điều hòa|Giường|Máy giặt|Tủ quần áo|WC riêng|Wifi,1
+365,Đồng Bẩm,2000000.00,27,2,Giường|WC riêng|Wifi,0
+366,Tân Thịnh,2050000.00,17,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,0
+367,Hoàng Văn Thụ,1450000.00,13,1,Ban công|Bếp|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Wifi,1
+368,Tích Lương,1500000.00,19,2,Ban công|Chỗ để xe|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+369,Đồng Quang,3450000.00,31,4,Điều hòa|Giường|Tủ quần áo|WC riêng,1
+370,Tân Long,1300000.00,13,1,Chỗ để xe|Điều hòa|Giường|Máy giặt|Tủ quần áo|Wifi,1
+371,Phan Đình Phùng,1700000.00,20,1,Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,0
+372,Quang Vinh,2100000.00,27,2,Chỗ để xe|Máy giặt|Tủ quần áo|WC riêng|Wifi,1
+373,Quang Trung,3150000.00,34,3,Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+374,Gia Sàng,1700000.00,16,1,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+375,Sơn Cẩm,1800000.00,23,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|WC riêng|Wifi,1
+376,Đồng Bẩm,1300000.00,11,1,Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+377,Thịnh Đán,2550000.00,26,2,Chỗ để xe|Điều hòa|Giường|Máy giặt|Tủ quần áo,1
+378,Quan Triều,1400000.00,13,1,Bếp|Chỗ để xe|Điều hòa|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+379,Quan Triều,1250000.00,10,1,Chỗ để xe|Tủ quần áo|WC riêng|Wifi,1
+380,Đồng Bẩm,1400000.00,16,1,Giường|Máy giặt|Wifi,1
+381,Cam Giá,2450000.00,33,3,Chỗ để xe|Giường|Tủ lạnh|WC riêng|Wifi,1
+382,Phú Xá,2450000.00,28,2,Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+383,Tân Long,1750000.00,23,2,Ban công|Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+384,Quang Trung,2500000.00,29,3,Bếp|Giường|Nóng lạnh|WC riêng|Wifi,1
+385,Quan Triều,1450000.00,25,2,WC riêng|Wifi,1
+386,Quan Triều,2250000.00,26,3,Chỗ để xe|Máy giặt,0
+387,Đồng Bẩm,1450000.00,19,2,Bếp|Chỗ để xe|Điều hòa|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+388,Hoàng Văn Thụ,2100000.00,24,1,Chỗ để xe|Điều hòa|WC riêng|Wifi,1
+389,Chùa Hang,1500000.00,16,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Máy giặt|Tủ quần áo|WC riêng|Wifi,0
+390,Hương Sơn,1600000.00,16,1,Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+391,Tân Long,1450000.00,16,2,Bếp|Điều hòa|Giường|Máy giặt|Tủ lạnh|Wifi,1
+392,Sơn Cẩm,2700000.00,44,3,Bếp|Chỗ để xe|Điều hòa|Máy giặt|Nóng lạnh|WC riêng|Wifi,1
+393,Túc Duyên,1450000.00,15,1,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1
+394,Tân Long,1450000.00,20,2,Chỗ để xe|Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+395,Trung Thành,1350000.00,10,1,Chỗ để xe|Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+396,Hương Sơn,2250000.00,29,2,Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,0
+397,Hoàng Văn Thụ,1750000.00,12,1,Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+398,Túc Duyên,2250000.00,26,2,Ban công|Chỗ để xe|Điều hòa|Máy giặt|Tủ lạnh|Tủ quần áo|Wifi,1
+399,Đồng Quang,1600000.00,11,1,Bếp|Chỗ để xe|Nóng lạnh|WC riêng|Wifi,1
+400,Trung Thành,2250000.00,26,3,Chỗ để xe|Điều hòa|Giường|Tủ quần áo|WC riêng,1
+401,Trưng Vương,2250000.00,24,2,Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,0
+402,Cam Giá,1750000.00,23,1,Điều hòa|Máy giặt|Tủ quần áo|Wifi,1
+403,Trung Thành,1550000.00,22,2,Chỗ để xe|Wifi,1
+404,Tân Long,1850000.00,30,3,Máy giặt|Nóng lạnh|Tủ quần áo|Wifi,1
+405,Trưng Vương,3050000.00,35,4,Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+406,Hoàng Văn Thụ,1750000.00,16,1,Ban công|Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|Wifi,0
+407,Trưng Vương,1750000.00,20,3,Ban công|Bếp|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+408,Phú Xá,2900000.00,33,2,Ban công|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+409,Quan Triều,1200000.00,11,1,Ban công|Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+410,Phan Đình Phùng,1650000.00,10,1,Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+411,Thịnh Đán,2900000.00,35,4,Ban công|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|Wifi,1
+412,Hương Sơn,2050000.00,23,2,Ban công|Bếp|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+413,Gia Sàng,2350000.00,27,3,Chỗ để xe|Giường|Tủ quần áo|WC riêng|Wifi,1
+414,Quyết Thắng,1500000.00,20,1,Ban công|Bếp|Chỗ để xe|Giường|WC riêng|Wifi,1
+415,Chùa Hang,2050000.00,28,2,Bếp|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+416,Trung Thành,1150000.00,11,1,Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|Wifi,0
+417,Quang Trung,1700000.00,16,2,Bếp|Chỗ để xe|Điều hòa|Giường|WC riêng|Wifi,1
+418,Chùa Hang,1150000.00,18,2,Điều hòa|Wifi,1
+419,Hoàng Văn Thụ,2850000.00,30,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+420,Tân Thịnh,1800000.00,17,1,Ban công|Bếp|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+421,Túc Duyên,1800000.00,22,2,Chỗ để xe|Tủ quần áo|WC riêng|Wifi,1
+422,Hương Sơn,1450000.00,20,2,Ban công|Bếp|Chỗ để xe|Máy giặt|WC riêng|Wifi,1
+423,Hoàng Văn Thụ,2650000.00,23,2,Bếp|Chỗ để xe|Điều hòa|Giường|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+424,Quang Vinh,1950000.00,25,3,Ban công|Bếp|Chỗ để xe|Giường|Tủ lạnh|Tủ quần áo|Wifi,1
+425,Thịnh Đán,1500000.00,16,1,Chỗ để xe|Điều hòa|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+426,Đồng Quang,2000000.00,20,1,Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+427,Quyết Thắng,1500000.00,18,1,Bếp|Điều hòa|Tủ quần áo|WC riêng|Wifi,1
+428,Tích Lương,2350000.00,21,2,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Wifi,1
+429,Gia Sàng,2100000.00,25,2,Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+430,Quyết Thắng,1250000.00,20,1,Chỗ để xe|Giường|Tủ quần áo|WC riêng|Wifi,1
+431,Đồng Quang,1450000.00,10,1,Chỗ để xe|Điều hòa|Giường|Máy giặt|Tủ quần áo|WC riêng,1
+432,Đồng Quang,1450000.00,12,1,Chỗ để xe|Điều hòa|Nóng lạnh|Wifi,1
+433,Chùa Hang,1050000.00,14,1,Giường|Tủ lạnh|Tủ quần áo|Wifi,1
+434,Tân Long,1900000.00,25,2,Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+435,Đồng Quang,2850000.00,29,2,Bếp|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+436,Quan Triều,1450000.00,13,1,Ban công|Bếp|Chỗ để xe|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+437,Sơn Cẩm,1750000.00,21,1,Bếp|Chỗ để xe|Điều hòa|Tủ quần áo|WC riêng|Wifi,1
+438,Cam Giá,2700000.00,31,2,Ban công|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+439,Quan Triều,2950000.00,45,3,Chỗ để xe|Điều hòa|Nóng lạnh|WC riêng|Wifi,1
+440,Hoàng Văn Thụ,2250000.00,22,1,Chỗ để xe|Giường|Tủ quần áo,1
+441,Sơn Cẩm,1350000.00,17,1,Bếp|Chỗ để xe|Điều hòa|Giường|Tủ quần áo|WC riêng|Wifi,1
+442,Quang Trung,1450000.00,17,1,Tủ quần áo|Wifi,1
+443,Hương Sơn,1250000.00,18,2,Nóng lạnh|WC riêng|Wifi,1
+444,Quyết Thắng,1600000.00,17,2,Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+445,Đồng Quang,2150000.00,22,2,Bếp|Chỗ để xe|Nóng lạnh,1
+446,Quan Triều,1400000.00,15,2,Bếp|Chỗ để xe|Điều hòa|Giường|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+447,Cam Giá,1850000.00,22,2,Ban công|Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+448,Cam Giá,1400000.00,20,1,Bếp|Chỗ để xe|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+449,Sơn Cẩm,1300000.00,15,1,Ban công|Chỗ để xe|Giường|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+450,Tân Thịnh,3500000.00,34,3,Bếp|Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+451,Chùa Hang,1250000.00,14,1,Chỗ để xe|Điều hòa|Giường|Tủ lạnh|WC riêng|Wifi,1
+452,Sơn Cẩm,1200000.00,17,2,Chỗ để xe|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+453,Quyết Thắng,1200000.00,11,1,Bếp|Chỗ để xe|Tủ quần áo|Wifi,1
+454,Phú Xá,1800000.00,18,2,Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+455,Túc Duyên,2300000.00,21,1,Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng|Wifi,1
+456,Hoàng Văn Thụ,1650000.00,20,3,Ban công|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+457,Chùa Hang,1150000.00,14,1,Ban công|Chỗ để xe|Giường|Tủ quần áo|WC riêng|Wifi,1
+458,Gia Sàng,3000000.00,44,3,Bếp|Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|WC riêng|Wifi,1
+459,Chùa Hang,1300000.00,19,1,Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ quần áo|Wifi,1
+460,Cam Giá,2250000.00,26,3,Chỗ để xe|Tủ quần áo|Wifi,1
+461,Quang Vinh,1150000.00,12,1,Tủ quần áo|WC riêng|Wifi,1
+462,Thịnh Đán,3500000.00,40,3,Chỗ để xe|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo,1
+463,Trung Thành,2300000.00,30,3,Bếp|Chỗ để xe|Tủ quần áo|WC riêng|Wifi,1
+464,Quang Vinh,1850000.00,20,3,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Máy giặt|Nóng lạnh|Tủ quần áo|WC riêng,1
+465,Quang Vinh,1800000.00,16,1,Ban công|Bếp|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|WC riêng|Wifi,1
+466,Hoàng Văn Thụ,1250000.00,12,1,Bếp|Giường|Wifi,1
+467,Quyết Thắng,2300000.00,26,3,Chỗ để xe|Giường|Nóng lạnh|Wifi,1
+468,Hoàng Văn Thụ,1500000.00,11,1,Ban công|Chỗ để xe|Điều hòa|Giường|Nóng lạnh|Tủ lạnh|Tủ quần áo|Wifi,1
+469,Hương Sơn,2200000.00,26,3,Ban công|Nóng lạnh|WC riêng|Wifi,1
+470,Tân Thịnh,1450000.00,11,1,Bếp|Điều hòa|Giường|Nóng lạnh|WC riêng|Wifi,1

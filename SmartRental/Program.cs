@@ -30,14 +30,46 @@ builder.Services.AddHttpClient<AiSearchService>((sp, client) =>
         configuration["AiService:BaseUrl"] ?? "http://127.0.0.1:8000");
     client.Timeout = TimeSpan.FromSeconds(5);
 });
+builder.Services.AddHttpClient<RecommendationService>((sp, client) =>
+{
+    var configuration = sp.GetRequiredService<IConfiguration>();
+    client.BaseAddress = new Uri(
+        configuration["AiService:BaseUrl"] ?? "http://127.0.0.1:8000");
+    client.Timeout = TimeSpan.FromSeconds(5);
+});
 
 var app = builder.Build();
+
+if (args.Contains("--seed-room-coordinates-only", StringComparer.OrdinalIgnoreCase))
+{
+    if (!app.Environment.IsDevelopment())
+    {
+        throw new InvalidOperationException("Room coordinate seeding is only available in Development.");
+    }
+
+    await RoomCoordinateSeeder.SeedAsync(app.Services);
+    return;
+}
+
+if (args.Contains("--seed-demo-data-only", StringComparer.OrdinalIgnoreCase))
+{
+    if (!app.Environment.IsDevelopment())
+    {
+        throw new InvalidOperationException("Demo data seeding is only available in Development.");
+    }
+
+    await IdentitySeed.SeedRolesAsync(app.Services);
+    await DemoDataSeed.SeedAsync(app.Services);
+    await RoomCoordinateSeeder.SeedAsync(app.Services);
+    return;
+}
 
 await IdentitySeed.SeedRolesAsync(app.Services);
 if (app.Environment.IsDevelopment())
 {
     await DiaDiemSeed.SeedAsync(app.Services);
     await DemoDataSeed.SeedAsync(app.Services);
+    await RoomCoordinateSeeder.SeedAsync(app.Services);
 }
 
 // Configure the HTTP request pipeline.

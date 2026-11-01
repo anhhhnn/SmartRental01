@@ -1,0 +1,34 @@
+[
+  {"id":"price-01","category":"Giá","query":"tìm phòng dưới 2 triệu","supported":true,"expected":{"minPrice":null,"maxPrice":2000000}},
+  {"id":"price-02","category":"Giá","query":"phòng từ 1 triệu đến 1,8 triệu","supported":true,"expected":{"minPrice":1000000,"maxPrice":1800000}},
+  {"id":"price-03","category":"Giá","query":"tìm phòng trên 1 triệu dưới 2 triệu","supported":true,"expected":{"minPrice":1000000,"maxPrice":2000000}},
+  {"id":"price-04","category":"Giá","query":"phòng khoảng 1,5 triệu","supported":true,"expected":{"maxPrice":1500000}},
+
+  {"id":"people-01","category":"Số người","query":"phòng cho 2 người","supported":true,"expected":{"soNguoi":2}},
+  {"id":"people-02","category":"Số người","query":"phòng cho 3 người","supported":true,"expected":{"soNguoi":3}},
+  {"id":"people-03","category":"Số người","query":"tìm chỗ ở cho 4 người","supported":true,"expected":{"soNguoi":4}},
+
+  {"id":"area-01","category":"Khu vực","query":"phòng ở Tân Thịnh","supported":true,"expected":{"khuVuc":"Tân Thịnh","nearPlace":null}},
+  {"id":"area-02","category":"Khu vực","query":"phòng khu Đồng Quang","supported":true,"expected":{"khuVuc":"Đồng Quang","nearPlace":null}},
+  {"id":"area-03","category":"Khu vực","query":"tìm phòng tại Quang Trung","supported":true,"expected":{"khuVuc":"Quang Trung","nearPlace":null}},
+
+  {"id":"amenity-01","category":"Tiện nghi","query":"phòng có wifi điều hòa","supported":true,"expected":{"tienNghiContains":["wifi","điều hòa"]}},
+  {"id":"amenity-02","category":"Tiện nghi","query":"phòng khép kín có giường","supported":true,"expected":{"tienNghiContains":["khép kín","giường"]}},
+  {"id":"amenity-03","category":"Tiện nghi","query":"phòng có nóng lạnh và chỗ để xe","supported":true,"expected":{"tienNghiContains":["nóng lạnh","chỗ để xe"]}},
+  {"id":"amenity-04","category":"Tiện nghi","query":"cần phòng có bếp và tủ lạnh","supported":true,"expected":{"tienNghiContains":["bếp","tủ lạnh"]}},
+
+  {"id":"landmark-01","category":"Landmark","query":"phòng gần ICTU","supported":true,"expected":{"nearPlace":"Đại học Công nghệ Thông tin và Truyền thông","khuVuc":null}},
+  {"id":"landmark-02","category":"Landmark","query":"phòng gần trường ngoại ngữ trong 2km","supported":true,"expected":{"nearPlace":"Trường Ngoại ngữ","maxDistanceKm":2,"khuVuc":null}},
+  {"id":"landmark-03","category":"Landmark","query":"tìm trọ gần Đại học Nông Lâm bán kính 3 km","supported":true,"expected":{"nearPlace":"Đại học Nông Lâm","maxDistanceKm":3,"khuVuc":null}},
+  {"id":"landmark-04","category":"Landmark","query":"phòng quanh trường Sư phạm","supported":true,"expected":{"nearPlace":"Đại học Sư phạm","khuVuc":null}},
+
+  {"id":"combined-01","category":"Kết hợp","query":"tìm phòng từ 1 đến 2 triệu cho 2 người có wifi gần ICTU trong 3km","supported":true,"expected":{"minPrice":1000000,"maxPrice":2000000,"soNguoi":2,"tienNghiContains":["wifi"],"nearPlace":"Đại học Công nghệ Thông tin và Truyền thông","maxDistanceKm":3,"khuVuc":null}},
+  {"id":"combined-02","category":"Kết hợp","query":"phòng dưới 1,8 triệu cho 3 người có giường ở Tân Thịnh","supported":true,"expected":{"maxPrice":1800000,"soNguoi":3,"tienNghiContains":["giường"],"khuVuc":"Tân Thịnh"}},
+  {"id":"combined-03","category":"Kết hợp","query":"phòng trên 1 triệu có wifi điều hòa khu Đồng Quang","supported":false,"note":"Area classifier chưa đủ confidence khi câu đồng thời có giá và nhiều tiện nghi; không đổi model chỉ để pass demo."},
+  {"id":"combined-04","category":"Kết hợp","query":"tìm phòng 2 triệu cho 2 người gần ngoại ngữ 2km","supported":true,"expected":{"maxPrice":2000000,"soNguoi":2,"nearPlace":"Trường Ngoại ngữ","maxDistanceKm":2,"khuVuc":null}},
+
+  {"id":"natural-01","category":"Tự nhiên/không dấu","query":"tim tro gan ngoai ngu 2km","supported":true,"expected":{"nearPlace":"Trường Ngoại ngữ","maxDistanceKm":2,"khuVuc":null}},
+  {"id":"natural-02","category":"Tự nhiên/không dấu","query":"phong co wifi va dieu hoa","supported":true,"expected":{"tienNghiContains":["wifi","điều hòa"]}},
+  {"id":"natural-03","category":"Tự nhiên/không dấu","query":"phong tam 1tr5 co dieu hoa","supported":false,"note":"Cú pháp 1tr5 chưa được price parser hỗ trợ; ghi nhận limitation, không đổi model chỉ để pass."},
+  {"id":"natural-04","category":"Tự nhiên/không dấu","query":"phong cho 2 nguoi","supported":false,"note":"Bộ tách số người hiện yêu cầu từ 'người' có dấu; ghi nhận limitation."}
+]

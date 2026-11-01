@@ -1,23 +1,61 @@
 import os
+import json
+import logging
 import re
+import sys
+import time
 import unicodedata
+from contextlib import asynccontextmanager
 
 import joblib
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 
 
-app = FastAPI(title="SmartRental AI Search API")
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+AI_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
 MODEL_DIR = os.path.join(BASE_DIR, "..", "models")
+if AI_DIR not in sys.path:
+    sys.path.insert(0, AI_DIR)
+
+from recommendation.recommendation_service import RecommendationService
+
+
+logger = logging.getLogger("uvicorn.error")
+
+
+@asynccontextmanager
+async def lifespan(application: FastAPI):
+    started_at = time.perf_counter()
+    application.state.recommendation_service = None
+    application.state.recommendation_error = None
+    try:
+        service = RecommendationService()
+        application.state.recommendation_service = service
+        logger.info(
+            "Recommendation ready: rooms=%d visible=%d profiles=%d config=%s",
+            service.room_count,
+            service.visible_room_count,
+            service.user_profile_count,
+            service.config_name,
+        )
+    except Exception as exc:  # Search API must remain available on recommendation failure.
+        application.state.recommendation_error = str(exc)
+        logger.exception("Recommendation service failed to load")
+    application.state.recommendation_startup_seconds = time.perf_counter() - started_at
+    yield
+
+
+app = FastAPI(title="SmartRental AI Search API", lifespan=lifespan)
 
 area_model = joblib.load(os.path.join(MODEL_DIR, "area_model.pkl"))
 amenity_model = joblib.load(os.path.join(MODEL_DIR, "amenity_model.pkl"))
 amenity_mlb = joblib.load(os.path.join(MODEL_DIR, "amenity_mlb.pkl"))
 
 AREA_CONFIDENCE_THRESHOLD = 0.55
-AMENITY_CONFIDENCE_THRESHOLD = 0.35
+with open(os.path.join(MODEL_DIR, "model_metadata.json"), encoding="utf-8") as metadata_file:
+    model_metadata = json.load(metadata_file)
+AMENITY_CONFIDENCE_THRESHOLD = float(model_metadata["amenity_threshold"])
 
 LANDMARK_ALIASES = {
     "Đại học Công nghệ Thông tin và Truyền thông": (
@@ -50,11 +88,35 @@ LANDMARK_ALIASES = {
         "su pham",
         "tnue",
     ),
+    "Trường Ngoại ngữ": (
+        "trường ngoại ngữ - đại học thái nguyên",
+        "trường ngoại ngữ thái nguyên",
+        "đại học ngoại ngữ",
+        "trường ngoại ngữ",
+        "ngoại ngữ",
+        "sfl tnu",
+        "sfl",
+    ),
 }
 
 
 class SearchRequest(BaseModel):
     text: str
+
+
+class RecommendationItem(BaseModel):
+    phongtroId: int
+    score: float
+    rank: int
+    reasons: list[str]
+
+
+class RecommendationResponse(BaseModel):
+    userId: str
+    userKnown: bool
+    coldStart: bool
+    model: str
+    recommendations: list[RecommendationItem]
 
 
 def normalize_text(value: str) -> str:
@@ -66,20 +128,42 @@ def normalize_text(value: str) -> str:
     return " ".join(without_accents.split())
 
 
-def extract_price(text: str):
-    normalized = text.lower()
-    patterns = (
-        r"(?:dưới|không quá|tối đa|khoảng)\s*(\d+(?:[.,]\d+)?)\s*(?:triệu|tr)",
-        r"(\d+(?:[.,]\d+)?)\s*(?:triệu|tr)",
+def extract_price_bounds(text: str) -> tuple[int | None, int | None]:
+    normalized = normalize_text(text)
+    amount = r"(\d+(?:[.,]\d+)?)"
+    unit = r"(?:trieu|tr)"
+
+    range_match = re.search(
+        rf"\b(?:khoang\s+)?tu\s+{amount}\s*{unit}?\s*(?:den|-)\s*{amount}\s*{unit}\b",
+        normalized,
     )
+    if range_match:
+        minimum = int(float(range_match.group(1).replace(",", ".")) * 1_000_000)
+        maximum = int(float(range_match.group(2).replace(",", ".")) * 1_000_000)
+        return minimum, maximum
 
-    for pattern in patterns:
-        match = re.search(pattern, normalized)
-        if match:
-            value = float(match.group(1).replace(",", "."))
-            return int(value * 1_000_000)
+    minimum = None
+    minimum_match = re.search(
+        rf"\b(?:tu|tren|it nhat|toi thieu)\s*{amount}\s*{unit}\b",
+        normalized,
+    )
+    if minimum_match:
+        minimum = int(float(minimum_match.group(1).replace(",", ".")) * 1_000_000)
 
-    return None
+    maximum = None
+    maximum_match = re.search(
+        rf"\b(?:duoi|khong qua|toi da|cao nhat|khoang)\s*{amount}\s*{unit}\b",
+        normalized,
+    )
+    if maximum_match:
+        maximum = int(float(maximum_match.group(1).replace(",", ".")) * 1_000_000)
+    elif minimum is None:
+        # A standalone amount such as "2 triệu" keeps the existing max-price meaning.
+        standalone_match = re.search(rf"\b{amount}\s*{unit}\b", normalized)
+        if standalone_match:
+            maximum = int(float(standalone_match.group(1).replace(",", ".")) * 1_000_000)
+
+    return minimum, maximum
 
 
 def extract_people(text: str):
@@ -137,9 +221,11 @@ def predict_amenities(text: str):
 
 def parse_search(text: str):
     near_place = extract_landmark(text)
+    min_price, max_price = extract_price_bounds(text)
 
     return {
-        "maxPrice": extract_price(text),
+        "minPrice": min_price,
+        "maxPrice": max_price,
         "soNguoi": extract_people(text),
         "khuVuc": predict_area(text, near_place is not None),
         "tienNghi": predict_amenities(text),
@@ -153,6 +239,37 @@ def home():
     return {"message": "SmartRental AI API đang hoạt động"}
 
 
+@app.get("/health")
+def health():
+    service = getattr(app.state, "recommendation_service", None)
+    return {
+        "status": "ok" if service is not None else "degraded",
+        "search": "ready",
+        "recommendation": "ready" if service is not None else "unavailable",
+        "rooms": service.room_count if service is not None else 0,
+        "userProfiles": service.user_profile_count if service is not None else 0,
+    }
+
+
 @app.post("/parse-search")
 def parse_search_api(request: SearchRequest):
     return parse_search(request.text)
+
+
+@app.get("/recommend/{user_id}", response_model=RecommendationResponse)
+def recommend(
+    user_id: str,
+    top_n: int = Query(default=10, ge=1, le=50),
+    exclude_seen: bool = Query(default=True),
+):
+    service = getattr(app.state, "recommendation_service", None)
+    if service is None:
+        raise HTTPException(status_code=503, detail="Recommendation service is unavailable")
+    masked_user = f"***{user_id[-4:]}" if user_id else "<empty>"
+    logger.info(
+        "Recommendation request user=%s top_n=%d exclude_seen=%s",
+        masked_user,
+        top_n,
+        exclude_seen,
+    )
+    return service.recommend_for_user(user_id, top_n, exclude_seen)

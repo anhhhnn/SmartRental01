@@ -1,4 +1,5 @@
-@model SmartRental.Models.Phongtro
+@model SmartRental.ViewModels.PhongtroDetailsViewModel
+@using System.Text.Json
 
 @functions {
     string AmenityIcon(string? name)
@@ -17,11 +18,12 @@
 }
 
 @{
-    ViewData["Title"] = Model.TieuDe;
+    var room = Model.Phongtro;
+    ViewData["Title"] = room.TieuDe;
     var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-    var canManage = User.IsInRole(AppRoles.Admin) || (currentUserId != null && Model.OwnerId == currentUserId);
+    var canManage = User.IsInRole(AppRoles.Admin) || (currentUserId != null && room.OwnerId == currentUserId);
     var favorites = ViewBag.FavoriteRoomIds as HashSet<int> ?? new HashSet<int>();
-    var isFavorite = favorites.Contains(Model.Id);
+    var isFavorite = favorites.Contains(room.Id);
     var returnUrl = Context.Request.Path + Context.Request.QueryString;
     var reviews = ViewBag.Reviews as IEnumerable<SmartRental.Models.DanhGia> ?? Enumerable.Empty<SmartRental.Models.DanhGia>();
     var myReview = ViewBag.MyReview as SmartRental.Models.DanhGia;
@@ -29,14 +31,47 @@
     var averageRating = (double)(ViewBag.AverageRating ?? 0d);
     var distribution = ViewBag.RatingDistribution as Dictionary<int, int> ?? new();
     var similarRooms = ViewBag.SimilarRooms as IEnumerable<SmartRental.Models.Phongtro> ?? Enumerable.Empty<SmartRental.Models.Phongtro>();
-    var gallery = Model.HinhAnhs.OrderByDescending(x => x.IsAnhChinh).ThenBy(x => x.ThuTu).Select(x => x.DuongDan).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
-    if (!string.IsNullOrWhiteSpace(Model.HinhAnh) && !gallery.Contains(Model.HinhAnh)) gallery.Add(Model.HinhAnh);
-    var ownerName = Model.Owner?.HoTen ?? "Chủ nhà SmartRental";
+    var gallery = room.HinhAnhs.OrderByDescending(x => x.IsAnhChinh).ThenBy(x => x.ThuTu).Select(x => x.DuongDan).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
+    if (!string.IsNullOrWhiteSpace(room.HinhAnh) && !gallery.Contains(room.HinhAnh)) gallery.Add(room.HinhAnh);
+    var ownerName = room.Owner?.HoTen ?? "Chủ nhà SmartRental";
     var ownerInitials = string.Join("", ownerName.Split(' ', StringSplitOptions.RemoveEmptyEntries).TakeLast(2).Select(x => char.ToUpperInvariant(x[0])));
     var ownerResponseRate = (int?)ViewBag.OwnerResponseRate;
-    var canBook = Model.IsVisible && Model.SoLuongPhong > 0 && Model.OwnerId != currentUserId;
+    var canBook = room.IsVisible && room.SoLuongPhong > 0 && room.OwnerId != currentUserId;
     var bookingName = (string?)ViewBag.BookingHoTen ?? string.Empty;
     var bookingPhone = (string?)ViewBag.BookingPhone ?? string.Empty;
+    var hasMap = room.Latitude.HasValue && room.Longitude.HasValue;
+    var mapDataJson = hasMap
+        ? JsonSerializer.Serialize(new
+        {
+            room = new
+            {
+                latitude = room.Latitude!.Value,
+                longitude = room.Longitude!.Value,
+                title = room.TieuDe,
+                address = room.DiaChi,
+                price = $"{room.Gia:N0} ₫/tháng"
+            },
+            landmarks = Model.NearbyLandmarks.Select(landmark => new
+            {
+                id = landmark.Id,
+                name = landmark.Ten,
+                latitude = landmark.Latitude,
+                longitude = landmark.Longitude,
+                distanceKm = landmark.DistanceKm
+            })
+        })
+        : null;
+}
+
+@section Styles
+{
+    @if (hasMap)
+    {
+        <link rel="stylesheet"
+              href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+              integrity="sha256-p4NxAoJBhIINfQ3ynh5tR+PN5J4uS3xfsdE/PdA="
+              crossorigin="anonymous" />
+    }
 }
 
 <main class="room-details-page">
@@ -55,7 +90,7 @@
             @if (gallery.Any())
             {
                 <div class="details-main-media">
-                    <img id="mainRoomImage" src="@gallery[0]" alt="@Model.TieuDe" class="details-image" />
+                    <img id="mainRoomImage" src="@gallery[0]" alt="@room.TieuDe" class="details-image" />
                     @if (gallery.Count > 1)
                     {
                         <button class="gallery-arrow gallery-arrow--prev" type="button" data-gallery-prev aria-label="Ảnh trước"><i class="bi bi-chevron-left"></i></button>
@@ -88,7 +123,7 @@
         <aside class="owner-profile-card card">
             <div class="card-body">
             <p class="details-eyebrow">Thông tin chủ trọ</p>
-            @if (Model.Owner != null)
+            @if (room.Owner != null)
             {
                 <div class="owner-profile">
                     <span class="owner-avatar">@ownerInitials</span>
@@ -100,11 +135,11 @@
                 <div class="owner-contact-list">
                     <div class="owner-contact-item">
                         <i class="bi bi-envelope"></i>
-                        <div><small>Email</small><strong>@(string.IsNullOrWhiteSpace(Model.Owner.Email) ? "Chưa cập nhật" : Model.Owner.Email)</strong></div>
+                        <div><small>Email</small><strong>@(string.IsNullOrWhiteSpace(room.Owner.Email) ? "Chưa cập nhật" : room.Owner.Email)</strong></div>
                     </div>
                     <div class="owner-contact-item">
                         <i class="bi bi-telephone"></i>
-                        <div><small>Số điện thoại</small><strong>@(string.IsNullOrWhiteSpace(Model.Owner.PhoneNumber) ? "Chưa cập nhật" : Model.Owner.PhoneNumber)</strong></div>
+                        <div><small>Số điện thoại</small><strong>@(string.IsNullOrWhiteSpace(room.Owner.PhoneNumber) ? "Chưa cập nhật" : room.Owner.PhoneNumber)</strong></div>
                     </div>
                     <div class="owner-contact-item">
                         <i class="bi bi-chat-dots"></i>
@@ -115,18 +150,18 @@
                 {
                     <div class="owner-stat"><strong>@ViewBag.OwnerActiveRoomCount</strong><span>phòng đang cho thuê</span></div>
                 }
-                @if (Model.OwnerId != currentUserId)
+                @if (room.OwnerId != currentUserId)
                 {
                     <div class="owner-actions">
                         @if (!canBook)
                         {
-                            <div class="booking-unavailable"><i class="bi bi-calendar-x"></i><span>@(Model.SoLuongPhong <= 0 ? "Hết phòng" : "Tin phòng đã ẩn")</span></div>
+                            <div class="booking-unavailable"><i class="bi bi-calendar-x"></i><span>@(room.SoLuongPhong <= 0 ? "Hết phòng" : "Tin phòng đã ẩn")</span></div>
                         }
                         else if (User.Identity?.IsAuthenticated == true)
                         {
                             <button type="button" class="sr-btn sr-btn-primary" data-bs-toggle="modal" data-bs-target="#bookingModal"><i class="bi bi-calendar-check"></i> Đặt lịch xem phòng</button>
                             <form asp-controller="Messages" asp-action="Start" method="post">
-                                <input type="hidden" name="phongtroId" value="@Model.Id" />
+                                <input type="hidden" name="phongtroId" value="@room.Id" />
                                 <button class="sr-btn sr-btn-secondary" type="submit"><i class="bi bi-chat-dots"></i> Nhắn tin</button>
                             </form>
                         }
@@ -152,16 +187,16 @@
                 <div class="card-body">
                 <header class="room-info-header">
                     <div>
-                        <div class="room-status @(Model.SoLuongPhong > 0 ? "is-available" : "is-full")"><i class="bi bi-circle-fill"></i> @(Model.SoLuongPhong > 0 ? $"Còn {Model.SoLuongPhong} phòng" : "Hết phòng")</div>
-                        <h1>@Model.TieuDe</h1>
-                        <p><i class="bi bi-geo-alt"></i> <strong>@Model.KhuVuc</strong> · @Model.DiaChi</p>
+                        <div class="room-status @(room.SoLuongPhong > 0 ? "is-available" : "is-full")"><i class="bi bi-circle-fill"></i> @(room.SoLuongPhong > 0 ? $"Còn {room.SoLuongPhong} phòng" : "Hết phòng")</div>
+                        <h1>@room.TieuDe</h1>
+                        <p><i class="bi bi-geo-alt"></i> <strong>@room.KhuVuc</strong> · @room.DiaChi</p>
                     </div>
                     <div class="room-header-actions">
                         <button class="icon-action" type="button" data-share-room aria-label="Chia sẻ phòng"><i class="bi bi-share"></i></button>
                         @if (User.Identity?.IsAuthenticated == true)
                         {
                             <form asp-action="@(isFavorite ? "RemoveYeuThich" : "AddYeuThich")" method="post">
-                                <input type="hidden" name="phongtroId" value="@Model.Id" />
+                                <input type="hidden" name="phongtroId" value="@room.Id" />
                                 <input type="hidden" name="returnUrl" value="@returnUrl" />
                                 <button class="icon-action favorite-action @(isFavorite ? "is-favorite" : "")" type="submit" aria-label="@(isFavorite ? "Bỏ yêu thích" : "Thêm vào yêu thích")"><i class="bi bi-heart@(isFavorite ? "-fill" : "")"></i></button>
                             </form>
@@ -173,18 +208,18 @@
                     </div>
                 </header>
                 <div class="room-facts">
-                    <div class="room-fact room-fact--price"><i class="bi bi-wallet2"></i><span>Giá mỗi tháng</span><strong>@Model.Gia.ToString("N0") ₫</strong></div>
-                    <div class="room-fact"><i class="bi bi-aspect-ratio"></i><span>Diện tích</span><strong>@Model.DienTich.ToString("0.#") m²</strong></div>
-                    <div class="room-fact"><i class="bi bi-people"></i><span>Số phòng trống</span><strong>@Model.SoLuongPhong phòng</strong></div>
-                    <div class="room-fact"><i class="bi bi-person-check"></i><span>Sức chứa</span><strong>Tối đa @Model.SoNguoiToiDa người</strong></div>
-                    <div class="room-fact"><i class="bi bi-calendar3"></i><span>Ngày đăng</span><strong>@Model.NgayDang.ToString("dd/MM/yyyy")</strong></div>
+                    <div class="room-fact room-fact--price"><i class="bi bi-wallet2"></i><span>Giá mỗi tháng</span><strong>@room.Gia.ToString("N0") ₫</strong></div>
+                    <div class="room-fact"><i class="bi bi-aspect-ratio"></i><span>Diện tích</span><strong>@room.DienTich.ToString("0.#") m²</strong></div>
+                    <div class="room-fact"><i class="bi bi-people"></i><span>Số phòng trống</span><strong>@room.SoLuongPhong phòng</strong></div>
+                    <div class="room-fact"><i class="bi bi-person-check"></i><span>Sức chứa</span><strong>Tối đa @room.SoNguoiToiDa người</strong></div>
+                    <div class="room-fact"><i class="bi bi-calendar3"></i><span>Ngày đăng</span><strong>@room.NgayDang.ToString("dd/MM/yyyy")</strong></div>
                 </div>
                 <section class="room-section">
                     <h2><i class="bi bi-stars"></i> Tiện nghi</h2>
-                    @if (Model.PhongTienNghis.Any())
+                    @if (room.PhongTienNghis.Any())
                     {
                         <div class="amenity-grid">
-                            @foreach (var item in Model.PhongTienNghis.OrderBy(x => x.TienNghi.TenTienNghi))
+                            @foreach (var item in room.PhongTienNghis.OrderBy(x => x.TienNghi.TenTienNghi))
                             {
                                 <span class="detail-amenity"><i class="bi @AmenityIcon(item.TienNghi.TenTienNghi)"></i>@item.TienNghi.TenTienNghi</span>
                             }
@@ -197,17 +232,91 @@
                 </section>
                 <section class="room-section room-description">
                     <h2><i class="bi bi-card-text"></i> Mô tả</h2>
-                    <p>@(string.IsNullOrWhiteSpace(Model.MoTa) ? "Chưa có mô tả cho phòng này." : Model.MoTa)</p>
+                    <p>@(string.IsNullOrWhiteSpace(room.MoTa) ? "Chưa có mô tả cho phòng này." : room.MoTa)</p>
                 </section>
                 @if (canManage)
                 {
                     <div class="manage-room-actions">
-                        <a asp-action="Edit" asp-route-id="@Model.Id" class="sr-btn sr-btn-secondary"><i class="bi bi-pencil"></i> Chỉnh sửa</a>
-                        <a asp-action="Delete" asp-route-id="@Model.Id" class="sr-btn sr-btn-ghost text-danger"><i class="bi bi-trash"></i> Xóa phòng</a>
+                        <a asp-action="Edit" asp-route-id="@room.Id" class="sr-btn sr-btn-secondary"><i class="bi bi-pencil"></i> Chỉnh sửa</a>
+                        <a asp-action="Delete" asp-route-id="@room.Id" class="sr-btn sr-btn-ghost text-danger"><i class="bi bi-trash"></i> Xóa phòng</a>
                     </div>
                 }
                 </div>
             </article>
+
+            <section class="room-map-section card" aria-labelledby="roomMapHeading">
+                <div class="card-body">
+                    <header class="room-map-header">
+                        <div class="room-map-title">
+                            <span class="room-map-title__icon"><i class="bi bi-map"></i></span>
+                            <div>
+                                <h2 id="roomMapHeading">Vị trí phòng trọ</h2>
+                                <p>Vị trí trên bản đồ mang tính tham khảo và có thể không trùng hoàn toàn với vị trí thực tế của phòng.</p>
+                            </div>
+                        </div>
+                        <span class="room-map-badge"><i class="bi bi-info-circle"></i> Vị trí tham khảo</span>
+                    </header>
+
+                    <div class="room-map-address">
+                        <span><i class="bi bi-geo-alt-fill"></i></span>
+                        <div><small>Địa chỉ phòng</small><strong>@room.DiaChi</strong></div>
+                    </div>
+
+                    @if (hasMap)
+                    {
+                        <div class="room-map-frame">
+                            <div id="roomMap" class="room-map-canvas" role="region" aria-label="Bản đồ vị trí tham khảo của @room.TieuDe"></div>
+                            <div class="room-map-legend" aria-hidden="true"><i></i><span>Khu vực tham khảo khoảng 250 m</span></div>
+                        </div>
+
+                        @if (Model.NearbyLandmarks.Count > 0)
+                        {
+                            <div class="room-map-landmarks">
+                                <div class="room-map-landmarks__heading">
+                                    <div>
+                                        <h3>Địa điểm gần đây</h3>
+                                        <p>Các địa điểm trong phạm vi 5 km, xếp từ gần đến xa.</p>
+                                    </div>
+                                    <span>@Model.NearbyLandmarks.Count địa điểm</span>
+                                </div>
+                                <ol>
+                                    @for (var landmarkIndex = 0; landmarkIndex < Model.NearbyLandmarks.Count; landmarkIndex++)
+                                    {
+                                        var landmark = Model.NearbyLandmarks[landmarkIndex];
+                                        <li class="room-map-landmark-item">
+                                            <span class="room-map-landmark-item__icon"><i class="bi bi-geo"></i></span>
+                                            <span class="room-map-landmark-item__content">
+                                                <small>Địa điểm @(landmarkIndex + 1)</small>
+                                                <strong>@landmark.Ten</strong>
+                                            </span>
+                                            <span class="room-map-landmark-item__distance">@landmark.DistanceKm.ToString("0.0") km</span>
+                                        </li>
+                                    }
+                                </ol>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="room-map-empty room-map-empty--landmarks">
+                                <i class="bi bi-signpost-split"></i>
+                                <span>Chưa có địa điểm gần phù hợp để hiển thị.</span>
+                            </div>
+                        }
+
+                        <p class="room-map-note">
+                            <i class="bi bi-compass"></i>
+                            <span>Khoảng cách được tính theo đường chim bay từ tọa độ, không phải quãng đường di chuyển thực tế.</span>
+                        </p>
+                    }
+                    else
+                    {
+                        <div class="room-map-empty" role="status">
+                            <span class="room-map-empty__icon"><i class="bi bi-geo-alt"></i></span>
+                            <div><strong>Chưa có dữ liệu bản đồ</strong><span>Vị trí bản đồ của phòng hiện chưa khả dụng.</span></div>
+                        </div>
+                    }
+                </div>
+            </section>
 
             <section class="reviews-card card" id="reviews">
                 <div class="card-body">
@@ -247,7 +356,7 @@
                 @if (User.Identity?.IsAuthenticated == true)
                 {
                     <form asp-action="@(myReview == null ? "AddDanhGia" : "EditDanhGia")" method="post" class="review-form">
-                        <input type="hidden" name="phongtroId" value="@Model.Id" />
+                        <input type="hidden" name="phongtroId" value="@room.Id" />
                         <input type="hidden" name="soSao" id="SoSao" value="@myReview?.SoSao" />
                         <h3>@(myReview == null ? "Gửi đánh giá của bạn" : "Chỉnh sửa đánh giá")</h3>
                         <div class="rating-picker" data-rating="@myReview?.SoSao" role="radiogroup">
@@ -281,7 +390,7 @@
                                 @if (currentUserId == review.UserId || User.IsInRole(AppRoles.Admin))
                                 {
                                     <form asp-action="DeleteDanhGia" method="post" class="d-inline">
-                                        <input type="hidden" name="phongtroId" value="@Model.Id" />
+                                        <input type="hidden" name="phongtroId" value="@room.Id" />
                                         <input type="hidden" name="userId" value="@review.UserId" />
                                         <button type="submit" class="review-delete" aria-label="Xóa đánh giá của @review.User?.HoTen">Xóa</button>
                                     </form>
@@ -295,7 +404,7 @@
                     <nav class="review-pagination">
                         @for (var p = 1; p <= (int)ViewBag.ReviewTotalPages; p++)
                         {
-                            <a class="@(p == (int)ViewBag.ReviewPage ? "is-active" : "")" asp-action="Details" asp-route-id="@Model.Id" asp-route-reviewPage="@p">@p</a>
+                            <a class="@(p == (int)ViewBag.ReviewPage ? "is-active" : "")" asp-action="Details" asp-route-id="@room.Id" asp-route-reviewPage="@p">@p</a>
                         }
                     </nav>
                 }
@@ -330,22 +439,22 @@
                     @if (similarRooms.Any())
                     {
                         <div class="similar-room-list">
-                            @foreach (var room in similarRooms)
+                            @foreach (var similarRoom in similarRooms)
                             {
-                                var image = room.HinhAnhs.OrderByDescending(x => x.IsAnhChinh).ThenBy(x => x.ThuTu).FirstOrDefault()?.DuongDan ?? room.HinhAnh;
-                                <a asp-action="Details" asp-route-id="@room.Id" class="similar-room">
+                                var image = similarRoom.HinhAnhs.OrderByDescending(x => x.IsAnhChinh).ThenBy(x => x.ThuTu).FirstOrDefault()?.DuongDan ?? similarRoom.HinhAnh;
+                                <a asp-action="Details" asp-route-id="@similarRoom.Id" class="similar-room">
                                     @if (!string.IsNullOrWhiteSpace(image))
                                     {
-                                        <img src="@image" alt="@room.TieuDe" loading="lazy" />
+                                        <img src="@image" alt="@similarRoom.TieuDe" loading="lazy" />
                                     }
                                     else
                                     {
                                         <span class="similar-room-placeholder"><i class="bi bi-image"></i></span>
                                     }
                                     <span>
-                                        <strong>@room.TieuDe</strong>
-                                        <small><i class="bi bi-geo-alt"></i> @room.DiaChi</small>
-                                        <b>@room.Gia.ToString("N0") ₫<em>/tháng</em></b>
+                                        <strong>@similarRoom.TieuDe</strong>
+                                        <small><i class="bi bi-geo-alt"></i> @similarRoom.DiaChi</small>
+                                        <b>@similarRoom.Gia.ToString("N0") ₫<em>/tháng</em></b>
                                     </span>
                                     <i class="bi bi-chevron-right"></i>
                                 </a>
@@ -372,8 +481,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
                 </div>
                 <div class="modal-body">
-                    <input type="hidden" name="phongtroId" value="@Model.Id" />
-                    <div class="booking-room-summary"><i class="bi bi-house-heart"></i><div><small>Phòng bạn muốn xem</small><strong>@Model.TieuDe</strong></div></div>
+                    <input type="hidden" name="phongtroId" value="@room.Id" />
+                    <div class="booking-room-summary"><i class="bi bi-house-heart"></i><div><small>Phòng bạn muốn xem</small><strong>@room.TieuDe</strong></div></div>
                     <div class="mb-3"><label class="form-label" for="bookingName">Họ tên</label><input id="bookingName" name="hoTen" class="form-control" value="@bookingName" required maxlength="150" autocomplete="name" /><div class="invalid-feedback">Vui lòng nhập họ tên.</div></div>
                     <div class="mb-3"><label class="form-label" for="bookingPhone">Số điện thoại</label><input id="bookingPhone" name="soDienThoai" type="tel" class="form-control" value="@bookingPhone" required maxlength="30" autocomplete="tel" /><div class="invalid-feedback">Vui lòng nhập số điện thoại liên hệ.</div></div>
                     <div class="booking-date-time">
@@ -391,7 +500,112 @@
 
 @section Scripts
 {
+    @if (hasMap)
+    {
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+                crossorigin="anonymous"></script>
+    }
     <script>
+        @if (hasMap)
+        {
+            <text>
+        (() => {
+            const mapElement = document.getElementById('roomMap');
+            if (!mapElement || typeof L === 'undefined') return;
+
+            const mapData = @Html.Raw(mapDataJson);
+            const roomPosition = [mapData.room.latitude, mapData.room.longitude];
+            const bounds = L.latLngBounds([roomPosition]);
+            mapData.landmarks.forEach(landmark => bounds.extend([landmark.latitude, landmark.longitude]));
+
+            const map = L.map(mapElement, { scrollWheelZoom: false });
+            if (mapData.landmarks.length > 0) {
+                map.fitBounds(bounds, { padding: [42, 42], maxZoom: 16, animate: false });
+            } else {
+                map.setView(roomPosition, 16, { animate: false });
+            }
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            const popupContent = (title, lines) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'map-popup';
+                const heading = document.createElement('strong');
+                heading.textContent = title;
+                wrapper.appendChild(heading);
+                lines.forEach(line => {
+                    const item = document.createElement('span');
+                    item.textContent = line;
+                    wrapper.appendChild(item);
+                });
+                return wrapper;
+            };
+
+            const roomIcon = L.divIcon({
+                className: 'room-map-marker',
+                html: '<span aria-hidden="true"><i class="bi bi-house-fill"></i></span>',
+                iconSize: [42, 42],
+                iconAnchor: [21, 40],
+                popupAnchor: [0, -38]
+            });
+            const roomMarker = L.marker(roomPosition, { icon: roomIcon, title: mapData.room.title })
+                .addTo(map)
+                .bindPopup(popupContent(mapData.room.title, [mapData.room.address, mapData.room.price]));
+
+            L.circle(roomPosition, {
+                radius: 250,
+                color: '#245a96',
+                weight: 1.5,
+                fillColor: '#6da9d4',
+                fillOpacity: 0.12
+            }).addTo(map);
+
+            mapData.landmarks.forEach((landmark, index) => {
+                const position = [landmark.latitude, landmark.longitude];
+                const landmarkIcon = L.divIcon({
+                    className: 'room-map-landmark-marker',
+                    html: `<span aria-hidden="true"><b style="transform:rotate(45deg);font:inherit">${index + 1}</b></span>`,
+                    iconSize: [30, 36],
+                    iconAnchor: [15, 34],
+                    popupAnchor: [0, -31]
+                });
+                L.marker(position, { icon: landmarkIcon, title: landmark.name })
+                    .addTo(map)
+                    .bindPopup(popupContent(landmark.name, [`Cách phòng: ${landmark.distanceKm.toFixed(1)} km`]));
+            });
+
+            const fitMapToContent = () => {
+                if (!mapElement.offsetWidth || !mapElement.offsetHeight) return;
+                map.invalidateSize({ pan: false });
+                if (mapData.landmarks.length > 0) {
+                    map.fitBounds(bounds, { padding: [42, 42], maxZoom: 16, animate: false });
+                } else {
+                    map.setView(roomPosition, 16, { animate: false });
+                }
+            };
+
+            requestAnimationFrame(() => requestAnimationFrame(fitMapToContent));
+            setTimeout(fitMapToContent, 100);
+            window.addEventListener('load', fitMapToContent, { once: true });
+
+            if ('ResizeObserver' in window) {
+                let previousWidth = mapElement.offsetWidth;
+                new ResizeObserver(entries => {
+                    const width = Math.round(entries[0].contentRect.width);
+                    if (width && width !== previousWidth) {
+                        previousWidth = width;
+                        requestAnimationFrame(fitMapToContent);
+                    }
+                }).observe(mapElement);
+            }
+        })();
+            </text>
+        }
+
         document.querySelectorAll('.rating-picker').forEach(picker => {
             const hidden = document.querySelector('#SoSao'), text = document.querySelector('#ratingText'), labels = ['', 'Rất tệ', 'Không tốt', 'Bình thường', 'Tốt', 'Rất tốt'];
             let value = Number(picker.dataset.rating) || 0;

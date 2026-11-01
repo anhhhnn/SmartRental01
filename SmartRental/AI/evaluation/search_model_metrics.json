@@ -1,0 +1,354 @@
+{
+  "generated_at_utc": "2026-10-27T15:01:14.590031+00:00",
+  "scikit_learn_version": "1.6.1",
+  "random_seed": 20261027,
+  "area_model": {
+    "source": "AI\\DATA\\rooms.csv",
+    "protocol": "Deterministic stratified 25% reference split. The area model is pre-trained; its training-data overlap with this source is unknown.",
+    "train_samples": 178,
+    "test_samples": 60,
+    "accuracy": 0.9333333333333333,
+    "classification_report": {
+      "Cam Giá": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1-score": 0.6666666666666666,
+        "support": 2.0
+      },
+      "Chùa Hang": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "Gia Sàng": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "Hoàng Văn Thụ": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "Hương Sơn": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "KHONG_XAC_DINH": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+      },
+      "Phan Đình Phùng": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "Phú Xá": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1-score": 0.8571428571428571,
+        "support": 4.0
+      },
+      "Quan Triều": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "Quang Trung": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "Quang Vinh": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "Quyết Thắng": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1.0
+      },
+      "Sơn Cẩm": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "Thịnh Đán": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "Trung Thành": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "Trưng Vương": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "Tân Long": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "Tân Thịnh": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.8,
+        "support": 3.0
+      },
+      "Tích Lương": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 4.0
+      },
+      "Túc Duyên": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3.0
+      },
+      "Đồng Bẩm": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "Đồng Quang": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1-score": 0.8571428571428571,
+        "support": 4.0
+      },
+      "accuracy": 0.9333333333333333,
+      "macro avg": {
+        "precision": 0.9545454545454546,
+        "recall": 0.8939393939393938,
+        "f1-score": 0.9173160173160173,
+        "support": 60.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 0.9333333333333333,
+        "f1-score": 0.9598412698412698,
+        "support": 60.0
+      }
+    },
+    "incorrect_count": 4,
+    "incorrect_examples": [
+      {
+        "expected": "Tân Thịnh",
+        "predicted": "KHONG_XAC_DINH",
+        "query": "Phòng trọ có điều hòa, nóng lạnh, phù hợp 4 người Ngõ 117 đường Việt Bắc, phường Tân Thịnh, TP. Thái Nguyên Phòng 33m² gọn gàng, dễ bố trí đồ, phù hợp nhóm tối đa 4 người. Thuộc khu Tân Thịnh, có wifi, wc riêng, chỗ để xe, điều hòa. Giờ giấc linh hoạt và khu dân cư an ninh."
+      },
+      {
+        "expected": "Cam Giá",
+        "predicted": "KHONG_XAC_DINH",
+        "query": "Phòng trọ có ban công thoáng, phù hợp 2 người Ngõ 39 đường Lưu Nhân Chú, phường Cam Giá, TP. Thái Nguyên Phòng 20m² gọn gàng, dễ bố trí đồ, phù hợp hai người hoặc cặp đôi. Thuộc khu Cam Giá, có wifi, wc riêng, chỗ để xe, điều hòa. Lối vào hơi hẹp vào giờ đông."
+      },
+      {
+        "expected": "Đồng Quang",
+        "predicted": "KHONG_XAC_DINH",
+        "query": "Phòng trọ có điều hòa, nóng lạnh, phù hợp 2 người Ngõ 79 đường Lương Ngọc Quyến, phường Đồng Quang, TP. Thái Nguyên Phòng 26m² gọn gàng, dễ bố trí đồ, phù hợp hai người hoặc cặp đôi. Thuộc khu Đồng Quang, có wifi, wc riêng, chỗ để xe, điều hòa. Phòng ở tầng trên nên cần đi cầu thang."
+      },
+      {
+        "expected": "Phú Xá",
+        "predicted": "KHONG_XAC_DINH",
+        "query": "Phòng trọ có điều hòa, nóng lạnh, giờ giấc linh hoạt Ngõ 124 đường Thống Nhất, phường Phú Xá, TP. Thái Nguyên Phòng 25m² gọn gàng, dễ bố trí đồ, phù hợp nhóm tối đa 3 người. Thuộc khu Phú Xá, có wifi, chỗ để xe, điều hòa, nóng lạnh. Giờ giấc linh hoạt và khu dân cư an ninh."
+      }
+    ]
+  },
+  "amenity_model": {
+    "micro_f1": 1.0,
+    "macro_f1": 1.0,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "classification_report": {
+      "wifi": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 48.0
+      },
+      "điều hòa": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 78.0
+      },
+      "nóng lạnh": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 54.0
+      },
+      "chỗ để xe": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 66.0
+      },
+      "máy giặt": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 66.0
+      },
+      "tủ lạnh": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 54.0
+      },
+      "ban công": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 78.0
+      },
+      "wc riêng": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 48.0
+      },
+      "bếp": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 60.0
+      },
+      "giường": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 84.0
+      },
+      "tủ quần áo": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 42.0
+      },
+      "khép kín": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 66.0
+      },
+      "micro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 744.0
+      },
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 744.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 744.0
+      },
+      "samples avg": {
+        "precision": 0.9825783972125436,
+        "recall": 0.9825783972125436,
+        "f1-score": 0.9825783972125436,
+        "support": 744.0
+      }
+    },
+    "train_samples": 1264,
+    "validation_samples": 261,
+    "test_samples": 287,
+    "threshold": 0.25,
+    "threshold_candidates": [
+      {
+        "threshold": 0.25,
+        "micro_f1": 1.0,
+        "macro_f1": 1.0
+      },
+      {
+        "threshold": 0.3,
+        "micro_f1": 1.0,
+        "macro_f1": 1.0
+      },
+      {
+        "threshold": 0.35,
+        "micro_f1": 1.0,
+        "macro_f1": 1.0
+      },
+      {
+        "threshold": 0.4,
+        "micro_f1": 0.9992932862190813,
+        "macro_f1": 0.9993638676844784
+      },
+      {
+        "threshold": 0.45,
+        "micro_f1": 0.9978768577494692,
+        "macro_f1": 0.998062015503876
+      },
+      {
+        "threshold": 0.5,
+        "micro_f1": 0.9957446808510638,
+        "macro_f1": 0.996031746031746
+      }
+    ],
+    "evaluation_protocol": "Held-out amenity-combination groups; deterministic synthetic Vietnamese query corpus. These metrics measure this generated corpus, not real-user generalization."
+  },
+  "dataset": {
+    "path": "AI\\DATA\\amenity_search_queries.csv",
+    "total_samples": 1812,
+    "split_counts": {
+      "validation": 261,
+      "train": 1264,
+      "test": 287
+    },
+    "label_count": 12,
+    "labels": [
+      "wifi",
+      "điều hòa",
+      "nóng lạnh",
+      "chỗ để xe",
+      "máy giặt",
+      "tủ lạnh",
+      "ban công",
+      "wc riêng",
+      "bếp",
+      "giường",
+      "tủ quần áo",
+      "khép kín"
+    ],
+    "amenity_count_distribution": {
+      "0": 24,
+      "1": 72,
+      "2": 396,
+      "3": 1320
+    },
+    "protocol": "Exhaustive zero-, one-, two-, and three-amenity combinations with varied Vietnamese query forms; splits are disjoint by combination group."
+  }
+}

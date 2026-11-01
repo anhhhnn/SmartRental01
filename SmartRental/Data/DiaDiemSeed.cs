@@ -16,10 +16,10 @@ public static class DiaDiemSeed
 
         var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
-        // Campus coordinates verified against public map listings on 2026-10-23.
-        // OSM ways: TNUS 968202795, TUAF 978670578. ICTU/TNUE coordinates are
-        // campus entrance/listing points. Room coordinates are deliberately not seeded
-        // because the existing demo addresses are synthetic and cannot be geocoded reliably.
+        // Campus coordinates reference public map listings.
+        // OSM ways: TNUS 968202795, TUAF 978670578, SFL 1078525062.
+        // ICTU/TNUE coordinates are campus entrance/listing points. Room coordinates are
+        // deliberately not seeded because the existing demo addresses are synthetic.
         var landmarks = new[]
         {
             new DiaDiem
@@ -57,6 +57,15 @@ public static class DiaDiemSeed
                 Latitude = 21.5989047,
                 Longitude = 105.8229194,
                 Alias = "sư phạm; su pham; dh su pham; đại học sư phạm; trường sư phạm; tnue"
+            },
+            new DiaDiem
+            {
+                Ten = "Trường Ngoại ngữ",
+                Loai = "Đại học",
+                DiaChi = "Trường Ngoại ngữ - Đại học Thái Nguyên, khu Quyết Thắng, Thái Nguyên",
+                Latitude = 21.5913,
+                Longitude = 105.80744,
+                Alias = "trường ngoại ngữ; ngoại ngữ; đại học ngoại ngữ; trường ngoại ngữ thái nguyên; sfl; sfl tnu; truong ngoai ngu; ngoai ngu; dai hoc ngoai ngu"
             }
         };
 

@@ -1,0 +1,24 @@
+{
+  "name": "B_non_negative__feature_2",
+  "view_transform": "log1p",
+  "view_weight": 1.0,
+  "favorite_weight": 3.0,
+  "booking_weight": 5.0,
+  "rating_mapping": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.5,
+    "4": 2.0,
+    "5": 4.0
+  },
+  "feature_weights": {
+    "khuVuc": 1.3,
+    "tienNghi": 1.7,
+    "gia": 1.4,
+    "dienTich": 0.8,
+    "soNguoi": 0.8
+  },
+  "interaction_config": "B_non_negative",
+  "feature_config": "feature_2"
+}

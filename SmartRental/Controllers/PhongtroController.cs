@@ -17,17 +17,20 @@ namespace SmartRental.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly AiSearchService _aiSearchService;
+        private readonly RecommendationService _recommendationService;
         private readonly GeoDistanceService _geoDistanceService;
 
         public PhongtroController(
             ApplicationDbContext context,
             UserManager<ApplicationUser> userManager,
             AiSearchService aiSearchService,
+            RecommendationService recommendationService,
             GeoDistanceService geoDistanceService)
         {
             _context = context;
             _userManager = userManager;
             _aiSearchService = aiSearchService;
+            _recommendationService = recommendationService;
             _geoDistanceService = geoDistanceService;
         }
 
@@ -71,6 +74,11 @@ namespace SmartRental.Controllers
                 {
                     ViewBag.AiSearchResult = aiResult;
                     landmarkRequested = !string.IsNullOrWhiteSpace(aiResult.NearPlace);
+
+                    if (aiResult.MinPrice.HasValue)
+                    {
+                        phongtros = phongtros.Where(p => p.Gia >= aiResult.MinPrice.Value);
+                    }
 
                     if (aiResult.MaxPrice.HasValue)
                     {
@@ -309,13 +317,41 @@ namespace SmartRental.Controllers
             ViewBag.Sort = sort is "price_asc" or "price_desc" ? sort : "default";
             await SetFavoriteRoomIdsAsync();
 
+            var hasActiveSearchOrFilter =
+                !string.IsNullOrWhiteSpace(search)
+                || !string.IsNullOrWhiteSpace(aiQuery)
+                || !string.IsNullOrWhiteSpace(khuVuc)
+                || minPrice.HasValue
+                || maxPrice.HasValue
+                || minArea.HasValue
+                || maxArea.HasValue
+                || soNguoi.HasValue
+                || status.HasValue
+                || tienNghiIds is { Count: > 0 }
+                || page > 1;
+
+            var (recommendedRooms, recommendation) = hasActiveSearchOrFilter
+                ? (Array.Empty<Phongtro>(), null)
+                : await LoadRecommendationsAsync(cancellationToken);
+
             SetPaginationViewData(page, pageSize, totalItems);
-            return View(new PagedResult<PhongtroSearchItemViewModel>
+            return View(new PhongtroIndexViewModel
             {
-                Items = rooms,
-                PageNumber = page,
-                PageSize = pageSize,
-                TotalItems = totalItems
+                SearchResults = new PagedResult<PhongtroSearchItemViewModel>
+                {
+                    Items = rooms,
+                    PageNumber = page,
+                    PageSize = pageSize,
+                    TotalItems = totalItems
+                },
+                RecommendedRooms = recommendedRooms,
+                RecommendationByRoomId = recommendation?.Recommendations
+                    .GroupBy(item => item.PhongtroId)
+                    .ToDictionary(group => group.Key, group => group.First())
+                    ?? new Dictionary<int, RecommendationItem>(),
+                ShowRecommendations = !hasActiveSearchOrFilter && recommendedRooms.Count > 0,
+                RecommendationColdStart = recommendation?.ColdStart ?? false,
+                RecommendationModel = recommendation?.Model
             });
         }
 
@@ -558,7 +594,50 @@ namespace SmartRental.Controllers
                 ? null
                 : await _context.DanhGias.FindAsync(currentUserId, phongtro.Id);
 
-            return View(phongtro);
+            const int maximumNearbyLandmarks = 5;
+            const double nearbyLandmarkRadiusKm = 5d;
+            var nearbyLandmarks = new List<NearbyLandmarkViewModel>();
+
+            if (phongtro.Latitude.HasValue && phongtro.Longitude.HasValue)
+            {
+                var activeLandmarks = await _context.DiaDiems
+                    .AsNoTracking()
+                    .Where(d => d.IsActive
+                        && d.Latitude >= -90 && d.Latitude <= 90
+                        && d.Longitude >= -180 && d.Longitude <= 180)
+                    .Select(d => new
+                    {
+                        d.Id,
+                        d.Ten,
+                        d.Latitude,
+                        d.Longitude
+                    })
+                    .ToListAsync();
+
+                nearbyLandmarks = activeLandmarks
+                    .Select(landmark => new NearbyLandmarkViewModel
+                    {
+                        Id = landmark.Id,
+                        Ten = landmark.Ten,
+                        Latitude = landmark.Latitude,
+                        Longitude = landmark.Longitude,
+                        DistanceKm = _geoDistanceService.CalculateDistanceKm(
+                            phongtro.Latitude.Value,
+                            phongtro.Longitude.Value,
+                            landmark.Latitude,
+                            landmark.Longitude)
+                    })
+                    .Where(landmark => landmark.DistanceKm <= nearbyLandmarkRadiusKm)
+                    .OrderBy(landmark => landmark.DistanceKm)
+                    .Take(maximumNearbyLandmarks)
+                    .ToList();
+            }
+
+            return View(new PhongtroDetailsViewModel
+            {
+                Phongtro = phongtro,
+                NearbyLandmarks = nearbyLandmarks
+            });
         }
 
         [Authorize]
@@ -1251,6 +1330,57 @@ namespace SmartRental.Controllers
                     .Where(yt => yt.UserId == currentUserId)
                     .Select(yt => yt.PhongtroId)
                     .ToHashSetAsync();
+        }
+
+        private async Task<(IReadOnlyList<Phongtro> Rooms, RecommendationResponse? Response)>
+            LoadRecommendationsAsync(CancellationToken cancellationToken)
+        {
+            if (User.Identity?.IsAuthenticated != true)
+            {
+                return (Array.Empty<Phongtro>(), null);
+            }
+
+            var userId = _userManager.GetUserId(User);
+            if (string.IsNullOrWhiteSpace(userId))
+            {
+                return (Array.Empty<Phongtro>(), null);
+            }
+
+            const int topN = 8;
+            var recommendation = await _recommendationService.GetRecommendationsAsync(
+                userId,
+                topN,
+                excludeSeen: true,
+                cancellationToken);
+
+            var orderedIds = recommendation?.Recommendations
+                .OrderBy(item => item.Rank)
+                .Select(item => item.PhongtroId)
+                .Distinct()
+                .ToList() ?? new List<int>();
+
+            if (orderedIds.Count == 0)
+            {
+                return (Array.Empty<Phongtro>(), recommendation);
+            }
+
+            var rooms = await _context.Phongtros
+                .AsNoTracking()
+                .Where(room => orderedIds.Contains(room.Id) && room.IsVisible)
+                .Include(room => room.HinhAnhs)
+                .Include(room => room.DanhGias)
+                .Include(room => room.PhongTienNghis)
+                    .ThenInclude(roomAmenity => roomAmenity.TienNghi)
+                .AsSplitQuery()
+                .ToListAsync(cancellationToken);
+
+            var roomById = rooms.ToDictionary(room => room.Id);
+            var orderedRooms = orderedIds
+                .Where(roomById.ContainsKey)
+                .Select(id => roomById[id])
+                .ToList();
+
+            return (orderedRooms, recommendation);
         }
 
         private void SetPaginationViewData(int pageNumber, int pageSize, int totalItems)

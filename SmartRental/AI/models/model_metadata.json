@@ -1,0 +1,27 @@
+{
+  "trained_at_utc": "2026-10-27T15:01:14.590031+00:00",
+  "scikit_learn_version": "1.6.1",
+  "random_seed": 20261027,
+  "area_threshold": 0.55,
+  "amenity_threshold": 0.25,
+  "amenity_labels": [
+    "wifi",
+    "điều hòa",
+    "nóng lạnh",
+    "chỗ để xe",
+    "máy giặt",
+    "tủ lạnh",
+    "ban công",
+    "wc riêng",
+    "bếp",
+    "giường",
+    "tủ quần áo",
+    "khép kín"
+  ],
+  "amenity_training_samples": 1812,
+  "amenity_test_samples": 287,
+  "amenity_model_file": "amenity_model.pkl",
+  "amenity_label_binarizer_file": "amenity_mlb.pkl",
+  "metrics_file": "AI\\evaluation\\search_model_metrics.json",
+  "training_data_file": "AI\\DATA\\amenity_search_queries.csv"
+}

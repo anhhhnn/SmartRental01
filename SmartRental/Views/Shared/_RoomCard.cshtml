@@ -5,6 +5,8 @@
     var showFav = (ViewData["ShowFavorite"] as bool?) ?? false;
     var distanceKm = ViewData["DistanceKm"] as double?;
     var nearPlaceName = ViewData["NearPlaceName"] as string;
+    var recommendationReasons = ViewData["RecommendationReasons"] as IEnumerable<string>
+        ?? Enumerable.Empty<string>();
     var ret = Context.Request.Path + Context.Request.QueryString;
     var amenities = Model.PhongTienNghis?.ToList() ?? new();
     var ratings = Model.DanhGias ?? new List<SmartRental.Models.DanhGia>();
@@ -66,6 +68,13 @@
                     <span class="amenity-chip">+@(amenities.Count - 3)</span>
                 }
             </div>
+        }
+        @if (recommendationReasons.Any())
+        {
+            <p class="room-card__recommendation-reason" title="@string.Join("; ", recommendationReasons)">
+                <i class="bi bi-stars" aria-hidden="true"></i>
+                <span>@string.Join(" · ", recommendationReasons.Take(2))</span>
+            </p>
         }
         <div class="room-card__footerline mt-auto"><div><small>Từ</small><div class="room-card__price">@Model.Gia.ToString("N0") ₫<span>/tháng</span></div></div><a asp-controller="Phongtro" asp-action="Details" asp-route-id="@Model.Id" class="sr-btn sr-btn-secondary sr-btn-sm">Chi tiết <i class="bi bi-arrow-right"></i></a></div>
         @if (manage)

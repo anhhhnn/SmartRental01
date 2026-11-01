@@ -1,0 +1,1813 @@
+query,amenities_json,split,group_id,amenity_count
+Tìm phòng có wifi,"[""Wifi""]",validation,1:0,1
+Cần phòng trọ có wifi,"[""Wifi""]",validation,1:0,1
+Ưu tiên chỗ ở với wifi,"[""Wifi""]",validation,1:0,1
+Tìm phòng trọ gồm wifi,"[""Wifi""]",validation,1:0,1
+Phòng cần có wifi,"[""Wifi""]",validation,1:0,1
+Mong muốn phòng được trang bị wifi,"[""Wifi""]",validation,1:0,1
+Tìm phòng có máy lạnh,"[""Điều hòa""]",train,1:1,1
+Cần phòng trọ có máy lạnh,"[""Điều hòa""]",train,1:1,1
+Ưu tiên chỗ ở với máy lạnh,"[""Điều hòa""]",train,1:1,1
+Tìm phòng trọ gồm máy lạnh,"[""Điều hòa""]",train,1:1,1
+Phòng cần có máy lạnh,"[""Điều hòa""]",train,1:1,1
+Mong muốn phòng được trang bị máy lạnh,"[""Điều hòa""]",train,1:1,1
+Tìm phòng có nong lanh,"[""Nóng lạnh""]",train,1:2,1
+Cần phòng trọ có nong lanh,"[""Nóng lạnh""]",train,1:2,1
+Ưu tiên chỗ ở với nong lanh,"[""Nóng lạnh""]",train,1:2,1
+Tìm phòng trọ gồm nong lanh,"[""Nóng lạnh""]",train,1:2,1
+Phòng cần có nong lanh,"[""Nóng lạnh""]",train,1:2,1
+Mong muốn phòng được trang bị nong lanh,"[""Nóng lạnh""]",train,1:2,1
+Tìm phòng có noi de xe,"[""Chỗ để xe""]",train,1:3,1
+Cần phòng trọ có noi de xe,"[""Chỗ để xe""]",train,1:3,1
+Ưu tiên chỗ ở với noi de xe,"[""Chỗ để xe""]",train,1:3,1
+Tìm phòng trọ gồm noi de xe,"[""Chỗ để xe""]",train,1:3,1
+Phòng cần có noi de xe,"[""Chỗ để xe""]",train,1:3,1
+Mong muốn phòng được trang bị noi de xe,"[""Chỗ để xe""]",train,1:3,1
+Tìm phòng có máy giặt riêng,"[""Máy giặt""]",train,1:4,1
+Cần phòng trọ có máy giặt riêng,"[""Máy giặt""]",train,1:4,1
+Ưu tiên chỗ ở với máy giặt riêng,"[""Máy giặt""]",train,1:4,1
+Tìm phòng trọ gồm máy giặt riêng,"[""Máy giặt""]",train,1:4,1
+Phòng cần có máy giặt riêng,"[""Máy giặt""]",train,1:4,1
+Mong muốn phòng được trang bị máy giặt riêng,"[""Máy giặt""]",train,1:4,1
+Tìm phòng có tu lanh,"[""Tủ lạnh""]",train,1:5,1
+Cần phòng trọ có tu lanh,"[""Tủ lạnh""]",train,1:5,1
+Ưu tiên chỗ ở với tu lanh,"[""Tủ lạnh""]",train,1:5,1
+Tìm phòng trọ gồm tu lanh,"[""Tủ lạnh""]",train,1:5,1
+Phòng cần có tu lanh,"[""Tủ lạnh""]",train,1:5,1
+Mong muốn phòng được trang bị tu lanh,"[""Tủ lạnh""]",train,1:5,1
+Tìm phòng có ban công,"[""Ban công""]",train,1:6,1
+Cần phòng trọ có ban công,"[""Ban công""]",train,1:6,1
+Ưu tiên chỗ ở với ban công,"[""Ban công""]",train,1:6,1
+Tìm phòng trọ gồm ban công,"[""Ban công""]",train,1:6,1
+Phòng cần có ban công,"[""Ban công""]",train,1:6,1
+Mong muốn phòng được trang bị ban công,"[""Ban công""]",train,1:6,1
+Tìm phòng có nha ve sinh rieng,"[""WC riêng""]",train,1:7,1
+Cần phòng trọ có nha ve sinh rieng,"[""WC riêng""]",train,1:7,1
+Ưu tiên chỗ ở với nha ve sinh rieng,"[""WC riêng""]",train,1:7,1
+Tìm phòng trọ gồm nha ve sinh rieng,"[""WC riêng""]",train,1:7,1
+Phòng cần có nha ve sinh rieng,"[""WC riêng""]",train,1:7,1
+Mong muốn phòng được trang bị nha ve sinh rieng,"[""WC riêng""]",train,1:7,1
+Tìm phòng có bep,"[""Bếp""]",test,1:8,1
+Cần phòng trọ có bep,"[""Bếp""]",test,1:8,1
+Ưu tiên chỗ ở với bep,"[""Bếp""]",test,1:8,1
+Tìm phòng trọ gồm bep,"[""Bếp""]",test,1:8,1
+Phòng cần có bep,"[""Bếp""]",test,1:8,1
+Mong muốn phòng được trang bị bep,"[""Bếp""]",test,1:8,1
+Tìm phòng có giường ngủ,"[""Giường""]",test,1:9,1
+Cần phòng trọ có giường ngủ,"[""Giường""]",test,1:9,1
+Ưu tiên chỗ ở với giường ngủ,"[""Giường""]",test,1:9,1
+Tìm phòng trọ gồm giường ngủ,"[""Giường""]",test,1:9,1
+Phòng cần có giường ngủ,"[""Giường""]",test,1:9,1
+Mong muốn phòng được trang bị giường ngủ,"[""Giường""]",test,1:9,1
+Tìm phòng có tu quan ao,"[""Tủ quần áo""]",train,1:10,1
+Cần phòng trọ có tu quan ao,"[""Tủ quần áo""]",train,1:10,1
+Ưu tiên chỗ ở với tu quan ao,"[""Tủ quần áo""]",train,1:10,1
+Tìm phòng trọ gồm tu quan ao,"[""Tủ quần áo""]",train,1:10,1
+Phòng cần có tu quan ao,"[""Tủ quần áo""]",train,1:10,1
+Mong muốn phòng được trang bị tu quan ao,"[""Tủ quần áo""]",train,1:10,1
+Tìm phòng có phong khep kin,"[""Khép kín""]",test,1:11,1
+Cần phòng trọ có phong khep kin,"[""Khép kín""]",test,1:11,1
+Ưu tiên chỗ ở với phong khep kin,"[""Khép kín""]",test,1:11,1
+Tìm phòng trọ gồm phong khep kin,"[""Khép kín""]",test,1:11,1
+Phòng cần có phong khep kin,"[""Khép kín""]",test,1:11,1
+Mong muốn phòng được trang bị phong khep kin,"[""Khép kín""]",test,1:11,1
+Tìm phòng có mạng wifi và máy lạnh,"[""Wifi"", ""Điều hòa""]",train,2:12,2
+Cần phòng trọ có máy lạnh và mạng wifi,"[""Wifi"", ""Điều hòa""]",train,2:12,2
+Ưu tiên chỗ ở với mạng wifi và máy lạnh,"[""Wifi"", ""Điều hòa""]",train,2:12,2
+Tìm phòng trọ gồm máy lạnh và mạng wifi,"[""Wifi"", ""Điều hòa""]",train,2:12,2
+Phòng cần có mạng wifi và máy lạnh,"[""Wifi"", ""Điều hòa""]",train,2:12,2
+Mong muốn phòng được trang bị máy lạnh và mạng wifi,"[""Wifi"", ""Điều hòa""]",train,2:12,2
+Tìm phòng có internet không dây và nong lanh,"[""Wifi"", ""Nóng lạnh""]",train,2:13,2
+Cần phòng trọ có nong lanh và internet không dây,"[""Wifi"", ""Nóng lạnh""]",train,2:13,2
+Ưu tiên chỗ ở với internet không dây và nong lanh,"[""Wifi"", ""Nóng lạnh""]",train,2:13,2
+Tìm phòng trọ gồm nong lanh và internet không dây,"[""Wifi"", ""Nóng lạnh""]",train,2:13,2
+Phòng cần có internet không dây và nong lanh,"[""Wifi"", ""Nóng lạnh""]",train,2:13,2
+Mong muốn phòng được trang bị nong lanh và internet không dây,"[""Wifi"", ""Nóng lạnh""]",train,2:13,2
+Tìm phòng có internet khong day và noi de xe,"[""Wifi"", ""Chỗ để xe""]",train,2:14,2
+Cần phòng trọ có noi de xe và internet khong day,"[""Wifi"", ""Chỗ để xe""]",train,2:14,2
+Ưu tiên chỗ ở với internet khong day và noi de xe,"[""Wifi"", ""Chỗ để xe""]",train,2:14,2
+Tìm phòng trọ gồm noi de xe và internet khong day,"[""Wifi"", ""Chỗ để xe""]",train,2:14,2
+Phòng cần có internet khong day và noi de xe,"[""Wifi"", ""Chỗ để xe""]",train,2:14,2
+Mong muốn phòng được trang bị noi de xe và internet khong day,"[""Wifi"", ""Chỗ để xe""]",train,2:14,2
+Tìm phòng có wifi và máy giặt riêng,"[""Wifi"", ""Máy giặt""]",train,2:15,2
+Cần phòng trọ có máy giặt riêng và wifi,"[""Wifi"", ""Máy giặt""]",train,2:15,2
+Ưu tiên chỗ ở với wifi và máy giặt riêng,"[""Wifi"", ""Máy giặt""]",train,2:15,2
+Tìm phòng trọ gồm máy giặt riêng và wifi,"[""Wifi"", ""Máy giặt""]",train,2:15,2
+Phòng cần có wifi và máy giặt riêng,"[""Wifi"", ""Máy giặt""]",train,2:15,2
+Mong muốn phòng được trang bị máy giặt riêng và wifi,"[""Wifi"", ""Máy giặt""]",train,2:15,2
+Tìm phòng có wi-fi và tu lanh,"[""Wifi"", ""Tủ lạnh""]",train,2:16,2
+Cần phòng trọ có tu lanh và wi-fi,"[""Wifi"", ""Tủ lạnh""]",train,2:16,2
+Ưu tiên chỗ ở với wi-fi và tu lanh,"[""Wifi"", ""Tủ lạnh""]",train,2:16,2
+Tìm phòng trọ gồm tu lanh và wi-fi,"[""Wifi"", ""Tủ lạnh""]",train,2:16,2
+Phòng cần có wi-fi và tu lanh,"[""Wifi"", ""Tủ lạnh""]",train,2:16,2
+Mong muốn phòng được trang bị tu lanh và wi-fi,"[""Wifi"", ""Tủ lạnh""]",train,2:16,2
+Tìm phòng có mạng wifi và ban công,"[""Wifi"", ""Ban công""]",validation,2:17,2
+Cần phòng trọ có ban công và mạng wifi,"[""Wifi"", ""Ban công""]",validation,2:17,2
+Ưu tiên chỗ ở với mạng wifi và ban công,"[""Wifi"", ""Ban công""]",validation,2:17,2
+Tìm phòng trọ gồm ban công và mạng wifi,"[""Wifi"", ""Ban công""]",validation,2:17,2
+Phòng cần có mạng wifi và ban công,"[""Wifi"", ""Ban công""]",validation,2:17,2
+Mong muốn phòng được trang bị ban công và mạng wifi,"[""Wifi"", ""Ban công""]",validation,2:17,2
+Tìm phòng có internet không dây và nha ve sinh rieng,"[""Wifi"", ""WC riêng""]",train,2:18,2
+Cần phòng trọ có nha ve sinh rieng và internet không dây,"[""Wifi"", ""WC riêng""]",train,2:18,2
+Ưu tiên chỗ ở với internet không dây và nha ve sinh rieng,"[""Wifi"", ""WC riêng""]",train,2:18,2
+Tìm phòng trọ gồm nha ve sinh rieng và internet không dây,"[""Wifi"", ""WC riêng""]",train,2:18,2
+Phòng cần có internet không dây và nha ve sinh rieng,"[""Wifi"", ""WC riêng""]",train,2:18,2
+Mong muốn phòng được trang bị nha ve sinh rieng và internet không dây,"[""Wifi"", ""WC riêng""]",train,2:18,2
+Tìm phòng có internet khong day và bep,"[""Wifi"", ""Bếp""]",train,2:19,2
+Cần phòng trọ có bep và internet khong day,"[""Wifi"", ""Bếp""]",train,2:19,2
+Ưu tiên chỗ ở với internet khong day và bep,"[""Wifi"", ""Bếp""]",train,2:19,2
+Tìm phòng trọ gồm bep và internet khong day,"[""Wifi"", ""Bếp""]",train,2:19,2
+Phòng cần có internet khong day và bep,"[""Wifi"", ""Bếp""]",train,2:19,2
+Mong muốn phòng được trang bị bep và internet khong day,"[""Wifi"", ""Bếp""]",train,2:19,2
+Tìm phòng có wifi và giường ngủ,"[""Wifi"", ""Giường""]",train,2:20,2
+Cần phòng trọ có giường ngủ và wifi,"[""Wifi"", ""Giường""]",train,2:20,2
+Ưu tiên chỗ ở với wifi và giường ngủ,"[""Wifi"", ""Giường""]",train,2:20,2
+Tìm phòng trọ gồm giường ngủ và wifi,"[""Wifi"", ""Giường""]",train,2:20,2
+Phòng cần có wifi và giường ngủ,"[""Wifi"", ""Giường""]",train,2:20,2
+Mong muốn phòng được trang bị giường ngủ và wifi,"[""Wifi"", ""Giường""]",train,2:20,2
+Tìm phòng có wi-fi và tu quan ao,"[""Wifi"", ""Tủ quần áo""]",validation,2:21,2
+Cần phòng trọ có tu quan ao và wi-fi,"[""Wifi"", ""Tủ quần áo""]",validation,2:21,2
+Ưu tiên chỗ ở với wi-fi và tu quan ao,"[""Wifi"", ""Tủ quần áo""]",validation,2:21,2
+Tìm phòng trọ gồm tu quan ao và wi-fi,"[""Wifi"", ""Tủ quần áo""]",validation,2:21,2
+Phòng cần có wi-fi và tu quan ao,"[""Wifi"", ""Tủ quần áo""]",validation,2:21,2
+Mong muốn phòng được trang bị tu quan ao và wi-fi,"[""Wifi"", ""Tủ quần áo""]",validation,2:21,2
+Tìm phòng có mạng wifi và phong khep kin,"[""Wifi"", ""Khép kín""]",train,2:22,2
+Cần phòng trọ có phong khep kin và mạng wifi,"[""Wifi"", ""Khép kín""]",train,2:22,2
+Ưu tiên chỗ ở với mạng wifi và phong khep kin,"[""Wifi"", ""Khép kín""]",train,2:22,2
+Tìm phòng trọ gồm phong khep kin và mạng wifi,"[""Wifi"", ""Khép kín""]",train,2:22,2
+Phòng cần có mạng wifi và phong khep kin,"[""Wifi"", ""Khép kín""]",train,2:22,2
+Mong muốn phòng được trang bị phong khep kin và mạng wifi,"[""Wifi"", ""Khép kín""]",train,2:22,2
+Tìm phòng có may lanh và nóng lạnh,"[""Điều hòa"", ""Nóng lạnh""]",test,2:23,2
+Cần phòng trọ có nóng lạnh và may lanh,"[""Điều hòa"", ""Nóng lạnh""]",test,2:23,2
+Ưu tiên chỗ ở với may lanh và nóng lạnh,"[""Điều hòa"", ""Nóng lạnh""]",test,2:23,2
+Tìm phòng trọ gồm nóng lạnh và may lanh,"[""Điều hòa"", ""Nóng lạnh""]",test,2:23,2
+Phòng cần có may lanh và nóng lạnh,"[""Điều hòa"", ""Nóng lạnh""]",test,2:23,2
+Mong muốn phòng được trang bị nóng lạnh và may lanh,"[""Điều hòa"", ""Nóng lạnh""]",test,2:23,2
+Tìm phòng có điều hòa và nơi để xe,"[""Điều hòa"", ""Chỗ để xe""]",train,2:24,2
+Cần phòng trọ có nơi để xe và điều hòa,"[""Điều hòa"", ""Chỗ để xe""]",train,2:24,2
+Ưu tiên chỗ ở với điều hòa và nơi để xe,"[""Điều hòa"", ""Chỗ để xe""]",train,2:24,2
+Tìm phòng trọ gồm nơi để xe và điều hòa,"[""Điều hòa"", ""Chỗ để xe""]",train,2:24,2
+Phòng cần có điều hòa và nơi để xe,"[""Điều hòa"", ""Chỗ để xe""]",train,2:24,2
+Mong muốn phòng được trang bị nơi để xe và điều hòa,"[""Điều hòa"", ""Chỗ để xe""]",train,2:24,2
+Tìm phòng có máy lạnh và may giat,"[""Điều hòa"", ""Máy giặt""]",train,2:25,2
+Cần phòng trọ có may giat và máy lạnh,"[""Điều hòa"", ""Máy giặt""]",train,2:25,2
+Ưu tiên chỗ ở với máy lạnh và may giat,"[""Điều hòa"", ""Máy giặt""]",train,2:25,2
+Tìm phòng trọ gồm may giat và máy lạnh,"[""Điều hòa"", ""Máy giặt""]",train,2:25,2
+Phòng cần có máy lạnh và may giat,"[""Điều hòa"", ""Máy giặt""]",train,2:25,2
+Mong muốn phòng được trang bị may giat và máy lạnh,"[""Điều hòa"", ""Máy giặt""]",train,2:25,2
+Tìm phòng có dieu hoa và tu lanh,"[""Điều hòa"", ""Tủ lạnh""]",validation,2:26,2
+Cần phòng trọ có tu lanh và dieu hoa,"[""Điều hòa"", ""Tủ lạnh""]",validation,2:26,2
+Ưu tiên chỗ ở với dieu hoa và tu lanh,"[""Điều hòa"", ""Tủ lạnh""]",validation,2:26,2
+Tìm phòng trọ gồm tu lanh và dieu hoa,"[""Điều hòa"", ""Tủ lạnh""]",validation,2:26,2
+Phòng cần có dieu hoa và tu lanh,"[""Điều hòa"", ""Tủ lạnh""]",validation,2:26,2
+Mong muốn phòng được trang bị tu lanh và dieu hoa,"[""Điều hòa"", ""Tủ lạnh""]",validation,2:26,2
+Tìm phòng có may lanh và ban công,"[""Điều hòa"", ""Ban công""]",train,2:27,2
+Cần phòng trọ có ban công và may lanh,"[""Điều hòa"", ""Ban công""]",train,2:27,2
+Ưu tiên chỗ ở với may lanh và ban công,"[""Điều hòa"", ""Ban công""]",train,2:27,2
+Tìm phòng trọ gồm ban công và may lanh,"[""Điều hòa"", ""Ban công""]",train,2:27,2
+Phòng cần có may lanh và ban công,"[""Điều hòa"", ""Ban công""]",train,2:27,2
+Mong muốn phòng được trang bị ban công và may lanh,"[""Điều hòa"", ""Ban công""]",train,2:27,2
+Tìm phòng có điều hòa và nhà vệ sinh riêng,"[""Điều hòa"", ""WC riêng""]",validation,2:28,2
+Cần phòng trọ có nhà vệ sinh riêng và điều hòa,"[""Điều hòa"", ""WC riêng""]",validation,2:28,2
+Ưu tiên chỗ ở với điều hòa và nhà vệ sinh riêng,"[""Điều hòa"", ""WC riêng""]",validation,2:28,2
+Tìm phòng trọ gồm nhà vệ sinh riêng và điều hòa,"[""Điều hòa"", ""WC riêng""]",validation,2:28,2
+Phòng cần có điều hòa và nhà vệ sinh riêng,"[""Điều hòa"", ""WC riêng""]",validation,2:28,2
+Mong muốn phòng được trang bị nhà vệ sinh riêng và điều hòa,"[""Điều hòa"", ""WC riêng""]",validation,2:28,2
+Tìm phòng có máy lạnh và bếp,"[""Điều hòa"", ""Bếp""]",validation,2:29,2
+Cần phòng trọ có bếp và máy lạnh,"[""Điều hòa"", ""Bếp""]",validation,2:29,2
+Ưu tiên chỗ ở với máy lạnh và bếp,"[""Điều hòa"", ""Bếp""]",validation,2:29,2
+Tìm phòng trọ gồm bếp và máy lạnh,"[""Điều hòa"", ""Bếp""]",validation,2:29,2
+Phòng cần có máy lạnh và bếp,"[""Điều hòa"", ""Bếp""]",validation,2:29,2
+Mong muốn phòng được trang bị bếp và máy lạnh,"[""Điều hòa"", ""Bếp""]",validation,2:29,2
+Tìm phòng có dieu hoa và giuong ngu,"[""Điều hòa"", ""Giường""]",test,2:30,2
+Cần phòng trọ có giuong ngu và dieu hoa,"[""Điều hòa"", ""Giường""]",test,2:30,2
+Ưu tiên chỗ ở với dieu hoa và giuong ngu,"[""Điều hòa"", ""Giường""]",test,2:30,2
+Tìm phòng trọ gồm giuong ngu và dieu hoa,"[""Điều hòa"", ""Giường""]",test,2:30,2
+Phòng cần có dieu hoa và giuong ngu,"[""Điều hòa"", ""Giường""]",test,2:30,2
+Mong muốn phòng được trang bị giuong ngu và dieu hoa,"[""Điều hòa"", ""Giường""]",test,2:30,2
+Tìm phòng có may lanh và tủ quần áo,"[""Điều hòa"", ""Tủ quần áo""]",train,2:31,2
+Cần phòng trọ có tủ quần áo và may lanh,"[""Điều hòa"", ""Tủ quần áo""]",train,2:31,2
+Ưu tiên chỗ ở với may lanh và tủ quần áo,"[""Điều hòa"", ""Tủ quần áo""]",train,2:31,2
+Tìm phòng trọ gồm tủ quần áo và may lanh,"[""Điều hòa"", ""Tủ quần áo""]",train,2:31,2
+Phòng cần có may lanh và tủ quần áo,"[""Điều hòa"", ""Tủ quần áo""]",train,2:31,2
+Mong muốn phòng được trang bị tủ quần áo và may lanh,"[""Điều hòa"", ""Tủ quần áo""]",train,2:31,2
+Tìm phòng có điều hòa và phòng khép kín,"[""Điều hòa"", ""Khép kín""]",train,2:32,2
+Cần phòng trọ có phòng khép kín và điều hòa,"[""Điều hòa"", ""Khép kín""]",train,2:32,2
+Ưu tiên chỗ ở với điều hòa và phòng khép kín,"[""Điều hòa"", ""Khép kín""]",train,2:32,2
+Tìm phòng trọ gồm phòng khép kín và điều hòa,"[""Điều hòa"", ""Khép kín""]",train,2:32,2
+Phòng cần có điều hòa và phòng khép kín,"[""Điều hòa"", ""Khép kín""]",train,2:32,2
+Mong muốn phòng được trang bị phòng khép kín và điều hòa,"[""Điều hòa"", ""Khép kín""]",train,2:32,2
+Tìm phòng có bình nóng lạnh và cho de xe,"[""Nóng lạnh"", ""Chỗ để xe""]",train,2:33,2
+Cần phòng trọ có cho de xe và bình nóng lạnh,"[""Nóng lạnh"", ""Chỗ để xe""]",train,2:33,2
+Ưu tiên chỗ ở với bình nóng lạnh và cho de xe,"[""Nóng lạnh"", ""Chỗ để xe""]",train,2:33,2
+Tìm phòng trọ gồm cho de xe và bình nóng lạnh,"[""Nóng lạnh"", ""Chỗ để xe""]",train,2:33,2
+Phòng cần có bình nóng lạnh và cho de xe,"[""Nóng lạnh"", ""Chỗ để xe""]",train,2:33,2
+Mong muốn phòng được trang bị cho de xe và bình nóng lạnh,"[""Nóng lạnh"", ""Chỗ để xe""]",train,2:33,2
+Tìm phòng có nong lanh và may giat,"[""Nóng lạnh"", ""Máy giặt""]",train,2:34,2
+Cần phòng trọ có may giat và nong lanh,"[""Nóng lạnh"", ""Máy giặt""]",train,2:34,2
+Ưu tiên chỗ ở với nong lanh và may giat,"[""Nóng lạnh"", ""Máy giặt""]",train,2:34,2
+Tìm phòng trọ gồm may giat và nong lanh,"[""Nóng lạnh"", ""Máy giặt""]",train,2:34,2
+Phòng cần có nong lanh và may giat,"[""Nóng lạnh"", ""Máy giặt""]",train,2:34,2
+Mong muốn phòng được trang bị may giat và nong lanh,"[""Nóng lạnh"", ""Máy giặt""]",train,2:34,2
+Tìm phòng có binh nong lanh và tủ lạnh,"[""Nóng lạnh"", ""Tủ lạnh""]",train,2:35,2
+Cần phòng trọ có tủ lạnh và binh nong lanh,"[""Nóng lạnh"", ""Tủ lạnh""]",train,2:35,2
+Ưu tiên chỗ ở với binh nong lanh và tủ lạnh,"[""Nóng lạnh"", ""Tủ lạnh""]",train,2:35,2
+Tìm phòng trọ gồm tủ lạnh và binh nong lanh,"[""Nóng lạnh"", ""Tủ lạnh""]",train,2:35,2
+Phòng cần có binh nong lanh và tủ lạnh,"[""Nóng lạnh"", ""Tủ lạnh""]",train,2:35,2
+Mong muốn phòng được trang bị tủ lạnh và binh nong lanh,"[""Nóng lạnh"", ""Tủ lạnh""]",train,2:35,2
+Tìm phòng có nóng lạnh và ban cong,"[""Nóng lạnh"", ""Ban công""]",train,2:36,2
+Cần phòng trọ có ban cong và nóng lạnh,"[""Nóng lạnh"", ""Ban công""]",train,2:36,2
+Ưu tiên chỗ ở với nóng lạnh và ban cong,"[""Nóng lạnh"", ""Ban công""]",train,2:36,2
+Tìm phòng trọ gồm ban cong và nóng lạnh,"[""Nóng lạnh"", ""Ban công""]",train,2:36,2
+Phòng cần có nóng lạnh và ban cong,"[""Nóng lạnh"", ""Ban công""]",train,2:36,2
+Mong muốn phòng được trang bị ban cong và nóng lạnh,"[""Nóng lạnh"", ""Ban công""]",train,2:36,2
+Tìm phòng có bình nóng lạnh và wc rieng,"[""Nóng lạnh"", ""WC riêng""]",train,2:37,2
+Cần phòng trọ có wc rieng và bình nóng lạnh,"[""Nóng lạnh"", ""WC riêng""]",train,2:37,2
+Ưu tiên chỗ ở với bình nóng lạnh và wc rieng,"[""Nóng lạnh"", ""WC riêng""]",train,2:37,2
+Tìm phòng trọ gồm wc rieng và bình nóng lạnh,"[""Nóng lạnh"", ""WC riêng""]",train,2:37,2
+Phòng cần có bình nóng lạnh và wc rieng,"[""Nóng lạnh"", ""WC riêng""]",train,2:37,2
+Mong muốn phòng được trang bị wc rieng và bình nóng lạnh,"[""Nóng lạnh"", ""WC riêng""]",train,2:37,2
+Tìm phòng có nong lanh và bếp,"[""Nóng lạnh"", ""Bếp""]",train,2:38,2
+Cần phòng trọ có bếp và nong lanh,"[""Nóng lạnh"", ""Bếp""]",train,2:38,2
+Ưu tiên chỗ ở với nong lanh và bếp,"[""Nóng lạnh"", ""Bếp""]",train,2:38,2
+Tìm phòng trọ gồm bếp và nong lanh,"[""Nóng lạnh"", ""Bếp""]",train,2:38,2
+Phòng cần có nong lanh và bếp,"[""Nóng lạnh"", ""Bếp""]",train,2:38,2
+Mong muốn phòng được trang bị bếp và nong lanh,"[""Nóng lạnh"", ""Bếp""]",train,2:38,2
+Tìm phòng có binh nong lanh và giường,"[""Nóng lạnh"", ""Giường""]",test,2:39,2
+Cần phòng trọ có giường và binh nong lanh,"[""Nóng lạnh"", ""Giường""]",test,2:39,2
+Ưu tiên chỗ ở với binh nong lanh và giường,"[""Nóng lạnh"", ""Giường""]",test,2:39,2
+Tìm phòng trọ gồm giường và binh nong lanh,"[""Nóng lạnh"", ""Giường""]",test,2:39,2
+Phòng cần có binh nong lanh và giường,"[""Nóng lạnh"", ""Giường""]",test,2:39,2
+Mong muốn phòng được trang bị giường và binh nong lanh,"[""Nóng lạnh"", ""Giường""]",test,2:39,2
+Tìm phòng có nóng lạnh và tủ đồ,"[""Nóng lạnh"", ""Tủ quần áo""]",test,2:40,2
+Cần phòng trọ có tủ đồ và nóng lạnh,"[""Nóng lạnh"", ""Tủ quần áo""]",test,2:40,2
+Ưu tiên chỗ ở với nóng lạnh và tủ đồ,"[""Nóng lạnh"", ""Tủ quần áo""]",test,2:40,2
+Tìm phòng trọ gồm tủ đồ và nóng lạnh,"[""Nóng lạnh"", ""Tủ quần áo""]",test,2:40,2
+Phòng cần có nóng lạnh và tủ đồ,"[""Nóng lạnh"", ""Tủ quần áo""]",test,2:40,2
+Mong muốn phòng được trang bị tủ đồ và nóng lạnh,"[""Nóng lạnh"", ""Tủ quần áo""]",test,2:40,2
+Tìm phòng có bình nóng lạnh và khep kin,"[""Nóng lạnh"", ""Khép kín""]",test,2:41,2
+Cần phòng trọ có khep kin và bình nóng lạnh,"[""Nóng lạnh"", ""Khép kín""]",test,2:41,2
+Ưu tiên chỗ ở với bình nóng lạnh và khep kin,"[""Nóng lạnh"", ""Khép kín""]",test,2:41,2
+Tìm phòng trọ gồm khep kin và bình nóng lạnh,"[""Nóng lạnh"", ""Khép kín""]",test,2:41,2
+Phòng cần có bình nóng lạnh và khep kin,"[""Nóng lạnh"", ""Khép kín""]",test,2:41,2
+Mong muốn phòng được trang bị khep kin và bình nóng lạnh,"[""Nóng lạnh"", ""Khép kín""]",test,2:41,2
+Tìm phòng có cho de xe và máy giặt riêng,"[""Chỗ để xe"", ""Máy giặt""]",train,2:42,2
+Cần phòng trọ có máy giặt riêng và cho de xe,"[""Chỗ để xe"", ""Máy giặt""]",train,2:42,2
+Ưu tiên chỗ ở với cho de xe và máy giặt riêng,"[""Chỗ để xe"", ""Máy giặt""]",train,2:42,2
+Tìm phòng trọ gồm máy giặt riêng và cho de xe,"[""Chỗ để xe"", ""Máy giặt""]",train,2:42,2
+Phòng cần có cho de xe và máy giặt riêng,"[""Chỗ để xe"", ""Máy giặt""]",train,2:42,2
+Mong muốn phòng được trang bị máy giặt riêng và cho de xe,"[""Chỗ để xe"", ""Máy giặt""]",train,2:42,2
+Tìm phòng có noi de xe và tủ lạnh,"[""Chỗ để xe"", ""Tủ lạnh""]",train,2:43,2
+Cần phòng trọ có tủ lạnh và noi de xe,"[""Chỗ để xe"", ""Tủ lạnh""]",train,2:43,2
+Ưu tiên chỗ ở với noi de xe và tủ lạnh,"[""Chỗ để xe"", ""Tủ lạnh""]",train,2:43,2
+Tìm phòng trọ gồm tủ lạnh và noi de xe,"[""Chỗ để xe"", ""Tủ lạnh""]",train,2:43,2
+Phòng cần có noi de xe và tủ lạnh,"[""Chỗ để xe"", ""Tủ lạnh""]",train,2:43,2
+Mong muốn phòng được trang bị tủ lạnh và noi de xe,"[""Chỗ để xe"", ""Tủ lạnh""]",train,2:43,2
+Tìm phòng có chỗ để xe và ban cong,"[""Chỗ để xe"", ""Ban công""]",train,2:44,2
+Cần phòng trọ có ban cong và chỗ để xe,"[""Chỗ để xe"", ""Ban công""]",train,2:44,2
+Ưu tiên chỗ ở với chỗ để xe và ban cong,"[""Chỗ để xe"", ""Ban công""]",train,2:44,2
+Tìm phòng trọ gồm ban cong và chỗ để xe,"[""Chỗ để xe"", ""Ban công""]",train,2:44,2
+Phòng cần có chỗ để xe và ban cong,"[""Chỗ để xe"", ""Ban công""]",train,2:44,2
+Mong muốn phòng được trang bị ban cong và chỗ để xe,"[""Chỗ để xe"", ""Ban công""]",train,2:44,2
+Tìm phòng có nơi để xe và wc rieng,"[""Chỗ để xe"", ""WC riêng""]",train,2:45,2
+Cần phòng trọ có wc rieng và nơi để xe,"[""Chỗ để xe"", ""WC riêng""]",train,2:45,2
+Ưu tiên chỗ ở với nơi để xe và wc rieng,"[""Chỗ để xe"", ""WC riêng""]",train,2:45,2
+Tìm phòng trọ gồm wc rieng và nơi để xe,"[""Chỗ để xe"", ""WC riêng""]",train,2:45,2
+Phòng cần có nơi để xe và wc rieng,"[""Chỗ để xe"", ""WC riêng""]",train,2:45,2
+Mong muốn phòng được trang bị wc rieng và nơi để xe,"[""Chỗ để xe"", ""WC riêng""]",train,2:45,2
+Tìm phòng có cho de xe và bep,"[""Chỗ để xe"", ""Bếp""]",train,2:46,2
+Cần phòng trọ có bep và cho de xe,"[""Chỗ để xe"", ""Bếp""]",train,2:46,2
+Ưu tiên chỗ ở với cho de xe và bep,"[""Chỗ để xe"", ""Bếp""]",train,2:46,2
+Tìm phòng trọ gồm bep và cho de xe,"[""Chỗ để xe"", ""Bếp""]",train,2:46,2
+Phòng cần có cho de xe và bep,"[""Chỗ để xe"", ""Bếp""]",train,2:46,2
+Mong muốn phòng được trang bị bep và cho de xe,"[""Chỗ để xe"", ""Bếp""]",train,2:46,2
+Tìm phòng có noi de xe và giường,"[""Chỗ để xe"", ""Giường""]",train,2:47,2
+Cần phòng trọ có giường và noi de xe,"[""Chỗ để xe"", ""Giường""]",train,2:47,2
+Ưu tiên chỗ ở với noi de xe và giường,"[""Chỗ để xe"", ""Giường""]",train,2:47,2
+Tìm phòng trọ gồm giường và noi de xe,"[""Chỗ để xe"", ""Giường""]",train,2:47,2
+Phòng cần có noi de xe và giường,"[""Chỗ để xe"", ""Giường""]",train,2:47,2
+Mong muốn phòng được trang bị giường và noi de xe,"[""Chỗ để xe"", ""Giường""]",train,2:47,2
+Tìm phòng có chỗ để xe và tủ đồ,"[""Chỗ để xe"", ""Tủ quần áo""]",train,2:48,2
+Cần phòng trọ có tủ đồ và chỗ để xe,"[""Chỗ để xe"", ""Tủ quần áo""]",train,2:48,2
+Ưu tiên chỗ ở với chỗ để xe và tủ đồ,"[""Chỗ để xe"", ""Tủ quần áo""]",train,2:48,2
+Tìm phòng trọ gồm tủ đồ và chỗ để xe,"[""Chỗ để xe"", ""Tủ quần áo""]",train,2:48,2
+Phòng cần có chỗ để xe và tủ đồ,"[""Chỗ để xe"", ""Tủ quần áo""]",train,2:48,2
+Mong muốn phòng được trang bị tủ đồ và chỗ để xe,"[""Chỗ để xe"", ""Tủ quần áo""]",train,2:48,2
+Tìm phòng có nơi để xe và khep kin,"[""Chỗ để xe"", ""Khép kín""]",train,2:49,2
+Cần phòng trọ có khep kin và nơi để xe,"[""Chỗ để xe"", ""Khép kín""]",train,2:49,2
+Ưu tiên chỗ ở với nơi để xe và khep kin,"[""Chỗ để xe"", ""Khép kín""]",train,2:49,2
+Tìm phòng trọ gồm khep kin và nơi để xe,"[""Chỗ để xe"", ""Khép kín""]",train,2:49,2
+Phòng cần có nơi để xe và khep kin,"[""Chỗ để xe"", ""Khép kín""]",train,2:49,2
+Mong muốn phòng được trang bị khep kin và nơi để xe,"[""Chỗ để xe"", ""Khép kín""]",train,2:49,2
+Tìm phòng có may giat và tu lanh,"[""Máy giặt"", ""Tủ lạnh""]",train,2:50,2
+Cần phòng trọ có tu lanh và may giat,"[""Máy giặt"", ""Tủ lạnh""]",train,2:50,2
+Ưu tiên chỗ ở với may giat và tu lanh,"[""Máy giặt"", ""Tủ lạnh""]",train,2:50,2
+Tìm phòng trọ gồm tu lanh và may giat,"[""Máy giặt"", ""Tủ lạnh""]",train,2:50,2
+Phòng cần có may giat và tu lanh,"[""Máy giặt"", ""Tủ lạnh""]",train,2:50,2
+Mong muốn phòng được trang bị tu lanh và may giat,"[""Máy giặt"", ""Tủ lạnh""]",train,2:50,2
+Tìm phòng có máy giặt và ban công,"[""Máy giặt"", ""Ban công""]",train,2:51,2
+Cần phòng trọ có ban công và máy giặt,"[""Máy giặt"", ""Ban công""]",train,2:51,2
+Ưu tiên chỗ ở với máy giặt và ban công,"[""Máy giặt"", ""Ban công""]",train,2:51,2
+Tìm phòng trọ gồm ban công và máy giặt,"[""Máy giặt"", ""Ban công""]",train,2:51,2
+Phòng cần có máy giặt và ban công,"[""Máy giặt"", ""Ban công""]",train,2:51,2
+Mong muốn phòng được trang bị ban công và máy giặt,"[""Máy giặt"", ""Ban công""]",train,2:51,2
+Tìm phòng có máy giặt riêng và nhà vệ sinh riêng,"[""Máy giặt"", ""WC riêng""]",train,2:52,2
+Cần phòng trọ có nhà vệ sinh riêng và máy giặt riêng,"[""Máy giặt"", ""WC riêng""]",train,2:52,2
+Ưu tiên chỗ ở với máy giặt riêng và nhà vệ sinh riêng,"[""Máy giặt"", ""WC riêng""]",train,2:52,2
+Tìm phòng trọ gồm nhà vệ sinh riêng và máy giặt riêng,"[""Máy giặt"", ""WC riêng""]",train,2:52,2
+Phòng cần có máy giặt riêng và nhà vệ sinh riêng,"[""Máy giặt"", ""WC riêng""]",train,2:52,2
+Mong muốn phòng được trang bị nhà vệ sinh riêng và máy giặt riêng,"[""Máy giặt"", ""WC riêng""]",train,2:52,2
+Tìm phòng có may giat và bếp,"[""Máy giặt"", ""Bếp""]",train,2:53,2
+Cần phòng trọ có bếp và may giat,"[""Máy giặt"", ""Bếp""]",train,2:53,2
+Ưu tiên chỗ ở với may giat và bếp,"[""Máy giặt"", ""Bếp""]",train,2:53,2
+Tìm phòng trọ gồm bếp và may giat,"[""Máy giặt"", ""Bếp""]",train,2:53,2
+Phòng cần có may giat và bếp,"[""Máy giặt"", ""Bếp""]",train,2:53,2
+Mong muốn phòng được trang bị bếp và may giat,"[""Máy giặt"", ""Bếp""]",train,2:53,2
+Tìm phòng có máy giặt và giuong ngu,"[""Máy giặt"", ""Giường""]",validation,2:54,2
+Cần phòng trọ có giuong ngu và máy giặt,"[""Máy giặt"", ""Giường""]",validation,2:54,2
+Ưu tiên chỗ ở với máy giặt và giuong ngu,"[""Máy giặt"", ""Giường""]",validation,2:54,2
+Tìm phòng trọ gồm giuong ngu và máy giặt,"[""Máy giặt"", ""Giường""]",validation,2:54,2
+Phòng cần có máy giặt và giuong ngu,"[""Máy giặt"", ""Giường""]",validation,2:54,2
+Mong muốn phòng được trang bị giuong ngu và máy giặt,"[""Máy giặt"", ""Giường""]",validation,2:54,2
+Tìm phòng có máy giặt riêng và tủ quần áo,"[""Máy giặt"", ""Tủ quần áo""]",test,2:55,2
+Cần phòng trọ có tủ quần áo và máy giặt riêng,"[""Máy giặt"", ""Tủ quần áo""]",test,2:55,2
+Ưu tiên chỗ ở với máy giặt riêng và tủ quần áo,"[""Máy giặt"", ""Tủ quần áo""]",test,2:55,2
+Tìm phòng trọ gồm tủ quần áo và máy giặt riêng,"[""Máy giặt"", ""Tủ quần áo""]",test,2:55,2
+Phòng cần có máy giặt riêng và tủ quần áo,"[""Máy giặt"", ""Tủ quần áo""]",test,2:55,2
+Mong muốn phòng được trang bị tủ quần áo và máy giặt riêng,"[""Máy giặt"", ""Tủ quần áo""]",test,2:55,2
+Tìm phòng có may giat và phòng khép kín,"[""Máy giặt"", ""Khép kín""]",test,2:56,2
+Cần phòng trọ có phòng khép kín và may giat,"[""Máy giặt"", ""Khép kín""]",test,2:56,2
+Ưu tiên chỗ ở với may giat và phòng khép kín,"[""Máy giặt"", ""Khép kín""]",test,2:56,2
+Tìm phòng trọ gồm phòng khép kín và may giat,"[""Máy giặt"", ""Khép kín""]",test,2:56,2
+Phòng cần có may giat và phòng khép kín,"[""Máy giặt"", ""Khép kín""]",test,2:56,2
+Mong muốn phòng được trang bị phòng khép kín và may giat,"[""Máy giặt"", ""Khép kín""]",test,2:56,2
+Tìm phòng có tu lanh và ban công,"[""Tủ lạnh"", ""Ban công""]",train,2:57,2
+Cần phòng trọ có ban công và tu lanh,"[""Tủ lạnh"", ""Ban công""]",train,2:57,2
+Ưu tiên chỗ ở với tu lanh và ban công,"[""Tủ lạnh"", ""Ban công""]",train,2:57,2
+Tìm phòng trọ gồm ban công và tu lanh,"[""Tủ lạnh"", ""Ban công""]",train,2:57,2
+Phòng cần có tu lanh và ban công,"[""Tủ lạnh"", ""Ban công""]",train,2:57,2
+Mong muốn phòng được trang bị ban công và tu lanh,"[""Tủ lạnh"", ""Ban công""]",train,2:57,2
+Tìm phòng có tủ lạnh và nha ve sinh rieng,"[""Tủ lạnh"", ""WC riêng""]",test,2:58,2
+Cần phòng trọ có nha ve sinh rieng và tủ lạnh,"[""Tủ lạnh"", ""WC riêng""]",test,2:58,2
+Ưu tiên chỗ ở với tủ lạnh và nha ve sinh rieng,"[""Tủ lạnh"", ""WC riêng""]",test,2:58,2
+Tìm phòng trọ gồm nha ve sinh rieng và tủ lạnh,"[""Tủ lạnh"", ""WC riêng""]",test,2:58,2
+Phòng cần có tủ lạnh và nha ve sinh rieng,"[""Tủ lạnh"", ""WC riêng""]",test,2:58,2
+Mong muốn phòng được trang bị nha ve sinh rieng và tủ lạnh,"[""Tủ lạnh"", ""WC riêng""]",test,2:58,2
+Tìm phòng có tu lanh và bếp,"[""Tủ lạnh"", ""Bếp""]",train,2:59,2
+Cần phòng trọ có bếp và tu lanh,"[""Tủ lạnh"", ""Bếp""]",train,2:59,2
+Ưu tiên chỗ ở với tu lanh và bếp,"[""Tủ lạnh"", ""Bếp""]",train,2:59,2
+Tìm phòng trọ gồm bếp và tu lanh,"[""Tủ lạnh"", ""Bếp""]",train,2:59,2
+Phòng cần có tu lanh và bếp,"[""Tủ lạnh"", ""Bếp""]",train,2:59,2
+Mong muốn phòng được trang bị bếp và tu lanh,"[""Tủ lạnh"", ""Bếp""]",train,2:59,2
+Tìm phòng có tủ lạnh và giường ngủ,"[""Tủ lạnh"", ""Giường""]",train,2:60,2
+Cần phòng trọ có giường ngủ và tủ lạnh,"[""Tủ lạnh"", ""Giường""]",train,2:60,2
+Ưu tiên chỗ ở với tủ lạnh và giường ngủ,"[""Tủ lạnh"", ""Giường""]",train,2:60,2
+Tìm phòng trọ gồm giường ngủ và tủ lạnh,"[""Tủ lạnh"", ""Giường""]",train,2:60,2
+Phòng cần có tủ lạnh và giường ngủ,"[""Tủ lạnh"", ""Giường""]",train,2:60,2
+Mong muốn phòng được trang bị giường ngủ và tủ lạnh,"[""Tủ lạnh"", ""Giường""]",train,2:60,2
+Tìm phòng có tu lanh và tu quan ao,"[""Tủ lạnh"", ""Tủ quần áo""]",train,2:61,2
+Cần phòng trọ có tu quan ao và tu lanh,"[""Tủ lạnh"", ""Tủ quần áo""]",train,2:61,2
+Ưu tiên chỗ ở với tu lanh và tu quan ao,"[""Tủ lạnh"", ""Tủ quần áo""]",train,2:61,2
+Tìm phòng trọ gồm tu quan ao và tu lanh,"[""Tủ lạnh"", ""Tủ quần áo""]",train,2:61,2
+Phòng cần có tu lanh và tu quan ao,"[""Tủ lạnh"", ""Tủ quần áo""]",train,2:61,2
+Mong muốn phòng được trang bị tu quan ao và tu lanh,"[""Tủ lạnh"", ""Tủ quần áo""]",train,2:61,2
+Tìm phòng có tủ lạnh và phong khep kin,"[""Tủ lạnh"", ""Khép kín""]",validation,2:62,2
+Cần phòng trọ có phong khep kin và tủ lạnh,"[""Tủ lạnh"", ""Khép kín""]",validation,2:62,2
+Ưu tiên chỗ ở với tủ lạnh và phong khep kin,"[""Tủ lạnh"", ""Khép kín""]",validation,2:62,2
+Tìm phòng trọ gồm phong khep kin và tủ lạnh,"[""Tủ lạnh"", ""Khép kín""]",validation,2:62,2
+Phòng cần có tủ lạnh và phong khep kin,"[""Tủ lạnh"", ""Khép kín""]",validation,2:62,2
+Mong muốn phòng được trang bị phong khep kin và tủ lạnh,"[""Tủ lạnh"", ""Khép kín""]",validation,2:62,2
+Tìm phòng có ban cong và WC riêng,"[""Ban công"", ""WC riêng""]",train,2:63,2
+Cần phòng trọ có WC riêng và ban cong,"[""Ban công"", ""WC riêng""]",train,2:63,2
+Ưu tiên chỗ ở với ban cong và WC riêng,"[""Ban công"", ""WC riêng""]",train,2:63,2
+Tìm phòng trọ gồm WC riêng và ban cong,"[""Ban công"", ""WC riêng""]",train,2:63,2
+Phòng cần có ban cong và WC riêng,"[""Ban công"", ""WC riêng""]",train,2:63,2
+Mong muốn phòng được trang bị WC riêng và ban cong,"[""Ban công"", ""WC riêng""]",train,2:63,2
+Tìm phòng có ban công và bep,"[""Ban công"", ""Bếp""]",train,2:64,2
+Cần phòng trọ có bep và ban công,"[""Ban công"", ""Bếp""]",train,2:64,2
+Ưu tiên chỗ ở với ban công và bep,"[""Ban công"", ""Bếp""]",train,2:64,2
+Tìm phòng trọ gồm bep và ban công,"[""Ban công"", ""Bếp""]",train,2:64,2
+Phòng cần có ban công và bep,"[""Ban công"", ""Bếp""]",train,2:64,2
+Mong muốn phòng được trang bị bep và ban công,"[""Ban công"", ""Bếp""]",train,2:64,2
+Tìm phòng có ban cong và giuong,"[""Ban công"", ""Giường""]",train,2:65,2
+Cần phòng trọ có giuong và ban cong,"[""Ban công"", ""Giường""]",train,2:65,2
+Ưu tiên chỗ ở với ban cong và giuong,"[""Ban công"", ""Giường""]",train,2:65,2
+Tìm phòng trọ gồm giuong và ban cong,"[""Ban công"", ""Giường""]",train,2:65,2
+Phòng cần có ban cong và giuong,"[""Ban công"", ""Giường""]",train,2:65,2
+Mong muốn phòng được trang bị giuong và ban cong,"[""Ban công"", ""Giường""]",train,2:65,2
+Tìm phòng có ban công và tu do,"[""Ban công"", ""Tủ quần áo""]",train,2:66,2
+Cần phòng trọ có tu do và ban công,"[""Ban công"", ""Tủ quần áo""]",train,2:66,2
+Ưu tiên chỗ ở với ban công và tu do,"[""Ban công"", ""Tủ quần áo""]",train,2:66,2
+Tìm phòng trọ gồm tu do và ban công,"[""Ban công"", ""Tủ quần áo""]",train,2:66,2
+Phòng cần có ban công và tu do,"[""Ban công"", ""Tủ quần áo""]",train,2:66,2
+Mong muốn phòng được trang bị tu do và ban công,"[""Ban công"", ""Tủ quần áo""]",train,2:66,2
+Tìm phòng có ban cong và khép kín,"[""Ban công"", ""Khép kín""]",validation,2:67,2
+Cần phòng trọ có khép kín và ban cong,"[""Ban công"", ""Khép kín""]",validation,2:67,2
+Ưu tiên chỗ ở với ban cong và khép kín,"[""Ban công"", ""Khép kín""]",validation,2:67,2
+Tìm phòng trọ gồm khép kín và ban cong,"[""Ban công"", ""Khép kín""]",validation,2:67,2
+Phòng cần có ban cong và khép kín,"[""Ban công"", ""Khép kín""]",validation,2:67,2
+Mong muốn phòng được trang bị khép kín và ban cong,"[""Ban công"", ""Khép kín""]",validation,2:67,2
+Tìm phòng có WC riêng và bếp,"[""WC riêng"", ""Bếp""]",test,2:68,2
+Cần phòng trọ có bếp và WC riêng,"[""WC riêng"", ""Bếp""]",test,2:68,2
+Ưu tiên chỗ ở với WC riêng và bếp,"[""WC riêng"", ""Bếp""]",test,2:68,2
+Tìm phòng trọ gồm bếp và WC riêng,"[""WC riêng"", ""Bếp""]",test,2:68,2
+Phòng cần có WC riêng và bếp,"[""WC riêng"", ""Bếp""]",test,2:68,2
+Mong muốn phòng được trang bị bếp và WC riêng,"[""WC riêng"", ""Bếp""]",test,2:68,2
+Tìm phòng có nhà vệ sinh riêng và giuong,"[""WC riêng"", ""Giường""]",train,2:69,2
+Cần phòng trọ có giuong và nhà vệ sinh riêng,"[""WC riêng"", ""Giường""]",train,2:69,2
+Ưu tiên chỗ ở với nhà vệ sinh riêng và giuong,"[""WC riêng"", ""Giường""]",train,2:69,2
+Tìm phòng trọ gồm giuong và nhà vệ sinh riêng,"[""WC riêng"", ""Giường""]",train,2:69,2
+Phòng cần có nhà vệ sinh riêng và giuong,"[""WC riêng"", ""Giường""]",train,2:69,2
+Mong muốn phòng được trang bị giuong và nhà vệ sinh riêng,"[""WC riêng"", ""Giường""]",train,2:69,2
+Tìm phòng có wc rieng và tu do,"[""WC riêng"", ""Tủ quần áo""]",train,2:70,2
+Cần phòng trọ có tu do và wc rieng,"[""WC riêng"", ""Tủ quần áo""]",train,2:70,2
+Ưu tiên chỗ ở với wc rieng và tu do,"[""WC riêng"", ""Tủ quần áo""]",train,2:70,2
+Tìm phòng trọ gồm tu do và wc rieng,"[""WC riêng"", ""Tủ quần áo""]",train,2:70,2
+Phòng cần có wc rieng và tu do,"[""WC riêng"", ""Tủ quần áo""]",train,2:70,2
+Mong muốn phòng được trang bị tu do và wc rieng,"[""WC riêng"", ""Tủ quần áo""]",train,2:70,2
+Tìm phòng có nha ve sinh rieng và khép kín,"[""WC riêng"", ""Khép kín""]",train,2:71,2
+Cần phòng trọ có khép kín và nha ve sinh rieng,"[""WC riêng"", ""Khép kín""]",train,2:71,2
+Ưu tiên chỗ ở với nha ve sinh rieng và khép kín,"[""WC riêng"", ""Khép kín""]",train,2:71,2
+Tìm phòng trọ gồm khép kín và nha ve sinh rieng,"[""WC riêng"", ""Khép kín""]",train,2:71,2
+Phòng cần có nha ve sinh rieng và khép kín,"[""WC riêng"", ""Khép kín""]",train,2:71,2
+Mong muốn phòng được trang bị khép kín và nha ve sinh rieng,"[""WC riêng"", ""Khép kín""]",train,2:71,2
+Tìm phòng có bếp và giường ngủ,"[""Bếp"", ""Giường""]",train,2:72,2
+Cần phòng trọ có giường ngủ và bếp,"[""Bếp"", ""Giường""]",train,2:72,2
+Ưu tiên chỗ ở với bếp và giường ngủ,"[""Bếp"", ""Giường""]",train,2:72,2
+Tìm phòng trọ gồm giường ngủ và bếp,"[""Bếp"", ""Giường""]",train,2:72,2
+Phòng cần có bếp và giường ngủ,"[""Bếp"", ""Giường""]",train,2:72,2
+Mong muốn phòng được trang bị giường ngủ và bếp,"[""Bếp"", ""Giường""]",train,2:72,2
+Tìm phòng có khu bếp và tu quan ao,"[""Bếp"", ""Tủ quần áo""]",train,2:73,2
+Cần phòng trọ có tu quan ao và khu bếp,"[""Bếp"", ""Tủ quần áo""]",train,2:73,2
+Ưu tiên chỗ ở với khu bếp và tu quan ao,"[""Bếp"", ""Tủ quần áo""]",train,2:73,2
+Tìm phòng trọ gồm tu quan ao và khu bếp,"[""Bếp"", ""Tủ quần áo""]",train,2:73,2
+Phòng cần có khu bếp và tu quan ao,"[""Bếp"", ""Tủ quần áo""]",train,2:73,2
+Mong muốn phòng được trang bị tu quan ao và khu bếp,"[""Bếp"", ""Tủ quần áo""]",train,2:73,2
+Tìm phòng có bep và phong khep kin,"[""Bếp"", ""Khép kín""]",test,2:74,2
+Cần phòng trọ có phong khep kin và bep,"[""Bếp"", ""Khép kín""]",test,2:74,2
+Ưu tiên chỗ ở với bep và phong khep kin,"[""Bếp"", ""Khép kín""]",test,2:74,2
+Tìm phòng trọ gồm phong khep kin và bep,"[""Bếp"", ""Khép kín""]",test,2:74,2
+Phòng cần có bep và phong khep kin,"[""Bếp"", ""Khép kín""]",test,2:74,2
+Mong muốn phòng được trang bị phong khep kin và bep,"[""Bếp"", ""Khép kín""]",test,2:74,2
+Tìm phòng có giuong ngu và tủ quần áo,"[""Giường"", ""Tủ quần áo""]",test,2:75,2
+Cần phòng trọ có tủ quần áo và giuong ngu,"[""Giường"", ""Tủ quần áo""]",test,2:75,2
+Ưu tiên chỗ ở với giuong ngu và tủ quần áo,"[""Giường"", ""Tủ quần áo""]",test,2:75,2
+Tìm phòng trọ gồm tủ quần áo và giuong ngu,"[""Giường"", ""Tủ quần áo""]",test,2:75,2
+Phòng cần có giuong ngu và tủ quần áo,"[""Giường"", ""Tủ quần áo""]",test,2:75,2
+Mong muốn phòng được trang bị tủ quần áo và giuong ngu,"[""Giường"", ""Tủ quần áo""]",test,2:75,2
+Tìm phòng có giường và phòng khép kín,"[""Giường"", ""Khép kín""]",train,2:76,2
+Cần phòng trọ có phòng khép kín và giường,"[""Giường"", ""Khép kín""]",train,2:76,2
+Ưu tiên chỗ ở với giường và phòng khép kín,"[""Giường"", ""Khép kín""]",train,2:76,2
+Tìm phòng trọ gồm phòng khép kín và giường,"[""Giường"", ""Khép kín""]",train,2:76,2
+Phòng cần có giường và phòng khép kín,"[""Giường"", ""Khép kín""]",train,2:76,2
+Mong muốn phòng được trang bị phòng khép kín và giường,"[""Giường"", ""Khép kín""]",train,2:76,2
+Tìm phòng có tủ đồ và khep kin,"[""Tủ quần áo"", ""Khép kín""]",validation,2:77,2
+Cần phòng trọ có khep kin và tủ đồ,"[""Tủ quần áo"", ""Khép kín""]",validation,2:77,2
+Ưu tiên chỗ ở với tủ đồ và khep kin,"[""Tủ quần áo"", ""Khép kín""]",validation,2:77,2
+Tìm phòng trọ gồm khep kin và tủ đồ,"[""Tủ quần áo"", ""Khép kín""]",validation,2:77,2
+Phòng cần có tủ đồ và khep kin,"[""Tủ quần áo"", ""Khép kín""]",validation,2:77,2
+Mong muốn phòng được trang bị khep kin và tủ đồ,"[""Tủ quần áo"", ""Khép kín""]",validation,2:77,2
+"Tìm phòng có internet không dây, may lanh và nóng lạnh","[""Wifi"", ""Điều hòa"", ""Nóng lạnh""]",train,3:78,3
+"Cần phòng trọ có may lanh, nóng lạnh và internet không dây","[""Wifi"", ""Điều hòa"", ""Nóng lạnh""]",train,3:78,3
+"Ưu tiên chỗ ở với nóng lạnh, internet không dây và may lanh","[""Wifi"", ""Điều hòa"", ""Nóng lạnh""]",train,3:78,3
+"Tìm phòng trọ gồm internet không dây, may lanh và nóng lạnh","[""Wifi"", ""Điều hòa"", ""Nóng lạnh""]",train,3:78,3
+"Phòng cần có may lanh, nóng lạnh và internet không dây","[""Wifi"", ""Điều hòa"", ""Nóng lạnh""]",train,3:78,3
+"Mong muốn phòng được trang bị nóng lạnh, internet không dây và may lanh","[""Wifi"", ""Điều hòa"", ""Nóng lạnh""]",train,3:78,3
+"Tìm phòng có internet khong day, điều hòa và nơi để xe","[""Wifi"", ""Điều hòa"", ""Chỗ để xe""]",validation,3:79,3
+"Cần phòng trọ có điều hòa, nơi để xe và internet khong day","[""Wifi"", ""Điều hòa"", ""Chỗ để xe""]",validation,3:79,3
+"Ưu tiên chỗ ở với nơi để xe, internet khong day và điều hòa","[""Wifi"", ""Điều hòa"", ""Chỗ để xe""]",validation,3:79,3
+"Tìm phòng trọ gồm internet khong day, điều hòa và nơi để xe","[""Wifi"", ""Điều hòa"", ""Chỗ để xe""]",validation,3:79,3
+"Phòng cần có điều hòa, nơi để xe và internet khong day","[""Wifi"", ""Điều hòa"", ""Chỗ để xe""]",validation,3:79,3
+"Mong muốn phòng được trang bị nơi để xe, internet khong day và điều hòa","[""Wifi"", ""Điều hòa"", ""Chỗ để xe""]",validation,3:79,3
+"Tìm phòng có wifi, máy lạnh và máy giặt riêng","[""Wifi"", ""Điều hòa"", ""Máy giặt""]",train,3:80,3
+"Cần phòng trọ có máy lạnh, máy giặt riêng và wifi","[""Wifi"", ""Điều hòa"", ""Máy giặt""]",train,3:80,3
+"Ưu tiên chỗ ở với máy giặt riêng, wifi và máy lạnh","[""Wifi"", ""Điều hòa"", ""Máy giặt""]",train,3:80,3
+"Tìm phòng trọ gồm wifi, máy lạnh và máy giặt riêng","[""Wifi"", ""Điều hòa"", ""Máy giặt""]",train,3:80,3
+"Phòng cần có máy lạnh, máy giặt riêng và wifi","[""Wifi"", ""Điều hòa"", ""Máy giặt""]",train,3:80,3
+"Mong muốn phòng được trang bị máy giặt riêng, wifi và máy lạnh","[""Wifi"", ""Điều hòa"", ""Máy giặt""]",train,3:80,3
+"Tìm phòng có wi-fi, dieu hoa và tu lanh","[""Wifi"", ""Điều hòa"", ""Tủ lạnh""]",train,3:81,3
+"Cần phòng trọ có dieu hoa, tu lanh và wi-fi","[""Wifi"", ""Điều hòa"", ""Tủ lạnh""]",train,3:81,3
+"Ưu tiên chỗ ở với tu lanh, wi-fi và dieu hoa","[""Wifi"", ""Điều hòa"", ""Tủ lạnh""]",train,3:81,3
+"Tìm phòng trọ gồm wi-fi, dieu hoa và tu lanh","[""Wifi"", ""Điều hòa"", ""Tủ lạnh""]",train,3:81,3
+"Phòng cần có dieu hoa, tu lanh và wi-fi","[""Wifi"", ""Điều hòa"", ""Tủ lạnh""]",train,3:81,3
+"Mong muốn phòng được trang bị tu lanh, wi-fi và dieu hoa","[""Wifi"", ""Điều hòa"", ""Tủ lạnh""]",train,3:81,3
+"Tìm phòng có mạng wifi, may lanh và ban công","[""Wifi"", ""Điều hòa"", ""Ban công""]",train,3:82,3
+"Cần phòng trọ có may lanh, ban công và mạng wifi","[""Wifi"", ""Điều hòa"", ""Ban công""]",train,3:82,3
+"Ưu tiên chỗ ở với ban công, mạng wifi và may lanh","[""Wifi"", ""Điều hòa"", ""Ban công""]",train,3:82,3
+"Tìm phòng trọ gồm mạng wifi, may lanh và ban công","[""Wifi"", ""Điều hòa"", ""Ban công""]",train,3:82,3
+"Phòng cần có may lanh, ban công và mạng wifi","[""Wifi"", ""Điều hòa"", ""Ban công""]",train,3:82,3
+"Mong muốn phòng được trang bị ban công, mạng wifi và may lanh","[""Wifi"", ""Điều hòa"", ""Ban công""]",train,3:82,3
+"Tìm phòng có internet không dây, điều hòa và nhà vệ sinh riêng","[""Wifi"", ""Điều hòa"", ""WC riêng""]",train,3:83,3
+"Cần phòng trọ có điều hòa, nhà vệ sinh riêng và internet không dây","[""Wifi"", ""Điều hòa"", ""WC riêng""]",train,3:83,3
+"Ưu tiên chỗ ở với nhà vệ sinh riêng, internet không dây và điều hòa","[""Wifi"", ""Điều hòa"", ""WC riêng""]",train,3:83,3
+"Tìm phòng trọ gồm internet không dây, điều hòa và nhà vệ sinh riêng","[""Wifi"", ""Điều hòa"", ""WC riêng""]",train,3:83,3
+"Phòng cần có điều hòa, nhà vệ sinh riêng và internet không dây","[""Wifi"", ""Điều hòa"", ""WC riêng""]",train,3:83,3
+"Mong muốn phòng được trang bị nhà vệ sinh riêng, internet không dây và điều hòa","[""Wifi"", ""Điều hòa"", ""WC riêng""]",train,3:83,3
+"Tìm phòng có internet khong day, máy lạnh và bep","[""Wifi"", ""Điều hòa"", ""Bếp""]",test,3:84,3
+"Cần phòng trọ có máy lạnh, bep và internet khong day","[""Wifi"", ""Điều hòa"", ""Bếp""]",test,3:84,3
+"Ưu tiên chỗ ở với bep, internet khong day và máy lạnh","[""Wifi"", ""Điều hòa"", ""Bếp""]",test,3:84,3
+"Tìm phòng trọ gồm internet khong day, máy lạnh và bep","[""Wifi"", ""Điều hòa"", ""Bếp""]",test,3:84,3
+"Phòng cần có máy lạnh, bep và internet khong day","[""Wifi"", ""Điều hòa"", ""Bếp""]",test,3:84,3
+"Mong muốn phòng được trang bị bep, internet khong day và máy lạnh","[""Wifi"", ""Điều hòa"", ""Bếp""]",test,3:84,3
+"Tìm phòng có wifi, dieu hoa và giuong ngu","[""Wifi"", ""Điều hòa"", ""Giường""]",train,3:85,3
+"Cần phòng trọ có dieu hoa, giuong ngu và wifi","[""Wifi"", ""Điều hòa"", ""Giường""]",train,3:85,3
+"Ưu tiên chỗ ở với giuong ngu, wifi và dieu hoa","[""Wifi"", ""Điều hòa"", ""Giường""]",train,3:85,3
+"Tìm phòng trọ gồm wifi, dieu hoa và giuong ngu","[""Wifi"", ""Điều hòa"", ""Giường""]",train,3:85,3
+"Phòng cần có dieu hoa, giuong ngu và wifi","[""Wifi"", ""Điều hòa"", ""Giường""]",train,3:85,3
+"Mong muốn phòng được trang bị giuong ngu, wifi và dieu hoa","[""Wifi"", ""Điều hòa"", ""Giường""]",train,3:85,3
+"Tìm phòng có wi-fi, may lanh và tủ quần áo","[""Wifi"", ""Điều hòa"", ""Tủ quần áo""]",train,3:86,3
+"Cần phòng trọ có may lanh, tủ quần áo và wi-fi","[""Wifi"", ""Điều hòa"", ""Tủ quần áo""]",train,3:86,3
+"Ưu tiên chỗ ở với tủ quần áo, wi-fi và may lanh","[""Wifi"", ""Điều hòa"", ""Tủ quần áo""]",train,3:86,3
+"Tìm phòng trọ gồm wi-fi, may lanh và tủ quần áo","[""Wifi"", ""Điều hòa"", ""Tủ quần áo""]",train,3:86,3
+"Phòng cần có may lanh, tủ quần áo và wi-fi","[""Wifi"", ""Điều hòa"", ""Tủ quần áo""]",train,3:86,3
+"Mong muốn phòng được trang bị tủ quần áo, wi-fi và may lanh","[""Wifi"", ""Điều hòa"", ""Tủ quần áo""]",train,3:86,3
+"Tìm phòng có mạng wifi, điều hòa và phòng khép kín","[""Wifi"", ""Điều hòa"", ""Khép kín""]",test,3:87,3
+"Cần phòng trọ có điều hòa, phòng khép kín và mạng wifi","[""Wifi"", ""Điều hòa"", ""Khép kín""]",test,3:87,3
+"Ưu tiên chỗ ở với phòng khép kín, mạng wifi và điều hòa","[""Wifi"", ""Điều hòa"", ""Khép kín""]",test,3:87,3
+"Tìm phòng trọ gồm mạng wifi, điều hòa và phòng khép kín","[""Wifi"", ""Điều hòa"", ""Khép kín""]",test,3:87,3
+"Phòng cần có điều hòa, phòng khép kín và mạng wifi","[""Wifi"", ""Điều hòa"", ""Khép kín""]",test,3:87,3
+"Mong muốn phòng được trang bị phòng khép kín, mạng wifi và điều hòa","[""Wifi"", ""Điều hòa"", ""Khép kín""]",test,3:87,3
+"Tìm phòng có internet không dây, bình nóng lạnh và cho de xe","[""Wifi"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:88,3
+"Cần phòng trọ có bình nóng lạnh, cho de xe và internet không dây","[""Wifi"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:88,3
+"Ưu tiên chỗ ở với cho de xe, internet không dây và bình nóng lạnh","[""Wifi"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:88,3
+"Tìm phòng trọ gồm internet không dây, bình nóng lạnh và cho de xe","[""Wifi"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:88,3
+"Phòng cần có bình nóng lạnh, cho de xe và internet không dây","[""Wifi"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:88,3
+"Mong muốn phòng được trang bị cho de xe, internet không dây và bình nóng lạnh","[""Wifi"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:88,3
+"Tìm phòng có internet khong day, nong lanh và máy giặt riêng","[""Wifi"", ""Nóng lạnh"", ""Máy giặt""]",train,3:89,3
+"Cần phòng trọ có nong lanh, máy giặt riêng và internet khong day","[""Wifi"", ""Nóng lạnh"", ""Máy giặt""]",train,3:89,3
+"Ưu tiên chỗ ở với máy giặt riêng, internet khong day và nong lanh","[""Wifi"", ""Nóng lạnh"", ""Máy giặt""]",train,3:89,3
+"Tìm phòng trọ gồm internet khong day, nong lanh và máy giặt riêng","[""Wifi"", ""Nóng lạnh"", ""Máy giặt""]",train,3:89,3
+"Phòng cần có nong lanh, máy giặt riêng và internet khong day","[""Wifi"", ""Nóng lạnh"", ""Máy giặt""]",train,3:89,3
+"Mong muốn phòng được trang bị máy giặt riêng, internet khong day và nong lanh","[""Wifi"", ""Nóng lạnh"", ""Máy giặt""]",train,3:89,3
+"Tìm phòng có wifi, binh nong lanh và tủ lạnh","[""Wifi"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:90,3
+"Cần phòng trọ có binh nong lanh, tủ lạnh và wifi","[""Wifi"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:90,3
+"Ưu tiên chỗ ở với tủ lạnh, wifi và binh nong lanh","[""Wifi"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:90,3
+"Tìm phòng trọ gồm wifi, binh nong lanh và tủ lạnh","[""Wifi"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:90,3
+"Phòng cần có binh nong lanh, tủ lạnh và wifi","[""Wifi"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:90,3
+"Mong muốn phòng được trang bị tủ lạnh, wifi và binh nong lanh","[""Wifi"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:90,3
+"Tìm phòng có wi-fi, nóng lạnh và ban cong","[""Wifi"", ""Nóng lạnh"", ""Ban công""]",train,3:91,3
+"Cần phòng trọ có nóng lạnh, ban cong và wi-fi","[""Wifi"", ""Nóng lạnh"", ""Ban công""]",train,3:91,3
+"Ưu tiên chỗ ở với ban cong, wi-fi và nóng lạnh","[""Wifi"", ""Nóng lạnh"", ""Ban công""]",train,3:91,3
+"Tìm phòng trọ gồm wi-fi, nóng lạnh và ban cong","[""Wifi"", ""Nóng lạnh"", ""Ban công""]",train,3:91,3
+"Phòng cần có nóng lạnh, ban cong và wi-fi","[""Wifi"", ""Nóng lạnh"", ""Ban công""]",train,3:91,3
+"Mong muốn phòng được trang bị ban cong, wi-fi và nóng lạnh","[""Wifi"", ""Nóng lạnh"", ""Ban công""]",train,3:91,3
+"Tìm phòng có mạng wifi, bình nóng lạnh và wc rieng","[""Wifi"", ""Nóng lạnh"", ""WC riêng""]",validation,3:92,3
+"Cần phòng trọ có bình nóng lạnh, wc rieng và mạng wifi","[""Wifi"", ""Nóng lạnh"", ""WC riêng""]",validation,3:92,3
+"Ưu tiên chỗ ở với wc rieng, mạng wifi và bình nóng lạnh","[""Wifi"", ""Nóng lạnh"", ""WC riêng""]",validation,3:92,3
+"Tìm phòng trọ gồm mạng wifi, bình nóng lạnh và wc rieng","[""Wifi"", ""Nóng lạnh"", ""WC riêng""]",validation,3:92,3
+"Phòng cần có bình nóng lạnh, wc rieng và mạng wifi","[""Wifi"", ""Nóng lạnh"", ""WC riêng""]",validation,3:92,3
+"Mong muốn phòng được trang bị wc rieng, mạng wifi và bình nóng lạnh","[""Wifi"", ""Nóng lạnh"", ""WC riêng""]",validation,3:92,3
+"Tìm phòng có internet không dây, nong lanh và bep","[""Wifi"", ""Nóng lạnh"", ""Bếp""]",train,3:93,3
+"Cần phòng trọ có nong lanh, bep và internet không dây","[""Wifi"", ""Nóng lạnh"", ""Bếp""]",train,3:93,3
+"Ưu tiên chỗ ở với bep, internet không dây và nong lanh","[""Wifi"", ""Nóng lạnh"", ""Bếp""]",train,3:93,3
+"Tìm phòng trọ gồm internet không dây, nong lanh và bep","[""Wifi"", ""Nóng lạnh"", ""Bếp""]",train,3:93,3
+"Phòng cần có nong lanh, bep và internet không dây","[""Wifi"", ""Nóng lạnh"", ""Bếp""]",train,3:93,3
+"Mong muốn phòng được trang bị bep, internet không dây và nong lanh","[""Wifi"", ""Nóng lạnh"", ""Bếp""]",train,3:93,3
+"Tìm phòng có internet khong day, binh nong lanh và giường","[""Wifi"", ""Nóng lạnh"", ""Giường""]",train,3:94,3
+"Cần phòng trọ có binh nong lanh, giường và internet khong day","[""Wifi"", ""Nóng lạnh"", ""Giường""]",train,3:94,3
+"Ưu tiên chỗ ở với giường, internet khong day và binh nong lanh","[""Wifi"", ""Nóng lạnh"", ""Giường""]",train,3:94,3
+"Tìm phòng trọ gồm internet khong day, binh nong lanh và giường","[""Wifi"", ""Nóng lạnh"", ""Giường""]",train,3:94,3
+"Phòng cần có binh nong lanh, giường và internet khong day","[""Wifi"", ""Nóng lạnh"", ""Giường""]",train,3:94,3
+"Mong muốn phòng được trang bị giường, internet khong day và binh nong lanh","[""Wifi"", ""Nóng lạnh"", ""Giường""]",train,3:94,3
+"Tìm phòng có wifi, nóng lạnh và tủ đồ","[""Wifi"", ""Nóng lạnh"", ""Tủ quần áo""]",train,3:95,3
+"Cần phòng trọ có nóng lạnh, tủ đồ và wifi","[""Wifi"", ""Nóng lạnh"", ""Tủ quần áo""]",train,3:95,3
+"Ưu tiên chỗ ở với tủ đồ, wifi và nóng lạnh","[""Wifi"", ""Nóng lạnh"", ""Tủ quần áo""]",train,3:95,3
+"Tìm phòng trọ gồm wifi, nóng lạnh và tủ đồ","[""Wifi"", ""Nóng lạnh"", ""Tủ quần áo""]",train,3:95,3
+"Phòng cần có nóng lạnh, tủ đồ và wifi","[""Wifi"", ""Nóng lạnh"", ""Tủ quần áo""]",train,3:95,3
+"Mong muốn phòng được trang bị tủ đồ, wifi và nóng lạnh","[""Wifi"", ""Nóng lạnh"", ""Tủ quần áo""]",train,3:95,3
+"Tìm phòng có wi-fi, bình nóng lạnh và khep kin","[""Wifi"", ""Nóng lạnh"", ""Khép kín""]",validation,3:96,3
+"Cần phòng trọ có bình nóng lạnh, khep kin và wi-fi","[""Wifi"", ""Nóng lạnh"", ""Khép kín""]",validation,3:96,3
+"Ưu tiên chỗ ở với khep kin, wi-fi và bình nóng lạnh","[""Wifi"", ""Nóng lạnh"", ""Khép kín""]",validation,3:96,3
+"Tìm phòng trọ gồm wi-fi, bình nóng lạnh và khep kin","[""Wifi"", ""Nóng lạnh"", ""Khép kín""]",validation,3:96,3
+"Phòng cần có bình nóng lạnh, khep kin và wi-fi","[""Wifi"", ""Nóng lạnh"", ""Khép kín""]",validation,3:96,3
+"Mong muốn phòng được trang bị khep kin, wi-fi và bình nóng lạnh","[""Wifi"", ""Nóng lạnh"", ""Khép kín""]",validation,3:96,3
+"Tìm phòng có mạng wifi, cho de xe và máy giặt","[""Wifi"", ""Chỗ để xe"", ""Máy giặt""]",train,3:97,3
+"Cần phòng trọ có cho de xe, máy giặt và mạng wifi","[""Wifi"", ""Chỗ để xe"", ""Máy giặt""]",train,3:97,3
+"Ưu tiên chỗ ở với máy giặt, mạng wifi và cho de xe","[""Wifi"", ""Chỗ để xe"", ""Máy giặt""]",train,3:97,3
+"Tìm phòng trọ gồm mạng wifi, cho de xe và máy giặt","[""Wifi"", ""Chỗ để xe"", ""Máy giặt""]",train,3:97,3
+"Phòng cần có cho de xe, máy giặt và mạng wifi","[""Wifi"", ""Chỗ để xe"", ""Máy giặt""]",train,3:97,3
+"Mong muốn phòng được trang bị máy giặt, mạng wifi và cho de xe","[""Wifi"", ""Chỗ để xe"", ""Máy giặt""]",train,3:97,3
+"Tìm phòng có internet không dây, noi de xe và tủ lạnh","[""Wifi"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:98,3
+"Cần phòng trọ có noi de xe, tủ lạnh và internet không dây","[""Wifi"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:98,3
+"Ưu tiên chỗ ở với tủ lạnh, internet không dây và noi de xe","[""Wifi"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:98,3
+"Tìm phòng trọ gồm internet không dây, noi de xe và tủ lạnh","[""Wifi"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:98,3
+"Phòng cần có noi de xe, tủ lạnh và internet không dây","[""Wifi"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:98,3
+"Mong muốn phòng được trang bị tủ lạnh, internet không dây và noi de xe","[""Wifi"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:98,3
+"Tìm phòng có internet khong day, chỗ để xe và ban cong","[""Wifi"", ""Chỗ để xe"", ""Ban công""]",test,3:99,3
+"Cần phòng trọ có chỗ để xe, ban cong và internet khong day","[""Wifi"", ""Chỗ để xe"", ""Ban công""]",test,3:99,3
+"Ưu tiên chỗ ở với ban cong, internet khong day và chỗ để xe","[""Wifi"", ""Chỗ để xe"", ""Ban công""]",test,3:99,3
+"Tìm phòng trọ gồm internet khong day, chỗ để xe và ban cong","[""Wifi"", ""Chỗ để xe"", ""Ban công""]",test,3:99,3
+"Phòng cần có chỗ để xe, ban cong và internet khong day","[""Wifi"", ""Chỗ để xe"", ""Ban công""]",test,3:99,3
+"Mong muốn phòng được trang bị ban cong, internet khong day và chỗ để xe","[""Wifi"", ""Chỗ để xe"", ""Ban công""]",test,3:99,3
+"Tìm phòng có wifi, nơi để xe và wc rieng","[""Wifi"", ""Chỗ để xe"", ""WC riêng""]",train,3:100,3
+"Cần phòng trọ có nơi để xe, wc rieng và wifi","[""Wifi"", ""Chỗ để xe"", ""WC riêng""]",train,3:100,3
+"Ưu tiên chỗ ở với wc rieng, wifi và nơi để xe","[""Wifi"", ""Chỗ để xe"", ""WC riêng""]",train,3:100,3
+"Tìm phòng trọ gồm wifi, nơi để xe và wc rieng","[""Wifi"", ""Chỗ để xe"", ""WC riêng""]",train,3:100,3
+"Phòng cần có nơi để xe, wc rieng và wifi","[""Wifi"", ""Chỗ để xe"", ""WC riêng""]",train,3:100,3
+"Mong muốn phòng được trang bị wc rieng, wifi và nơi để xe","[""Wifi"", ""Chỗ để xe"", ""WC riêng""]",train,3:100,3
+"Tìm phòng có wi-fi, cho de xe và khu bếp","[""Wifi"", ""Chỗ để xe"", ""Bếp""]",test,3:101,3
+"Cần phòng trọ có cho de xe, khu bếp và wi-fi","[""Wifi"", ""Chỗ để xe"", ""Bếp""]",test,3:101,3
+"Ưu tiên chỗ ở với khu bếp, wi-fi và cho de xe","[""Wifi"", ""Chỗ để xe"", ""Bếp""]",test,3:101,3
+"Tìm phòng trọ gồm wi-fi, cho de xe và khu bếp","[""Wifi"", ""Chỗ để xe"", ""Bếp""]",test,3:101,3
+"Phòng cần có cho de xe, khu bếp và wi-fi","[""Wifi"", ""Chỗ để xe"", ""Bếp""]",test,3:101,3
+"Mong muốn phòng được trang bị khu bếp, wi-fi và cho de xe","[""Wifi"", ""Chỗ để xe"", ""Bếp""]",test,3:101,3
+"Tìm phòng có mạng wifi, noi de xe và giường","[""Wifi"", ""Chỗ để xe"", ""Giường""]",train,3:102,3
+"Cần phòng trọ có noi de xe, giường và mạng wifi","[""Wifi"", ""Chỗ để xe"", ""Giường""]",train,3:102,3
+"Ưu tiên chỗ ở với giường, mạng wifi và noi de xe","[""Wifi"", ""Chỗ để xe"", ""Giường""]",train,3:102,3
+"Tìm phòng trọ gồm mạng wifi, noi de xe và giường","[""Wifi"", ""Chỗ để xe"", ""Giường""]",train,3:102,3
+"Phòng cần có noi de xe, giường và mạng wifi","[""Wifi"", ""Chỗ để xe"", ""Giường""]",train,3:102,3
+"Mong muốn phòng được trang bị giường, mạng wifi và noi de xe","[""Wifi"", ""Chỗ để xe"", ""Giường""]",train,3:102,3
+"Tìm phòng có internet không dây, chỗ để xe và tủ đồ","[""Wifi"", ""Chỗ để xe"", ""Tủ quần áo""]",validation,3:103,3
+"Cần phòng trọ có chỗ để xe, tủ đồ và internet không dây","[""Wifi"", ""Chỗ để xe"", ""Tủ quần áo""]",validation,3:103,3
+"Ưu tiên chỗ ở với tủ đồ, internet không dây và chỗ để xe","[""Wifi"", ""Chỗ để xe"", ""Tủ quần áo""]",validation,3:103,3
+"Tìm phòng trọ gồm internet không dây, chỗ để xe và tủ đồ","[""Wifi"", ""Chỗ để xe"", ""Tủ quần áo""]",validation,3:103,3
+"Phòng cần có chỗ để xe, tủ đồ và internet không dây","[""Wifi"", ""Chỗ để xe"", ""Tủ quần áo""]",validation,3:103,3
+"Mong muốn phòng được trang bị tủ đồ, internet không dây và chỗ để xe","[""Wifi"", ""Chỗ để xe"", ""Tủ quần áo""]",validation,3:103,3
+"Tìm phòng có internet khong day, nơi để xe và khep kin","[""Wifi"", ""Chỗ để xe"", ""Khép kín""]",train,3:104,3
+"Cần phòng trọ có nơi để xe, khep kin và internet khong day","[""Wifi"", ""Chỗ để xe"", ""Khép kín""]",train,3:104,3
+"Ưu tiên chỗ ở với khep kin, internet khong day và nơi để xe","[""Wifi"", ""Chỗ để xe"", ""Khép kín""]",train,3:104,3
+"Tìm phòng trọ gồm internet khong day, nơi để xe và khep kin","[""Wifi"", ""Chỗ để xe"", ""Khép kín""]",train,3:104,3
+"Phòng cần có nơi để xe, khep kin và internet khong day","[""Wifi"", ""Chỗ để xe"", ""Khép kín""]",train,3:104,3
+"Mong muốn phòng được trang bị khep kin, internet khong day và nơi để xe","[""Wifi"", ""Chỗ để xe"", ""Khép kín""]",train,3:104,3
+"Tìm phòng có wifi, máy giặt riêng và tu lanh","[""Wifi"", ""Máy giặt"", ""Tủ lạnh""]",train,3:105,3
+"Cần phòng trọ có máy giặt riêng, tu lanh và wifi","[""Wifi"", ""Máy giặt"", ""Tủ lạnh""]",train,3:105,3
+"Ưu tiên chỗ ở với tu lanh, wifi và máy giặt riêng","[""Wifi"", ""Máy giặt"", ""Tủ lạnh""]",train,3:105,3
+"Tìm phòng trọ gồm wifi, máy giặt riêng và tu lanh","[""Wifi"", ""Máy giặt"", ""Tủ lạnh""]",train,3:105,3
+"Phòng cần có máy giặt riêng, tu lanh và wifi","[""Wifi"", ""Máy giặt"", ""Tủ lạnh""]",train,3:105,3
+"Mong muốn phòng được trang bị tu lanh, wifi và máy giặt riêng","[""Wifi"", ""Máy giặt"", ""Tủ lạnh""]",train,3:105,3
+"Tìm phòng có wi-fi, may giat và ban công","[""Wifi"", ""Máy giặt"", ""Ban công""]",train,3:106,3
+"Cần phòng trọ có may giat, ban công và wi-fi","[""Wifi"", ""Máy giặt"", ""Ban công""]",train,3:106,3
+"Ưu tiên chỗ ở với ban công, wi-fi và may giat","[""Wifi"", ""Máy giặt"", ""Ban công""]",train,3:106,3
+"Tìm phòng trọ gồm wi-fi, may giat và ban công","[""Wifi"", ""Máy giặt"", ""Ban công""]",train,3:106,3
+"Phòng cần có may giat, ban công và wi-fi","[""Wifi"", ""Máy giặt"", ""Ban công""]",train,3:106,3
+"Mong muốn phòng được trang bị ban công, wi-fi và may giat","[""Wifi"", ""Máy giặt"", ""Ban công""]",train,3:106,3
+"Tìm phòng có mạng wifi, máy giặt và nhà vệ sinh riêng","[""Wifi"", ""Máy giặt"", ""WC riêng""]",train,3:107,3
+"Cần phòng trọ có máy giặt, nhà vệ sinh riêng và mạng wifi","[""Wifi"", ""Máy giặt"", ""WC riêng""]",train,3:107,3
+"Ưu tiên chỗ ở với nhà vệ sinh riêng, mạng wifi và máy giặt","[""Wifi"", ""Máy giặt"", ""WC riêng""]",train,3:107,3
+"Tìm phòng trọ gồm mạng wifi, máy giặt và nhà vệ sinh riêng","[""Wifi"", ""Máy giặt"", ""WC riêng""]",train,3:107,3
+"Phòng cần có máy giặt, nhà vệ sinh riêng và mạng wifi","[""Wifi"", ""Máy giặt"", ""WC riêng""]",train,3:107,3
+"Mong muốn phòng được trang bị nhà vệ sinh riêng, mạng wifi và máy giặt","[""Wifi"", ""Máy giặt"", ""WC riêng""]",train,3:107,3
+"Tìm phòng có internet không dây, máy giặt riêng và bep","[""Wifi"", ""Máy giặt"", ""Bếp""]",train,3:108,3
+"Cần phòng trọ có máy giặt riêng, bep và internet không dây","[""Wifi"", ""Máy giặt"", ""Bếp""]",train,3:108,3
+"Ưu tiên chỗ ở với bep, internet không dây và máy giặt riêng","[""Wifi"", ""Máy giặt"", ""Bếp""]",train,3:108,3
+"Tìm phòng trọ gồm internet không dây, máy giặt riêng và bep","[""Wifi"", ""Máy giặt"", ""Bếp""]",train,3:108,3
+"Phòng cần có máy giặt riêng, bep và internet không dây","[""Wifi"", ""Máy giặt"", ""Bếp""]",train,3:108,3
+"Mong muốn phòng được trang bị bep, internet không dây và máy giặt riêng","[""Wifi"", ""Máy giặt"", ""Bếp""]",train,3:108,3
+"Tìm phòng có internet khong day, may giat và giuong ngu","[""Wifi"", ""Máy giặt"", ""Giường""]",test,3:109,3
+"Cần phòng trọ có may giat, giuong ngu và internet khong day","[""Wifi"", ""Máy giặt"", ""Giường""]",test,3:109,3
+"Ưu tiên chỗ ở với giuong ngu, internet khong day và may giat","[""Wifi"", ""Máy giặt"", ""Giường""]",test,3:109,3
+"Tìm phòng trọ gồm internet khong day, may giat và giuong ngu","[""Wifi"", ""Máy giặt"", ""Giường""]",test,3:109,3
+"Phòng cần có may giat, giuong ngu và internet khong day","[""Wifi"", ""Máy giặt"", ""Giường""]",test,3:109,3
+"Mong muốn phòng được trang bị giuong ngu, internet khong day và may giat","[""Wifi"", ""Máy giặt"", ""Giường""]",test,3:109,3
+"Tìm phòng có wifi, máy giặt và tủ quần áo","[""Wifi"", ""Máy giặt"", ""Tủ quần áo""]",train,3:110,3
+"Cần phòng trọ có máy giặt, tủ quần áo và wifi","[""Wifi"", ""Máy giặt"", ""Tủ quần áo""]",train,3:110,3
+"Ưu tiên chỗ ở với tủ quần áo, wifi và máy giặt","[""Wifi"", ""Máy giặt"", ""Tủ quần áo""]",train,3:110,3
+"Tìm phòng trọ gồm wifi, máy giặt và tủ quần áo","[""Wifi"", ""Máy giặt"", ""Tủ quần áo""]",train,3:110,3
+"Phòng cần có máy giặt, tủ quần áo và wifi","[""Wifi"", ""Máy giặt"", ""Tủ quần áo""]",train,3:110,3
+"Mong muốn phòng được trang bị tủ quần áo, wifi và máy giặt","[""Wifi"", ""Máy giặt"", ""Tủ quần áo""]",train,3:110,3
+"Tìm phòng có wi-fi, máy giặt riêng và phòng khép kín","[""Wifi"", ""Máy giặt"", ""Khép kín""]",validation,3:111,3
+"Cần phòng trọ có máy giặt riêng, phòng khép kín và wi-fi","[""Wifi"", ""Máy giặt"", ""Khép kín""]",validation,3:111,3
+"Ưu tiên chỗ ở với phòng khép kín, wi-fi và máy giặt riêng","[""Wifi"", ""Máy giặt"", ""Khép kín""]",validation,3:111,3
+"Tìm phòng trọ gồm wi-fi, máy giặt riêng và phòng khép kín","[""Wifi"", ""Máy giặt"", ""Khép kín""]",validation,3:111,3
+"Phòng cần có máy giặt riêng, phòng khép kín và wi-fi","[""Wifi"", ""Máy giặt"", ""Khép kín""]",validation,3:111,3
+"Mong muốn phòng được trang bị phòng khép kín, wi-fi và máy giặt riêng","[""Wifi"", ""Máy giặt"", ""Khép kín""]",validation,3:111,3
+"Tìm phòng có mạng wifi, tu lanh và ban công","[""Wifi"", ""Tủ lạnh"", ""Ban công""]",train,3:112,3
+"Cần phòng trọ có tu lanh, ban công và mạng wifi","[""Wifi"", ""Tủ lạnh"", ""Ban công""]",train,3:112,3
+"Ưu tiên chỗ ở với ban công, mạng wifi và tu lanh","[""Wifi"", ""Tủ lạnh"", ""Ban công""]",train,3:112,3
+"Tìm phòng trọ gồm mạng wifi, tu lanh và ban công","[""Wifi"", ""Tủ lạnh"", ""Ban công""]",train,3:112,3
+"Phòng cần có tu lanh, ban công và mạng wifi","[""Wifi"", ""Tủ lạnh"", ""Ban công""]",train,3:112,3
+"Mong muốn phòng được trang bị ban công, mạng wifi và tu lanh","[""Wifi"", ""Tủ lạnh"", ""Ban công""]",train,3:112,3
+"Tìm phòng có internet không dây, tủ lạnh và nha ve sinh rieng","[""Wifi"", ""Tủ lạnh"", ""WC riêng""]",train,3:113,3
+"Cần phòng trọ có tủ lạnh, nha ve sinh rieng và internet không dây","[""Wifi"", ""Tủ lạnh"", ""WC riêng""]",train,3:113,3
+"Ưu tiên chỗ ở với nha ve sinh rieng, internet không dây và tủ lạnh","[""Wifi"", ""Tủ lạnh"", ""WC riêng""]",train,3:113,3
+"Tìm phòng trọ gồm internet không dây, tủ lạnh và nha ve sinh rieng","[""Wifi"", ""Tủ lạnh"", ""WC riêng""]",train,3:113,3
+"Phòng cần có tủ lạnh, nha ve sinh rieng và internet không dây","[""Wifi"", ""Tủ lạnh"", ""WC riêng""]",train,3:113,3
+"Mong muốn phòng được trang bị nha ve sinh rieng, internet không dây và tủ lạnh","[""Wifi"", ""Tủ lạnh"", ""WC riêng""]",train,3:113,3
+"Tìm phòng có internet khong day, tu lanh và bep","[""Wifi"", ""Tủ lạnh"", ""Bếp""]",test,3:114,3
+"Cần phòng trọ có tu lanh, bep và internet khong day","[""Wifi"", ""Tủ lạnh"", ""Bếp""]",test,3:114,3
+"Ưu tiên chỗ ở với bep, internet khong day và tu lanh","[""Wifi"", ""Tủ lạnh"", ""Bếp""]",test,3:114,3
+"Tìm phòng trọ gồm internet khong day, tu lanh và bep","[""Wifi"", ""Tủ lạnh"", ""Bếp""]",test,3:114,3
+"Phòng cần có tu lanh, bep và internet khong day","[""Wifi"", ""Tủ lạnh"", ""Bếp""]",test,3:114,3
+"Mong muốn phòng được trang bị bep, internet khong day và tu lanh","[""Wifi"", ""Tủ lạnh"", ""Bếp""]",test,3:114,3
+"Tìm phòng có wifi, tủ lạnh và giường ngủ","[""Wifi"", ""Tủ lạnh"", ""Giường""]",test,3:115,3
+"Cần phòng trọ có tủ lạnh, giường ngủ và wifi","[""Wifi"", ""Tủ lạnh"", ""Giường""]",test,3:115,3
+"Ưu tiên chỗ ở với giường ngủ, wifi và tủ lạnh","[""Wifi"", ""Tủ lạnh"", ""Giường""]",test,3:115,3
+"Tìm phòng trọ gồm wifi, tủ lạnh và giường ngủ","[""Wifi"", ""Tủ lạnh"", ""Giường""]",test,3:115,3
+"Phòng cần có tủ lạnh, giường ngủ và wifi","[""Wifi"", ""Tủ lạnh"", ""Giường""]",test,3:115,3
+"Mong muốn phòng được trang bị giường ngủ, wifi và tủ lạnh","[""Wifi"", ""Tủ lạnh"", ""Giường""]",test,3:115,3
+"Tìm phòng có wi-fi, tu lanh và tu quan ao","[""Wifi"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:116,3
+"Cần phòng trọ có tu lanh, tu quan ao và wi-fi","[""Wifi"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:116,3
+"Ưu tiên chỗ ở với tu quan ao, wi-fi và tu lanh","[""Wifi"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:116,3
+"Tìm phòng trọ gồm wi-fi, tu lanh và tu quan ao","[""Wifi"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:116,3
+"Phòng cần có tu lanh, tu quan ao và wi-fi","[""Wifi"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:116,3
+"Mong muốn phòng được trang bị tu quan ao, wi-fi và tu lanh","[""Wifi"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:116,3
+"Tìm phòng có mạng wifi, tủ lạnh và phong khep kin","[""Wifi"", ""Tủ lạnh"", ""Khép kín""]",validation,3:117,3
+"Cần phòng trọ có tủ lạnh, phong khep kin và mạng wifi","[""Wifi"", ""Tủ lạnh"", ""Khép kín""]",validation,3:117,3
+"Ưu tiên chỗ ở với phong khep kin, mạng wifi và tủ lạnh","[""Wifi"", ""Tủ lạnh"", ""Khép kín""]",validation,3:117,3
+"Tìm phòng trọ gồm mạng wifi, tủ lạnh và phong khep kin","[""Wifi"", ""Tủ lạnh"", ""Khép kín""]",validation,3:117,3
+"Phòng cần có tủ lạnh, phong khep kin và mạng wifi","[""Wifi"", ""Tủ lạnh"", ""Khép kín""]",validation,3:117,3
+"Mong muốn phòng được trang bị phong khep kin, mạng wifi và tủ lạnh","[""Wifi"", ""Tủ lạnh"", ""Khép kín""]",validation,3:117,3
+"Tìm phòng có internet không dây, ban cong và WC riêng","[""Wifi"", ""Ban công"", ""WC riêng""]",train,3:118,3
+"Cần phòng trọ có ban cong, WC riêng và internet không dây","[""Wifi"", ""Ban công"", ""WC riêng""]",train,3:118,3
+"Ưu tiên chỗ ở với WC riêng, internet không dây và ban cong","[""Wifi"", ""Ban công"", ""WC riêng""]",train,3:118,3
+"Tìm phòng trọ gồm internet không dây, ban cong và WC riêng","[""Wifi"", ""Ban công"", ""WC riêng""]",train,3:118,3
+"Phòng cần có ban cong, WC riêng và internet không dây","[""Wifi"", ""Ban công"", ""WC riêng""]",train,3:118,3
+"Mong muốn phòng được trang bị WC riêng, internet không dây và ban cong","[""Wifi"", ""Ban công"", ""WC riêng""]",train,3:118,3
+"Tìm phòng có internet khong day, ban công và khu bếp","[""Wifi"", ""Ban công"", ""Bếp""]",test,3:119,3
+"Cần phòng trọ có ban công, khu bếp và internet khong day","[""Wifi"", ""Ban công"", ""Bếp""]",test,3:119,3
+"Ưu tiên chỗ ở với khu bếp, internet khong day và ban công","[""Wifi"", ""Ban công"", ""Bếp""]",test,3:119,3
+"Tìm phòng trọ gồm internet khong day, ban công và khu bếp","[""Wifi"", ""Ban công"", ""Bếp""]",test,3:119,3
+"Phòng cần có ban công, khu bếp và internet khong day","[""Wifi"", ""Ban công"", ""Bếp""]",test,3:119,3
+"Mong muốn phòng được trang bị khu bếp, internet khong day và ban công","[""Wifi"", ""Ban công"", ""Bếp""]",test,3:119,3
+"Tìm phòng có wifi, ban cong và giuong","[""Wifi"", ""Ban công"", ""Giường""]",train,3:120,3
+"Cần phòng trọ có ban cong, giuong và wifi","[""Wifi"", ""Ban công"", ""Giường""]",train,3:120,3
+"Ưu tiên chỗ ở với giuong, wifi và ban cong","[""Wifi"", ""Ban công"", ""Giường""]",train,3:120,3
+"Tìm phòng trọ gồm wifi, ban cong và giuong","[""Wifi"", ""Ban công"", ""Giường""]",train,3:120,3
+"Phòng cần có ban cong, giuong và wifi","[""Wifi"", ""Ban công"", ""Giường""]",train,3:120,3
+"Mong muốn phòng được trang bị giuong, wifi và ban cong","[""Wifi"", ""Ban công"", ""Giường""]",train,3:120,3
+"Tìm phòng có wi-fi, ban công và tu do","[""Wifi"", ""Ban công"", ""Tủ quần áo""]",train,3:121,3
+"Cần phòng trọ có ban công, tu do và wi-fi","[""Wifi"", ""Ban công"", ""Tủ quần áo""]",train,3:121,3
+"Ưu tiên chỗ ở với tu do, wi-fi và ban công","[""Wifi"", ""Ban công"", ""Tủ quần áo""]",train,3:121,3
+"Tìm phòng trọ gồm wi-fi, ban công và tu do","[""Wifi"", ""Ban công"", ""Tủ quần áo""]",train,3:121,3
+"Phòng cần có ban công, tu do và wi-fi","[""Wifi"", ""Ban công"", ""Tủ quần áo""]",train,3:121,3
+"Mong muốn phòng được trang bị tu do, wi-fi và ban công","[""Wifi"", ""Ban công"", ""Tủ quần áo""]",train,3:121,3
+"Tìm phòng có mạng wifi, ban cong và khép kín","[""Wifi"", ""Ban công"", ""Khép kín""]",train,3:122,3
+"Cần phòng trọ có ban cong, khép kín và mạng wifi","[""Wifi"", ""Ban công"", ""Khép kín""]",train,3:122,3
+"Ưu tiên chỗ ở với khép kín, mạng wifi và ban cong","[""Wifi"", ""Ban công"", ""Khép kín""]",train,3:122,3
+"Tìm phòng trọ gồm mạng wifi, ban cong và khép kín","[""Wifi"", ""Ban công"", ""Khép kín""]",train,3:122,3
+"Phòng cần có ban cong, khép kín và mạng wifi","[""Wifi"", ""Ban công"", ""Khép kín""]",train,3:122,3
+"Mong muốn phòng được trang bị khép kín, mạng wifi và ban cong","[""Wifi"", ""Ban công"", ""Khép kín""]",train,3:122,3
+"Tìm phòng có internet không dây, WC riêng và bep","[""Wifi"", ""WC riêng"", ""Bếp""]",train,3:123,3
+"Cần phòng trọ có WC riêng, bep và internet không dây","[""Wifi"", ""WC riêng"", ""Bếp""]",train,3:123,3
+"Ưu tiên chỗ ở với bep, internet không dây và WC riêng","[""Wifi"", ""WC riêng"", ""Bếp""]",train,3:123,3
+"Tìm phòng trọ gồm internet không dây, WC riêng và bep","[""Wifi"", ""WC riêng"", ""Bếp""]",train,3:123,3
+"Phòng cần có WC riêng, bep và internet không dây","[""Wifi"", ""WC riêng"", ""Bếp""]",train,3:123,3
+"Mong muốn phòng được trang bị bep, internet không dây và WC riêng","[""Wifi"", ""WC riêng"", ""Bếp""]",train,3:123,3
+"Tìm phòng có internet khong day, nhà vệ sinh riêng và giuong","[""Wifi"", ""WC riêng"", ""Giường""]",validation,3:124,3
+"Cần phòng trọ có nhà vệ sinh riêng, giuong và internet khong day","[""Wifi"", ""WC riêng"", ""Giường""]",validation,3:124,3
+"Ưu tiên chỗ ở với giuong, internet khong day và nhà vệ sinh riêng","[""Wifi"", ""WC riêng"", ""Giường""]",validation,3:124,3
+"Tìm phòng trọ gồm internet khong day, nhà vệ sinh riêng và giuong","[""Wifi"", ""WC riêng"", ""Giường""]",validation,3:124,3
+"Phòng cần có nhà vệ sinh riêng, giuong và internet khong day","[""Wifi"", ""WC riêng"", ""Giường""]",validation,3:124,3
+"Mong muốn phòng được trang bị giuong, internet khong day và nhà vệ sinh riêng","[""Wifi"", ""WC riêng"", ""Giường""]",validation,3:124,3
+"Tìm phòng có wifi, wc rieng và tu do","[""Wifi"", ""WC riêng"", ""Tủ quần áo""]",validation,3:125,3
+"Cần phòng trọ có wc rieng, tu do và wifi","[""Wifi"", ""WC riêng"", ""Tủ quần áo""]",validation,3:125,3
+"Ưu tiên chỗ ở với tu do, wifi và wc rieng","[""Wifi"", ""WC riêng"", ""Tủ quần áo""]",validation,3:125,3
+"Tìm phòng trọ gồm wifi, wc rieng và tu do","[""Wifi"", ""WC riêng"", ""Tủ quần áo""]",validation,3:125,3
+"Phòng cần có wc rieng, tu do và wifi","[""Wifi"", ""WC riêng"", ""Tủ quần áo""]",validation,3:125,3
+"Mong muốn phòng được trang bị tu do, wifi và wc rieng","[""Wifi"", ""WC riêng"", ""Tủ quần áo""]",validation,3:125,3
+"Tìm phòng có wi-fi, nha ve sinh rieng và khép kín","[""Wifi"", ""WC riêng"", ""Khép kín""]",train,3:126,3
+"Cần phòng trọ có nha ve sinh rieng, khép kín và wi-fi","[""Wifi"", ""WC riêng"", ""Khép kín""]",train,3:126,3
+"Ưu tiên chỗ ở với khép kín, wi-fi và nha ve sinh rieng","[""Wifi"", ""WC riêng"", ""Khép kín""]",train,3:126,3
+"Tìm phòng trọ gồm wi-fi, nha ve sinh rieng và khép kín","[""Wifi"", ""WC riêng"", ""Khép kín""]",train,3:126,3
+"Phòng cần có nha ve sinh rieng, khép kín và wi-fi","[""Wifi"", ""WC riêng"", ""Khép kín""]",train,3:126,3
+"Mong muốn phòng được trang bị khép kín, wi-fi và nha ve sinh rieng","[""Wifi"", ""WC riêng"", ""Khép kín""]",train,3:126,3
+"Tìm phòng có mạng wifi, bep và giường ngủ","[""Wifi"", ""Bếp"", ""Giường""]",train,3:127,3
+"Cần phòng trọ có bep, giường ngủ và mạng wifi","[""Wifi"", ""Bếp"", ""Giường""]",train,3:127,3
+"Ưu tiên chỗ ở với giường ngủ, mạng wifi và bep","[""Wifi"", ""Bếp"", ""Giường""]",train,3:127,3
+"Tìm phòng trọ gồm mạng wifi, bep và giường ngủ","[""Wifi"", ""Bếp"", ""Giường""]",train,3:127,3
+"Phòng cần có bep, giường ngủ và mạng wifi","[""Wifi"", ""Bếp"", ""Giường""]",train,3:127,3
+"Mong muốn phòng được trang bị giường ngủ, mạng wifi và bep","[""Wifi"", ""Bếp"", ""Giường""]",train,3:127,3
+"Tìm phòng có internet không dây, bếp và tu quan ao","[""Wifi"", ""Bếp"", ""Tủ quần áo""]",train,3:128,3
+"Cần phòng trọ có bếp, tu quan ao và internet không dây","[""Wifi"", ""Bếp"", ""Tủ quần áo""]",train,3:128,3
+"Ưu tiên chỗ ở với tu quan ao, internet không dây và bếp","[""Wifi"", ""Bếp"", ""Tủ quần áo""]",train,3:128,3
+"Tìm phòng trọ gồm internet không dây, bếp và tu quan ao","[""Wifi"", ""Bếp"", ""Tủ quần áo""]",train,3:128,3
+"Phòng cần có bếp, tu quan ao và internet không dây","[""Wifi"", ""Bếp"", ""Tủ quần áo""]",train,3:128,3
+"Mong muốn phòng được trang bị tu quan ao, internet không dây và bếp","[""Wifi"", ""Bếp"", ""Tủ quần áo""]",train,3:128,3
+"Tìm phòng có internet khong day, khu bếp và phong khep kin","[""Wifi"", ""Bếp"", ""Khép kín""]",validation,3:129,3
+"Cần phòng trọ có khu bếp, phong khep kin và internet khong day","[""Wifi"", ""Bếp"", ""Khép kín""]",validation,3:129,3
+"Ưu tiên chỗ ở với phong khep kin, internet khong day và khu bếp","[""Wifi"", ""Bếp"", ""Khép kín""]",validation,3:129,3
+"Tìm phòng trọ gồm internet khong day, khu bếp và phong khep kin","[""Wifi"", ""Bếp"", ""Khép kín""]",validation,3:129,3
+"Phòng cần có khu bếp, phong khep kin và internet khong day","[""Wifi"", ""Bếp"", ""Khép kín""]",validation,3:129,3
+"Mong muốn phòng được trang bị phong khep kin, internet khong day và khu bếp","[""Wifi"", ""Bếp"", ""Khép kín""]",validation,3:129,3
+"Tìm phòng có wifi, giuong ngu và tủ quần áo","[""Wifi"", ""Giường"", ""Tủ quần áo""]",train,3:130,3
+"Cần phòng trọ có giuong ngu, tủ quần áo và wifi","[""Wifi"", ""Giường"", ""Tủ quần áo""]",train,3:130,3
+"Ưu tiên chỗ ở với tủ quần áo, wifi và giuong ngu","[""Wifi"", ""Giường"", ""Tủ quần áo""]",train,3:130,3
+"Tìm phòng trọ gồm wifi, giuong ngu và tủ quần áo","[""Wifi"", ""Giường"", ""Tủ quần áo""]",train,3:130,3
+"Phòng cần có giuong ngu, tủ quần áo và wifi","[""Wifi"", ""Giường"", ""Tủ quần áo""]",train,3:130,3
+"Mong muốn phòng được trang bị tủ quần áo, wifi và giuong ngu","[""Wifi"", ""Giường"", ""Tủ quần áo""]",train,3:130,3
+"Tìm phòng có wi-fi, giường và phòng khép kín","[""Wifi"", ""Giường"", ""Khép kín""]",train,3:131,3
+"Cần phòng trọ có giường, phòng khép kín và wi-fi","[""Wifi"", ""Giường"", ""Khép kín""]",train,3:131,3
+"Ưu tiên chỗ ở với phòng khép kín, wi-fi và giường","[""Wifi"", ""Giường"", ""Khép kín""]",train,3:131,3
+"Tìm phòng trọ gồm wi-fi, giường và phòng khép kín","[""Wifi"", ""Giường"", ""Khép kín""]",train,3:131,3
+"Phòng cần có giường, phòng khép kín và wi-fi","[""Wifi"", ""Giường"", ""Khép kín""]",train,3:131,3
+"Mong muốn phòng được trang bị phòng khép kín, wi-fi và giường","[""Wifi"", ""Giường"", ""Khép kín""]",train,3:131,3
+"Tìm phòng có mạng wifi, tủ đồ và khep kin","[""Wifi"", ""Tủ quần áo"", ""Khép kín""]",train,3:132,3
+"Cần phòng trọ có tủ đồ, khep kin và mạng wifi","[""Wifi"", ""Tủ quần áo"", ""Khép kín""]",train,3:132,3
+"Ưu tiên chỗ ở với khep kin, mạng wifi và tủ đồ","[""Wifi"", ""Tủ quần áo"", ""Khép kín""]",train,3:132,3
+"Tìm phòng trọ gồm mạng wifi, tủ đồ và khep kin","[""Wifi"", ""Tủ quần áo"", ""Khép kín""]",train,3:132,3
+"Phòng cần có tủ đồ, khep kin và mạng wifi","[""Wifi"", ""Tủ quần áo"", ""Khép kín""]",train,3:132,3
+"Mong muốn phòng được trang bị khep kin, mạng wifi và tủ đồ","[""Wifi"", ""Tủ quần áo"", ""Khép kín""]",train,3:132,3
+"Tìm phòng có máy lạnh, nong lanh và noi de xe","[""Điều hòa"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:133,3
+"Cần phòng trọ có nong lanh, noi de xe và máy lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:133,3
+"Ưu tiên chỗ ở với noi de xe, máy lạnh và nong lanh","[""Điều hòa"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:133,3
+"Tìm phòng trọ gồm máy lạnh, nong lanh và noi de xe","[""Điều hòa"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:133,3
+"Phòng cần có nong lanh, noi de xe và máy lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:133,3
+"Mong muốn phòng được trang bị noi de xe, máy lạnh và nong lanh","[""Điều hòa"", ""Nóng lạnh"", ""Chỗ để xe""]",train,3:133,3
+"Tìm phòng có dieu hoa, binh nong lanh và máy giặt riêng","[""Điều hòa"", ""Nóng lạnh"", ""Máy giặt""]",test,3:134,3
+"Cần phòng trọ có binh nong lanh, máy giặt riêng và dieu hoa","[""Điều hòa"", ""Nóng lạnh"", ""Máy giặt""]",test,3:134,3
+"Ưu tiên chỗ ở với máy giặt riêng, dieu hoa và binh nong lanh","[""Điều hòa"", ""Nóng lạnh"", ""Máy giặt""]",test,3:134,3
+"Tìm phòng trọ gồm dieu hoa, binh nong lanh và máy giặt riêng","[""Điều hòa"", ""Nóng lạnh"", ""Máy giặt""]",test,3:134,3
+"Phòng cần có binh nong lanh, máy giặt riêng và dieu hoa","[""Điều hòa"", ""Nóng lạnh"", ""Máy giặt""]",test,3:134,3
+"Mong muốn phòng được trang bị máy giặt riêng, dieu hoa và binh nong lanh","[""Điều hòa"", ""Nóng lạnh"", ""Máy giặt""]",test,3:134,3
+"Tìm phòng có may lanh, nóng lạnh và tu lanh","[""Điều hòa"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:135,3
+"Cần phòng trọ có nóng lạnh, tu lanh và may lanh","[""Điều hòa"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:135,3
+"Ưu tiên chỗ ở với tu lanh, may lanh và nóng lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:135,3
+"Tìm phòng trọ gồm may lanh, nóng lạnh và tu lanh","[""Điều hòa"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:135,3
+"Phòng cần có nóng lạnh, tu lanh và may lanh","[""Điều hòa"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:135,3
+"Mong muốn phòng được trang bị tu lanh, may lanh và nóng lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Tủ lạnh""]",train,3:135,3
+"Tìm phòng có điều hòa, bình nóng lạnh và ban công","[""Điều hòa"", ""Nóng lạnh"", ""Ban công""]",train,3:136,3
+"Cần phòng trọ có bình nóng lạnh, ban công và điều hòa","[""Điều hòa"", ""Nóng lạnh"", ""Ban công""]",train,3:136,3
+"Ưu tiên chỗ ở với ban công, điều hòa và bình nóng lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Ban công""]",train,3:136,3
+"Tìm phòng trọ gồm điều hòa, bình nóng lạnh và ban công","[""Điều hòa"", ""Nóng lạnh"", ""Ban công""]",train,3:136,3
+"Phòng cần có bình nóng lạnh, ban công và điều hòa","[""Điều hòa"", ""Nóng lạnh"", ""Ban công""]",train,3:136,3
+"Mong muốn phòng được trang bị ban công, điều hòa và bình nóng lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Ban công""]",train,3:136,3
+"Tìm phòng có máy lạnh, nong lanh và nha ve sinh rieng","[""Điều hòa"", ""Nóng lạnh"", ""WC riêng""]",train,3:137,3
+"Cần phòng trọ có nong lanh, nha ve sinh rieng và máy lạnh","[""Điều hòa"", ""Nóng lạnh"", ""WC riêng""]",train,3:137,3
+"Ưu tiên chỗ ở với nha ve sinh rieng, máy lạnh và nong lanh","[""Điều hòa"", ""Nóng lạnh"", ""WC riêng""]",train,3:137,3
+"Tìm phòng trọ gồm máy lạnh, nong lanh và nha ve sinh rieng","[""Điều hòa"", ""Nóng lạnh"", ""WC riêng""]",train,3:137,3
+"Phòng cần có nong lanh, nha ve sinh rieng và máy lạnh","[""Điều hòa"", ""Nóng lạnh"", ""WC riêng""]",train,3:137,3
+"Mong muốn phòng được trang bị nha ve sinh rieng, máy lạnh và nong lanh","[""Điều hòa"", ""Nóng lạnh"", ""WC riêng""]",train,3:137,3
+"Tìm phòng có dieu hoa, binh nong lanh và bep","[""Điều hòa"", ""Nóng lạnh"", ""Bếp""]",train,3:138,3
+"Cần phòng trọ có binh nong lanh, bep và dieu hoa","[""Điều hòa"", ""Nóng lạnh"", ""Bếp""]",train,3:138,3
+"Ưu tiên chỗ ở với bep, dieu hoa và binh nong lanh","[""Điều hòa"", ""Nóng lạnh"", ""Bếp""]",train,3:138,3
+"Tìm phòng trọ gồm dieu hoa, binh nong lanh và bep","[""Điều hòa"", ""Nóng lạnh"", ""Bếp""]",train,3:138,3
+"Phòng cần có binh nong lanh, bep và dieu hoa","[""Điều hòa"", ""Nóng lạnh"", ""Bếp""]",train,3:138,3
+"Mong muốn phòng được trang bị bep, dieu hoa và binh nong lanh","[""Điều hòa"", ""Nóng lạnh"", ""Bếp""]",train,3:138,3
+"Tìm phòng có may lanh, nóng lạnh và giường ngủ","[""Điều hòa"", ""Nóng lạnh"", ""Giường""]",validation,3:139,3
+"Cần phòng trọ có nóng lạnh, giường ngủ và may lanh","[""Điều hòa"", ""Nóng lạnh"", ""Giường""]",validation,3:139,3
+"Ưu tiên chỗ ở với giường ngủ, may lanh và nóng lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Giường""]",validation,3:139,3
+"Tìm phòng trọ gồm may lanh, nóng lạnh và giường ngủ","[""Điều hòa"", ""Nóng lạnh"", ""Giường""]",validation,3:139,3
+"Phòng cần có nóng lạnh, giường ngủ và may lanh","[""Điều hòa"", ""Nóng lạnh"", ""Giường""]",validation,3:139,3
+"Mong muốn phòng được trang bị giường ngủ, may lanh và nóng lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Giường""]",validation,3:139,3
+"Tìm phòng có điều hòa, bình nóng lạnh và tu quan ao","[""Điều hòa"", ""Nóng lạnh"", ""Tủ quần áo""]",validation,3:140,3
+"Cần phòng trọ có bình nóng lạnh, tu quan ao và điều hòa","[""Điều hòa"", ""Nóng lạnh"", ""Tủ quần áo""]",validation,3:140,3
+"Ưu tiên chỗ ở với tu quan ao, điều hòa và bình nóng lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Tủ quần áo""]",validation,3:140,3
+"Tìm phòng trọ gồm điều hòa, bình nóng lạnh và tu quan ao","[""Điều hòa"", ""Nóng lạnh"", ""Tủ quần áo""]",validation,3:140,3
+"Phòng cần có bình nóng lạnh, tu quan ao và điều hòa","[""Điều hòa"", ""Nóng lạnh"", ""Tủ quần áo""]",validation,3:140,3
+"Mong muốn phòng được trang bị tu quan ao, điều hòa và bình nóng lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Tủ quần áo""]",validation,3:140,3
+"Tìm phòng có máy lạnh, nong lanh và phong khep kin","[""Điều hòa"", ""Nóng lạnh"", ""Khép kín""]",train,3:141,3
+"Cần phòng trọ có nong lanh, phong khep kin và máy lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Khép kín""]",train,3:141,3
+"Ưu tiên chỗ ở với phong khep kin, máy lạnh và nong lanh","[""Điều hòa"", ""Nóng lạnh"", ""Khép kín""]",train,3:141,3
+"Tìm phòng trọ gồm máy lạnh, nong lanh và phong khep kin","[""Điều hòa"", ""Nóng lạnh"", ""Khép kín""]",train,3:141,3
+"Phòng cần có nong lanh, phong khep kin và máy lạnh","[""Điều hòa"", ""Nóng lạnh"", ""Khép kín""]",train,3:141,3
+"Mong muốn phòng được trang bị phong khep kin, máy lạnh và nong lanh","[""Điều hòa"", ""Nóng lạnh"", ""Khép kín""]",train,3:141,3
+"Tìm phòng có dieu hoa, noi de xe và máy giặt","[""Điều hòa"", ""Chỗ để xe"", ""Máy giặt""]",train,3:142,3
+"Cần phòng trọ có noi de xe, máy giặt và dieu hoa","[""Điều hòa"", ""Chỗ để xe"", ""Máy giặt""]",train,3:142,3
+"Ưu tiên chỗ ở với máy giặt, dieu hoa và noi de xe","[""Điều hòa"", ""Chỗ để xe"", ""Máy giặt""]",train,3:142,3
+"Tìm phòng trọ gồm dieu hoa, noi de xe và máy giặt","[""Điều hòa"", ""Chỗ để xe"", ""Máy giặt""]",train,3:142,3
+"Phòng cần có noi de xe, máy giặt và dieu hoa","[""Điều hòa"", ""Chỗ để xe"", ""Máy giặt""]",train,3:142,3
+"Mong muốn phòng được trang bị máy giặt, dieu hoa và noi de xe","[""Điều hòa"", ""Chỗ để xe"", ""Máy giặt""]",train,3:142,3
+"Tìm phòng có may lanh, chỗ để xe và tu lanh","[""Điều hòa"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:143,3
+"Cần phòng trọ có chỗ để xe, tu lanh và may lanh","[""Điều hòa"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:143,3
+"Ưu tiên chỗ ở với tu lanh, may lanh và chỗ để xe","[""Điều hòa"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:143,3
+"Tìm phòng trọ gồm may lanh, chỗ để xe và tu lanh","[""Điều hòa"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:143,3
+"Phòng cần có chỗ để xe, tu lanh và may lanh","[""Điều hòa"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:143,3
+"Mong muốn phòng được trang bị tu lanh, may lanh và chỗ để xe","[""Điều hòa"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:143,3
+"Tìm phòng có điều hòa, nơi để xe và ban công","[""Điều hòa"", ""Chỗ để xe"", ""Ban công""]",train,3:144,3
+"Cần phòng trọ có nơi để xe, ban công và điều hòa","[""Điều hòa"", ""Chỗ để xe"", ""Ban công""]",train,3:144,3
+"Ưu tiên chỗ ở với ban công, điều hòa và nơi để xe","[""Điều hòa"", ""Chỗ để xe"", ""Ban công""]",train,3:144,3
+"Tìm phòng trọ gồm điều hòa, nơi để xe và ban công","[""Điều hòa"", ""Chỗ để xe"", ""Ban công""]",train,3:144,3
+"Phòng cần có nơi để xe, ban công và điều hòa","[""Điều hòa"", ""Chỗ để xe"", ""Ban công""]",train,3:144,3
+"Mong muốn phòng được trang bị ban công, điều hòa và nơi để xe","[""Điều hòa"", ""Chỗ để xe"", ""Ban công""]",train,3:144,3
+"Tìm phòng có máy lạnh, cho de xe và nha ve sinh rieng","[""Điều hòa"", ""Chỗ để xe"", ""WC riêng""]",test,3:145,3
+"Cần phòng trọ có cho de xe, nha ve sinh rieng và máy lạnh","[""Điều hòa"", ""Chỗ để xe"", ""WC riêng""]",test,3:145,3
+"Ưu tiên chỗ ở với nha ve sinh rieng, máy lạnh và cho de xe","[""Điều hòa"", ""Chỗ để xe"", ""WC riêng""]",test,3:145,3
+"Tìm phòng trọ gồm máy lạnh, cho de xe và nha ve sinh rieng","[""Điều hòa"", ""Chỗ để xe"", ""WC riêng""]",test,3:145,3
+"Phòng cần có cho de xe, nha ve sinh rieng và máy lạnh","[""Điều hòa"", ""Chỗ để xe"", ""WC riêng""]",test,3:145,3
+"Mong muốn phòng được trang bị nha ve sinh rieng, máy lạnh và cho de xe","[""Điều hòa"", ""Chỗ để xe"", ""WC riêng""]",test,3:145,3
+"Tìm phòng có dieu hoa, noi de xe và khu bếp","[""Điều hòa"", ""Chỗ để xe"", ""Bếp""]",train,3:146,3
+"Cần phòng trọ có noi de xe, khu bếp và dieu hoa","[""Điều hòa"", ""Chỗ để xe"", ""Bếp""]",train,3:146,3
+"Ưu tiên chỗ ở với khu bếp, dieu hoa và noi de xe","[""Điều hòa"", ""Chỗ để xe"", ""Bếp""]",train,3:146,3
+"Tìm phòng trọ gồm dieu hoa, noi de xe và khu bếp","[""Điều hòa"", ""Chỗ để xe"", ""Bếp""]",train,3:146,3
+"Phòng cần có noi de xe, khu bếp và dieu hoa","[""Điều hòa"", ""Chỗ để xe"", ""Bếp""]",train,3:146,3
+"Mong muốn phòng được trang bị khu bếp, dieu hoa và noi de xe","[""Điều hòa"", ""Chỗ để xe"", ""Bếp""]",train,3:146,3
+"Tìm phòng có may lanh, chỗ để xe và giường ngủ","[""Điều hòa"", ""Chỗ để xe"", ""Giường""]",test,3:147,3
+"Cần phòng trọ có chỗ để xe, giường ngủ và may lanh","[""Điều hòa"", ""Chỗ để xe"", ""Giường""]",test,3:147,3
+"Ưu tiên chỗ ở với giường ngủ, may lanh và chỗ để xe","[""Điều hòa"", ""Chỗ để xe"", ""Giường""]",test,3:147,3
+"Tìm phòng trọ gồm may lanh, chỗ để xe và giường ngủ","[""Điều hòa"", ""Chỗ để xe"", ""Giường""]",test,3:147,3
+"Phòng cần có chỗ để xe, giường ngủ và may lanh","[""Điều hòa"", ""Chỗ để xe"", ""Giường""]",test,3:147,3
+"Mong muốn phòng được trang bị giường ngủ, may lanh và chỗ để xe","[""Điều hòa"", ""Chỗ để xe"", ""Giường""]",test,3:147,3
+"Tìm phòng có điều hòa, nơi để xe và tu quan ao","[""Điều hòa"", ""Chỗ để xe"", ""Tủ quần áo""]",train,3:148,3
+"Cần phòng trọ có nơi để xe, tu quan ao và điều hòa","[""Điều hòa"", ""Chỗ để xe"", ""Tủ quần áo""]",train,3:148,3
+"Ưu tiên chỗ ở với tu quan ao, điều hòa và nơi để xe","[""Điều hòa"", ""Chỗ để xe"", ""Tủ quần áo""]",train,3:148,3
+"Tìm phòng trọ gồm điều hòa, nơi để xe và tu quan ao","[""Điều hòa"", ""Chỗ để xe"", ""Tủ quần áo""]",train,3:148,3
+"Phòng cần có nơi để xe, tu quan ao và điều hòa","[""Điều hòa"", ""Chỗ để xe"", ""Tủ quần áo""]",train,3:148,3
+"Mong muốn phòng được trang bị tu quan ao, điều hòa và nơi để xe","[""Điều hòa"", ""Chỗ để xe"", ""Tủ quần áo""]",train,3:148,3
+"Tìm phòng có máy lạnh, cho de xe và phong khep kin","[""Điều hòa"", ""Chỗ để xe"", ""Khép kín""]",train,3:149,3
+"Cần phòng trọ có cho de xe, phong khep kin và máy lạnh","[""Điều hòa"", ""Chỗ để xe"", ""Khép kín""]",train,3:149,3
+"Ưu tiên chỗ ở với phong khep kin, máy lạnh và cho de xe","[""Điều hòa"", ""Chỗ để xe"", ""Khép kín""]",train,3:149,3
+"Tìm phòng trọ gồm máy lạnh, cho de xe và phong khep kin","[""Điều hòa"", ""Chỗ để xe"", ""Khép kín""]",train,3:149,3
+"Phòng cần có cho de xe, phong khep kin và máy lạnh","[""Điều hòa"", ""Chỗ để xe"", ""Khép kín""]",train,3:149,3
+"Mong muốn phòng được trang bị phong khep kin, máy lạnh và cho de xe","[""Điều hòa"", ""Chỗ để xe"", ""Khép kín""]",train,3:149,3
+"Tìm phòng có dieu hoa, máy giặt riêng và tủ lạnh","[""Điều hòa"", ""Máy giặt"", ""Tủ lạnh""]",test,3:150,3
+"Cần phòng trọ có máy giặt riêng, tủ lạnh và dieu hoa","[""Điều hòa"", ""Máy giặt"", ""Tủ lạnh""]",test,3:150,3
+"Ưu tiên chỗ ở với tủ lạnh, dieu hoa và máy giặt riêng","[""Điều hòa"", ""Máy giặt"", ""Tủ lạnh""]",test,3:150,3
+"Tìm phòng trọ gồm dieu hoa, máy giặt riêng và tủ lạnh","[""Điều hòa"", ""Máy giặt"", ""Tủ lạnh""]",test,3:150,3
+"Phòng cần có máy giặt riêng, tủ lạnh và dieu hoa","[""Điều hòa"", ""Máy giặt"", ""Tủ lạnh""]",test,3:150,3
+"Mong muốn phòng được trang bị tủ lạnh, dieu hoa và máy giặt riêng","[""Điều hòa"", ""Máy giặt"", ""Tủ lạnh""]",test,3:150,3
+"Tìm phòng có may lanh, may giat và ban cong","[""Điều hòa"", ""Máy giặt"", ""Ban công""]",test,3:151,3
+"Cần phòng trọ có may giat, ban cong và may lanh","[""Điều hòa"", ""Máy giặt"", ""Ban công""]",test,3:151,3
+"Ưu tiên chỗ ở với ban cong, may lanh và may giat","[""Điều hòa"", ""Máy giặt"", ""Ban công""]",test,3:151,3
+"Tìm phòng trọ gồm may lanh, may giat và ban cong","[""Điều hòa"", ""Máy giặt"", ""Ban công""]",test,3:151,3
+"Phòng cần có may giat, ban cong và may lanh","[""Điều hòa"", ""Máy giặt"", ""Ban công""]",test,3:151,3
+"Mong muốn phòng được trang bị ban cong, may lanh và may giat","[""Điều hòa"", ""Máy giặt"", ""Ban công""]",test,3:151,3
+"Tìm phòng có điều hòa, máy giặt và wc rieng","[""Điều hòa"", ""Máy giặt"", ""WC riêng""]",train,3:152,3
+"Cần phòng trọ có máy giặt, wc rieng và điều hòa","[""Điều hòa"", ""Máy giặt"", ""WC riêng""]",train,3:152,3
+"Ưu tiên chỗ ở với wc rieng, điều hòa và máy giặt","[""Điều hòa"", ""Máy giặt"", ""WC riêng""]",train,3:152,3
+"Tìm phòng trọ gồm điều hòa, máy giặt và wc rieng","[""Điều hòa"", ""Máy giặt"", ""WC riêng""]",train,3:152,3
+"Phòng cần có máy giặt, wc rieng và điều hòa","[""Điều hòa"", ""Máy giặt"", ""WC riêng""]",train,3:152,3
+"Mong muốn phòng được trang bị wc rieng, điều hòa và máy giặt","[""Điều hòa"", ""Máy giặt"", ""WC riêng""]",train,3:152,3
+"Tìm phòng có máy lạnh, máy giặt riêng và bep","[""Điều hòa"", ""Máy giặt"", ""Bếp""]",train,3:153,3
+"Cần phòng trọ có máy giặt riêng, bep và máy lạnh","[""Điều hòa"", ""Máy giặt"", ""Bếp""]",train,3:153,3
+"Ưu tiên chỗ ở với bep, máy lạnh và máy giặt riêng","[""Điều hòa"", ""Máy giặt"", ""Bếp""]",train,3:153,3
+"Tìm phòng trọ gồm máy lạnh, máy giặt riêng và bep","[""Điều hòa"", ""Máy giặt"", ""Bếp""]",train,3:153,3
+"Phòng cần có máy giặt riêng, bep và máy lạnh","[""Điều hòa"", ""Máy giặt"", ""Bếp""]",train,3:153,3
+"Mong muốn phòng được trang bị bep, máy lạnh và máy giặt riêng","[""Điều hòa"", ""Máy giặt"", ""Bếp""]",train,3:153,3
+"Tìm phòng có dieu hoa, may giat và giường","[""Điều hòa"", ""Máy giặt"", ""Giường""]",train,3:154,3
+"Cần phòng trọ có may giat, giường và dieu hoa","[""Điều hòa"", ""Máy giặt"", ""Giường""]",train,3:154,3
+"Ưu tiên chỗ ở với giường, dieu hoa và may giat","[""Điều hòa"", ""Máy giặt"", ""Giường""]",train,3:154,3
+"Tìm phòng trọ gồm dieu hoa, may giat và giường","[""Điều hòa"", ""Máy giặt"", ""Giường""]",train,3:154,3
+"Phòng cần có may giat, giường và dieu hoa","[""Điều hòa"", ""Máy giặt"", ""Giường""]",train,3:154,3
+"Mong muốn phòng được trang bị giường, dieu hoa và may giat","[""Điều hòa"", ""Máy giặt"", ""Giường""]",train,3:154,3
+"Tìm phòng có may lanh, máy giặt và tủ đồ","[""Điều hòa"", ""Máy giặt"", ""Tủ quần áo""]",validation,3:155,3
+"Cần phòng trọ có máy giặt, tủ đồ và may lanh","[""Điều hòa"", ""Máy giặt"", ""Tủ quần áo""]",validation,3:155,3
+"Ưu tiên chỗ ở với tủ đồ, may lanh và máy giặt","[""Điều hòa"", ""Máy giặt"", ""Tủ quần áo""]",validation,3:155,3
+"Tìm phòng trọ gồm may lanh, máy giặt và tủ đồ","[""Điều hòa"", ""Máy giặt"", ""Tủ quần áo""]",validation,3:155,3
+"Phòng cần có máy giặt, tủ đồ và may lanh","[""Điều hòa"", ""Máy giặt"", ""Tủ quần áo""]",validation,3:155,3
+"Mong muốn phòng được trang bị tủ đồ, may lanh và máy giặt","[""Điều hòa"", ""Máy giặt"", ""Tủ quần áo""]",validation,3:155,3
+"Tìm phòng có điều hòa, máy giặt riêng và khep kin","[""Điều hòa"", ""Máy giặt"", ""Khép kín""]",train,3:156,3
+"Cần phòng trọ có máy giặt riêng, khep kin và điều hòa","[""Điều hòa"", ""Máy giặt"", ""Khép kín""]",train,3:156,3
+"Ưu tiên chỗ ở với khep kin, điều hòa và máy giặt riêng","[""Điều hòa"", ""Máy giặt"", ""Khép kín""]",train,3:156,3
+"Tìm phòng trọ gồm điều hòa, máy giặt riêng và khep kin","[""Điều hòa"", ""Máy giặt"", ""Khép kín""]",train,3:156,3
+"Phòng cần có máy giặt riêng, khep kin và điều hòa","[""Điều hòa"", ""Máy giặt"", ""Khép kín""]",train,3:156,3
+"Mong muốn phòng được trang bị khep kin, điều hòa và máy giặt riêng","[""Điều hòa"", ""Máy giặt"", ""Khép kín""]",train,3:156,3
+"Tìm phòng có máy lạnh, tủ lạnh và ban cong","[""Điều hòa"", ""Tủ lạnh"", ""Ban công""]",train,3:157,3
+"Cần phòng trọ có tủ lạnh, ban cong và máy lạnh","[""Điều hòa"", ""Tủ lạnh"", ""Ban công""]",train,3:157,3
+"Ưu tiên chỗ ở với ban cong, máy lạnh và tủ lạnh","[""Điều hòa"", ""Tủ lạnh"", ""Ban công""]",train,3:157,3
+"Tìm phòng trọ gồm máy lạnh, tủ lạnh và ban cong","[""Điều hòa"", ""Tủ lạnh"", ""Ban công""]",train,3:157,3
+"Phòng cần có tủ lạnh, ban cong và máy lạnh","[""Điều hòa"", ""Tủ lạnh"", ""Ban công""]",train,3:157,3
+"Mong muốn phòng được trang bị ban cong, máy lạnh và tủ lạnh","[""Điều hòa"", ""Tủ lạnh"", ""Ban công""]",train,3:157,3
+"Tìm phòng có dieu hoa, tu lanh và WC riêng","[""Điều hòa"", ""Tủ lạnh"", ""WC riêng""]",train,3:158,3
+"Cần phòng trọ có tu lanh, WC riêng và dieu hoa","[""Điều hòa"", ""Tủ lạnh"", ""WC riêng""]",train,3:158,3
+"Ưu tiên chỗ ở với WC riêng, dieu hoa và tu lanh","[""Điều hòa"", ""Tủ lạnh"", ""WC riêng""]",train,3:158,3
+"Tìm phòng trọ gồm dieu hoa, tu lanh và WC riêng","[""Điều hòa"", ""Tủ lạnh"", ""WC riêng""]",train,3:158,3
+"Phòng cần có tu lanh, WC riêng và dieu hoa","[""Điều hòa"", ""Tủ lạnh"", ""WC riêng""]",train,3:158,3
+"Mong muốn phòng được trang bị WC riêng, dieu hoa và tu lanh","[""Điều hòa"", ""Tủ lạnh"", ""WC riêng""]",train,3:158,3
+"Tìm phòng có may lanh, tủ lạnh và bep","[""Điều hòa"", ""Tủ lạnh"", ""Bếp""]",train,3:159,3
+"Cần phòng trọ có tủ lạnh, bep và may lanh","[""Điều hòa"", ""Tủ lạnh"", ""Bếp""]",train,3:159,3
+"Ưu tiên chỗ ở với bep, may lanh và tủ lạnh","[""Điều hòa"", ""Tủ lạnh"", ""Bếp""]",train,3:159,3
+"Tìm phòng trọ gồm may lanh, tủ lạnh và bep","[""Điều hòa"", ""Tủ lạnh"", ""Bếp""]",train,3:159,3
+"Phòng cần có tủ lạnh, bep và may lanh","[""Điều hòa"", ""Tủ lạnh"", ""Bếp""]",train,3:159,3
+"Mong muốn phòng được trang bị bep, may lanh và tủ lạnh","[""Điều hòa"", ""Tủ lạnh"", ""Bếp""]",train,3:159,3
+"Tìm phòng có điều hòa, tu lanh và giuong","[""Điều hòa"", ""Tủ lạnh"", ""Giường""]",test,3:160,3
+"Cần phòng trọ có tu lanh, giuong và điều hòa","[""Điều hòa"", ""Tủ lạnh"", ""Giường""]",test,3:160,3
+"Ưu tiên chỗ ở với giuong, điều hòa và tu lanh","[""Điều hòa"", ""Tủ lạnh"", ""Giường""]",test,3:160,3
+"Tìm phòng trọ gồm điều hòa, tu lanh và giuong","[""Điều hòa"", ""Tủ lạnh"", ""Giường""]",test,3:160,3
+"Phòng cần có tu lanh, giuong và điều hòa","[""Điều hòa"", ""Tủ lạnh"", ""Giường""]",test,3:160,3
+"Mong muốn phòng được trang bị giuong, điều hòa và tu lanh","[""Điều hòa"", ""Tủ lạnh"", ""Giường""]",test,3:160,3
+"Tìm phòng có máy lạnh, tủ lạnh và tu do","[""Điều hòa"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:161,3
+"Cần phòng trọ có tủ lạnh, tu do và máy lạnh","[""Điều hòa"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:161,3
+"Ưu tiên chỗ ở với tu do, máy lạnh và tủ lạnh","[""Điều hòa"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:161,3
+"Tìm phòng trọ gồm máy lạnh, tủ lạnh và tu do","[""Điều hòa"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:161,3
+"Phòng cần có tủ lạnh, tu do và máy lạnh","[""Điều hòa"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:161,3
+"Mong muốn phòng được trang bị tu do, máy lạnh và tủ lạnh","[""Điều hòa"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:161,3
+"Tìm phòng có dieu hoa, tu lanh và khép kín","[""Điều hòa"", ""Tủ lạnh"", ""Khép kín""]",train,3:162,3
+"Cần phòng trọ có tu lanh, khép kín và dieu hoa","[""Điều hòa"", ""Tủ lạnh"", ""Khép kín""]",train,3:162,3
+"Ưu tiên chỗ ở với khép kín, dieu hoa và tu lanh","[""Điều hòa"", ""Tủ lạnh"", ""Khép kín""]",train,3:162,3
+"Tìm phòng trọ gồm dieu hoa, tu lanh và khép kín","[""Điều hòa"", ""Tủ lạnh"", ""Khép kín""]",train,3:162,3
+"Phòng cần có tu lanh, khép kín và dieu hoa","[""Điều hòa"", ""Tủ lạnh"", ""Khép kín""]",train,3:162,3
+"Mong muốn phòng được trang bị khép kín, dieu hoa và tu lanh","[""Điều hòa"", ""Tủ lạnh"", ""Khép kín""]",train,3:162,3
+"Tìm phòng có may lanh, ban công và nhà vệ sinh riêng","[""Điều hòa"", ""Ban công"", ""WC riêng""]",test,3:163,3
+"Cần phòng trọ có ban công, nhà vệ sinh riêng và may lanh","[""Điều hòa"", ""Ban công"", ""WC riêng""]",test,3:163,3
+"Ưu tiên chỗ ở với nhà vệ sinh riêng, may lanh và ban công","[""Điều hòa"", ""Ban công"", ""WC riêng""]",test,3:163,3
+"Tìm phòng trọ gồm may lanh, ban công và nhà vệ sinh riêng","[""Điều hòa"", ""Ban công"", ""WC riêng""]",test,3:163,3
+"Phòng cần có ban công, nhà vệ sinh riêng và may lanh","[""Điều hòa"", ""Ban công"", ""WC riêng""]",test,3:163,3
+"Mong muốn phòng được trang bị nhà vệ sinh riêng, may lanh và ban công","[""Điều hòa"", ""Ban công"", ""WC riêng""]",test,3:163,3
+"Tìm phòng có điều hòa, ban cong và khu bếp","[""Điều hòa"", ""Ban công"", ""Bếp""]",test,3:164,3
+"Cần phòng trọ có ban cong, khu bếp và điều hòa","[""Điều hòa"", ""Ban công"", ""Bếp""]",test,3:164,3
+"Ưu tiên chỗ ở với khu bếp, điều hòa và ban cong","[""Điều hòa"", ""Ban công"", ""Bếp""]",test,3:164,3
+"Tìm phòng trọ gồm điều hòa, ban cong và khu bếp","[""Điều hòa"", ""Ban công"", ""Bếp""]",test,3:164,3
+"Phòng cần có ban cong, khu bếp và điều hòa","[""Điều hòa"", ""Ban công"", ""Bếp""]",test,3:164,3
+"Mong muốn phòng được trang bị khu bếp, điều hòa và ban cong","[""Điều hòa"", ""Ban công"", ""Bếp""]",test,3:164,3
+"Tìm phòng có máy lạnh, ban công và giuong ngu","[""Điều hòa"", ""Ban công"", ""Giường""]",train,3:165,3
+"Cần phòng trọ có ban công, giuong ngu và máy lạnh","[""Điều hòa"", ""Ban công"", ""Giường""]",train,3:165,3
+"Ưu tiên chỗ ở với giuong ngu, máy lạnh và ban công","[""Điều hòa"", ""Ban công"", ""Giường""]",train,3:165,3
+"Tìm phòng trọ gồm máy lạnh, ban công và giuong ngu","[""Điều hòa"", ""Ban công"", ""Giường""]",train,3:165,3
+"Phòng cần có ban công, giuong ngu và máy lạnh","[""Điều hòa"", ""Ban công"", ""Giường""]",train,3:165,3
+"Mong muốn phòng được trang bị giuong ngu, máy lạnh và ban công","[""Điều hòa"", ""Ban công"", ""Giường""]",train,3:165,3
+"Tìm phòng có dieu hoa, ban cong và tủ quần áo","[""Điều hòa"", ""Ban công"", ""Tủ quần áo""]",train,3:166,3
+"Cần phòng trọ có ban cong, tủ quần áo và dieu hoa","[""Điều hòa"", ""Ban công"", ""Tủ quần áo""]",train,3:166,3
+"Ưu tiên chỗ ở với tủ quần áo, dieu hoa và ban cong","[""Điều hòa"", ""Ban công"", ""Tủ quần áo""]",train,3:166,3
+"Tìm phòng trọ gồm dieu hoa, ban cong và tủ quần áo","[""Điều hòa"", ""Ban công"", ""Tủ quần áo""]",train,3:166,3
+"Phòng cần có ban cong, tủ quần áo và dieu hoa","[""Điều hòa"", ""Ban công"", ""Tủ quần áo""]",train,3:166,3
+"Mong muốn phòng được trang bị tủ quần áo, dieu hoa và ban cong","[""Điều hòa"", ""Ban công"", ""Tủ quần áo""]",train,3:166,3
+"Tìm phòng có may lanh, ban công và phòng khép kín","[""Điều hòa"", ""Ban công"", ""Khép kín""]",test,3:167,3
+"Cần phòng trọ có ban công, phòng khép kín và may lanh","[""Điều hòa"", ""Ban công"", ""Khép kín""]",test,3:167,3
+"Ưu tiên chỗ ở với phòng khép kín, may lanh và ban công","[""Điều hòa"", ""Ban công"", ""Khép kín""]",test,3:167,3
+"Tìm phòng trọ gồm may lanh, ban công và phòng khép kín","[""Điều hòa"", ""Ban công"", ""Khép kín""]",test,3:167,3
+"Phòng cần có ban công, phòng khép kín và may lanh","[""Điều hòa"", ""Ban công"", ""Khép kín""]",test,3:167,3
+"Mong muốn phòng được trang bị phòng khép kín, may lanh và ban công","[""Điều hòa"", ""Ban công"", ""Khép kín""]",test,3:167,3
+"Tìm phòng có điều hòa, nhà vệ sinh riêng và bep","[""Điều hòa"", ""WC riêng"", ""Bếp""]",train,3:168,3
+"Cần phòng trọ có nhà vệ sinh riêng, bep và điều hòa","[""Điều hòa"", ""WC riêng"", ""Bếp""]",train,3:168,3
+"Ưu tiên chỗ ở với bep, điều hòa và nhà vệ sinh riêng","[""Điều hòa"", ""WC riêng"", ""Bếp""]",train,3:168,3
+"Tìm phòng trọ gồm điều hòa, nhà vệ sinh riêng và bep","[""Điều hòa"", ""WC riêng"", ""Bếp""]",train,3:168,3
+"Phòng cần có nhà vệ sinh riêng, bep và điều hòa","[""Điều hòa"", ""WC riêng"", ""Bếp""]",train,3:168,3
+"Mong muốn phòng được trang bị bep, điều hòa và nhà vệ sinh riêng","[""Điều hòa"", ""WC riêng"", ""Bếp""]",train,3:168,3
+"Tìm phòng có máy lạnh, wc rieng và giuong ngu","[""Điều hòa"", ""WC riêng"", ""Giường""]",train,3:169,3
+"Cần phòng trọ có wc rieng, giuong ngu và máy lạnh","[""Điều hòa"", ""WC riêng"", ""Giường""]",train,3:169,3
+"Ưu tiên chỗ ở với giuong ngu, máy lạnh và wc rieng","[""Điều hòa"", ""WC riêng"", ""Giường""]",train,3:169,3
+"Tìm phòng trọ gồm máy lạnh, wc rieng và giuong ngu","[""Điều hòa"", ""WC riêng"", ""Giường""]",train,3:169,3
+"Phòng cần có wc rieng, giuong ngu và máy lạnh","[""Điều hòa"", ""WC riêng"", ""Giường""]",train,3:169,3
+"Mong muốn phòng được trang bị giuong ngu, máy lạnh và wc rieng","[""Điều hòa"", ""WC riêng"", ""Giường""]",train,3:169,3
+"Tìm phòng có dieu hoa, nha ve sinh rieng và tủ quần áo","[""Điều hòa"", ""WC riêng"", ""Tủ quần áo""]",train,3:170,3
+"Cần phòng trọ có nha ve sinh rieng, tủ quần áo và dieu hoa","[""Điều hòa"", ""WC riêng"", ""Tủ quần áo""]",train,3:170,3
+"Ưu tiên chỗ ở với tủ quần áo, dieu hoa và nha ve sinh rieng","[""Điều hòa"", ""WC riêng"", ""Tủ quần áo""]",train,3:170,3
+"Tìm phòng trọ gồm dieu hoa, nha ve sinh rieng và tủ quần áo","[""Điều hòa"", ""WC riêng"", ""Tủ quần áo""]",train,3:170,3
+"Phòng cần có nha ve sinh rieng, tủ quần áo và dieu hoa","[""Điều hòa"", ""WC riêng"", ""Tủ quần áo""]",train,3:170,3
+"Mong muốn phòng được trang bị tủ quần áo, dieu hoa và nha ve sinh rieng","[""Điều hòa"", ""WC riêng"", ""Tủ quần áo""]",train,3:170,3
+"Tìm phòng có may lanh, WC riêng và phòng khép kín","[""Điều hòa"", ""WC riêng"", ""Khép kín""]",train,3:171,3
+"Cần phòng trọ có WC riêng, phòng khép kín và may lanh","[""Điều hòa"", ""WC riêng"", ""Khép kín""]",train,3:171,3
+"Ưu tiên chỗ ở với phòng khép kín, may lanh và WC riêng","[""Điều hòa"", ""WC riêng"", ""Khép kín""]",train,3:171,3
+"Tìm phòng trọ gồm may lanh, WC riêng và phòng khép kín","[""Điều hòa"", ""WC riêng"", ""Khép kín""]",train,3:171,3
+"Phòng cần có WC riêng, phòng khép kín và may lanh","[""Điều hòa"", ""WC riêng"", ""Khép kín""]",train,3:171,3
+"Mong muốn phòng được trang bị phòng khép kín, may lanh và WC riêng","[""Điều hòa"", ""WC riêng"", ""Khép kín""]",train,3:171,3
+"Tìm phòng có điều hòa, bep và giuong","[""Điều hòa"", ""Bếp"", ""Giường""]",train,3:172,3
+"Cần phòng trọ có bep, giuong và điều hòa","[""Điều hòa"", ""Bếp"", ""Giường""]",train,3:172,3
+"Ưu tiên chỗ ở với giuong, điều hòa và bep","[""Điều hòa"", ""Bếp"", ""Giường""]",train,3:172,3
+"Tìm phòng trọ gồm điều hòa, bep và giuong","[""Điều hòa"", ""Bếp"", ""Giường""]",train,3:172,3
+"Phòng cần có bep, giuong và điều hòa","[""Điều hòa"", ""Bếp"", ""Giường""]",train,3:172,3
+"Mong muốn phòng được trang bị giuong, điều hòa và bep","[""Điều hòa"", ""Bếp"", ""Giường""]",train,3:172,3
+"Tìm phòng có máy lạnh, bếp và tu do","[""Điều hòa"", ""Bếp"", ""Tủ quần áo""]",train,3:173,3
+"Cần phòng trọ có bếp, tu do và máy lạnh","[""Điều hòa"", ""Bếp"", ""Tủ quần áo""]",train,3:173,3
+"Ưu tiên chỗ ở với tu do, máy lạnh và bếp","[""Điều hòa"", ""Bếp"", ""Tủ quần áo""]",train,3:173,3
+"Tìm phòng trọ gồm máy lạnh, bếp và tu do","[""Điều hòa"", ""Bếp"", ""Tủ quần áo""]",train,3:173,3
+"Phòng cần có bếp, tu do và máy lạnh","[""Điều hòa"", ""Bếp"", ""Tủ quần áo""]",train,3:173,3
+"Mong muốn phòng được trang bị tu do, máy lạnh và bếp","[""Điều hòa"", ""Bếp"", ""Tủ quần áo""]",train,3:173,3
+"Tìm phòng có dieu hoa, khu bếp và khép kín","[""Điều hòa"", ""Bếp"", ""Khép kín""]",validation,3:174,3
+"Cần phòng trọ có khu bếp, khép kín và dieu hoa","[""Điều hòa"", ""Bếp"", ""Khép kín""]",validation,3:174,3
+"Ưu tiên chỗ ở với khép kín, dieu hoa và khu bếp","[""Điều hòa"", ""Bếp"", ""Khép kín""]",validation,3:174,3
+"Tìm phòng trọ gồm dieu hoa, khu bếp và khép kín","[""Điều hòa"", ""Bếp"", ""Khép kín""]",validation,3:174,3
+"Phòng cần có khu bếp, khép kín và dieu hoa","[""Điều hòa"", ""Bếp"", ""Khép kín""]",validation,3:174,3
+"Mong muốn phòng được trang bị khép kín, dieu hoa và khu bếp","[""Điều hòa"", ""Bếp"", ""Khép kín""]",validation,3:174,3
+"Tìm phòng có may lanh, giường và tủ đồ","[""Điều hòa"", ""Giường"", ""Tủ quần áo""]",train,3:175,3
+"Cần phòng trọ có giường, tủ đồ và may lanh","[""Điều hòa"", ""Giường"", ""Tủ quần áo""]",train,3:175,3
+"Ưu tiên chỗ ở với tủ đồ, may lanh và giường","[""Điều hòa"", ""Giường"", ""Tủ quần áo""]",train,3:175,3
+"Tìm phòng trọ gồm may lanh, giường và tủ đồ","[""Điều hòa"", ""Giường"", ""Tủ quần áo""]",train,3:175,3
+"Phòng cần có giường, tủ đồ và may lanh","[""Điều hòa"", ""Giường"", ""Tủ quần áo""]",train,3:175,3
+"Mong muốn phòng được trang bị tủ đồ, may lanh và giường","[""Điều hòa"", ""Giường"", ""Tủ quần áo""]",train,3:175,3
+"Tìm phòng có điều hòa, giường ngủ và khep kin","[""Điều hòa"", ""Giường"", ""Khép kín""]",train,3:176,3
+"Cần phòng trọ có giường ngủ, khep kin và điều hòa","[""Điều hòa"", ""Giường"", ""Khép kín""]",train,3:176,3
+"Ưu tiên chỗ ở với khep kin, điều hòa và giường ngủ","[""Điều hòa"", ""Giường"", ""Khép kín""]",train,3:176,3
+"Tìm phòng trọ gồm điều hòa, giường ngủ và khep kin","[""Điều hòa"", ""Giường"", ""Khép kín""]",train,3:176,3
+"Phòng cần có giường ngủ, khep kin và điều hòa","[""Điều hòa"", ""Giường"", ""Khép kín""]",train,3:176,3
+"Mong muốn phòng được trang bị khep kin, điều hòa và giường ngủ","[""Điều hòa"", ""Giường"", ""Khép kín""]",train,3:176,3
+"Tìm phòng có máy lạnh, tu quan ao và phong khep kin","[""Điều hòa"", ""Tủ quần áo"", ""Khép kín""]",train,3:177,3
+"Cần phòng trọ có tu quan ao, phong khep kin và máy lạnh","[""Điều hòa"", ""Tủ quần áo"", ""Khép kín""]",train,3:177,3
+"Ưu tiên chỗ ở với phong khep kin, máy lạnh và tu quan ao","[""Điều hòa"", ""Tủ quần áo"", ""Khép kín""]",train,3:177,3
+"Tìm phòng trọ gồm máy lạnh, tu quan ao và phong khep kin","[""Điều hòa"", ""Tủ quần áo"", ""Khép kín""]",train,3:177,3
+"Phòng cần có tu quan ao, phong khep kin và máy lạnh","[""Điều hòa"", ""Tủ quần áo"", ""Khép kín""]",train,3:177,3
+"Mong muốn phòng được trang bị phong khep kin, máy lạnh và tu quan ao","[""Điều hòa"", ""Tủ quần áo"", ""Khép kín""]",train,3:177,3
+"Tìm phòng có nong lanh, noi de xe và máy giặt","[""Nóng lạnh"", ""Chỗ để xe"", ""Máy giặt""]",validation,3:178,3
+"Cần phòng trọ có noi de xe, máy giặt và nong lanh","[""Nóng lạnh"", ""Chỗ để xe"", ""Máy giặt""]",validation,3:178,3
+"Ưu tiên chỗ ở với máy giặt, nong lanh và noi de xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Máy giặt""]",validation,3:178,3
+"Tìm phòng trọ gồm nong lanh, noi de xe và máy giặt","[""Nóng lạnh"", ""Chỗ để xe"", ""Máy giặt""]",validation,3:178,3
+"Phòng cần có noi de xe, máy giặt và nong lanh","[""Nóng lạnh"", ""Chỗ để xe"", ""Máy giặt""]",validation,3:178,3
+"Mong muốn phòng được trang bị máy giặt, nong lanh và noi de xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Máy giặt""]",validation,3:178,3
+"Tìm phòng có binh nong lanh, chỗ để xe và tu lanh","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:179,3
+"Cần phòng trọ có chỗ để xe, tu lanh và binh nong lanh","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:179,3
+"Ưu tiên chỗ ở với tu lanh, binh nong lanh và chỗ để xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:179,3
+"Tìm phòng trọ gồm binh nong lanh, chỗ để xe và tu lanh","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:179,3
+"Phòng cần có chỗ để xe, tu lanh và binh nong lanh","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:179,3
+"Mong muốn phòng được trang bị tu lanh, binh nong lanh và chỗ để xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ lạnh""]",train,3:179,3
+"Tìm phòng có nóng lạnh, nơi để xe và ban công","[""Nóng lạnh"", ""Chỗ để xe"", ""Ban công""]",train,3:180,3
+"Cần phòng trọ có nơi để xe, ban công và nóng lạnh","[""Nóng lạnh"", ""Chỗ để xe"", ""Ban công""]",train,3:180,3
+"Ưu tiên chỗ ở với ban công, nóng lạnh và nơi để xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Ban công""]",train,3:180,3
+"Tìm phòng trọ gồm nóng lạnh, nơi để xe và ban công","[""Nóng lạnh"", ""Chỗ để xe"", ""Ban công""]",train,3:180,3
+"Phòng cần có nơi để xe, ban công và nóng lạnh","[""Nóng lạnh"", ""Chỗ để xe"", ""Ban công""]",train,3:180,3
+"Mong muốn phòng được trang bị ban công, nóng lạnh và nơi để xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Ban công""]",train,3:180,3
+"Tìm phòng có bình nóng lạnh, cho de xe và nha ve sinh rieng","[""Nóng lạnh"", ""Chỗ để xe"", ""WC riêng""]",train,3:181,3
+"Cần phòng trọ có cho de xe, nha ve sinh rieng và bình nóng lạnh","[""Nóng lạnh"", ""Chỗ để xe"", ""WC riêng""]",train,3:181,3
+"Ưu tiên chỗ ở với nha ve sinh rieng, bình nóng lạnh và cho de xe","[""Nóng lạnh"", ""Chỗ để xe"", ""WC riêng""]",train,3:181,3
+"Tìm phòng trọ gồm bình nóng lạnh, cho de xe và nha ve sinh rieng","[""Nóng lạnh"", ""Chỗ để xe"", ""WC riêng""]",train,3:181,3
+"Phòng cần có cho de xe, nha ve sinh rieng và bình nóng lạnh","[""Nóng lạnh"", ""Chỗ để xe"", ""WC riêng""]",train,3:181,3
+"Mong muốn phòng được trang bị nha ve sinh rieng, bình nóng lạnh và cho de xe","[""Nóng lạnh"", ""Chỗ để xe"", ""WC riêng""]",train,3:181,3
+"Tìm phòng có nong lanh, noi de xe và khu bếp","[""Nóng lạnh"", ""Chỗ để xe"", ""Bếp""]",train,3:182,3
+"Cần phòng trọ có noi de xe, khu bếp và nong lanh","[""Nóng lạnh"", ""Chỗ để xe"", ""Bếp""]",train,3:182,3
+"Ưu tiên chỗ ở với khu bếp, nong lanh và noi de xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Bếp""]",train,3:182,3
+"Tìm phòng trọ gồm nong lanh, noi de xe và khu bếp","[""Nóng lạnh"", ""Chỗ để xe"", ""Bếp""]",train,3:182,3
+"Phòng cần có noi de xe, khu bếp và nong lanh","[""Nóng lạnh"", ""Chỗ để xe"", ""Bếp""]",train,3:182,3
+"Mong muốn phòng được trang bị khu bếp, nong lanh và noi de xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Bếp""]",train,3:182,3
+"Tìm phòng có binh nong lanh, chỗ để xe và giường ngủ","[""Nóng lạnh"", ""Chỗ để xe"", ""Giường""]",test,3:183,3
+"Cần phòng trọ có chỗ để xe, giường ngủ và binh nong lanh","[""Nóng lạnh"", ""Chỗ để xe"", ""Giường""]",test,3:183,3
+"Ưu tiên chỗ ở với giường ngủ, binh nong lanh và chỗ để xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Giường""]",test,3:183,3
+"Tìm phòng trọ gồm binh nong lanh, chỗ để xe và giường ngủ","[""Nóng lạnh"", ""Chỗ để xe"", ""Giường""]",test,3:183,3
+"Phòng cần có chỗ để xe, giường ngủ và binh nong lanh","[""Nóng lạnh"", ""Chỗ để xe"", ""Giường""]",test,3:183,3
+"Mong muốn phòng được trang bị giường ngủ, binh nong lanh và chỗ để xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Giường""]",test,3:183,3
+"Tìm phòng có nóng lạnh, nơi để xe và tu quan ao","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ quần áo""]",test,3:184,3
+"Cần phòng trọ có nơi để xe, tu quan ao và nóng lạnh","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ quần áo""]",test,3:184,3
+"Ưu tiên chỗ ở với tu quan ao, nóng lạnh và nơi để xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ quần áo""]",test,3:184,3
+"Tìm phòng trọ gồm nóng lạnh, nơi để xe và tu quan ao","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ quần áo""]",test,3:184,3
+"Phòng cần có nơi để xe, tu quan ao và nóng lạnh","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ quần áo""]",test,3:184,3
+"Mong muốn phòng được trang bị tu quan ao, nóng lạnh và nơi để xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Tủ quần áo""]",test,3:184,3
+"Tìm phòng có bình nóng lạnh, cho de xe và phong khep kin","[""Nóng lạnh"", ""Chỗ để xe"", ""Khép kín""]",train,3:185,3
+"Cần phòng trọ có cho de xe, phong khep kin và bình nóng lạnh","[""Nóng lạnh"", ""Chỗ để xe"", ""Khép kín""]",train,3:185,3
+"Ưu tiên chỗ ở với phong khep kin, bình nóng lạnh và cho de xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Khép kín""]",train,3:185,3
+"Tìm phòng trọ gồm bình nóng lạnh, cho de xe và phong khep kin","[""Nóng lạnh"", ""Chỗ để xe"", ""Khép kín""]",train,3:185,3
+"Phòng cần có cho de xe, phong khep kin và bình nóng lạnh","[""Nóng lạnh"", ""Chỗ để xe"", ""Khép kín""]",train,3:185,3
+"Mong muốn phòng được trang bị phong khep kin, bình nóng lạnh và cho de xe","[""Nóng lạnh"", ""Chỗ để xe"", ""Khép kín""]",train,3:185,3
+"Tìm phòng có nong lanh, máy giặt riêng và tủ lạnh","[""Nóng lạnh"", ""Máy giặt"", ""Tủ lạnh""]",train,3:186,3
+"Cần phòng trọ có máy giặt riêng, tủ lạnh và nong lanh","[""Nóng lạnh"", ""Máy giặt"", ""Tủ lạnh""]",train,3:186,3
+"Ưu tiên chỗ ở với tủ lạnh, nong lanh và máy giặt riêng","[""Nóng lạnh"", ""Máy giặt"", ""Tủ lạnh""]",train,3:186,3
+"Tìm phòng trọ gồm nong lanh, máy giặt riêng và tủ lạnh","[""Nóng lạnh"", ""Máy giặt"", ""Tủ lạnh""]",train,3:186,3
+"Phòng cần có máy giặt riêng, tủ lạnh và nong lanh","[""Nóng lạnh"", ""Máy giặt"", ""Tủ lạnh""]",train,3:186,3
+"Mong muốn phòng được trang bị tủ lạnh, nong lanh và máy giặt riêng","[""Nóng lạnh"", ""Máy giặt"", ""Tủ lạnh""]",train,3:186,3
+"Tìm phòng có binh nong lanh, may giat và ban cong","[""Nóng lạnh"", ""Máy giặt"", ""Ban công""]",train,3:187,3
+"Cần phòng trọ có may giat, ban cong và binh nong lanh","[""Nóng lạnh"", ""Máy giặt"", ""Ban công""]",train,3:187,3
+"Ưu tiên chỗ ở với ban cong, binh nong lanh và may giat","[""Nóng lạnh"", ""Máy giặt"", ""Ban công""]",train,3:187,3
+"Tìm phòng trọ gồm binh nong lanh, may giat và ban cong","[""Nóng lạnh"", ""Máy giặt"", ""Ban công""]",train,3:187,3
+"Phòng cần có may giat, ban cong và binh nong lanh","[""Nóng lạnh"", ""Máy giặt"", ""Ban công""]",train,3:187,3
+"Mong muốn phòng được trang bị ban cong, binh nong lanh và may giat","[""Nóng lạnh"", ""Máy giặt"", ""Ban công""]",train,3:187,3
+"Tìm phòng có nóng lạnh, máy giặt và wc rieng","[""Nóng lạnh"", ""Máy giặt"", ""WC riêng""]",train,3:188,3
+"Cần phòng trọ có máy giặt, wc rieng và nóng lạnh","[""Nóng lạnh"", ""Máy giặt"", ""WC riêng""]",train,3:188,3
+"Ưu tiên chỗ ở với wc rieng, nóng lạnh và máy giặt","[""Nóng lạnh"", ""Máy giặt"", ""WC riêng""]",train,3:188,3
+"Tìm phòng trọ gồm nóng lạnh, máy giặt và wc rieng","[""Nóng lạnh"", ""Máy giặt"", ""WC riêng""]",train,3:188,3
+"Phòng cần có máy giặt, wc rieng và nóng lạnh","[""Nóng lạnh"", ""Máy giặt"", ""WC riêng""]",train,3:188,3
+"Mong muốn phòng được trang bị wc rieng, nóng lạnh và máy giặt","[""Nóng lạnh"", ""Máy giặt"", ""WC riêng""]",train,3:188,3
+"Tìm phòng có bình nóng lạnh, máy giặt riêng và bep","[""Nóng lạnh"", ""Máy giặt"", ""Bếp""]",train,3:189,3
+"Cần phòng trọ có máy giặt riêng, bep và bình nóng lạnh","[""Nóng lạnh"", ""Máy giặt"", ""Bếp""]",train,3:189,3
+"Ưu tiên chỗ ở với bep, bình nóng lạnh và máy giặt riêng","[""Nóng lạnh"", ""Máy giặt"", ""Bếp""]",train,3:189,3
+"Tìm phòng trọ gồm bình nóng lạnh, máy giặt riêng và bep","[""Nóng lạnh"", ""Máy giặt"", ""Bếp""]",train,3:189,3
+"Phòng cần có máy giặt riêng, bep và bình nóng lạnh","[""Nóng lạnh"", ""Máy giặt"", ""Bếp""]",train,3:189,3
+"Mong muốn phòng được trang bị bep, bình nóng lạnh và máy giặt riêng","[""Nóng lạnh"", ""Máy giặt"", ""Bếp""]",train,3:189,3
+"Tìm phòng có nong lanh, may giat và giường","[""Nóng lạnh"", ""Máy giặt"", ""Giường""]",test,3:190,3
+"Cần phòng trọ có may giat, giường và nong lanh","[""Nóng lạnh"", ""Máy giặt"", ""Giường""]",test,3:190,3
+"Ưu tiên chỗ ở với giường, nong lanh và may giat","[""Nóng lạnh"", ""Máy giặt"", ""Giường""]",test,3:190,3
+"Tìm phòng trọ gồm nong lanh, may giat và giường","[""Nóng lạnh"", ""Máy giặt"", ""Giường""]",test,3:190,3
+"Phòng cần có may giat, giường và nong lanh","[""Nóng lạnh"", ""Máy giặt"", ""Giường""]",test,3:190,3
+"Mong muốn phòng được trang bị giường, nong lanh và may giat","[""Nóng lạnh"", ""Máy giặt"", ""Giường""]",test,3:190,3
+"Tìm phòng có binh nong lanh, máy giặt và tủ đồ","[""Nóng lạnh"", ""Máy giặt"", ""Tủ quần áo""]",train,3:191,3
+"Cần phòng trọ có máy giặt, tủ đồ và binh nong lanh","[""Nóng lạnh"", ""Máy giặt"", ""Tủ quần áo""]",train,3:191,3
+"Ưu tiên chỗ ở với tủ đồ, binh nong lanh và máy giặt","[""Nóng lạnh"", ""Máy giặt"", ""Tủ quần áo""]",train,3:191,3
+"Tìm phòng trọ gồm binh nong lanh, máy giặt và tủ đồ","[""Nóng lạnh"", ""Máy giặt"", ""Tủ quần áo""]",train,3:191,3
+"Phòng cần có máy giặt, tủ đồ và binh nong lanh","[""Nóng lạnh"", ""Máy giặt"", ""Tủ quần áo""]",train,3:191,3
+"Mong muốn phòng được trang bị tủ đồ, binh nong lanh và máy giặt","[""Nóng lạnh"", ""Máy giặt"", ""Tủ quần áo""]",train,3:191,3
+"Tìm phòng có nóng lạnh, máy giặt riêng và khep kin","[""Nóng lạnh"", ""Máy giặt"", ""Khép kín""]",train,3:192,3
+"Cần phòng trọ có máy giặt riêng, khep kin và nóng lạnh","[""Nóng lạnh"", ""Máy giặt"", ""Khép kín""]",train,3:192,3
+"Ưu tiên chỗ ở với khep kin, nóng lạnh và máy giặt riêng","[""Nóng lạnh"", ""Máy giặt"", ""Khép kín""]",train,3:192,3
+"Tìm phòng trọ gồm nóng lạnh, máy giặt riêng và khep kin","[""Nóng lạnh"", ""Máy giặt"", ""Khép kín""]",train,3:192,3
+"Phòng cần có máy giặt riêng, khep kin và nóng lạnh","[""Nóng lạnh"", ""Máy giặt"", ""Khép kín""]",train,3:192,3
+"Mong muốn phòng được trang bị khep kin, nóng lạnh và máy giặt riêng","[""Nóng lạnh"", ""Máy giặt"", ""Khép kín""]",train,3:192,3
+"Tìm phòng có bình nóng lạnh, tủ lạnh và ban cong","[""Nóng lạnh"", ""Tủ lạnh"", ""Ban công""]",train,3:193,3
+"Cần phòng trọ có tủ lạnh, ban cong và bình nóng lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Ban công""]",train,3:193,3
+"Ưu tiên chỗ ở với ban cong, bình nóng lạnh và tủ lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Ban công""]",train,3:193,3
+"Tìm phòng trọ gồm bình nóng lạnh, tủ lạnh và ban cong","[""Nóng lạnh"", ""Tủ lạnh"", ""Ban công""]",train,3:193,3
+"Phòng cần có tủ lạnh, ban cong và bình nóng lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Ban công""]",train,3:193,3
+"Mong muốn phòng được trang bị ban cong, bình nóng lạnh và tủ lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Ban công""]",train,3:193,3
+"Tìm phòng có nong lanh, tu lanh và WC riêng","[""Nóng lạnh"", ""Tủ lạnh"", ""WC riêng""]",train,3:194,3
+"Cần phòng trọ có tu lanh, WC riêng và nong lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""WC riêng""]",train,3:194,3
+"Ưu tiên chỗ ở với WC riêng, nong lanh và tu lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""WC riêng""]",train,3:194,3
+"Tìm phòng trọ gồm nong lanh, tu lanh và WC riêng","[""Nóng lạnh"", ""Tủ lạnh"", ""WC riêng""]",train,3:194,3
+"Phòng cần có tu lanh, WC riêng và nong lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""WC riêng""]",train,3:194,3
+"Mong muốn phòng được trang bị WC riêng, nong lanh và tu lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""WC riêng""]",train,3:194,3
+"Tìm phòng có binh nong lanh, tủ lạnh và bep","[""Nóng lạnh"", ""Tủ lạnh"", ""Bếp""]",validation,3:195,3
+"Cần phòng trọ có tủ lạnh, bep và binh nong lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""Bếp""]",validation,3:195,3
+"Ưu tiên chỗ ở với bep, binh nong lanh và tủ lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Bếp""]",validation,3:195,3
+"Tìm phòng trọ gồm binh nong lanh, tủ lạnh và bep","[""Nóng lạnh"", ""Tủ lạnh"", ""Bếp""]",validation,3:195,3
+"Phòng cần có tủ lạnh, bep và binh nong lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""Bếp""]",validation,3:195,3
+"Mong muốn phòng được trang bị bep, binh nong lanh và tủ lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Bếp""]",validation,3:195,3
+"Tìm phòng có nóng lạnh, tu lanh và giuong","[""Nóng lạnh"", ""Tủ lạnh"", ""Giường""]",train,3:196,3
+"Cần phòng trọ có tu lanh, giuong và nóng lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Giường""]",train,3:196,3
+"Ưu tiên chỗ ở với giuong, nóng lạnh và tu lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""Giường""]",train,3:196,3
+"Tìm phòng trọ gồm nóng lạnh, tu lanh và giuong","[""Nóng lạnh"", ""Tủ lạnh"", ""Giường""]",train,3:196,3
+"Phòng cần có tu lanh, giuong và nóng lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Giường""]",train,3:196,3
+"Mong muốn phòng được trang bị giuong, nóng lạnh và tu lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""Giường""]",train,3:196,3
+"Tìm phòng có bình nóng lạnh, tủ lạnh và tu do","[""Nóng lạnh"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:197,3
+"Cần phòng trọ có tủ lạnh, tu do và bình nóng lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:197,3
+"Ưu tiên chỗ ở với tu do, bình nóng lạnh và tủ lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:197,3
+"Tìm phòng trọ gồm bình nóng lạnh, tủ lạnh và tu do","[""Nóng lạnh"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:197,3
+"Phòng cần có tủ lạnh, tu do và bình nóng lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:197,3
+"Mong muốn phòng được trang bị tu do, bình nóng lạnh và tủ lạnh","[""Nóng lạnh"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:197,3
+"Tìm phòng có nong lanh, tu lanh và khép kín","[""Nóng lạnh"", ""Tủ lạnh"", ""Khép kín""]",train,3:198,3
+"Cần phòng trọ có tu lanh, khép kín và nong lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""Khép kín""]",train,3:198,3
+"Ưu tiên chỗ ở với khép kín, nong lanh và tu lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""Khép kín""]",train,3:198,3
+"Tìm phòng trọ gồm nong lanh, tu lanh và khép kín","[""Nóng lạnh"", ""Tủ lạnh"", ""Khép kín""]",train,3:198,3
+"Phòng cần có tu lanh, khép kín và nong lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""Khép kín""]",train,3:198,3
+"Mong muốn phòng được trang bị khép kín, nong lanh và tu lanh","[""Nóng lạnh"", ""Tủ lạnh"", ""Khép kín""]",train,3:198,3
+"Tìm phòng có binh nong lanh, ban công và nhà vệ sinh riêng","[""Nóng lạnh"", ""Ban công"", ""WC riêng""]",train,3:199,3
+"Cần phòng trọ có ban công, nhà vệ sinh riêng và binh nong lanh","[""Nóng lạnh"", ""Ban công"", ""WC riêng""]",train,3:199,3
+"Ưu tiên chỗ ở với nhà vệ sinh riêng, binh nong lanh và ban công","[""Nóng lạnh"", ""Ban công"", ""WC riêng""]",train,3:199,3
+"Tìm phòng trọ gồm binh nong lanh, ban công và nhà vệ sinh riêng","[""Nóng lạnh"", ""Ban công"", ""WC riêng""]",train,3:199,3
+"Phòng cần có ban công, nhà vệ sinh riêng và binh nong lanh","[""Nóng lạnh"", ""Ban công"", ""WC riêng""]",train,3:199,3
+"Mong muốn phòng được trang bị nhà vệ sinh riêng, binh nong lanh và ban công","[""Nóng lạnh"", ""Ban công"", ""WC riêng""]",train,3:199,3
+"Tìm phòng có nóng lạnh, ban cong và khu bếp","[""Nóng lạnh"", ""Ban công"", ""Bếp""]",validation,3:200,3
+"Cần phòng trọ có ban cong, khu bếp và nóng lạnh","[""Nóng lạnh"", ""Ban công"", ""Bếp""]",validation,3:200,3
+"Ưu tiên chỗ ở với khu bếp, nóng lạnh và ban cong","[""Nóng lạnh"", ""Ban công"", ""Bếp""]",validation,3:200,3
+"Tìm phòng trọ gồm nóng lạnh, ban cong và khu bếp","[""Nóng lạnh"", ""Ban công"", ""Bếp""]",validation,3:200,3
+"Phòng cần có ban cong, khu bếp và nóng lạnh","[""Nóng lạnh"", ""Ban công"", ""Bếp""]",validation,3:200,3
+"Mong muốn phòng được trang bị khu bếp, nóng lạnh và ban cong","[""Nóng lạnh"", ""Ban công"", ""Bếp""]",validation,3:200,3
+"Tìm phòng có bình nóng lạnh, ban công và giuong ngu","[""Nóng lạnh"", ""Ban công"", ""Giường""]",validation,3:201,3
+"Cần phòng trọ có ban công, giuong ngu và bình nóng lạnh","[""Nóng lạnh"", ""Ban công"", ""Giường""]",validation,3:201,3
+"Ưu tiên chỗ ở với giuong ngu, bình nóng lạnh và ban công","[""Nóng lạnh"", ""Ban công"", ""Giường""]",validation,3:201,3
+"Tìm phòng trọ gồm bình nóng lạnh, ban công và giuong ngu","[""Nóng lạnh"", ""Ban công"", ""Giường""]",validation,3:201,3
+"Phòng cần có ban công, giuong ngu và bình nóng lạnh","[""Nóng lạnh"", ""Ban công"", ""Giường""]",validation,3:201,3
+"Mong muốn phòng được trang bị giuong ngu, bình nóng lạnh và ban công","[""Nóng lạnh"", ""Ban công"", ""Giường""]",validation,3:201,3
+"Tìm phòng có nong lanh, ban cong và tủ quần áo","[""Nóng lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:202,3
+"Cần phòng trọ có ban cong, tủ quần áo và nong lanh","[""Nóng lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:202,3
+"Ưu tiên chỗ ở với tủ quần áo, nong lanh và ban cong","[""Nóng lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:202,3
+"Tìm phòng trọ gồm nong lanh, ban cong và tủ quần áo","[""Nóng lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:202,3
+"Phòng cần có ban cong, tủ quần áo và nong lanh","[""Nóng lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:202,3
+"Mong muốn phòng được trang bị tủ quần áo, nong lanh và ban cong","[""Nóng lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:202,3
+"Tìm phòng có binh nong lanh, ban công và phòng khép kín","[""Nóng lạnh"", ""Ban công"", ""Khép kín""]",train,3:203,3
+"Cần phòng trọ có ban công, phòng khép kín và binh nong lanh","[""Nóng lạnh"", ""Ban công"", ""Khép kín""]",train,3:203,3
+"Ưu tiên chỗ ở với phòng khép kín, binh nong lanh và ban công","[""Nóng lạnh"", ""Ban công"", ""Khép kín""]",train,3:203,3
+"Tìm phòng trọ gồm binh nong lanh, ban công và phòng khép kín","[""Nóng lạnh"", ""Ban công"", ""Khép kín""]",train,3:203,3
+"Phòng cần có ban công, phòng khép kín và binh nong lanh","[""Nóng lạnh"", ""Ban công"", ""Khép kín""]",train,3:203,3
+"Mong muốn phòng được trang bị phòng khép kín, binh nong lanh và ban công","[""Nóng lạnh"", ""Ban công"", ""Khép kín""]",train,3:203,3
+"Tìm phòng có nóng lạnh, nhà vệ sinh riêng và bep","[""Nóng lạnh"", ""WC riêng"", ""Bếp""]",validation,3:204,3
+"Cần phòng trọ có nhà vệ sinh riêng, bep và nóng lạnh","[""Nóng lạnh"", ""WC riêng"", ""Bếp""]",validation,3:204,3
+"Ưu tiên chỗ ở với bep, nóng lạnh và nhà vệ sinh riêng","[""Nóng lạnh"", ""WC riêng"", ""Bếp""]",validation,3:204,3
+"Tìm phòng trọ gồm nóng lạnh, nhà vệ sinh riêng và bep","[""Nóng lạnh"", ""WC riêng"", ""Bếp""]",validation,3:204,3
+"Phòng cần có nhà vệ sinh riêng, bep và nóng lạnh","[""Nóng lạnh"", ""WC riêng"", ""Bếp""]",validation,3:204,3
+"Mong muốn phòng được trang bị bep, nóng lạnh và nhà vệ sinh riêng","[""Nóng lạnh"", ""WC riêng"", ""Bếp""]",validation,3:204,3
+"Tìm phòng có bình nóng lạnh, wc rieng và giuong ngu","[""Nóng lạnh"", ""WC riêng"", ""Giường""]",validation,3:205,3
+"Cần phòng trọ có wc rieng, giuong ngu và bình nóng lạnh","[""Nóng lạnh"", ""WC riêng"", ""Giường""]",validation,3:205,3
+"Ưu tiên chỗ ở với giuong ngu, bình nóng lạnh và wc rieng","[""Nóng lạnh"", ""WC riêng"", ""Giường""]",validation,3:205,3
+"Tìm phòng trọ gồm bình nóng lạnh, wc rieng và giuong ngu","[""Nóng lạnh"", ""WC riêng"", ""Giường""]",validation,3:205,3
+"Phòng cần có wc rieng, giuong ngu và bình nóng lạnh","[""Nóng lạnh"", ""WC riêng"", ""Giường""]",validation,3:205,3
+"Mong muốn phòng được trang bị giuong ngu, bình nóng lạnh và wc rieng","[""Nóng lạnh"", ""WC riêng"", ""Giường""]",validation,3:205,3
+"Tìm phòng có nong lanh, nha ve sinh rieng và tủ quần áo","[""Nóng lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:206,3
+"Cần phòng trọ có nha ve sinh rieng, tủ quần áo và nong lanh","[""Nóng lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:206,3
+"Ưu tiên chỗ ở với tủ quần áo, nong lanh và nha ve sinh rieng","[""Nóng lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:206,3
+"Tìm phòng trọ gồm nong lanh, nha ve sinh rieng và tủ quần áo","[""Nóng lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:206,3
+"Phòng cần có nha ve sinh rieng, tủ quần áo và nong lanh","[""Nóng lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:206,3
+"Mong muốn phòng được trang bị tủ quần áo, nong lanh và nha ve sinh rieng","[""Nóng lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:206,3
+"Tìm phòng có binh nong lanh, WC riêng và phòng khép kín","[""Nóng lạnh"", ""WC riêng"", ""Khép kín""]",train,3:207,3
+"Cần phòng trọ có WC riêng, phòng khép kín và binh nong lanh","[""Nóng lạnh"", ""WC riêng"", ""Khép kín""]",train,3:207,3
+"Ưu tiên chỗ ở với phòng khép kín, binh nong lanh và WC riêng","[""Nóng lạnh"", ""WC riêng"", ""Khép kín""]",train,3:207,3
+"Tìm phòng trọ gồm binh nong lanh, WC riêng và phòng khép kín","[""Nóng lạnh"", ""WC riêng"", ""Khép kín""]",train,3:207,3
+"Phòng cần có WC riêng, phòng khép kín và binh nong lanh","[""Nóng lạnh"", ""WC riêng"", ""Khép kín""]",train,3:207,3
+"Mong muốn phòng được trang bị phòng khép kín, binh nong lanh và WC riêng","[""Nóng lạnh"", ""WC riêng"", ""Khép kín""]",train,3:207,3
+"Tìm phòng có nóng lạnh, bep và giuong","[""Nóng lạnh"", ""Bếp"", ""Giường""]",train,3:208,3
+"Cần phòng trọ có bep, giuong và nóng lạnh","[""Nóng lạnh"", ""Bếp"", ""Giường""]",train,3:208,3
+"Ưu tiên chỗ ở với giuong, nóng lạnh và bep","[""Nóng lạnh"", ""Bếp"", ""Giường""]",train,3:208,3
+"Tìm phòng trọ gồm nóng lạnh, bep và giuong","[""Nóng lạnh"", ""Bếp"", ""Giường""]",train,3:208,3
+"Phòng cần có bep, giuong và nóng lạnh","[""Nóng lạnh"", ""Bếp"", ""Giường""]",train,3:208,3
+"Mong muốn phòng được trang bị giuong, nóng lạnh và bep","[""Nóng lạnh"", ""Bếp"", ""Giường""]",train,3:208,3
+"Tìm phòng có bình nóng lạnh, bếp và tu do","[""Nóng lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:209,3
+"Cần phòng trọ có bếp, tu do và bình nóng lạnh","[""Nóng lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:209,3
+"Ưu tiên chỗ ở với tu do, bình nóng lạnh và bếp","[""Nóng lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:209,3
+"Tìm phòng trọ gồm bình nóng lạnh, bếp và tu do","[""Nóng lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:209,3
+"Phòng cần có bếp, tu do và bình nóng lạnh","[""Nóng lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:209,3
+"Mong muốn phòng được trang bị tu do, bình nóng lạnh và bếp","[""Nóng lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:209,3
+"Tìm phòng có nong lanh, khu bếp và khép kín","[""Nóng lạnh"", ""Bếp"", ""Khép kín""]",test,3:210,3
+"Cần phòng trọ có khu bếp, khép kín và nong lanh","[""Nóng lạnh"", ""Bếp"", ""Khép kín""]",test,3:210,3
+"Ưu tiên chỗ ở với khép kín, nong lanh và khu bếp","[""Nóng lạnh"", ""Bếp"", ""Khép kín""]",test,3:210,3
+"Tìm phòng trọ gồm nong lanh, khu bếp và khép kín","[""Nóng lạnh"", ""Bếp"", ""Khép kín""]",test,3:210,3
+"Phòng cần có khu bếp, khép kín và nong lanh","[""Nóng lạnh"", ""Bếp"", ""Khép kín""]",test,3:210,3
+"Mong muốn phòng được trang bị khép kín, nong lanh và khu bếp","[""Nóng lạnh"", ""Bếp"", ""Khép kín""]",test,3:210,3
+"Tìm phòng có binh nong lanh, giường và tủ đồ","[""Nóng lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:211,3
+"Cần phòng trọ có giường, tủ đồ và binh nong lanh","[""Nóng lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:211,3
+"Ưu tiên chỗ ở với tủ đồ, binh nong lanh và giường","[""Nóng lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:211,3
+"Tìm phòng trọ gồm binh nong lanh, giường và tủ đồ","[""Nóng lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:211,3
+"Phòng cần có giường, tủ đồ và binh nong lanh","[""Nóng lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:211,3
+"Mong muốn phòng được trang bị tủ đồ, binh nong lanh và giường","[""Nóng lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:211,3
+"Tìm phòng có nóng lạnh, giường ngủ và khep kin","[""Nóng lạnh"", ""Giường"", ""Khép kín""]",train,3:212,3
+"Cần phòng trọ có giường ngủ, khep kin và nóng lạnh","[""Nóng lạnh"", ""Giường"", ""Khép kín""]",train,3:212,3
+"Ưu tiên chỗ ở với khep kin, nóng lạnh và giường ngủ","[""Nóng lạnh"", ""Giường"", ""Khép kín""]",train,3:212,3
+"Tìm phòng trọ gồm nóng lạnh, giường ngủ và khep kin","[""Nóng lạnh"", ""Giường"", ""Khép kín""]",train,3:212,3
+"Phòng cần có giường ngủ, khep kin và nóng lạnh","[""Nóng lạnh"", ""Giường"", ""Khép kín""]",train,3:212,3
+"Mong muốn phòng được trang bị khep kin, nóng lạnh và giường ngủ","[""Nóng lạnh"", ""Giường"", ""Khép kín""]",train,3:212,3
+"Tìm phòng có bình nóng lạnh, tu quan ao và phong khep kin","[""Nóng lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:213,3
+"Cần phòng trọ có tu quan ao, phong khep kin và bình nóng lạnh","[""Nóng lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:213,3
+"Ưu tiên chỗ ở với phong khep kin, bình nóng lạnh và tu quan ao","[""Nóng lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:213,3
+"Tìm phòng trọ gồm bình nóng lạnh, tu quan ao và phong khep kin","[""Nóng lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:213,3
+"Phòng cần có tu quan ao, phong khep kin và bình nóng lạnh","[""Nóng lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:213,3
+"Mong muốn phòng được trang bị phong khep kin, bình nóng lạnh và tu quan ao","[""Nóng lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:213,3
+"Tìm phòng có cho de xe, may giat và tủ lạnh","[""Chỗ để xe"", ""Máy giặt"", ""Tủ lạnh""]",train,3:214,3
+"Cần phòng trọ có may giat, tủ lạnh và cho de xe","[""Chỗ để xe"", ""Máy giặt"", ""Tủ lạnh""]",train,3:214,3
+"Ưu tiên chỗ ở với tủ lạnh, cho de xe và may giat","[""Chỗ để xe"", ""Máy giặt"", ""Tủ lạnh""]",train,3:214,3
+"Tìm phòng trọ gồm cho de xe, may giat và tủ lạnh","[""Chỗ để xe"", ""Máy giặt"", ""Tủ lạnh""]",train,3:214,3
+"Phòng cần có may giat, tủ lạnh và cho de xe","[""Chỗ để xe"", ""Máy giặt"", ""Tủ lạnh""]",train,3:214,3
+"Mong muốn phòng được trang bị tủ lạnh, cho de xe và may giat","[""Chỗ để xe"", ""Máy giặt"", ""Tủ lạnh""]",train,3:214,3
+"Tìm phòng có noi de xe, máy giặt và ban cong","[""Chỗ để xe"", ""Máy giặt"", ""Ban công""]",train,3:215,3
+"Cần phòng trọ có máy giặt, ban cong và noi de xe","[""Chỗ để xe"", ""Máy giặt"", ""Ban công""]",train,3:215,3
+"Ưu tiên chỗ ở với ban cong, noi de xe và máy giặt","[""Chỗ để xe"", ""Máy giặt"", ""Ban công""]",train,3:215,3
+"Tìm phòng trọ gồm noi de xe, máy giặt và ban cong","[""Chỗ để xe"", ""Máy giặt"", ""Ban công""]",train,3:215,3
+"Phòng cần có máy giặt, ban cong và noi de xe","[""Chỗ để xe"", ""Máy giặt"", ""Ban công""]",train,3:215,3
+"Mong muốn phòng được trang bị ban cong, noi de xe và máy giặt","[""Chỗ để xe"", ""Máy giặt"", ""Ban công""]",train,3:215,3
+"Tìm phòng có chỗ để xe, máy giặt riêng và wc rieng","[""Chỗ để xe"", ""Máy giặt"", ""WC riêng""]",test,3:216,3
+"Cần phòng trọ có máy giặt riêng, wc rieng và chỗ để xe","[""Chỗ để xe"", ""Máy giặt"", ""WC riêng""]",test,3:216,3
+"Ưu tiên chỗ ở với wc rieng, chỗ để xe và máy giặt riêng","[""Chỗ để xe"", ""Máy giặt"", ""WC riêng""]",test,3:216,3
+"Tìm phòng trọ gồm chỗ để xe, máy giặt riêng và wc rieng","[""Chỗ để xe"", ""Máy giặt"", ""WC riêng""]",test,3:216,3
+"Phòng cần có máy giặt riêng, wc rieng và chỗ để xe","[""Chỗ để xe"", ""Máy giặt"", ""WC riêng""]",test,3:216,3
+"Mong muốn phòng được trang bị wc rieng, chỗ để xe và máy giặt riêng","[""Chỗ để xe"", ""Máy giặt"", ""WC riêng""]",test,3:216,3
+"Tìm phòng có nơi để xe, may giat và bếp","[""Chỗ để xe"", ""Máy giặt"", ""Bếp""]",test,3:217,3
+"Cần phòng trọ có may giat, bếp và nơi để xe","[""Chỗ để xe"", ""Máy giặt"", ""Bếp""]",test,3:217,3
+"Ưu tiên chỗ ở với bếp, nơi để xe và may giat","[""Chỗ để xe"", ""Máy giặt"", ""Bếp""]",test,3:217,3
+"Tìm phòng trọ gồm nơi để xe, may giat và bếp","[""Chỗ để xe"", ""Máy giặt"", ""Bếp""]",test,3:217,3
+"Phòng cần có may giat, bếp và nơi để xe","[""Chỗ để xe"", ""Máy giặt"", ""Bếp""]",test,3:217,3
+"Mong muốn phòng được trang bị bếp, nơi để xe và may giat","[""Chỗ để xe"", ""Máy giặt"", ""Bếp""]",test,3:217,3
+"Tìm phòng có cho de xe, máy giặt và giường","[""Chỗ để xe"", ""Máy giặt"", ""Giường""]",train,3:218,3
+"Cần phòng trọ có máy giặt, giường và cho de xe","[""Chỗ để xe"", ""Máy giặt"", ""Giường""]",train,3:218,3
+"Ưu tiên chỗ ở với giường, cho de xe và máy giặt","[""Chỗ để xe"", ""Máy giặt"", ""Giường""]",train,3:218,3
+"Tìm phòng trọ gồm cho de xe, máy giặt và giường","[""Chỗ để xe"", ""Máy giặt"", ""Giường""]",train,3:218,3
+"Phòng cần có máy giặt, giường và cho de xe","[""Chỗ để xe"", ""Máy giặt"", ""Giường""]",train,3:218,3
+"Mong muốn phòng được trang bị giường, cho de xe và máy giặt","[""Chỗ để xe"", ""Máy giặt"", ""Giường""]",train,3:218,3
+"Tìm phòng có noi de xe, máy giặt riêng và tủ đồ","[""Chỗ để xe"", ""Máy giặt"", ""Tủ quần áo""]",train,3:219,3
+"Cần phòng trọ có máy giặt riêng, tủ đồ và noi de xe","[""Chỗ để xe"", ""Máy giặt"", ""Tủ quần áo""]",train,3:219,3
+"Ưu tiên chỗ ở với tủ đồ, noi de xe và máy giặt riêng","[""Chỗ để xe"", ""Máy giặt"", ""Tủ quần áo""]",train,3:219,3
+"Tìm phòng trọ gồm noi de xe, máy giặt riêng và tủ đồ","[""Chỗ để xe"", ""Máy giặt"", ""Tủ quần áo""]",train,3:219,3
+"Phòng cần có máy giặt riêng, tủ đồ và noi de xe","[""Chỗ để xe"", ""Máy giặt"", ""Tủ quần áo""]",train,3:219,3
+"Mong muốn phòng được trang bị tủ đồ, noi de xe và máy giặt riêng","[""Chỗ để xe"", ""Máy giặt"", ""Tủ quần áo""]",train,3:219,3
+"Tìm phòng có chỗ để xe, may giat và khep kin","[""Chỗ để xe"", ""Máy giặt"", ""Khép kín""]",validation,3:220,3
+"Cần phòng trọ có may giat, khep kin và chỗ để xe","[""Chỗ để xe"", ""Máy giặt"", ""Khép kín""]",validation,3:220,3
+"Ưu tiên chỗ ở với khep kin, chỗ để xe và may giat","[""Chỗ để xe"", ""Máy giặt"", ""Khép kín""]",validation,3:220,3
+"Tìm phòng trọ gồm chỗ để xe, may giat và khep kin","[""Chỗ để xe"", ""Máy giặt"", ""Khép kín""]",validation,3:220,3
+"Phòng cần có may giat, khep kin và chỗ để xe","[""Chỗ để xe"", ""Máy giặt"", ""Khép kín""]",validation,3:220,3
+"Mong muốn phòng được trang bị khep kin, chỗ để xe và may giat","[""Chỗ để xe"", ""Máy giặt"", ""Khép kín""]",validation,3:220,3
+"Tìm phòng có nơi để xe, tủ lạnh và ban cong","[""Chỗ để xe"", ""Tủ lạnh"", ""Ban công""]",test,3:221,3
+"Cần phòng trọ có tủ lạnh, ban cong và nơi để xe","[""Chỗ để xe"", ""Tủ lạnh"", ""Ban công""]",test,3:221,3
+"Ưu tiên chỗ ở với ban cong, nơi để xe và tủ lạnh","[""Chỗ để xe"", ""Tủ lạnh"", ""Ban công""]",test,3:221,3
+"Tìm phòng trọ gồm nơi để xe, tủ lạnh và ban cong","[""Chỗ để xe"", ""Tủ lạnh"", ""Ban công""]",test,3:221,3
+"Phòng cần có tủ lạnh, ban cong và nơi để xe","[""Chỗ để xe"", ""Tủ lạnh"", ""Ban công""]",test,3:221,3
+"Mong muốn phòng được trang bị ban cong, nơi để xe và tủ lạnh","[""Chỗ để xe"", ""Tủ lạnh"", ""Ban công""]",test,3:221,3
+"Tìm phòng có cho de xe, tu lanh và WC riêng","[""Chỗ để xe"", ""Tủ lạnh"", ""WC riêng""]",train,3:222,3
+"Cần phòng trọ có tu lanh, WC riêng và cho de xe","[""Chỗ để xe"", ""Tủ lạnh"", ""WC riêng""]",train,3:222,3
+"Ưu tiên chỗ ở với WC riêng, cho de xe và tu lanh","[""Chỗ để xe"", ""Tủ lạnh"", ""WC riêng""]",train,3:222,3
+"Tìm phòng trọ gồm cho de xe, tu lanh và WC riêng","[""Chỗ để xe"", ""Tủ lạnh"", ""WC riêng""]",train,3:222,3
+"Phòng cần có tu lanh, WC riêng và cho de xe","[""Chỗ để xe"", ""Tủ lạnh"", ""WC riêng""]",train,3:222,3
+"Mong muốn phòng được trang bị WC riêng, cho de xe và tu lanh","[""Chỗ để xe"", ""Tủ lạnh"", ""WC riêng""]",train,3:222,3
+"Tìm phòng có noi de xe, tủ lạnh và bếp","[""Chỗ để xe"", ""Tủ lạnh"", ""Bếp""]",validation,3:223,3
+"Cần phòng trọ có tủ lạnh, bếp và noi de xe","[""Chỗ để xe"", ""Tủ lạnh"", ""Bếp""]",validation,3:223,3
+"Ưu tiên chỗ ở với bếp, noi de xe và tủ lạnh","[""Chỗ để xe"", ""Tủ lạnh"", ""Bếp""]",validation,3:223,3
+"Tìm phòng trọ gồm noi de xe, tủ lạnh và bếp","[""Chỗ để xe"", ""Tủ lạnh"", ""Bếp""]",validation,3:223,3
+"Phòng cần có tủ lạnh, bếp và noi de xe","[""Chỗ để xe"", ""Tủ lạnh"", ""Bếp""]",validation,3:223,3
+"Mong muốn phòng được trang bị bếp, noi de xe và tủ lạnh","[""Chỗ để xe"", ""Tủ lạnh"", ""Bếp""]",validation,3:223,3
+"Tìm phòng có chỗ để xe, tu lanh và giuong","[""Chỗ để xe"", ""Tủ lạnh"", ""Giường""]",validation,3:224,3
+"Cần phòng trọ có tu lanh, giuong và chỗ để xe","[""Chỗ để xe"", ""Tủ lạnh"", ""Giường""]",validation,3:224,3
+"Ưu tiên chỗ ở với giuong, chỗ để xe và tu lanh","[""Chỗ để xe"", ""Tủ lạnh"", ""Giường""]",validation,3:224,3
+"Tìm phòng trọ gồm chỗ để xe, tu lanh và giuong","[""Chỗ để xe"", ""Tủ lạnh"", ""Giường""]",validation,3:224,3
+"Phòng cần có tu lanh, giuong và chỗ để xe","[""Chỗ để xe"", ""Tủ lạnh"", ""Giường""]",validation,3:224,3
+"Mong muốn phòng được trang bị giuong, chỗ để xe và tu lanh","[""Chỗ để xe"", ""Tủ lạnh"", ""Giường""]",validation,3:224,3
+"Tìm phòng có nơi để xe, tủ lạnh và tu do","[""Chỗ để xe"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:225,3
+"Cần phòng trọ có tủ lạnh, tu do và nơi để xe","[""Chỗ để xe"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:225,3
+"Ưu tiên chỗ ở với tu do, nơi để xe và tủ lạnh","[""Chỗ để xe"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:225,3
+"Tìm phòng trọ gồm nơi để xe, tủ lạnh và tu do","[""Chỗ để xe"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:225,3
+"Phòng cần có tủ lạnh, tu do và nơi để xe","[""Chỗ để xe"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:225,3
+"Mong muốn phòng được trang bị tu do, nơi để xe và tủ lạnh","[""Chỗ để xe"", ""Tủ lạnh"", ""Tủ quần áo""]",train,3:225,3
+"Tìm phòng có cho de xe, tu lanh và khép kín","[""Chỗ để xe"", ""Tủ lạnh"", ""Khép kín""]",train,3:226,3
+"Cần phòng trọ có tu lanh, khép kín và cho de xe","[""Chỗ để xe"", ""Tủ lạnh"", ""Khép kín""]",train,3:226,3
+"Ưu tiên chỗ ở với khép kín, cho de xe và tu lanh","[""Chỗ để xe"", ""Tủ lạnh"", ""Khép kín""]",train,3:226,3
+"Tìm phòng trọ gồm cho de xe, tu lanh và khép kín","[""Chỗ để xe"", ""Tủ lạnh"", ""Khép kín""]",train,3:226,3
+"Phòng cần có tu lanh, khép kín và cho de xe","[""Chỗ để xe"", ""Tủ lạnh"", ""Khép kín""]",train,3:226,3
+"Mong muốn phòng được trang bị khép kín, cho de xe và tu lanh","[""Chỗ để xe"", ""Tủ lạnh"", ""Khép kín""]",train,3:226,3
+"Tìm phòng có noi de xe, ban công và nhà vệ sinh riêng","[""Chỗ để xe"", ""Ban công"", ""WC riêng""]",train,3:227,3
+"Cần phòng trọ có ban công, nhà vệ sinh riêng và noi de xe","[""Chỗ để xe"", ""Ban công"", ""WC riêng""]",train,3:227,3
+"Ưu tiên chỗ ở với nhà vệ sinh riêng, noi de xe và ban công","[""Chỗ để xe"", ""Ban công"", ""WC riêng""]",train,3:227,3
+"Tìm phòng trọ gồm noi de xe, ban công và nhà vệ sinh riêng","[""Chỗ để xe"", ""Ban công"", ""WC riêng""]",train,3:227,3
+"Phòng cần có ban công, nhà vệ sinh riêng và noi de xe","[""Chỗ để xe"", ""Ban công"", ""WC riêng""]",train,3:227,3
+"Mong muốn phòng được trang bị nhà vệ sinh riêng, noi de xe và ban công","[""Chỗ để xe"", ""Ban công"", ""WC riêng""]",train,3:227,3
+"Tìm phòng có chỗ để xe, ban cong và bep","[""Chỗ để xe"", ""Ban công"", ""Bếp""]",train,3:228,3
+"Cần phòng trọ có ban cong, bep và chỗ để xe","[""Chỗ để xe"", ""Ban công"", ""Bếp""]",train,3:228,3
+"Ưu tiên chỗ ở với bep, chỗ để xe và ban cong","[""Chỗ để xe"", ""Ban công"", ""Bếp""]",train,3:228,3
+"Tìm phòng trọ gồm chỗ để xe, ban cong và bep","[""Chỗ để xe"", ""Ban công"", ""Bếp""]",train,3:228,3
+"Phòng cần có ban cong, bep và chỗ để xe","[""Chỗ để xe"", ""Ban công"", ""Bếp""]",train,3:228,3
+"Mong muốn phòng được trang bị bep, chỗ để xe và ban cong","[""Chỗ để xe"", ""Ban công"", ""Bếp""]",train,3:228,3
+"Tìm phòng có nơi để xe, ban công và giuong ngu","[""Chỗ để xe"", ""Ban công"", ""Giường""]",test,3:229,3
+"Cần phòng trọ có ban công, giuong ngu và nơi để xe","[""Chỗ để xe"", ""Ban công"", ""Giường""]",test,3:229,3
+"Ưu tiên chỗ ở với giuong ngu, nơi để xe và ban công","[""Chỗ để xe"", ""Ban công"", ""Giường""]",test,3:229,3
+"Tìm phòng trọ gồm nơi để xe, ban công và giuong ngu","[""Chỗ để xe"", ""Ban công"", ""Giường""]",test,3:229,3
+"Phòng cần có ban công, giuong ngu và nơi để xe","[""Chỗ để xe"", ""Ban công"", ""Giường""]",test,3:229,3
+"Mong muốn phòng được trang bị giuong ngu, nơi để xe và ban công","[""Chỗ để xe"", ""Ban công"", ""Giường""]",test,3:229,3
+"Tìm phòng có cho de xe, ban cong và tủ quần áo","[""Chỗ để xe"", ""Ban công"", ""Tủ quần áo""]",train,3:230,3
+"Cần phòng trọ có ban cong, tủ quần áo và cho de xe","[""Chỗ để xe"", ""Ban công"", ""Tủ quần áo""]",train,3:230,3
+"Ưu tiên chỗ ở với tủ quần áo, cho de xe và ban cong","[""Chỗ để xe"", ""Ban công"", ""Tủ quần áo""]",train,3:230,3
+"Tìm phòng trọ gồm cho de xe, ban cong và tủ quần áo","[""Chỗ để xe"", ""Ban công"", ""Tủ quần áo""]",train,3:230,3
+"Phòng cần có ban cong, tủ quần áo và cho de xe","[""Chỗ để xe"", ""Ban công"", ""Tủ quần áo""]",train,3:230,3
+"Mong muốn phòng được trang bị tủ quần áo, cho de xe và ban cong","[""Chỗ để xe"", ""Ban công"", ""Tủ quần áo""]",train,3:230,3
+"Tìm phòng có noi de xe, ban công và phòng khép kín","[""Chỗ để xe"", ""Ban công"", ""Khép kín""]",train,3:231,3
+"Cần phòng trọ có ban công, phòng khép kín và noi de xe","[""Chỗ để xe"", ""Ban công"", ""Khép kín""]",train,3:231,3
+"Ưu tiên chỗ ở với phòng khép kín, noi de xe và ban công","[""Chỗ để xe"", ""Ban công"", ""Khép kín""]",train,3:231,3
+"Tìm phòng trọ gồm noi de xe, ban công và phòng khép kín","[""Chỗ để xe"", ""Ban công"", ""Khép kín""]",train,3:231,3
+"Phòng cần có ban công, phòng khép kín và noi de xe","[""Chỗ để xe"", ""Ban công"", ""Khép kín""]",train,3:231,3
+"Mong muốn phòng được trang bị phòng khép kín, noi de xe và ban công","[""Chỗ để xe"", ""Ban công"", ""Khép kín""]",train,3:231,3
+"Tìm phòng có chỗ để xe, nhà vệ sinh riêng và bếp","[""Chỗ để xe"", ""WC riêng"", ""Bếp""]",train,3:232,3
+"Cần phòng trọ có nhà vệ sinh riêng, bếp và chỗ để xe","[""Chỗ để xe"", ""WC riêng"", ""Bếp""]",train,3:232,3
+"Ưu tiên chỗ ở với bếp, chỗ để xe và nhà vệ sinh riêng","[""Chỗ để xe"", ""WC riêng"", ""Bếp""]",train,3:232,3
+"Tìm phòng trọ gồm chỗ để xe, nhà vệ sinh riêng và bếp","[""Chỗ để xe"", ""WC riêng"", ""Bếp""]",train,3:232,3
+"Phòng cần có nhà vệ sinh riêng, bếp và chỗ để xe","[""Chỗ để xe"", ""WC riêng"", ""Bếp""]",train,3:232,3
+"Mong muốn phòng được trang bị bếp, chỗ để xe và nhà vệ sinh riêng","[""Chỗ để xe"", ""WC riêng"", ""Bếp""]",train,3:232,3
+"Tìm phòng có nơi để xe, wc rieng và giuong ngu","[""Chỗ để xe"", ""WC riêng"", ""Giường""]",validation,3:233,3
+"Cần phòng trọ có wc rieng, giuong ngu và nơi để xe","[""Chỗ để xe"", ""WC riêng"", ""Giường""]",validation,3:233,3
+"Ưu tiên chỗ ở với giuong ngu, nơi để xe và wc rieng","[""Chỗ để xe"", ""WC riêng"", ""Giường""]",validation,3:233,3
+"Tìm phòng trọ gồm nơi để xe, wc rieng và giuong ngu","[""Chỗ để xe"", ""WC riêng"", ""Giường""]",validation,3:233,3
+"Phòng cần có wc rieng, giuong ngu và nơi để xe","[""Chỗ để xe"", ""WC riêng"", ""Giường""]",validation,3:233,3
+"Mong muốn phòng được trang bị giuong ngu, nơi để xe và wc rieng","[""Chỗ để xe"", ""WC riêng"", ""Giường""]",validation,3:233,3
+"Tìm phòng có cho de xe, nha ve sinh rieng và tủ quần áo","[""Chỗ để xe"", ""WC riêng"", ""Tủ quần áo""]",train,3:234,3
+"Cần phòng trọ có nha ve sinh rieng, tủ quần áo và cho de xe","[""Chỗ để xe"", ""WC riêng"", ""Tủ quần áo""]",train,3:234,3
+"Ưu tiên chỗ ở với tủ quần áo, cho de xe và nha ve sinh rieng","[""Chỗ để xe"", ""WC riêng"", ""Tủ quần áo""]",train,3:234,3
+"Tìm phòng trọ gồm cho de xe, nha ve sinh rieng và tủ quần áo","[""Chỗ để xe"", ""WC riêng"", ""Tủ quần áo""]",train,3:234,3
+"Phòng cần có nha ve sinh rieng, tủ quần áo và cho de xe","[""Chỗ để xe"", ""WC riêng"", ""Tủ quần áo""]",train,3:234,3
+"Mong muốn phòng được trang bị tủ quần áo, cho de xe và nha ve sinh rieng","[""Chỗ để xe"", ""WC riêng"", ""Tủ quần áo""]",train,3:234,3
+"Tìm phòng có noi de xe, WC riêng và phòng khép kín","[""Chỗ để xe"", ""WC riêng"", ""Khép kín""]",validation,3:235,3
+"Cần phòng trọ có WC riêng, phòng khép kín và noi de xe","[""Chỗ để xe"", ""WC riêng"", ""Khép kín""]",validation,3:235,3
+"Ưu tiên chỗ ở với phòng khép kín, noi de xe và WC riêng","[""Chỗ để xe"", ""WC riêng"", ""Khép kín""]",validation,3:235,3
+"Tìm phòng trọ gồm noi de xe, WC riêng và phòng khép kín","[""Chỗ để xe"", ""WC riêng"", ""Khép kín""]",validation,3:235,3
+"Phòng cần có WC riêng, phòng khép kín và noi de xe","[""Chỗ để xe"", ""WC riêng"", ""Khép kín""]",validation,3:235,3
+"Mong muốn phòng được trang bị phòng khép kín, noi de xe và WC riêng","[""Chỗ để xe"", ""WC riêng"", ""Khép kín""]",validation,3:235,3
+"Tìm phòng có chỗ để xe, bếp và giuong","[""Chỗ để xe"", ""Bếp"", ""Giường""]",train,3:236,3
+"Cần phòng trọ có bếp, giuong và chỗ để xe","[""Chỗ để xe"", ""Bếp"", ""Giường""]",train,3:236,3
+"Ưu tiên chỗ ở với giuong, chỗ để xe và bếp","[""Chỗ để xe"", ""Bếp"", ""Giường""]",train,3:236,3
+"Tìm phòng trọ gồm chỗ để xe, bếp và giuong","[""Chỗ để xe"", ""Bếp"", ""Giường""]",train,3:236,3
+"Phòng cần có bếp, giuong và chỗ để xe","[""Chỗ để xe"", ""Bếp"", ""Giường""]",train,3:236,3
+"Mong muốn phòng được trang bị giuong, chỗ để xe và bếp","[""Chỗ để xe"", ""Bếp"", ""Giường""]",train,3:236,3
+"Tìm phòng có nơi để xe, khu bếp và tu do","[""Chỗ để xe"", ""Bếp"", ""Tủ quần áo""]",train,3:237,3
+"Cần phòng trọ có khu bếp, tu do và nơi để xe","[""Chỗ để xe"", ""Bếp"", ""Tủ quần áo""]",train,3:237,3
+"Ưu tiên chỗ ở với tu do, nơi để xe và khu bếp","[""Chỗ để xe"", ""Bếp"", ""Tủ quần áo""]",train,3:237,3
+"Tìm phòng trọ gồm nơi để xe, khu bếp và tu do","[""Chỗ để xe"", ""Bếp"", ""Tủ quần áo""]",train,3:237,3
+"Phòng cần có khu bếp, tu do và nơi để xe","[""Chỗ để xe"", ""Bếp"", ""Tủ quần áo""]",train,3:237,3
+"Mong muốn phòng được trang bị tu do, nơi để xe và khu bếp","[""Chỗ để xe"", ""Bếp"", ""Tủ quần áo""]",train,3:237,3
+"Tìm phòng có cho de xe, bep và khép kín","[""Chỗ để xe"", ""Bếp"", ""Khép kín""]",train,3:238,3
+"Cần phòng trọ có bep, khép kín và cho de xe","[""Chỗ để xe"", ""Bếp"", ""Khép kín""]",train,3:238,3
+"Ưu tiên chỗ ở với khép kín, cho de xe và bep","[""Chỗ để xe"", ""Bếp"", ""Khép kín""]",train,3:238,3
+"Tìm phòng trọ gồm cho de xe, bep và khép kín","[""Chỗ để xe"", ""Bếp"", ""Khép kín""]",train,3:238,3
+"Phòng cần có bep, khép kín và cho de xe","[""Chỗ để xe"", ""Bếp"", ""Khép kín""]",train,3:238,3
+"Mong muốn phòng được trang bị khép kín, cho de xe và bep","[""Chỗ để xe"", ""Bếp"", ""Khép kín""]",train,3:238,3
+"Tìm phòng có noi de xe, giường và tủ đồ","[""Chỗ để xe"", ""Giường"", ""Tủ quần áo""]",train,3:239,3
+"Cần phòng trọ có giường, tủ đồ và noi de xe","[""Chỗ để xe"", ""Giường"", ""Tủ quần áo""]",train,3:239,3
+"Ưu tiên chỗ ở với tủ đồ, noi de xe và giường","[""Chỗ để xe"", ""Giường"", ""Tủ quần áo""]",train,3:239,3
+"Tìm phòng trọ gồm noi de xe, giường và tủ đồ","[""Chỗ để xe"", ""Giường"", ""Tủ quần áo""]",train,3:239,3
+"Phòng cần có giường, tủ đồ và noi de xe","[""Chỗ để xe"", ""Giường"", ""Tủ quần áo""]",train,3:239,3
+"Mong muốn phòng được trang bị tủ đồ, noi de xe và giường","[""Chỗ để xe"", ""Giường"", ""Tủ quần áo""]",train,3:239,3
+"Tìm phòng có chỗ để xe, giường ngủ và khep kin","[""Chỗ để xe"", ""Giường"", ""Khép kín""]",test,3:240,3
+"Cần phòng trọ có giường ngủ, khep kin và chỗ để xe","[""Chỗ để xe"", ""Giường"", ""Khép kín""]",test,3:240,3
+"Ưu tiên chỗ ở với khep kin, chỗ để xe và giường ngủ","[""Chỗ để xe"", ""Giường"", ""Khép kín""]",test,3:240,3
+"Tìm phòng trọ gồm chỗ để xe, giường ngủ và khep kin","[""Chỗ để xe"", ""Giường"", ""Khép kín""]",test,3:240,3
+"Phòng cần có giường ngủ, khep kin và chỗ để xe","[""Chỗ để xe"", ""Giường"", ""Khép kín""]",test,3:240,3
+"Mong muốn phòng được trang bị khep kin, chỗ để xe và giường ngủ","[""Chỗ để xe"", ""Giường"", ""Khép kín""]",test,3:240,3
+"Tìm phòng có nơi để xe, tu quan ao và phong khep kin","[""Chỗ để xe"", ""Tủ quần áo"", ""Khép kín""]",train,3:241,3
+"Cần phòng trọ có tu quan ao, phong khep kin và nơi để xe","[""Chỗ để xe"", ""Tủ quần áo"", ""Khép kín""]",train,3:241,3
+"Ưu tiên chỗ ở với phong khep kin, nơi để xe và tu quan ao","[""Chỗ để xe"", ""Tủ quần áo"", ""Khép kín""]",train,3:241,3
+"Tìm phòng trọ gồm nơi để xe, tu quan ao và phong khep kin","[""Chỗ để xe"", ""Tủ quần áo"", ""Khép kín""]",train,3:241,3
+"Phòng cần có tu quan ao, phong khep kin và nơi để xe","[""Chỗ để xe"", ""Tủ quần áo"", ""Khép kín""]",train,3:241,3
+"Mong muốn phòng được trang bị phong khep kin, nơi để xe và tu quan ao","[""Chỗ để xe"", ""Tủ quần áo"", ""Khép kín""]",train,3:241,3
+"Tìm phòng có may giat, tu lanh và ban công","[""Máy giặt"", ""Tủ lạnh"", ""Ban công""]",train,3:242,3
+"Cần phòng trọ có tu lanh, ban công và may giat","[""Máy giặt"", ""Tủ lạnh"", ""Ban công""]",train,3:242,3
+"Ưu tiên chỗ ở với ban công, may giat và tu lanh","[""Máy giặt"", ""Tủ lạnh"", ""Ban công""]",train,3:242,3
+"Tìm phòng trọ gồm may giat, tu lanh và ban công","[""Máy giặt"", ""Tủ lạnh"", ""Ban công""]",train,3:242,3
+"Phòng cần có tu lanh, ban công và may giat","[""Máy giặt"", ""Tủ lạnh"", ""Ban công""]",train,3:242,3
+"Mong muốn phòng được trang bị ban công, may giat và tu lanh","[""Máy giặt"", ""Tủ lạnh"", ""Ban công""]",train,3:242,3
+"Tìm phòng có máy giặt, tủ lạnh và nhà vệ sinh riêng","[""Máy giặt"", ""Tủ lạnh"", ""WC riêng""]",train,3:243,3
+"Cần phòng trọ có tủ lạnh, nhà vệ sinh riêng và máy giặt","[""Máy giặt"", ""Tủ lạnh"", ""WC riêng""]",train,3:243,3
+"Ưu tiên chỗ ở với nhà vệ sinh riêng, máy giặt và tủ lạnh","[""Máy giặt"", ""Tủ lạnh"", ""WC riêng""]",train,3:243,3
+"Tìm phòng trọ gồm máy giặt, tủ lạnh và nhà vệ sinh riêng","[""Máy giặt"", ""Tủ lạnh"", ""WC riêng""]",train,3:243,3
+"Phòng cần có tủ lạnh, nhà vệ sinh riêng và máy giặt","[""Máy giặt"", ""Tủ lạnh"", ""WC riêng""]",train,3:243,3
+"Mong muốn phòng được trang bị nhà vệ sinh riêng, máy giặt và tủ lạnh","[""Máy giặt"", ""Tủ lạnh"", ""WC riêng""]",train,3:243,3
+"Tìm phòng có máy giặt riêng, tu lanh và bếp","[""Máy giặt"", ""Tủ lạnh"", ""Bếp""]",validation,3:244,3
+"Cần phòng trọ có tu lanh, bếp và máy giặt riêng","[""Máy giặt"", ""Tủ lạnh"", ""Bếp""]",validation,3:244,3
+"Ưu tiên chỗ ở với bếp, máy giặt riêng và tu lanh","[""Máy giặt"", ""Tủ lạnh"", ""Bếp""]",validation,3:244,3
+"Tìm phòng trọ gồm máy giặt riêng, tu lanh và bếp","[""Máy giặt"", ""Tủ lạnh"", ""Bếp""]",validation,3:244,3
+"Phòng cần có tu lanh, bếp và máy giặt riêng","[""Máy giặt"", ""Tủ lạnh"", ""Bếp""]",validation,3:244,3
+"Mong muốn phòng được trang bị bếp, máy giặt riêng và tu lanh","[""Máy giặt"", ""Tủ lạnh"", ""Bếp""]",validation,3:244,3
+"Tìm phòng có may giat, tủ lạnh và giuong ngu","[""Máy giặt"", ""Tủ lạnh"", ""Giường""]",validation,3:245,3
+"Cần phòng trọ có tủ lạnh, giuong ngu và may giat","[""Máy giặt"", ""Tủ lạnh"", ""Giường""]",validation,3:245,3
+"Ưu tiên chỗ ở với giuong ngu, may giat và tủ lạnh","[""Máy giặt"", ""Tủ lạnh"", ""Giường""]",validation,3:245,3
+"Tìm phòng trọ gồm may giat, tủ lạnh và giuong ngu","[""Máy giặt"", ""Tủ lạnh"", ""Giường""]",validation,3:245,3
+"Phòng cần có tủ lạnh, giuong ngu và may giat","[""Máy giặt"", ""Tủ lạnh"", ""Giường""]",validation,3:245,3
+"Mong muốn phòng được trang bị giuong ngu, may giat và tủ lạnh","[""Máy giặt"", ""Tủ lạnh"", ""Giường""]",validation,3:245,3
+"Tìm phòng có máy giặt, tu lanh và tủ quần áo","[""Máy giặt"", ""Tủ lạnh"", ""Tủ quần áo""]",test,3:246,3
+"Cần phòng trọ có tu lanh, tủ quần áo và máy giặt","[""Máy giặt"", ""Tủ lạnh"", ""Tủ quần áo""]",test,3:246,3
+"Ưu tiên chỗ ở với tủ quần áo, máy giặt và tu lanh","[""Máy giặt"", ""Tủ lạnh"", ""Tủ quần áo""]",test,3:246,3
+"Tìm phòng trọ gồm máy giặt, tu lanh và tủ quần áo","[""Máy giặt"", ""Tủ lạnh"", ""Tủ quần áo""]",test,3:246,3
+"Phòng cần có tu lanh, tủ quần áo và máy giặt","[""Máy giặt"", ""Tủ lạnh"", ""Tủ quần áo""]",test,3:246,3
+"Mong muốn phòng được trang bị tủ quần áo, máy giặt và tu lanh","[""Máy giặt"", ""Tủ lạnh"", ""Tủ quần áo""]",test,3:246,3
+"Tìm phòng có máy giặt riêng, tủ lạnh và phòng khép kín","[""Máy giặt"", ""Tủ lạnh"", ""Khép kín""]",train,3:247,3
+"Cần phòng trọ có tủ lạnh, phòng khép kín và máy giặt riêng","[""Máy giặt"", ""Tủ lạnh"", ""Khép kín""]",train,3:247,3
+"Ưu tiên chỗ ở với phòng khép kín, máy giặt riêng và tủ lạnh","[""Máy giặt"", ""Tủ lạnh"", ""Khép kín""]",train,3:247,3
+"Tìm phòng trọ gồm máy giặt riêng, tủ lạnh và phòng khép kín","[""Máy giặt"", ""Tủ lạnh"", ""Khép kín""]",train,3:247,3
+"Phòng cần có tủ lạnh, phòng khép kín và máy giặt riêng","[""Máy giặt"", ""Tủ lạnh"", ""Khép kín""]",train,3:247,3
+"Mong muốn phòng được trang bị phòng khép kín, máy giặt riêng và tủ lạnh","[""Máy giặt"", ""Tủ lạnh"", ""Khép kín""]",train,3:247,3
+"Tìm phòng có may giat, ban cong và wc rieng","[""Máy giặt"", ""Ban công"", ""WC riêng""]",train,3:248,3
+"Cần phòng trọ có ban cong, wc rieng và may giat","[""Máy giặt"", ""Ban công"", ""WC riêng""]",train,3:248,3
+"Ưu tiên chỗ ở với wc rieng, may giat và ban cong","[""Máy giặt"", ""Ban công"", ""WC riêng""]",train,3:248,3
+"Tìm phòng trọ gồm may giat, ban cong và wc rieng","[""Máy giặt"", ""Ban công"", ""WC riêng""]",train,3:248,3
+"Phòng cần có ban cong, wc rieng và may giat","[""Máy giặt"", ""Ban công"", ""WC riêng""]",train,3:248,3
+"Mong muốn phòng được trang bị wc rieng, may giat và ban cong","[""Máy giặt"", ""Ban công"", ""WC riêng""]",train,3:248,3
+"Tìm phòng có máy giặt, ban công và bep","[""Máy giặt"", ""Ban công"", ""Bếp""]",train,3:249,3
+"Cần phòng trọ có ban công, bep và máy giặt","[""Máy giặt"", ""Ban công"", ""Bếp""]",train,3:249,3
+"Ưu tiên chỗ ở với bep, máy giặt và ban công","[""Máy giặt"", ""Ban công"", ""Bếp""]",train,3:249,3
+"Tìm phòng trọ gồm máy giặt, ban công và bep","[""Máy giặt"", ""Ban công"", ""Bếp""]",train,3:249,3
+"Phòng cần có ban công, bep và máy giặt","[""Máy giặt"", ""Ban công"", ""Bếp""]",train,3:249,3
+"Mong muốn phòng được trang bị bep, máy giặt và ban công","[""Máy giặt"", ""Ban công"", ""Bếp""]",train,3:249,3
+"Tìm phòng có máy giặt riêng, ban cong và giường","[""Máy giặt"", ""Ban công"", ""Giường""]",test,3:250,3
+"Cần phòng trọ có ban cong, giường và máy giặt riêng","[""Máy giặt"", ""Ban công"", ""Giường""]",test,3:250,3
+"Ưu tiên chỗ ở với giường, máy giặt riêng và ban cong","[""Máy giặt"", ""Ban công"", ""Giường""]",test,3:250,3
+"Tìm phòng trọ gồm máy giặt riêng, ban cong và giường","[""Máy giặt"", ""Ban công"", ""Giường""]",test,3:250,3
+"Phòng cần có ban cong, giường và máy giặt riêng","[""Máy giặt"", ""Ban công"", ""Giường""]",test,3:250,3
+"Mong muốn phòng được trang bị giường, máy giặt riêng và ban cong","[""Máy giặt"", ""Ban công"", ""Giường""]",test,3:250,3
+"Tìm phòng có may giat, ban công và tủ đồ","[""Máy giặt"", ""Ban công"", ""Tủ quần áo""]",train,3:251,3
+"Cần phòng trọ có ban công, tủ đồ và may giat","[""Máy giặt"", ""Ban công"", ""Tủ quần áo""]",train,3:251,3
+"Ưu tiên chỗ ở với tủ đồ, may giat và ban công","[""Máy giặt"", ""Ban công"", ""Tủ quần áo""]",train,3:251,3
+"Tìm phòng trọ gồm may giat, ban công và tủ đồ","[""Máy giặt"", ""Ban công"", ""Tủ quần áo""]",train,3:251,3
+"Phòng cần có ban công, tủ đồ và may giat","[""Máy giặt"", ""Ban công"", ""Tủ quần áo""]",train,3:251,3
+"Mong muốn phòng được trang bị tủ đồ, may giat và ban công","[""Máy giặt"", ""Ban công"", ""Tủ quần áo""]",train,3:251,3
+"Tìm phòng có máy giặt, ban cong và khep kin","[""Máy giặt"", ""Ban công"", ""Khép kín""]",train,3:252,3
+"Cần phòng trọ có ban cong, khep kin và máy giặt","[""Máy giặt"", ""Ban công"", ""Khép kín""]",train,3:252,3
+"Ưu tiên chỗ ở với khep kin, máy giặt và ban cong","[""Máy giặt"", ""Ban công"", ""Khép kín""]",train,3:252,3
+"Tìm phòng trọ gồm máy giặt, ban cong và khep kin","[""Máy giặt"", ""Ban công"", ""Khép kín""]",train,3:252,3
+"Phòng cần có ban cong, khep kin và máy giặt","[""Máy giặt"", ""Ban công"", ""Khép kín""]",train,3:252,3
+"Mong muốn phòng được trang bị khep kin, máy giặt và ban cong","[""Máy giặt"", ""Ban công"", ""Khép kín""]",train,3:252,3
+"Tìm phòng có máy giặt riêng, wc rieng và bếp","[""Máy giặt"", ""WC riêng"", ""Bếp""]",validation,3:253,3
+"Cần phòng trọ có wc rieng, bếp và máy giặt riêng","[""Máy giặt"", ""WC riêng"", ""Bếp""]",validation,3:253,3
+"Ưu tiên chỗ ở với bếp, máy giặt riêng và wc rieng","[""Máy giặt"", ""WC riêng"", ""Bếp""]",validation,3:253,3
+"Tìm phòng trọ gồm máy giặt riêng, wc rieng và bếp","[""Máy giặt"", ""WC riêng"", ""Bếp""]",validation,3:253,3
+"Phòng cần có wc rieng, bếp và máy giặt riêng","[""Máy giặt"", ""WC riêng"", ""Bếp""]",validation,3:253,3
+"Mong muốn phòng được trang bị bếp, máy giặt riêng và wc rieng","[""Máy giặt"", ""WC riêng"", ""Bếp""]",validation,3:253,3
+"Tìm phòng có may giat, nha ve sinh rieng và giường","[""Máy giặt"", ""WC riêng"", ""Giường""]",train,3:254,3
+"Cần phòng trọ có nha ve sinh rieng, giường và may giat","[""Máy giặt"", ""WC riêng"", ""Giường""]",train,3:254,3
+"Ưu tiên chỗ ở với giường, may giat và nha ve sinh rieng","[""Máy giặt"", ""WC riêng"", ""Giường""]",train,3:254,3
+"Tìm phòng trọ gồm may giat, nha ve sinh rieng và giường","[""Máy giặt"", ""WC riêng"", ""Giường""]",train,3:254,3
+"Phòng cần có nha ve sinh rieng, giường và may giat","[""Máy giặt"", ""WC riêng"", ""Giường""]",train,3:254,3
+"Mong muốn phòng được trang bị giường, may giat và nha ve sinh rieng","[""Máy giặt"", ""WC riêng"", ""Giường""]",train,3:254,3
+"Tìm phòng có máy giặt, WC riêng và tủ đồ","[""Máy giặt"", ""WC riêng"", ""Tủ quần áo""]",train,3:255,3
+"Cần phòng trọ có WC riêng, tủ đồ và máy giặt","[""Máy giặt"", ""WC riêng"", ""Tủ quần áo""]",train,3:255,3
+"Ưu tiên chỗ ở với tủ đồ, máy giặt và WC riêng","[""Máy giặt"", ""WC riêng"", ""Tủ quần áo""]",train,3:255,3
+"Tìm phòng trọ gồm máy giặt, WC riêng và tủ đồ","[""Máy giặt"", ""WC riêng"", ""Tủ quần áo""]",train,3:255,3
+"Phòng cần có WC riêng, tủ đồ và máy giặt","[""Máy giặt"", ""WC riêng"", ""Tủ quần áo""]",train,3:255,3
+"Mong muốn phòng được trang bị tủ đồ, máy giặt và WC riêng","[""Máy giặt"", ""WC riêng"", ""Tủ quần áo""]",train,3:255,3
+"Tìm phòng có máy giặt riêng, nhà vệ sinh riêng và khep kin","[""Máy giặt"", ""WC riêng"", ""Khép kín""]",train,3:256,3
+"Cần phòng trọ có nhà vệ sinh riêng, khep kin và máy giặt riêng","[""Máy giặt"", ""WC riêng"", ""Khép kín""]",train,3:256,3
+"Ưu tiên chỗ ở với khep kin, máy giặt riêng và nhà vệ sinh riêng","[""Máy giặt"", ""WC riêng"", ""Khép kín""]",train,3:256,3
+"Tìm phòng trọ gồm máy giặt riêng, nhà vệ sinh riêng và khep kin","[""Máy giặt"", ""WC riêng"", ""Khép kín""]",train,3:256,3
+"Phòng cần có nhà vệ sinh riêng, khep kin và máy giặt riêng","[""Máy giặt"", ""WC riêng"", ""Khép kín""]",train,3:256,3
+"Mong muốn phòng được trang bị khep kin, máy giặt riêng và nhà vệ sinh riêng","[""Máy giặt"", ""WC riêng"", ""Khép kín""]",train,3:256,3
+"Tìm phòng có may giat, bếp và giuong ngu","[""Máy giặt"", ""Bếp"", ""Giường""]",train,3:257,3
+"Cần phòng trọ có bếp, giuong ngu và may giat","[""Máy giặt"", ""Bếp"", ""Giường""]",train,3:257,3
+"Ưu tiên chỗ ở với giuong ngu, may giat và bếp","[""Máy giặt"", ""Bếp"", ""Giường""]",train,3:257,3
+"Tìm phòng trọ gồm may giat, bếp và giuong ngu","[""Máy giặt"", ""Bếp"", ""Giường""]",train,3:257,3
+"Phòng cần có bếp, giuong ngu và may giat","[""Máy giặt"", ""Bếp"", ""Giường""]",train,3:257,3
+"Mong muốn phòng được trang bị giuong ngu, may giat và bếp","[""Máy giặt"", ""Bếp"", ""Giường""]",train,3:257,3
+"Tìm phòng có máy giặt, khu bếp và tủ quần áo","[""Máy giặt"", ""Bếp"", ""Tủ quần áo""]",train,3:258,3
+"Cần phòng trọ có khu bếp, tủ quần áo và máy giặt","[""Máy giặt"", ""Bếp"", ""Tủ quần áo""]",train,3:258,3
+"Ưu tiên chỗ ở với tủ quần áo, máy giặt và khu bếp","[""Máy giặt"", ""Bếp"", ""Tủ quần áo""]",train,3:258,3
+"Tìm phòng trọ gồm máy giặt, khu bếp và tủ quần áo","[""Máy giặt"", ""Bếp"", ""Tủ quần áo""]",train,3:258,3
+"Phòng cần có khu bếp, tủ quần áo và máy giặt","[""Máy giặt"", ""Bếp"", ""Tủ quần áo""]",train,3:258,3
+"Mong muốn phòng được trang bị tủ quần áo, máy giặt và khu bếp","[""Máy giặt"", ""Bếp"", ""Tủ quần áo""]",train,3:258,3
+"Tìm phòng có máy giặt riêng, bep và phòng khép kín","[""Máy giặt"", ""Bếp"", ""Khép kín""]",validation,3:259,3
+"Cần phòng trọ có bep, phòng khép kín và máy giặt riêng","[""Máy giặt"", ""Bếp"", ""Khép kín""]",validation,3:259,3
+"Ưu tiên chỗ ở với phòng khép kín, máy giặt riêng và bep","[""Máy giặt"", ""Bếp"", ""Khép kín""]",validation,3:259,3
+"Tìm phòng trọ gồm máy giặt riêng, bep và phòng khép kín","[""Máy giặt"", ""Bếp"", ""Khép kín""]",validation,3:259,3
+"Phòng cần có bep, phòng khép kín và máy giặt riêng","[""Máy giặt"", ""Bếp"", ""Khép kín""]",validation,3:259,3
+"Mong muốn phòng được trang bị phòng khép kín, máy giặt riêng và bep","[""Máy giặt"", ""Bếp"", ""Khép kín""]",validation,3:259,3
+"Tìm phòng có may giat, giường ngủ và tu quan ao","[""Máy giặt"", ""Giường"", ""Tủ quần áo""]",train,3:260,3
+"Cần phòng trọ có giường ngủ, tu quan ao và may giat","[""Máy giặt"", ""Giường"", ""Tủ quần áo""]",train,3:260,3
+"Ưu tiên chỗ ở với tu quan ao, may giat và giường ngủ","[""Máy giặt"", ""Giường"", ""Tủ quần áo""]",train,3:260,3
+"Tìm phòng trọ gồm may giat, giường ngủ và tu quan ao","[""Máy giặt"", ""Giường"", ""Tủ quần áo""]",train,3:260,3
+"Phòng cần có giường ngủ, tu quan ao và may giat","[""Máy giặt"", ""Giường"", ""Tủ quần áo""]",train,3:260,3
+"Mong muốn phòng được trang bị tu quan ao, may giat và giường ngủ","[""Máy giặt"", ""Giường"", ""Tủ quần áo""]",train,3:260,3
+"Tìm phòng có máy giặt, giuong và phong khep kin","[""Máy giặt"", ""Giường"", ""Khép kín""]",train,3:261,3
+"Cần phòng trọ có giuong, phong khep kin và máy giặt","[""Máy giặt"", ""Giường"", ""Khép kín""]",train,3:261,3
+"Ưu tiên chỗ ở với phong khep kin, máy giặt và giuong","[""Máy giặt"", ""Giường"", ""Khép kín""]",train,3:261,3
+"Tìm phòng trọ gồm máy giặt, giuong và phong khep kin","[""Máy giặt"", ""Giường"", ""Khép kín""]",train,3:261,3
+"Phòng cần có giuong, phong khep kin và máy giặt","[""Máy giặt"", ""Giường"", ""Khép kín""]",train,3:261,3
+"Mong muốn phòng được trang bị phong khep kin, máy giặt và giuong","[""Máy giặt"", ""Giường"", ""Khép kín""]",train,3:261,3
+"Tìm phòng có máy giặt riêng, tu do và khép kín","[""Máy giặt"", ""Tủ quần áo"", ""Khép kín""]",train,3:262,3
+"Cần phòng trọ có tu do, khép kín và máy giặt riêng","[""Máy giặt"", ""Tủ quần áo"", ""Khép kín""]",train,3:262,3
+"Ưu tiên chỗ ở với khép kín, máy giặt riêng và tu do","[""Máy giặt"", ""Tủ quần áo"", ""Khép kín""]",train,3:262,3
+"Tìm phòng trọ gồm máy giặt riêng, tu do và khép kín","[""Máy giặt"", ""Tủ quần áo"", ""Khép kín""]",train,3:262,3
+"Phòng cần có tu do, khép kín và máy giặt riêng","[""Máy giặt"", ""Tủ quần áo"", ""Khép kín""]",train,3:262,3
+"Mong muốn phòng được trang bị khép kín, máy giặt riêng và tu do","[""Máy giặt"", ""Tủ quần áo"", ""Khép kín""]",train,3:262,3
+"Tìm phòng có tu lanh, ban công và nhà vệ sinh riêng","[""Tủ lạnh"", ""Ban công"", ""WC riêng""]",validation,3:263,3
+"Cần phòng trọ có ban công, nhà vệ sinh riêng và tu lanh","[""Tủ lạnh"", ""Ban công"", ""WC riêng""]",validation,3:263,3
+"Ưu tiên chỗ ở với nhà vệ sinh riêng, tu lanh và ban công","[""Tủ lạnh"", ""Ban công"", ""WC riêng""]",validation,3:263,3
+"Tìm phòng trọ gồm tu lanh, ban công và nhà vệ sinh riêng","[""Tủ lạnh"", ""Ban công"", ""WC riêng""]",validation,3:263,3
+"Phòng cần có ban công, nhà vệ sinh riêng và tu lanh","[""Tủ lạnh"", ""Ban công"", ""WC riêng""]",validation,3:263,3
+"Mong muốn phòng được trang bị nhà vệ sinh riêng, tu lanh và ban công","[""Tủ lạnh"", ""Ban công"", ""WC riêng""]",validation,3:263,3
+"Tìm phòng có tủ lạnh, ban cong và bep","[""Tủ lạnh"", ""Ban công"", ""Bếp""]",train,3:264,3
+"Cần phòng trọ có ban cong, bep và tủ lạnh","[""Tủ lạnh"", ""Ban công"", ""Bếp""]",train,3:264,3
+"Ưu tiên chỗ ở với bep, tủ lạnh và ban cong","[""Tủ lạnh"", ""Ban công"", ""Bếp""]",train,3:264,3
+"Tìm phòng trọ gồm tủ lạnh, ban cong và bep","[""Tủ lạnh"", ""Ban công"", ""Bếp""]",train,3:264,3
+"Phòng cần có ban cong, bep và tủ lạnh","[""Tủ lạnh"", ""Ban công"", ""Bếp""]",train,3:264,3
+"Mong muốn phòng được trang bị bep, tủ lạnh và ban cong","[""Tủ lạnh"", ""Ban công"", ""Bếp""]",train,3:264,3
+"Tìm phòng có tu lanh, ban công và giuong ngu","[""Tủ lạnh"", ""Ban công"", ""Giường""]",test,3:265,3
+"Cần phòng trọ có ban công, giuong ngu và tu lanh","[""Tủ lạnh"", ""Ban công"", ""Giường""]",test,3:265,3
+"Ưu tiên chỗ ở với giuong ngu, tu lanh và ban công","[""Tủ lạnh"", ""Ban công"", ""Giường""]",test,3:265,3
+"Tìm phòng trọ gồm tu lanh, ban công và giuong ngu","[""Tủ lạnh"", ""Ban công"", ""Giường""]",test,3:265,3
+"Phòng cần có ban công, giuong ngu và tu lanh","[""Tủ lạnh"", ""Ban công"", ""Giường""]",test,3:265,3
+"Mong muốn phòng được trang bị giuong ngu, tu lanh và ban công","[""Tủ lạnh"", ""Ban công"", ""Giường""]",test,3:265,3
+"Tìm phòng có tủ lạnh, ban cong và tủ quần áo","[""Tủ lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:266,3
+"Cần phòng trọ có ban cong, tủ quần áo và tủ lạnh","[""Tủ lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:266,3
+"Ưu tiên chỗ ở với tủ quần áo, tủ lạnh và ban cong","[""Tủ lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:266,3
+"Tìm phòng trọ gồm tủ lạnh, ban cong và tủ quần áo","[""Tủ lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:266,3
+"Phòng cần có ban cong, tủ quần áo và tủ lạnh","[""Tủ lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:266,3
+"Mong muốn phòng được trang bị tủ quần áo, tủ lạnh và ban cong","[""Tủ lạnh"", ""Ban công"", ""Tủ quần áo""]",train,3:266,3
+"Tìm phòng có tu lanh, ban công và phòng khép kín","[""Tủ lạnh"", ""Ban công"", ""Khép kín""]",test,3:267,3
+"Cần phòng trọ có ban công, phòng khép kín và tu lanh","[""Tủ lạnh"", ""Ban công"", ""Khép kín""]",test,3:267,3
+"Ưu tiên chỗ ở với phòng khép kín, tu lanh và ban công","[""Tủ lạnh"", ""Ban công"", ""Khép kín""]",test,3:267,3
+"Tìm phòng trọ gồm tu lanh, ban công và phòng khép kín","[""Tủ lạnh"", ""Ban công"", ""Khép kín""]",test,3:267,3
+"Phòng cần có ban công, phòng khép kín và tu lanh","[""Tủ lạnh"", ""Ban công"", ""Khép kín""]",test,3:267,3
+"Mong muốn phòng được trang bị phòng khép kín, tu lanh và ban công","[""Tủ lạnh"", ""Ban công"", ""Khép kín""]",test,3:267,3
+"Tìm phòng có tủ lạnh, nhà vệ sinh riêng và bếp","[""Tủ lạnh"", ""WC riêng"", ""Bếp""]",train,3:268,3
+"Cần phòng trọ có nhà vệ sinh riêng, bếp và tủ lạnh","[""Tủ lạnh"", ""WC riêng"", ""Bếp""]",train,3:268,3
+"Ưu tiên chỗ ở với bếp, tủ lạnh và nhà vệ sinh riêng","[""Tủ lạnh"", ""WC riêng"", ""Bếp""]",train,3:268,3
+"Tìm phòng trọ gồm tủ lạnh, nhà vệ sinh riêng và bếp","[""Tủ lạnh"", ""WC riêng"", ""Bếp""]",train,3:268,3
+"Phòng cần có nhà vệ sinh riêng, bếp và tủ lạnh","[""Tủ lạnh"", ""WC riêng"", ""Bếp""]",train,3:268,3
+"Mong muốn phòng được trang bị bếp, tủ lạnh và nhà vệ sinh riêng","[""Tủ lạnh"", ""WC riêng"", ""Bếp""]",train,3:268,3
+"Tìm phòng có tu lanh, wc rieng và giuong ngu","[""Tủ lạnh"", ""WC riêng"", ""Giường""]",train,3:269,3
+"Cần phòng trọ có wc rieng, giuong ngu và tu lanh","[""Tủ lạnh"", ""WC riêng"", ""Giường""]",train,3:269,3
+"Ưu tiên chỗ ở với giuong ngu, tu lanh và wc rieng","[""Tủ lạnh"", ""WC riêng"", ""Giường""]",train,3:269,3
+"Tìm phòng trọ gồm tu lanh, wc rieng và giuong ngu","[""Tủ lạnh"", ""WC riêng"", ""Giường""]",train,3:269,3
+"Phòng cần có wc rieng, giuong ngu và tu lanh","[""Tủ lạnh"", ""WC riêng"", ""Giường""]",train,3:269,3
+"Mong muốn phòng được trang bị giuong ngu, tu lanh và wc rieng","[""Tủ lạnh"", ""WC riêng"", ""Giường""]",train,3:269,3
+"Tìm phòng có tủ lạnh, nha ve sinh rieng và tủ quần áo","[""Tủ lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:270,3
+"Cần phòng trọ có nha ve sinh rieng, tủ quần áo và tủ lạnh","[""Tủ lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:270,3
+"Ưu tiên chỗ ở với tủ quần áo, tủ lạnh và nha ve sinh rieng","[""Tủ lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:270,3
+"Tìm phòng trọ gồm tủ lạnh, nha ve sinh rieng và tủ quần áo","[""Tủ lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:270,3
+"Phòng cần có nha ve sinh rieng, tủ quần áo và tủ lạnh","[""Tủ lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:270,3
+"Mong muốn phòng được trang bị tủ quần áo, tủ lạnh và nha ve sinh rieng","[""Tủ lạnh"", ""WC riêng"", ""Tủ quần áo""]",train,3:270,3
+"Tìm phòng có tu lanh, WC riêng và phòng khép kín","[""Tủ lạnh"", ""WC riêng"", ""Khép kín""]",train,3:271,3
+"Cần phòng trọ có WC riêng, phòng khép kín và tu lanh","[""Tủ lạnh"", ""WC riêng"", ""Khép kín""]",train,3:271,3
+"Ưu tiên chỗ ở với phòng khép kín, tu lanh và WC riêng","[""Tủ lạnh"", ""WC riêng"", ""Khép kín""]",train,3:271,3
+"Tìm phòng trọ gồm tu lanh, WC riêng và phòng khép kín","[""Tủ lạnh"", ""WC riêng"", ""Khép kín""]",train,3:271,3
+"Phòng cần có WC riêng, phòng khép kín và tu lanh","[""Tủ lạnh"", ""WC riêng"", ""Khép kín""]",train,3:271,3
+"Mong muốn phòng được trang bị phòng khép kín, tu lanh và WC riêng","[""Tủ lạnh"", ""WC riêng"", ""Khép kín""]",train,3:271,3
+"Tìm phòng có tủ lạnh, bếp và giuong","[""Tủ lạnh"", ""Bếp"", ""Giường""]",train,3:272,3
+"Cần phòng trọ có bếp, giuong và tủ lạnh","[""Tủ lạnh"", ""Bếp"", ""Giường""]",train,3:272,3
+"Ưu tiên chỗ ở với giuong, tủ lạnh và bếp","[""Tủ lạnh"", ""Bếp"", ""Giường""]",train,3:272,3
+"Tìm phòng trọ gồm tủ lạnh, bếp và giuong","[""Tủ lạnh"", ""Bếp"", ""Giường""]",train,3:272,3
+"Phòng cần có bếp, giuong và tủ lạnh","[""Tủ lạnh"", ""Bếp"", ""Giường""]",train,3:272,3
+"Mong muốn phòng được trang bị giuong, tủ lạnh và bếp","[""Tủ lạnh"", ""Bếp"", ""Giường""]",train,3:272,3
+"Tìm phòng có tu lanh, khu bếp và tu do","[""Tủ lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:273,3
+"Cần phòng trọ có khu bếp, tu do và tu lanh","[""Tủ lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:273,3
+"Ưu tiên chỗ ở với tu do, tu lanh và khu bếp","[""Tủ lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:273,3
+"Tìm phòng trọ gồm tu lanh, khu bếp và tu do","[""Tủ lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:273,3
+"Phòng cần có khu bếp, tu do và tu lanh","[""Tủ lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:273,3
+"Mong muốn phòng được trang bị tu do, tu lanh và khu bếp","[""Tủ lạnh"", ""Bếp"", ""Tủ quần áo""]",train,3:273,3
+"Tìm phòng có tủ lạnh, bep và khép kín","[""Tủ lạnh"", ""Bếp"", ""Khép kín""]",train,3:274,3
+"Cần phòng trọ có bep, khép kín và tủ lạnh","[""Tủ lạnh"", ""Bếp"", ""Khép kín""]",train,3:274,3
+"Ưu tiên chỗ ở với khép kín, tủ lạnh và bep","[""Tủ lạnh"", ""Bếp"", ""Khép kín""]",train,3:274,3
+"Tìm phòng trọ gồm tủ lạnh, bep và khép kín","[""Tủ lạnh"", ""Bếp"", ""Khép kín""]",train,3:274,3
+"Phòng cần có bep, khép kín và tủ lạnh","[""Tủ lạnh"", ""Bếp"", ""Khép kín""]",train,3:274,3
+"Mong muốn phòng được trang bị khép kín, tủ lạnh và bep","[""Tủ lạnh"", ""Bếp"", ""Khép kín""]",train,3:274,3
+"Tìm phòng có tu lanh, giường và tủ đồ","[""Tủ lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:275,3
+"Cần phòng trọ có giường, tủ đồ và tu lanh","[""Tủ lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:275,3
+"Ưu tiên chỗ ở với tủ đồ, tu lanh và giường","[""Tủ lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:275,3
+"Tìm phòng trọ gồm tu lanh, giường và tủ đồ","[""Tủ lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:275,3
+"Phòng cần có giường, tủ đồ và tu lanh","[""Tủ lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:275,3
+"Mong muốn phòng được trang bị tủ đồ, tu lanh và giường","[""Tủ lạnh"", ""Giường"", ""Tủ quần áo""]",train,3:275,3
+"Tìm phòng có tủ lạnh, giường ngủ và khep kin","[""Tủ lạnh"", ""Giường"", ""Khép kín""]",validation,3:276,3
+"Cần phòng trọ có giường ngủ, khep kin và tủ lạnh","[""Tủ lạnh"", ""Giường"", ""Khép kín""]",validation,3:276,3
+"Ưu tiên chỗ ở với khep kin, tủ lạnh và giường ngủ","[""Tủ lạnh"", ""Giường"", ""Khép kín""]",validation,3:276,3
+"Tìm phòng trọ gồm tủ lạnh, giường ngủ và khep kin","[""Tủ lạnh"", ""Giường"", ""Khép kín""]",validation,3:276,3
+"Phòng cần có giường ngủ, khep kin và tủ lạnh","[""Tủ lạnh"", ""Giường"", ""Khép kín""]",validation,3:276,3
+"Mong muốn phòng được trang bị khep kin, tủ lạnh và giường ngủ","[""Tủ lạnh"", ""Giường"", ""Khép kín""]",validation,3:276,3
+"Tìm phòng có tu lanh, tu quan ao và phong khep kin","[""Tủ lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:277,3
+"Cần phòng trọ có tu quan ao, phong khep kin và tu lanh","[""Tủ lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:277,3
+"Ưu tiên chỗ ở với phong khep kin, tu lanh và tu quan ao","[""Tủ lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:277,3
+"Tìm phòng trọ gồm tu lanh, tu quan ao và phong khep kin","[""Tủ lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:277,3
+"Phòng cần có tu quan ao, phong khep kin và tu lanh","[""Tủ lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:277,3
+"Mong muốn phòng được trang bị phong khep kin, tu lanh và tu quan ao","[""Tủ lạnh"", ""Tủ quần áo"", ""Khép kín""]",train,3:277,3
+"Tìm phòng có ban công, nha ve sinh rieng và khu bếp","[""Ban công"", ""WC riêng"", ""Bếp""]",train,3:278,3
+"Cần phòng trọ có nha ve sinh rieng, khu bếp và ban công","[""Ban công"", ""WC riêng"", ""Bếp""]",train,3:278,3
+"Ưu tiên chỗ ở với khu bếp, ban công và nha ve sinh rieng","[""Ban công"", ""WC riêng"", ""Bếp""]",train,3:278,3
+"Tìm phòng trọ gồm ban công, nha ve sinh rieng và khu bếp","[""Ban công"", ""WC riêng"", ""Bếp""]",train,3:278,3
+"Phòng cần có nha ve sinh rieng, khu bếp và ban công","[""Ban công"", ""WC riêng"", ""Bếp""]",train,3:278,3
+"Mong muốn phòng được trang bị khu bếp, ban công và nha ve sinh rieng","[""Ban công"", ""WC riêng"", ""Bếp""]",train,3:278,3
+"Tìm phòng có ban cong, WC riêng và giường ngủ","[""Ban công"", ""WC riêng"", ""Giường""]",train,3:279,3
+"Cần phòng trọ có WC riêng, giường ngủ và ban cong","[""Ban công"", ""WC riêng"", ""Giường""]",train,3:279,3
+"Ưu tiên chỗ ở với giường ngủ, ban cong và WC riêng","[""Ban công"", ""WC riêng"", ""Giường""]",train,3:279,3
+"Tìm phòng trọ gồm ban cong, WC riêng và giường ngủ","[""Ban công"", ""WC riêng"", ""Giường""]",train,3:279,3
+"Phòng cần có WC riêng, giường ngủ và ban cong","[""Ban công"", ""WC riêng"", ""Giường""]",train,3:279,3
+"Mong muốn phòng được trang bị giường ngủ, ban cong và WC riêng","[""Ban công"", ""WC riêng"", ""Giường""]",train,3:279,3
+"Tìm phòng có ban công, nhà vệ sinh riêng và tu quan ao","[""Ban công"", ""WC riêng"", ""Tủ quần áo""]",test,3:280,3
+"Cần phòng trọ có nhà vệ sinh riêng, tu quan ao và ban công","[""Ban công"", ""WC riêng"", ""Tủ quần áo""]",test,3:280,3
+"Ưu tiên chỗ ở với tu quan ao, ban công và nhà vệ sinh riêng","[""Ban công"", ""WC riêng"", ""Tủ quần áo""]",test,3:280,3
+"Tìm phòng trọ gồm ban công, nhà vệ sinh riêng và tu quan ao","[""Ban công"", ""WC riêng"", ""Tủ quần áo""]",test,3:280,3
+"Phòng cần có nhà vệ sinh riêng, tu quan ao và ban công","[""Ban công"", ""WC riêng"", ""Tủ quần áo""]",test,3:280,3
+"Mong muốn phòng được trang bị tu quan ao, ban công và nhà vệ sinh riêng","[""Ban công"", ""WC riêng"", ""Tủ quần áo""]",test,3:280,3
+"Tìm phòng có ban cong, wc rieng và phong khep kin","[""Ban công"", ""WC riêng"", ""Khép kín""]",test,3:281,3
+"Cần phòng trọ có wc rieng, phong khep kin và ban cong","[""Ban công"", ""WC riêng"", ""Khép kín""]",test,3:281,3
+"Ưu tiên chỗ ở với phong khep kin, ban cong và wc rieng","[""Ban công"", ""WC riêng"", ""Khép kín""]",test,3:281,3
+"Tìm phòng trọ gồm ban cong, wc rieng và phong khep kin","[""Ban công"", ""WC riêng"", ""Khép kín""]",test,3:281,3
+"Phòng cần có wc rieng, phong khep kin và ban cong","[""Ban công"", ""WC riêng"", ""Khép kín""]",test,3:281,3
+"Mong muốn phòng được trang bị phong khep kin, ban cong và wc rieng","[""Ban công"", ""WC riêng"", ""Khép kín""]",test,3:281,3
+"Tìm phòng có ban công, khu bếp và giường","[""Ban công"", ""Bếp"", ""Giường""]",train,3:282,3
+"Cần phòng trọ có khu bếp, giường và ban công","[""Ban công"", ""Bếp"", ""Giường""]",train,3:282,3
+"Ưu tiên chỗ ở với giường, ban công và khu bếp","[""Ban công"", ""Bếp"", ""Giường""]",train,3:282,3
+"Tìm phòng trọ gồm ban công, khu bếp và giường","[""Ban công"", ""Bếp"", ""Giường""]",train,3:282,3
+"Phòng cần có khu bếp, giường và ban công","[""Ban công"", ""Bếp"", ""Giường""]",train,3:282,3
+"Mong muốn phòng được trang bị giường, ban công và khu bếp","[""Ban công"", ""Bếp"", ""Giường""]",train,3:282,3
+"Tìm phòng có ban cong, bep và tủ đồ","[""Ban công"", ""Bếp"", ""Tủ quần áo""]",validation,3:283,3
+"Cần phòng trọ có bep, tủ đồ và ban cong","[""Ban công"", ""Bếp"", ""Tủ quần áo""]",validation,3:283,3
+"Ưu tiên chỗ ở với tủ đồ, ban cong và bep","[""Ban công"", ""Bếp"", ""Tủ quần áo""]",validation,3:283,3
+"Tìm phòng trọ gồm ban cong, bep và tủ đồ","[""Ban công"", ""Bếp"", ""Tủ quần áo""]",validation,3:283,3
+"Phòng cần có bep, tủ đồ và ban cong","[""Ban công"", ""Bếp"", ""Tủ quần áo""]",validation,3:283,3
+"Mong muốn phòng được trang bị tủ đồ, ban cong và bep","[""Ban công"", ""Bếp"", ""Tủ quần áo""]",validation,3:283,3
+"Tìm phòng có ban công, bếp và khep kin","[""Ban công"", ""Bếp"", ""Khép kín""]",train,3:284,3
+"Cần phòng trọ có bếp, khep kin và ban công","[""Ban công"", ""Bếp"", ""Khép kín""]",train,3:284,3
+"Ưu tiên chỗ ở với khep kin, ban công và bếp","[""Ban công"", ""Bếp"", ""Khép kín""]",train,3:284,3
+"Tìm phòng trọ gồm ban công, bếp và khep kin","[""Ban công"", ""Bếp"", ""Khép kín""]",train,3:284,3
+"Phòng cần có bếp, khep kin và ban công","[""Ban công"", ""Bếp"", ""Khép kín""]",train,3:284,3
+"Mong muốn phòng được trang bị khep kin, ban công và bếp","[""Ban công"", ""Bếp"", ""Khép kín""]",train,3:284,3
+"Tìm phòng có ban cong, giuong và tu do","[""Ban công"", ""Giường"", ""Tủ quần áo""]",train,3:285,3
+"Cần phòng trọ có giuong, tu do và ban cong","[""Ban công"", ""Giường"", ""Tủ quần áo""]",train,3:285,3
+"Ưu tiên chỗ ở với tu do, ban cong và giuong","[""Ban công"", ""Giường"", ""Tủ quần áo""]",train,3:285,3
+"Tìm phòng trọ gồm ban cong, giuong và tu do","[""Ban công"", ""Giường"", ""Tủ quần áo""]",train,3:285,3
+"Phòng cần có giuong, tu do và ban cong","[""Ban công"", ""Giường"", ""Tủ quần áo""]",train,3:285,3
+"Mong muốn phòng được trang bị tu do, ban cong và giuong","[""Ban công"", ""Giường"", ""Tủ quần áo""]",train,3:285,3
+"Tìm phòng có ban công, giuong ngu và khép kín","[""Ban công"", ""Giường"", ""Khép kín""]",validation,3:286,3
+"Cần phòng trọ có giuong ngu, khép kín và ban công","[""Ban công"", ""Giường"", ""Khép kín""]",validation,3:286,3
+"Ưu tiên chỗ ở với khép kín, ban công và giuong ngu","[""Ban công"", ""Giường"", ""Khép kín""]",validation,3:286,3
+"Tìm phòng trọ gồm ban công, giuong ngu và khép kín","[""Ban công"", ""Giường"", ""Khép kín""]",validation,3:286,3
+"Phòng cần có giuong ngu, khép kín và ban công","[""Ban công"", ""Giường"", ""Khép kín""]",validation,3:286,3
+"Mong muốn phòng được trang bị khép kín, ban công và giuong ngu","[""Ban công"", ""Giường"", ""Khép kín""]",validation,3:286,3
+"Tìm phòng có ban cong, tủ quần áo và phòng khép kín","[""Ban công"", ""Tủ quần áo"", ""Khép kín""]",validation,3:287,3
+"Cần phòng trọ có tủ quần áo, phòng khép kín và ban cong","[""Ban công"", ""Tủ quần áo"", ""Khép kín""]",validation,3:287,3
+"Ưu tiên chỗ ở với phòng khép kín, ban cong và tủ quần áo","[""Ban công"", ""Tủ quần áo"", ""Khép kín""]",validation,3:287,3
+"Tìm phòng trọ gồm ban cong, tủ quần áo và phòng khép kín","[""Ban công"", ""Tủ quần áo"", ""Khép kín""]",validation,3:287,3
+"Phòng cần có tủ quần áo, phòng khép kín và ban cong","[""Ban công"", ""Tủ quần áo"", ""Khép kín""]",validation,3:287,3
+"Mong muốn phòng được trang bị phòng khép kín, ban cong và tủ quần áo","[""Ban công"", ""Tủ quần áo"", ""Khép kín""]",validation,3:287,3
+"Tìm phòng có WC riêng, khu bếp và giuong","[""WC riêng"", ""Bếp"", ""Giường""]",train,3:288,3
+"Cần phòng trọ có khu bếp, giuong và WC riêng","[""WC riêng"", ""Bếp"", ""Giường""]",train,3:288,3
+"Ưu tiên chỗ ở với giuong, WC riêng và khu bếp","[""WC riêng"", ""Bếp"", ""Giường""]",train,3:288,3
+"Tìm phòng trọ gồm WC riêng, khu bếp và giuong","[""WC riêng"", ""Bếp"", ""Giường""]",train,3:288,3
+"Phòng cần có khu bếp, giuong và WC riêng","[""WC riêng"", ""Bếp"", ""Giường""]",train,3:288,3
+"Mong muốn phòng được trang bị giuong, WC riêng và khu bếp","[""WC riêng"", ""Bếp"", ""Giường""]",train,3:288,3
+"Tìm phòng có nhà vệ sinh riêng, bep và tu do","[""WC riêng"", ""Bếp"", ""Tủ quần áo""]",train,3:289,3
+"Cần phòng trọ có bep, tu do và nhà vệ sinh riêng","[""WC riêng"", ""Bếp"", ""Tủ quần áo""]",train,3:289,3
+"Ưu tiên chỗ ở với tu do, nhà vệ sinh riêng và bep","[""WC riêng"", ""Bếp"", ""Tủ quần áo""]",train,3:289,3
+"Tìm phòng trọ gồm nhà vệ sinh riêng, bep và tu do","[""WC riêng"", ""Bếp"", ""Tủ quần áo""]",train,3:289,3
+"Phòng cần có bep, tu do và nhà vệ sinh riêng","[""WC riêng"", ""Bếp"", ""Tủ quần áo""]",train,3:289,3
+"Mong muốn phòng được trang bị tu do, nhà vệ sinh riêng và bep","[""WC riêng"", ""Bếp"", ""Tủ quần áo""]",train,3:289,3
+"Tìm phòng có wc rieng, bếp và khép kín","[""WC riêng"", ""Bếp"", ""Khép kín""]",train,3:290,3
+"Cần phòng trọ có bếp, khép kín và wc rieng","[""WC riêng"", ""Bếp"", ""Khép kín""]",train,3:290,3
+"Ưu tiên chỗ ở với khép kín, wc rieng và bếp","[""WC riêng"", ""Bếp"", ""Khép kín""]",train,3:290,3
+"Tìm phòng trọ gồm wc rieng, bếp và khép kín","[""WC riêng"", ""Bếp"", ""Khép kín""]",train,3:290,3
+"Phòng cần có bếp, khép kín và wc rieng","[""WC riêng"", ""Bếp"", ""Khép kín""]",train,3:290,3
+"Mong muốn phòng được trang bị khép kín, wc rieng và bếp","[""WC riêng"", ""Bếp"", ""Khép kín""]",train,3:290,3
+"Tìm phòng có nha ve sinh rieng, giường và tủ đồ","[""WC riêng"", ""Giường"", ""Tủ quần áo""]",train,3:291,3
+"Cần phòng trọ có giường, tủ đồ và nha ve sinh rieng","[""WC riêng"", ""Giường"", ""Tủ quần áo""]",train,3:291,3
+"Ưu tiên chỗ ở với tủ đồ, nha ve sinh rieng và giường","[""WC riêng"", ""Giường"", ""Tủ quần áo""]",train,3:291,3
+"Tìm phòng trọ gồm nha ve sinh rieng, giường và tủ đồ","[""WC riêng"", ""Giường"", ""Tủ quần áo""]",train,3:291,3
+"Phòng cần có giường, tủ đồ và nha ve sinh rieng","[""WC riêng"", ""Giường"", ""Tủ quần áo""]",train,3:291,3
+"Mong muốn phòng được trang bị tủ đồ, nha ve sinh rieng và giường","[""WC riêng"", ""Giường"", ""Tủ quần áo""]",train,3:291,3
+"Tìm phòng có WC riêng, giường ngủ và khep kin","[""WC riêng"", ""Giường"", ""Khép kín""]",train,3:292,3
+"Cần phòng trọ có giường ngủ, khep kin và WC riêng","[""WC riêng"", ""Giường"", ""Khép kín""]",train,3:292,3
+"Ưu tiên chỗ ở với khep kin, WC riêng và giường ngủ","[""WC riêng"", ""Giường"", ""Khép kín""]",train,3:292,3
+"Tìm phòng trọ gồm WC riêng, giường ngủ và khep kin","[""WC riêng"", ""Giường"", ""Khép kín""]",train,3:292,3
+"Phòng cần có giường ngủ, khep kin và WC riêng","[""WC riêng"", ""Giường"", ""Khép kín""]",train,3:292,3
+"Mong muốn phòng được trang bị khep kin, WC riêng và giường ngủ","[""WC riêng"", ""Giường"", ""Khép kín""]",train,3:292,3
+"Tìm phòng có nhà vệ sinh riêng, tu quan ao và phong khep kin","[""WC riêng"", ""Tủ quần áo"", ""Khép kín""]",test,3:293,3
+"Cần phòng trọ có tu quan ao, phong khep kin và nhà vệ sinh riêng","[""WC riêng"", ""Tủ quần áo"", ""Khép kín""]",test,3:293,3
+"Ưu tiên chỗ ở với phong khep kin, nhà vệ sinh riêng và tu quan ao","[""WC riêng"", ""Tủ quần áo"", ""Khép kín""]",test,3:293,3
+"Tìm phòng trọ gồm nhà vệ sinh riêng, tu quan ao và phong khep kin","[""WC riêng"", ""Tủ quần áo"", ""Khép kín""]",test,3:293,3
+"Phòng cần có tu quan ao, phong khep kin và nhà vệ sinh riêng","[""WC riêng"", ""Tủ quần áo"", ""Khép kín""]",test,3:293,3
+"Mong muốn phòng được trang bị phong khep kin, nhà vệ sinh riêng và tu quan ao","[""WC riêng"", ""Tủ quần áo"", ""Khép kín""]",test,3:293,3
+"Tìm phòng có bếp, giuong ngu và tủ quần áo","[""Bếp"", ""Giường"", ""Tủ quần áo""]",train,3:294,3
+"Cần phòng trọ có giuong ngu, tủ quần áo và bếp","[""Bếp"", ""Giường"", ""Tủ quần áo""]",train,3:294,3
+"Ưu tiên chỗ ở với tủ quần áo, bếp và giuong ngu","[""Bếp"", ""Giường"", ""Tủ quần áo""]",train,3:294,3
+"Tìm phòng trọ gồm bếp, giuong ngu và tủ quần áo","[""Bếp"", ""Giường"", ""Tủ quần áo""]",train,3:294,3
+"Phòng cần có giuong ngu, tủ quần áo và bếp","[""Bếp"", ""Giường"", ""Tủ quần áo""]",train,3:294,3
+"Mong muốn phòng được trang bị tủ quần áo, bếp và giuong ngu","[""Bếp"", ""Giường"", ""Tủ quần áo""]",train,3:294,3
+"Tìm phòng có khu bếp, giường và phòng khép kín","[""Bếp"", ""Giường"", ""Khép kín""]",train,3:295,3
+"Cần phòng trọ có giường, phòng khép kín và khu bếp","[""Bếp"", ""Giường"", ""Khép kín""]",train,3:295,3
+"Ưu tiên chỗ ở với phòng khép kín, khu bếp và giường","[""Bếp"", ""Giường"", ""Khép kín""]",train,3:295,3
+"Tìm phòng trọ gồm khu bếp, giường và phòng khép kín","[""Bếp"", ""Giường"", ""Khép kín""]",train,3:295,3
+"Phòng cần có giường, phòng khép kín và khu bếp","[""Bếp"", ""Giường"", ""Khép kín""]",train,3:295,3
+"Mong muốn phòng được trang bị phòng khép kín, khu bếp và giường","[""Bếp"", ""Giường"", ""Khép kín""]",train,3:295,3
+"Tìm phòng có bep, tủ đồ và khep kin","[""Bếp"", ""Tủ quần áo"", ""Khép kín""]",train,3:296,3
+"Cần phòng trọ có tủ đồ, khep kin và bep","[""Bếp"", ""Tủ quần áo"", ""Khép kín""]",train,3:296,3
+"Ưu tiên chỗ ở với khep kin, bep và tủ đồ","[""Bếp"", ""Tủ quần áo"", ""Khép kín""]",train,3:296,3
+"Tìm phòng trọ gồm bep, tủ đồ và khep kin","[""Bếp"", ""Tủ quần áo"", ""Khép kín""]",train,3:296,3
+"Phòng cần có tủ đồ, khep kin và bep","[""Bếp"", ""Tủ quần áo"", ""Khép kín""]",train,3:296,3
+"Mong muốn phòng được trang bị khep kin, bep và tủ đồ","[""Bếp"", ""Tủ quần áo"", ""Khép kín""]",train,3:296,3
+"Tìm phòng có giường ngủ, tu quan ao và phong khep kin","[""Giường"", ""Tủ quần áo"", ""Khép kín""]",train,3:297,3
+"Cần phòng trọ có tu quan ao, phong khep kin và giường ngủ","[""Giường"", ""Tủ quần áo"", ""Khép kín""]",train,3:297,3
+"Ưu tiên chỗ ở với phong khep kin, giường ngủ và tu quan ao","[""Giường"", ""Tủ quần áo"", ""Khép kín""]",train,3:297,3
+"Tìm phòng trọ gồm giường ngủ, tu quan ao và phong khep kin","[""Giường"", ""Tủ quần áo"", ""Khép kín""]",train,3:297,3
+"Phòng cần có tu quan ao, phong khep kin và giường ngủ","[""Giường"", ""Tủ quần áo"", ""Khép kín""]",train,3:297,3
+"Mong muốn phòng được trang bị phong khep kin, giường ngủ và tu quan ao","[""Giường"", ""Tủ quần áo"", ""Khép kín""]",train,3:297,3
+Tìm phòng trọ giá hợp lý,[],train,neutral:0,0
+Cần tìm phòng ở Thái Nguyên,[],test,neutral:1,0
+Tìm chỗ ở phù hợp cho sinh viên,[],train,neutral:2,0
+Có phòng nào còn trống không,[],validation,neutral:3,0
+Tìm phòng gần trường đại học,[],test,neutral:4,0
+Cần phòng yên tĩnh và an ninh,[],train,neutral:5,0
+Tìm phòng dưới hai triệu,[],test,neutral:6,0
+Phòng cho hai người ở,[],train,neutral:7,0
+Tìm phòng diện tích rộng,[],train,neutral:8,0
+Cần phòng gần trung tâm thành phố,[],train,neutral:9,0
+Tìm nhà trọ mới đăng,[],train,neutral:10,0
+Có phòng nào phù hợp ngân sách,[],train,neutral:11,0
+Tìm phòng ở khu Tân Thịnh,[],train,neutral:12,0
+Cần chỗ ở thuận tiện đi học,[],validation,neutral:13,0
+Tìm phòng trọ sạch sẽ,[],train,neutral:14,0
+Phòng còn chỗ cho người thuê,[],train,neutral:15,0
+Tìm phòng theo khu vực,[],train,neutral:16,0
+Cần phòng có giá vừa phải,[],train,neutral:17,0
+Tìm chỗ ở gần bến xe,[],train,neutral:18,0
+Phòng trọ dành cho người đi làm,[],test,neutral:19,0
+Tìm phòng diện tích khoảng hai mươi mét vuông,[],validation,neutral:20,0
+Có phòng nào mới đăng gần đây,[],train,neutral:21,0
+Tìm nơi ở có vị trí thuận tiện,[],train,neutral:22,0
+Cần thuê phòng tại Thái Nguyên,[],test,neutral:23,0
